@@ -1054,6 +1054,13 @@
       const pagina = path === '/' ? 'home'
         : (path.split('/').filter(Boolean)[0] || 'home').toLowerCase();
 
+      let humanInteracted = false;
+      ['mousemove', 'scroll', 'keydown', 'touchstart'].forEach(function (ev) {
+        window.addEventListener(ev, function () { humanInteracted = true; }, { once: true, passive: true });
+      });
+
+      let leadFired = false;
+
       if (pagina !== 'home') {
         fbq('track', 'ViewContent', { content_name: pagina, content_type: 'produto' });
       }
@@ -1061,6 +1068,9 @@
       document.addEventListener('click', function (e) {
         const wa = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
         if (wa) {
+          if (!humanInteracted) return;
+          if (leadFired) return;
+          leadFired = true;
           const sec = wa.closest('section');
           const pos = (sec && (sec.id || sec.getAttribute('data-section'))) || 'cta';
           fbq('track', 'Lead', { content_name: pagina + ' · ' + pos });

@@ -1895,6 +1895,15 @@
       const pagina = path === '/' ? 'home'
         : (path.split('/').filter(Boolean)[0] || 'home').toLowerCase();
 
+      // detecta interacao humana (mouse/scroll/teclado/touch) — bots geralmente nao acionam
+      let humanInteracted = false;
+      ['mousemove', 'scroll', 'keydown', 'touchstart'].forEach(function (ev) {
+        window.addEventListener(ev, function () { humanInteracted = true; }, { once: true, passive: true });
+      });
+
+      // 1 Lead por sessao · evita inflar com pessoa clicando em multiplos CTAs
+      let leadFired = false;
+
       // ViewContent ao chegar em pagina de produto (qualifica interesse)
       if (pagina !== 'home') {
         fbq('track', 'ViewContent', { content_name: pagina, content_type: 'produto' });
@@ -1904,6 +1913,9 @@
       document.addEventListener('click', function (e) {
         const wa = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
         if (wa) {
+          if (!humanInteracted) return; // sem interacao previa = provavel bot/crawler
+          if (leadFired) return;        // ja contou nesta sessao
+          leadFired = true;
           const sec = wa.closest('section');
           const pos = (sec && (sec.id || sec.getAttribute('data-section'))) || 'cta';
           fbq('track', 'Lead', { content_name: pagina + ' · ' + pos });
