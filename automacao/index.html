@@ -284,6 +284,30 @@
     @media (max-width: 560px) {
       .stats-belt-grid { grid-template-columns: 1fr; }
     }
+
+    /* DEPOIMENTOS */
+    .testimonials { padding: 100px 56px; border-top: 1px solid var(--rule); background: rgba(14,14,28,0.4); }
+    .testimonials-inner { max-width: 1100px; margin: 0 auto; }
+    .testimonials-head { margin-bottom: 64px; }
+    .testimonials-title { font-size: clamp(36px, 5vw, 60px); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+    .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 36px; align-items: start; }
+    .testimonial-card { position: relative; display: flex; flex-direction: column; align-items: center; }
+    .testimonial-phone { position: relative; width: 100%; max-width: 340px; border-radius: 24px; overflow: hidden; background: var(--dark-2); border: 2px solid rgba(255,255,255,0.08); box-shadow: 0 0 0 1px rgba(255,107,53,0.08), 0 24px 64px rgba(0,0,0,0.6), 0 0 120px rgba(255,107,53,0.06); transition: transform 0.4s, box-shadow 0.4s; }
+    .testimonial-phone:hover { transform: translateY(-6px); box-shadow: 0 0 0 1px rgba(255,107,53,0.15), 0 32px 80px rgba(0,0,0,0.7), 0 0 160px rgba(255,107,53,0.1); }
+    .testimonial-phone::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad); z-index: 2; }
+    .testimonial-phone-header { padding: 14px 20px; background: rgba(7,7,13,0.9); border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 10px; z-index: 1; position: relative; }
+    .testimonial-phone-dot { width: 8px; height: 8px; border-radius: 50%; background: #25D366; box-shadow: 0 0 8px rgba(37,211,102,0.4); }
+    .testimonial-phone-name { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .testimonial-phone-badge { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); padding: 3px 8px; border: 1px solid rgba(255,107,53,0.2); border-radius: 3px; }
+    .testimonial-phone img { width: 100%; height: auto; display: block; }
+    .testimonial-label { margin-top: 20px; text-align: center; }
+    .testimonial-label-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .testimonial-label-desc { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.2em; color: rgba(255,255,255,0.28); text-transform: uppercase; }
+    .testimonial-glow { position: absolute; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 70%); pointer-events: none; z-index: -1; }
+    .testimonial-glow-1 { top: -40px; left: -40px; }
+    .testimonial-glow-2 { bottom: -20px; right: -40px; }
+    @media (max-width: 900px) { .testimonials { padding: 80px 32px; } .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 24px; } }
+    @media (max-width: 600px) { .testimonials-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -833,6 +857,69 @@
             <span>Google Calendar</span>
             <span>Kommo API v4</span>
             <span>Webhooks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="testimonials" id="depoimentos">
+    <div class="testimonials-inner">
+      <div class="section-label reveal">
+        <span class="section-label-num">06</span>
+        <div class="section-label-rule"></div>
+        <span class="section-label-tag">Quem já trabalhou com a gente</span>
+      </div>
+      <div class="testimonials-head reveal reveal-d1">
+        <h2 class="testimonials-title">
+          Não acredite na gente.<br><span class="grad-text">Acredite em quem já contratou.</span>
+        </h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal reveal-d1">
+          <div class="testimonial-glow testimonial-glow-1"></div>
+          <div class="testimonial-phone">
+            <div class="testimonial-phone-header">
+              <div class="testimonial-phone-dot"></div>
+              <span class="testimonial-phone-name">Feedback real · WhatsApp</span>
+              <span class="testimonial-phone-badge">Verificado</span>
+            </div>
+            <img src="../feedback1.jpg" alt="Depoimento de cliente sobre implantação de CRM — destaca proatividade e suporte da Yanna">
+          </div>
+          <div class="testimonial-label">
+            <div class="testimonial-label-title">Implantação de CRM</div>
+            <div class="testimonial-label-desc">Migração de sistema anterior</div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-d2">
+          <div class="testimonial-glow testimonial-glow-2"></div>
+          <div class="testimonial-phone">
+            <div class="testimonial-phone-header">
+              <div class="testimonial-phone-dot"></div>
+              <span class="testimonial-phone-name">Feedback real · WhatsApp</span>
+              <span class="testimonial-phone-badge">Verificado</span>
+            </div>
+            <img src="../feedback2.jpg" alt="Depoimento de cliente sobre chatbot com IA — destaca atendimento rápido e disponibilidade">
+          </div>
+          <div class="testimonial-label">
+            <div class="testimonial-label-title">Chatbot com IA</div>
+            <div class="testimonial-label-desc">Automação de atendimento</div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-d3">
+          <div class="testimonial-glow testimonial-glow-1"></div>
+          <div class="testimonial-phone">
+            <div class="testimonial-phone-header">
+              <div class="testimonial-phone-dot"></div>
+              <span class="testimonial-phone-name">Depoimento em vídeo</span>
+              <span class="testimonial-phone-badge">Verificado</span>
+            </div>
+            <img src="../feedback-video.gif" alt="Depoimento em vídeo de cliente satisfeito com a Aruna">
+          </div>
+          <div class="testimonial-label">
+            <div class="testimonial-label-title">Depoimento em Vídeo</div>
+            <div class="testimonial-label-desc">Cliente real · Sem roteiro</div>
           </div>
         </div>
       </div>
