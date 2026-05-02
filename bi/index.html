@@ -115,8 +115,8 @@
     .stats-belt-rule { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(232,72,90,.35), transparent); }
     .stats-belt-title { font-size: clamp(24px, 2.6vw, 34px); font-weight: 700; letter-spacing: -.01em; line-height: 1.2; margin-bottom: 56px; max-width: 780px; }
     .stats-belt-title em { font-style: normal; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .stats-belt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: var(--rule); }
-    .stat-card { background: var(--dark); padding: 36px 32px; transition: background .3s; position: relative; overflow: hidden; }
+    .stats-belt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: var(--rule); }
+    .stat-card { background: var(--dark); padding: 32px 24px; transition: background .3s; position: relative; overflow: hidden; }
     .stat-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
     .stat-card:hover::before { transform: scaleX(1); }
     .stat-num { font-size: clamp(44px, 5vw, 68px); font-weight: 700; line-height: 1; letter-spacing: -.03em; margin-bottom: 14px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -343,38 +343,36 @@
       </div>
       <div class="hero-partner-tag">★ Looker Studio · Power BI · Metabase</div>
       <h1 class="hero-title">
-        Você decide olhando<br>
-        pra planilha<br>
-        <em>de quarta-feira?</em>
+        Dado em 5 sistemas.<br>
+        <em>Decisão em 1 painel.</em>
       </h1>
       <p class="hero-sub">
-        Quando o relatório fica pronto, o mercado já mudou. A Aruna conecta seu CRM, ERP, e-commerce
-        e ferramentas de marketing num painel ao vivo — e dispara alerta no seu WhatsApp quando algo
-        sai da meta. Em 15 a 30 dias com dado real, não dashboard de demo.
+        CRM, ERP, e-commerce e mídia paga num painel ao vivo. Dispara alerta no seu WhatsApp quando
+        a meta escapa. Em 15 a 30 dias rodando com dado real, não dashboard de demo.
       </p>
       <div class="hero-cta">
-        <a href="https://wa.me/5585920033627?text=Quero%20ver%20um%20dashboard%20real%20da%20Aruna" class="btn-primary">
+        <a href="https://wa.me/5585920033627?text=Quero%20ver%20os%2012%20KPIs%20num%20painel%20s%C3%B3%20da%20Aruna" class="btn-primary">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.961 1.395 5.658L.057 23.882l6.362-1.312A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.947 0-3.764-.528-5.321-1.438l-.38-.226-3.938.812.84-3.847-.249-.396A9.937 9.937 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          Quero ver um dashboard real
+          Quero ver os 12 KPIs num painel só
         </a>
         <a href="#solucao" class="btn-ghost">Ver o que entregamos ↓</a>
       </div>
       <div class="hero-trust">
         <div class="hero-trust-item">
-          <div class="hero-trust-val">−40%</div>
-          <div class="hero-trust-lab">tempo de decisão</div>
+          <div class="hero-trust-val">12 KPIs</div>
+          <div class="hero-trust-lab">num painel só</div>
         </div>
         <div class="hero-trust-item">
           <div class="hero-trust-val">15–30</div>
-          <div class="hero-trust-lab">dias de setup</div>
+          <div class="hero-trust-lab">dias pra rodar</div>
         </div>
         <div class="hero-trust-item">
-          <div class="hero-trust-val">Real-time</div>
-          <div class="hero-trust-lab">atualização ao vivo</div>
+          <div class="hero-trust-val">5s</div>
+          <div class="hero-trust-lab">atualiza em tempo real</div>
         </div>
         <div class="hero-trust-item">
           <div class="hero-trust-val">WhatsApp</div>
-          <div class="hero-trust-lab">alertas automáticos</div>
+          <div class="hero-trust-lab">alerta quando meta escapa</div>
         </div>
       </div>
     </div>
@@ -444,6 +442,11 @@
         <em>É sobrevivência.</em>
       </h2>
       <div class="stats-belt-grid">
+        <div class="stat-card reveal reveal-d1">
+          <div class="stat-num">23×</div>
+          <p class="stat-desc">mais probabilidade de <strong>superar concorrentes</strong> em empresas data-driven.</p>
+          <div class="stat-source">McKinsey · Data-Driven Enterprise</div>
+        </div>
         <div class="stat-card reveal reveal-d1">
           <div class="stat-num">75%</div>
           <p class="stat-desc">das empresas globais devem adotar <strong>Decision Intelligence</strong> em 2026.</p>
