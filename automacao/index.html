@@ -1137,10 +1137,21 @@
     resize(); init(); draw();
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    const revealEls = document.querySelectorAll('.reveal');
+    const showAll = () => revealEls.forEach(el => el.classList.add('visible'));
+    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      showAll();
+    } else {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0, rootMargin: '0px 0px 15% 0px' });
+      revealEls.forEach(el => obs.observe(el));
+      const safety = () => revealEls.forEach(el => {
+        if (!el.classList.contains('visible') && el.getBoundingClientRect().top < innerHeight) el.classList.add('visible');
+      });
+      addEventListener('scroll', safety, { passive: true });
+      addEventListener('load', () => setTimeout(safety, 300));
+    }
 
     // ── META PIXEL · tracking ampliado (Lead + sinais de qualidade) ──
     (function () {
