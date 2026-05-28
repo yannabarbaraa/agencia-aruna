@@ -9,13 +9,13 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PLACEHOLDER');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BI &amp; Dashboards pela Aruna — Decisão data-driven em tempo real</title>
-  <meta name="description" content="Aruna conecta CRM, ERP e e-commerce em painel ao vivo. Looker Studio, Power BI, Metabase. Alertas no WhatsApp. Setup em 15 a 30 dias.">
+  <title>Automação de Processos pela Aruna — n8n, Make, IA com voz da sua marca</title>
+  <meta name="description" content="Aruna automatiza follow-up, atendimento, integração entre sistemas e tarefa repetitiva. Stack n8n + Make + IA. Setup em 30 a 60 dias.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://agenciaaruna.com/bi/">
-  <meta property="og:title" content="BI &amp; Dashboards pela Aruna — Dado em 5 sistemas, decisão em 1 painel">
-  <meta property="og:description" content="CRM, ERP, e-commerce e mídia paga num painel ao vivo. Alerta no WhatsApp quando a meta escapa. Em 15 a 30 dias rodando.">
+  <meta property="og:url" content="https://agenciaaruna.com/automacao/">
+  <meta property="og:title" content="Automação pela Aruna — n8n, Make e IA com voz da sua marca">
+  <meta property="og:description" content="Sua equipe gasta 3 horas por dia em tarefa que um robô faz. A Aruna tira tudo isso do humano e coloca em workflow. ROI médio de 400% em 12 meses.">
   <meta property="og:image" content="https://agenciaaruna.com/dashboard-comercial.png">
   <meta property="og:site_name" content="Agência Aruna">
   <meta property="og:locale" content="pt_BR">
@@ -36,24 +36,29 @@
   <!-- End Meta Pixel Code -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700,800&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --coral: #E8485A; --orange: #FF6B35; --amber: #F5A623;
-      --dark: #07070D; --dark-2: #0E0E1C; --dark-3: #151526;
-      --light: #F7F3EE; --muted: rgba(247,243,238,0.52);
-      --faint: rgba(247,243,238,0.16); --rule: rgba(247,243,238,0.08);
-      --grad: linear-gradient(120deg, var(--coral) 0%, var(--orange) 45%, var(--amber) 100%);
+      --coral:   #E8485A; --orange:  #FF6B35; --amber:   #F5A623;
+      --dark:    #07070D; --dark-2:  #0E0E1C; --dark-3:  #151526;
+      --light:   #F7F3EE; --muted:   rgba(247,243,238,0.52);
+      --faint:   rgba(247,243,238,0.16); --rule: rgba(247,243,238,0.08);
+      --grad:    linear-gradient(120deg, var(--coral) 0%, var(--orange) 45%, var(--amber) 100%);
     }
     html { scroll-behavior: smooth; }
     body { background: var(--dark); color: var(--light); font-family: 'Cabinet Grotesk', sans-serif; overflow-x: hidden; }
-    body::after { content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.028; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 180px 180px; }
+    body::after {
+      content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+    }
     .grad-text { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
     .btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; background: var(--grad); color: var(--dark); font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; transition: opacity .2s, transform .2s, box-shadow .2s; }
     .btn-primary:hover { opacity: .88; transform: translateY(-2px); box-shadow: 0 16px 40px rgba(255,107,53,.3); }
-    .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: transparent; color: rgba(247,243,238,.65); font-family: 'General Sans', sans-serif; font-weight: 400; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 4px; cursor: pointer; text-decoration: none; transition: border-color .2s, color .2s; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: transparent; color: rgba(247,243,238,.65); font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 4px; cursor: pointer; text-decoration: none; transition: border-color .2s, color .2s; }
     .btn-ghost:hover { border-color: rgba(255,107,53,.4); color: var(--light); }
     .btn-whatsapp { display: inline-flex; align-items: center; gap: 12px; padding: 20px 48px; background: #25D366; color: #fff; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; transition: opacity .2s, transform .2s, box-shadow .2s; }
     .btn-whatsapp:hover { opacity: .9; transform: translateY(-2px); box-shadow: 0 16px 48px rgba(37,211,102,.3); }
@@ -68,18 +73,18 @@
     .nav-divider { width: 1px; height: 28px; background: linear-gradient(180deg, transparent, rgba(245,166,35,.3), transparent); }
     .nav-wordmark { display: flex; flex-direction: column; gap: 3px; }
     .nav-name { font-weight: 700; font-size: 18px; letter-spacing: .16em; line-height: 1; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .nav-tag { font-family: 'General Sans', sans-serif; font-size: 7px; letter-spacing: .3em; color: rgba(255,255,255,.28); text-transform: uppercase; }
+    .nav-tag { font-family: 'JetBrains Mono', monospace; font-size: 7px; letter-spacing: .3em; color: rgba(255,255,255,.28); text-transform: uppercase; }
     .nav-links { display: flex; align-items: center; gap: 40px; }
-    .nav-links a { font-family: 'General Sans', sans-serif; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.38); text-decoration: none; transition: color .2s; }
+    .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.38); text-decoration: none; transition: color .2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--amber); }
 
-    .hero { position: relative; z-index: 1; min-height: 100vh; display: grid; grid-template-columns: 1fr 680px; gap: 0; align-items: center; padding: 130px 56px 80px; overflow: hidden; }
+    .hero { position: relative; z-index: 1; min-height: 100vh; display: grid; grid-template-columns: 1fr 540px; gap: 0; align-items: center; padding: 130px 56px 80px; overflow: hidden; }
     .hero::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,107,53,.2), transparent); }
     .hero-left { padding-right: 48px; display: flex; flex-direction: column; gap: 0; }
     .hero-kicker { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; animation: fadeUp .7s both; }
     .hero-kicker-line { width: 32px; height: 1px; background: var(--orange); }
-    .hero-kicker-text { font-family: 'General Sans', sans-serif; font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--orange); }
-    .hero-partner-tag { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border: 1px solid rgba(245,166,35,.3); border-radius: 3px; background: rgba(245,166,35,.06); font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--amber); margin-bottom: 28px; width: max-content; animation: fadeUp .7s .05s both; }
+    .hero-kicker-text { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--orange); }
+    .hero-partner-tag { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border: 1px solid rgba(245,166,35,.3); border-radius: 3px; background: rgba(245,166,35,.06); font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--amber); margin-bottom: 28px; width: max-content; animation: fadeUp .7s .05s both; }
     .hero-title { font-size: clamp(46px, 6vw, 80px); font-weight: 700; line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 32px; animation: fadeUp .7s .12s both; }
     .hero-title em { font-style: normal; display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .hero-sub { font-size: 17px; font-weight: 400; line-height: 1.75; color: var(--muted); max-width: 520px; margin-bottom: 44px; border-left: 2px solid rgba(255,107,53,.35); padding-left: 20px; animation: fadeUp .7s .24s both; }
@@ -87,52 +92,64 @@
     .hero-trust { margin-top: 32px; display: flex; gap: 28px; flex-wrap: wrap; animation: fadeUp .7s .48s both; }
     .hero-trust-item { display: flex; flex-direction: column; gap: 4px; }
     .hero-trust-val { font-size: 22px; font-weight: 700; line-height: 1; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-trust-lab { font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.38); }
+    .hero-trust-lab { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.38); }
 
     .hero-right { position: relative; display: flex; align-items: center; justify-content: center; animation: fadeIn 1.2s .5s both; }
-    .dash-mock { width: 100%; max-width: 640px; border-radius: 10px; background: var(--dark-3); border: 1px solid rgba(255,255,255,.08); box-shadow: 0 40px 90px rgba(0,0,0,.6); overflow: hidden; position: relative; }
-    .dash-mock::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad); }
-    .dash-mock-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 22px; border-bottom: 1px solid var(--rule); background: rgba(0,0,0,.2); }
-    .dash-mock-title { font-family: 'General Sans', sans-serif; font-size: 10px; letter-spacing: .22em; color: rgba(255,255,255,.45); text-transform: uppercase; }
-    .dash-live { display: inline-flex; align-items: center; gap: 6px; }
-    .dash-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 12px #4ADE80; animation: pulse 1.6s ease-in-out infinite; }
+    /* WORKFLOW MOCK */
+    .wf-mock { width: 100%; max-width: 500px; border-radius: 10px; background: var(--dark-3); border: 1px solid rgba(255,255,255,.08); box-shadow: 0 40px 90px rgba(0,0,0,.6); overflow: hidden; position: relative; }
+    .wf-mock::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad); }
+    .wf-mock-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 22px; border-bottom: 1px solid var(--rule); background: rgba(0,0,0,.2); }
+    .wf-mock-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .22em; color: rgba(255,255,255,.45); text-transform: uppercase; }
+    .wf-mock-dots { display: flex; gap: 5px; }
+    .wf-mock-dot { width: 7px; height: 7px; border-radius: 50%; }
+    .wf-mock-dot:nth-child(1) { background: var(--coral); }
+    .wf-mock-dot:nth-child(2) { background: var(--amber); }
+    .wf-mock-dot:nth-child(3) { background: rgba(255,255,255,.15); }
+    .wf-canvas { padding: 28px 24px; min-height: 420px; }
+    .wf-node { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 6px; position: relative; transition: background .3s, border-color .3s; }
+    .wf-node:hover { background: rgba(255,107,53,.05); border-color: rgba(255,107,53,.25); }
+    .wf-node-icon { width: 32px; height: 32px; border-radius: 6px; background: var(--grad); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+    .wf-node-text { flex: 1; }
+    .wf-node-name { font-size: 13px; font-weight: 700; color: var(--light); margin-bottom: 2px; }
+    .wf-node-desc { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; letter-spacing: .12em; color: rgba(255,255,255,.42); text-transform: uppercase; }
+    .wf-pulse { width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 12px #4ADE80; animation: pulse 1.6s ease-in-out infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
-    .dash-live-text { font-family: 'General Sans', sans-serif; font-size: 8.5px; color: #4ADE80; letter-spacing: .2em; text-transform: uppercase; }
-    .dash-mock img { width: 100%; height: auto; display: block; }
-    .dash-float-badge { position: absolute; padding: 12px 16px; background: var(--dark-2); border: 1px solid rgba(245,166,35,.28); border-radius: 6px; box-shadow: 0 20px 40px rgba(0,0,0,.5); }
-    .dash-float-badge .fb-val { font-size: 16px; font-weight: 700; line-height: 1; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .dash-float-badge .fb-lab { font-family: 'General Sans', sans-serif; font-size: 8px; letter-spacing: .22em; color: rgba(255,255,255,.32); text-transform: uppercase; margin-top: 4px; }
-    .dash-badge-1 { top: -16px; right: -18px; }
-    .dash-badge-2 { bottom: -16px; left: -18px; }
+    .wf-connector { width: 2px; height: 22px; background: linear-gradient(180deg, rgba(255,107,53,.5), rgba(245,166,35,.2)); margin: 0 auto; position: relative; }
+    .wf-connector::after { content: '↓'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: var(--amber); font-size: 12px; background: var(--dark-3); padding: 0 4px; font-family: 'JetBrains Mono', monospace; }
+    .wf-float-badge { position: absolute; padding: 12px 16px; background: var(--dark-2); border: 1px solid rgba(245,166,35,.28); border-radius: 6px; box-shadow: 0 20px 40px rgba(0,0,0,.5); }
+    .wf-float-badge .fb-val { font-size: 16px; font-weight: 700; line-height: 1; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .wf-float-badge .fb-lab { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: .22em; color: rgba(255,255,255,.32); text-transform: uppercase; margin-top: 4px; }
+    .wf-badge-1 { top: -16px; right: -18px; }
+    .wf-badge-2 { bottom: -16px; left: -18px; }
 
     .marquee-strip { position: relative; z-index: 1; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 18px 0; overflow: hidden; background: rgba(14,14,28,.6); }
     .marquee-track { display: flex; gap: 0; animation: marqueeScroll 32s linear infinite; width: max-content; }
     .marquee-track:hover { animation-play-state: paused; }
     @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .marquee-item { display: flex; align-items: center; gap: 24px; padding: 0 40px; font-family: 'General Sans', sans-serif; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: rgba(247,243,238,.3); white-space: nowrap; }
+    .marquee-item { display: flex; align-items: center; gap: 24px; padding: 0 40px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: rgba(247,243,238,.3); white-space: nowrap; }
     .marquee-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--orange); opacity: .5; flex-shrink: 0; }
     .marquee-item.hi { color: rgba(245,166,35,.6); }
 
     .stats-belt { padding: 80px 56px; background: var(--dark-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); position: relative; z-index: 2; }
     .stats-belt-inner { max-width: 1200px; margin: 0 auto; }
     .stats-belt-head { display: flex; align-items: center; gap: 18px; margin-bottom: 48px; }
-    .stats-belt-eyebrow { font-family: 'General Sans', sans-serif; font-size: 10px; letter-spacing: .3em; color: var(--coral); text-transform: uppercase; }
+    .stats-belt-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .3em; color: var(--coral); text-transform: uppercase; }
     .stats-belt-rule { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(232,72,90,.35), transparent); }
     .stats-belt-title { font-size: clamp(24px, 2.6vw, 34px); font-weight: 700; letter-spacing: -.01em; line-height: 1.2; margin-bottom: 56px; max-width: 780px; }
     .stats-belt-title em { font-style: normal; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .stats-belt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: var(--rule); }
-    .stat-card { background: var(--dark); padding: 32px 24px; transition: background .3s; position: relative; overflow: hidden; }
+    .stats-belt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: var(--rule); }
+    .stat-card { background: var(--dark); padding: 36px 32px; transition: background .3s; position: relative; overflow: hidden; }
     .stat-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
     .stat-card:hover::before { transform: scaleX(1); }
     .stat-num { font-size: clamp(44px, 5vw, 68px); font-weight: 700; line-height: 1; letter-spacing: -.03em; margin-bottom: 14px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .stat-desc { font-size: 14px; color: rgba(247,243,238,.72); line-height: 1.55; margin-bottom: 18px; font-weight: 400; }
-    .stat-source { font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: .2em; color: rgba(255,255,255,.28); text-transform: uppercase; padding-top: 14px; border-top: 1px solid var(--rule); }
+    .stat-source { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .2em; color: rgba(255,255,255,.28); text-transform: uppercase; padding-top: 14px; border-top: 1px solid var(--rule); }
 
     section { position: relative; z-index: 2; }
     .section-label { display: flex; align-items: center; gap: 16px; margin-bottom: 56px; }
-    .section-label-num { font-family: 'General Sans', sans-serif; font-size: 10px; letter-spacing: .2em; color: var(--orange); text-transform: uppercase; }
+    .section-label-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .2em; color: var(--orange); text-transform: uppercase; }
     .section-label-rule { flex: 1; height: 1px; background: var(--rule); }
-    .section-label-tag { font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: .25em; color: rgba(255,255,255,.2); text-transform: uppercase; }
+    .section-label-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .25em; color: rgba(255,255,255,.2); text-transform: uppercase; }
 
     .problema { padding: 100px 56px; border-top: 1px solid var(--rule); }
     .problema-inner { max-width: 1100px; margin: 0 auto; }
@@ -142,7 +159,7 @@
     .problema-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: var(--rule); }
     .problema-card { background: var(--dark-2); padding: 40px 36px; position: relative; overflow: hidden; transition: background .3s; }
     .problema-card:hover { background: rgba(21,21,38,.95); }
-    .problema-card-num { font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: .28em; color: var(--coral); text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .problema-card-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .28em; color: var(--coral); text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
     .problema-card-num::before { content: ''; display: block; width: 14px; height: 1px; background: var(--coral); }
     .problema-card-title { font-size: 20px; font-weight: 700; line-height: 1.25; margin-bottom: 12px; letter-spacing: -.01em; }
     .problema-card-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
@@ -157,15 +174,15 @@
     .sol-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
     .sol-card:hover::before { transform: scaleX(1); }
     .sol-big-num { font-family: 'Cabinet Grotesk', sans-serif; font-size: 110px; font-weight: 700; line-height: 1; color: rgba(255,255,255,.03); position: absolute; top: 18px; right: 22px; letter-spacing: -.05em; pointer-events: none; user-select: none; }
-    .sol-label { font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: .3em; text-transform: uppercase; color: var(--orange); margin-bottom: 22px; display: flex; align-items: center; gap: 10px; }
+    .sol-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .3em; text-transform: uppercase; color: var(--orange); margin-bottom: 22px; display: flex; align-items: center; gap: 10px; }
     .sol-label::before { content: ''; display: block; width: 18px; height: 1px; background: var(--orange); }
     .sol-title { font-size: 24px; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; margin-bottom: 14px; }
-    .sol-prazo { font-family: 'General Sans', sans-serif; font-size: 10px; letter-spacing: .2em; color: var(--amber); margin-bottom: 22px; text-transform: uppercase; }
+    .sol-prazo { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .2em; color: var(--amber); margin-bottom: 22px; text-transform: uppercase; }
     .sol-desc { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 26px; border-bottom: 1px solid var(--rule); padding-bottom: 26px; }
     .sol-items { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .sol-items li { display: flex; align-items: flex-start; gap: 12px; font-size: 13px; color: rgba(247,243,238,.62); line-height: 1.55; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.04); }
     .sol-items li:last-child { border-bottom: none; padding-bottom: 0; }
-    .sol-items li .arrow { color: var(--orange); flex-shrink: 0; font-size: 11px; margin-top: 1px; font-family: 'General Sans', sans-serif; }
+    .sol-items li .arrow { color: var(--orange); flex-shrink: 0; font-size: 11px; margin-top: 1px; font-family: 'JetBrains Mono', monospace; }
 
     .features { padding: 100px 56px; border-top: 1px solid var(--rule); }
     .features-inner { max-width: 1100px; margin: 0 auto; }
@@ -188,7 +205,7 @@
     .metodo-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; }
     .metodo-steps::before { content: ''; position: absolute; top: 36px; left: 5%; right: 5%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,107,53,.22), rgba(245,166,35,.22), transparent); }
     .met-step { position: relative; padding-top: 0; }
-    .met-step-num { display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: var(--dark); border: 1px solid rgba(255,107,53,.3); font-family: 'General Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--orange); letter-spacing: .05em; margin-bottom: 28px; position: relative; z-index: 2; }
+    .met-step-num { display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: var(--dark); border: 1px solid rgba(255,107,53,.3); font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; color: var(--orange); letter-spacing: .05em; margin-bottom: 28px; position: relative; z-index: 2; }
     .met-step-title { font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 14px; letter-spacing: -.01em; }
     .met-step-title em { font-style: normal; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .met-step-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
@@ -198,20 +215,18 @@
     .prova-head { margin-bottom: 64px; max-width: 780px; }
     .prova-title { font-size: clamp(36px, 5vw, 58px); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
     .prova-sub { margin-top: 20px; font-size: 16px; color: var(--muted); max-width: 620px; line-height: 1.7; }
-    .prova-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
-    .prova-shot { position: relative; border-radius: 8px; overflow: hidden; background: var(--dark-3); border: 1px solid var(--rule); }
-    .prova-shot img { width: 100%; height: auto; display: block; filter: brightness(.92); }
-    .prova-shot-label { position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(7,7,13,.85); backdrop-filter: blur(12px); padding: 12px 16px; border-radius: 4px; border: 1px solid var(--rule); }
-    .prova-shot-label .psl-title { font-size: 13px; font-weight: 700; color: var(--light); margin-bottom: 3px; }
-    .prova-shot-label .psl-desc { font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: .18em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+    .prova-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .prova-case { display: flex; flex-direction: column; padding: 36px; background: var(--dark-2); border: 1px solid var(--rule); border-radius: 8px; position: relative; overflow: hidden; }
     .prova-case::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad); }
-    .case-tag { font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: .28em; color: var(--orange); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .case-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .28em; color: var(--orange); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
     .case-tag::before { content: ''; display: block; width: 14px; height: 1px; background: var(--orange); }
     .case-cliente { font-size: 22px; font-weight: 700; margin-bottom: 14px; letter-spacing: -.01em; }
     .case-quote { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 22px; }
     .case-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
-    .case-stack span { font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: .14em; padding: 6px 10px; background: rgba(255,107,53,.08); border: 1px solid rgba(255,107,53,.18); color: rgba(245,166,35,.9); border-radius: 3px; text-transform: uppercase; }
+    .case-stack span { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .14em; padding: 6px 10px; background: rgba(255,107,53,.08); border: 1px solid rgba(255,107,53,.18); color: rgba(245,166,35,.9); border-radius: 3px; text-transform: uppercase; }
+    .case-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 18px 0 22px; padding: 18px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .case-stat-val { font-size: 26px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+    .case-stat-lab { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .18em; color: rgba(255,255,255,.42); text-transform: uppercase; margin-top: 6px; }
 
     .faq { padding: 100px 56px; border-top: 1px solid var(--rule); background: rgba(14,14,28,.4); }
     .faq-inner { max-width: 820px; margin: 0 auto; }
@@ -221,7 +236,7 @@
     .faq-item { border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: var(--dark-2); transition: border-color .2s; }
     .faq-item.open { border-color: rgba(255,107,53,.28); }
     .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 22px 26px; background: transparent; border: none; font-family: 'Cabinet Grotesk', sans-serif; font-size: 15px; font-weight: 500; color: var(--light); text-align: left; cursor: pointer; }
-    .faq-arrow { color: var(--orange); font-size: 20px; transition: transform .3s; font-family: 'General Sans', sans-serif; }
+    .faq-arrow { color: var(--orange); font-size: 20px; transition: transform .3s; font-family: 'JetBrains Mono', monospace; }
     .faq-item.open .faq-arrow { transform: rotate(45deg); }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s; }
     .faq-item.open .faq-answer { max-height: 500px; }
@@ -230,10 +245,10 @@
     .cta-section { padding: 120px 56px; border-top: 1px solid var(--rule); position: relative; overflow: hidden; text-align: center; }
     .cta-glow { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 800px; height: 400px; background: radial-gradient(ellipse, rgba(255,107,53,.14), transparent 65%); pointer-events: none; }
     .cta-inner { max-width: 880px; margin: 0 auto; position: relative; }
-    .cta-eyebrow { font-family: 'General Sans', sans-serif; font-size: 10px; letter-spacing: .3em; color: var(--orange); text-transform: uppercase; margin-bottom: 28px; }
+    .cta-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .3em; color: var(--orange); text-transform: uppercase; margin-bottom: 28px; }
     .cta-title { font-size: clamp(38px, 5vw, 66px); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; }
     .cta-sub { font-size: 17px; color: var(--muted); line-height: 1.65; max-width: 620px; margin: 0 auto 48px; }
-    .cta-action-note { margin-top: 16px; font-family: 'General Sans', sans-serif; font-size: 10px; letter-spacing: .18em; color: rgba(255,255,255,.35); text-transform: uppercase; }
+    .cta-action-note { margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; color: rgba(255,255,255,.35); text-transform: uppercase; }
     .cta-signature { margin-top: 72px; padding-top: 40px; border-top: 1px solid var(--rule); font-family: 'Cabinet Grotesk', sans-serif; font-weight: 300; font-style: italic; font-size: 18px; color: rgba(255,255,255,.55); letter-spacing: -.01em; }
 
     footer { border-top: 1px solid var(--rule); padding: 48px 56px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; background: rgba(7,7,13,.6); position: relative; z-index: 2; }
@@ -242,12 +257,12 @@
     .footer-name { font-weight: 700; font-size: 15px; letter-spacing: .16em; color: rgba(255,255,255,.7); }
     .footer-center { display: flex; flex-direction: column; gap: 8px; align-items: center; font-size: 12px; }
     .footer-copy { color: rgba(255,255,255,.32); }
-    .footer-email { color: rgba(245,166,35,.75); text-decoration: none; font-family: 'General Sans', sans-serif; letter-spacing: .05em; }
+    .footer-email { color: rgba(245,166,35,.75); text-decoration: none; font-family: 'JetBrains Mono', monospace; letter-spacing: .05em; }
     .footer-social { display: flex; gap: 16px; margin-top: 4px; }
-    .footer-social a { display: flex; align-items: center; gap: 6px; font-family: 'General Sans', sans-serif; font-size: 10px; color: rgba(255,255,255,.45); text-decoration: none; letter-spacing: .1em; }
+    .footer-social a { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(255,255,255,.45); text-decoration: none; letter-spacing: .1em; }
     .footer-social svg { width: 14px; height: 14px; fill: rgba(255,255,255,.45); }
     .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-    .footer-links a { font-family: 'General Sans', sans-serif; font-size: 10px; color: rgba(255,255,255,.3); text-decoration: none; letter-spacing: .18em; text-transform: uppercase; }
+    .footer-links a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(255,255,255,.3); text-decoration: none; letter-spacing: .18em; text-transform: uppercase; }
     .footer-links a:hover { color: var(--amber); }
 
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s, transform .7s; }
@@ -267,7 +282,7 @@
       .stats-belt-grid { grid-template-columns: repeat(2, 1fr); }
       .metodo-steps { grid-template-columns: 1fr; gap: 48px; }
       .metodo-steps::before { display: none; }
-      .prova-grid { grid-template-columns: 1fr; }
+      .prova-case-grid { grid-template-columns: 1fr; }
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
       footer { padding: 32px 24px; }
@@ -288,12 +303,12 @@
     .testimonial-phone::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad); z-index: 2; }
     .testimonial-phone-header { padding: 14px 20px; background: rgba(7,7,13,0.9); border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 10px; z-index: 1; position: relative; }
     .testimonial-phone-dot { width: 8px; height: 8px; border-radius: 50%; background: #25D366; box-shadow: 0 0 8px rgba(37,211,102,0.4); }
-    .testimonial-phone-name { font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
-    .testimonial-phone-badge { margin-left: auto; font-family: 'General Sans', sans-serif; font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); padding: 3px 8px; border: 1px solid rgba(255,107,53,0.2); border-radius: 3px; }
+    .testimonial-phone-name { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .testimonial-phone-badge { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); padding: 3px 8px; border: 1px solid rgba(255,107,53,0.2); border-radius: 3px; }
     .testimonial-phone img { width: 100%; height: auto; display: block; }
     .testimonial-label { margin-top: 20px; text-align: center; }
     .testimonial-label-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-    .testimonial-label-desc { font-family: 'General Sans', sans-serif; font-size: 9px; letter-spacing: 0.2em; color: rgba(255,255,255,0.28); text-transform: uppercase; }
+    .testimonial-label-desc { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.2em; color: rgba(255,255,255,0.28); text-transform: uppercase; }
     .testimonial-glow { position: absolute; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 70%); pointer-events: none; z-index: -1; }
     .testimonial-glow-1 { top: -40px; left: -40px; }
     .testimonial-glow-2 { bottom: -20px; right: -40px; }
@@ -328,7 +343,7 @@
       <div class="nav-divider"></div>
       <div class="nav-wordmark">
         <div class="nav-name">ARUNA</div>
-        <div class="nav-tag">BI · Dashboards</div>
+        <div class="nav-tag">Automação · IA</div>
       </div>
     </a>
     <div class="nav-links">
@@ -339,7 +354,7 @@
       <a href="#metodo">Método</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="https://wa.me/5585920033627?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20BI%20da%20Aruna" class="btn-primary">Falar com a Aruna</a>
+    <a href="https://wa.me/5585920033627?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Automa%C3%A7%C3%A3o%20da%20Aruna" class="btn-primary">Falar com a Aruna</a>
   </nav>
 
   <!-- HERO -->
@@ -347,54 +362,99 @@
     <div class="hero-left">
       <div class="hero-kicker">
         <div class="hero-kicker-line"></div>
-        <span class="hero-kicker-text">BI · Dashboards · Decisão Data-Driven</span>
+        <span class="hero-kicker-text">Automação · n8n · Make · IA</span>
       </div>
-      <div class="hero-partner-tag">★ Looker Studio · Power BI · Metabase</div>
+      <div class="hero-partner-tag">★ EVA.ia · IA com voz da sua marca</div>
       <h1 class="hero-title">
-        Dado em 5 sistemas.<br>
-        <em>Decisão em 1 painel.</em>
+        Sua equipe gasta<br>
+        3 horas por dia<br>
+        <em>fazendo cópia-cola.</em>
       </h1>
       <p class="hero-sub">
-        CRM, ERP, e-commerce e mídia paga num painel ao vivo. Dispara alerta no seu WhatsApp quando
-        a meta escapa. Em 15 a 30 dias rodando com dado real, não dashboard de demo.
+        Follow-up no manual, planilha atualizada na mão, contrato digitado em 3 sistemas.
+        A Aruna tira tudo isso do humano e coloca em workflow — com IA onde faz sentido,
+        sem onde não faz. Stack n8n + Make + APIs. Setup em 30 a 60 dias.
       </p>
       <div class="hero-cta">
-        <a href="https://wa.me/5585920033627?text=Quero%20ver%20os%2012%20KPIs%20num%20painel%20s%C3%B3%20da%20Aruna" class="btn-primary">
+        <a href="https://wa.me/5585920033627?text=Quero%20ver%20um%20workflow%20real%20da%20Aruna%20rodando" class="btn-primary">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.961 1.395 5.658L.057 23.882l6.362-1.312A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.947 0-3.764-.528-5.321-1.438l-.38-.226-3.938.812.84-3.847-.249-.396A9.937 9.937 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          Quero ver os 12 KPIs num painel só
+          Quero ver um workflow real
         </a>
         <a href="#solucao" class="btn-ghost">Ver o que entregamos ↓</a>
       </div>
       <div class="hero-trust">
         <div class="hero-trust-item">
-          <div class="hero-trust-val">12 KPIs</div>
-          <div class="hero-trust-lab">num painel só</div>
+          <div class="hero-trust-val">+74%</div>
+          <div class="hero-trust-lab">produtividade média</div>
         </div>
         <div class="hero-trust-item">
-          <div class="hero-trust-val">15–30</div>
-          <div class="hero-trust-lab">dias pra rodar</div>
+          <div class="hero-trust-val">30–60</div>
+          <div class="hero-trust-lab">dias de setup</div>
         </div>
         <div class="hero-trust-item">
-          <div class="hero-trust-val">5s</div>
-          <div class="hero-trust-lab">atualiza em tempo real</div>
+          <div class="hero-trust-val">n8n+Make</div>
+          <div class="hero-trust-lab">stack pro</div>
         </div>
         <div class="hero-trust-item">
-          <div class="hero-trust-val">WhatsApp</div>
-          <div class="hero-trust-lab">alerta quando meta escapa</div>
+          <div class="hero-trust-val">30 dias</div>
+          <div class="hero-trust-lab">suporte pós go-live</div>
         </div>
       </div>
     </div>
 
     <div class="hero-right">
-      <div class="dash-mock">
-        <div class="dash-mock-header">
-          <span class="dash-mock-title">Dashboard Comercial · Aruna</span>
-          <div class="dash-live">
-            <div class="dash-live-dot"></div>
-            <span class="dash-live-text">live</span>
+      <div class="wf-mock">
+        <div class="wf-mock-header">
+          <span class="wf-mock-title">n8n · workflow ao vivo</span>
+          <div class="wf-mock-dots">
+            <div class="wf-mock-dot"></div><div class="wf-mock-dot"></div><div class="wf-mock-dot"></div>
           </div>
         </div>
-        <img src="dashboard-comercial.png?v=4" alt="Dashboard comercial real construído pela Aruna com KPIs ao vivo">
+        <div class="wf-canvas">
+          <div class="wf-node">
+            <div class="wf-node-icon">🎯</div>
+            <div class="wf-node-text">
+              <div class="wf-node-name">Lead novo (Meta Ads)</div>
+              <div class="wf-node-desc">webhook · trigger</div>
+            </div>
+            <div class="wf-pulse"></div>
+          </div>
+          <div class="wf-connector"></div>
+          <div class="wf-node">
+            <div class="wf-node-icon">🤖</div>
+            <div class="wf-node-text">
+              <div class="wf-node-name">EVA.ia qualifica</div>
+              <div class="wf-node-desc">IA · voz da marca</div>
+            </div>
+            <div class="wf-pulse"></div>
+          </div>
+          <div class="wf-connector"></div>
+          <div class="wf-node">
+            <div class="wf-node-icon">📲</div>
+            <div class="wf-node-text">
+              <div class="wf-node-name">WhatsApp + CRM</div>
+              <div class="wf-node-desc">create lead · assign</div>
+            </div>
+            <div class="wf-pulse"></div>
+          </div>
+          <div class="wf-connector"></div>
+          <div class="wf-node">
+            <div class="wf-node-icon">📅</div>
+            <div class="wf-node-text">
+              <div class="wf-node-name">Agendamento auto</div>
+              <div class="wf-node-desc">google calendar</div>
+            </div>
+            <div class="wf-pulse"></div>
+          </div>
+        </div>
+        <div class="wf-float-badge wf-badge-1">
+          <div class="fb-val">23s</div>
+          <div class="fb-lab">tempo médio</div>
+        </div>
+        <div class="wf-float-badge wf-badge-2">
+          <div class="fb-val">100%</div>
+          <div class="fb-lab">sem humano</div>
+        </div>
       </div>
     </div>
   </section>
@@ -402,31 +462,31 @@
   <!-- MARQUEE -->
   <div class="marquee-strip">
     <div class="marquee-track">
-      <div class="marquee-item hi">Looker Studio<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Power BI<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Metabase<span class="marquee-dot"></span></div>
-      <div class="marquee-item">KPI em tempo real<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Alerta no WhatsApp<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Drill-down<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Conexão CRM + ERP + Ads<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Cohort &amp; LTV<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Decision Intelligence<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Ranking de vendedor<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Origem de lead<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Funil ao vivo<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">n8n self-hosted<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Make.com<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">Agente IA SDR<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Multi-Agentes<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">Follow-up com IA<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Disparador Inteligente<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">Evolution API<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Eleven Labs (voz)<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">Supabase + RAG<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Webhooks · APIs<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">Notificação de falha<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Métricas no automático<span class="marquee-dot"></span></div>
       <!-- duplicado -->
-      <div class="marquee-item hi">Looker Studio<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Power BI<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Metabase<span class="marquee-dot"></span></div>
-      <div class="marquee-item">KPI em tempo real<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Alerta no WhatsApp<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Drill-down<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Conexão CRM + ERP + Ads<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Cohort &amp; LTV<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Decision Intelligence<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Ranking de vendedor<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Origem de lead<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Funil ao vivo<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">n8n self-hosted<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Make.com<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">Agente IA SDR<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Multi-Agentes<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">Follow-up com IA<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Disparador Inteligente<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">Evolution API<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Eleven Labs (voz)<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">Supabase + RAG<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Webhooks · APIs<span class="marquee-dot"></span></div>
+      <div class="marquee-item hi">Notificação de falha<span class="marquee-dot"></span></div>
+      <div class="marquee-item">Métricas no automático<span class="marquee-dot"></span></div>
     </div>
   </div>
 
@@ -434,38 +494,33 @@
   <section class="stats-belt">
     <div class="stats-belt-inner">
       <div class="stats-belt-head reveal">
-        <span class="stats-belt-eyebrow">Quanto custa decidir tarde</span>
+        <span class="stats-belt-eyebrow">O que tarefa manual rouba</span>
         <div class="stats-belt-rule"></div>
       </div>
       <h2 class="stats-belt-title reveal reveal-d1">
-        O Gartner já decretou: data-driven não é mais diferencial.<br>
-        <em>É sobrevivência.</em>
+        O mercado já calculou o preço de a equipe fazer no braço.<br>
+        <em>E é mais alto do que o ROI da automação.</em>
       </h2>
       <div class="stats-belt-grid">
         <div class="stat-card reveal reveal-d1">
-          <div class="stat-num">23×</div>
-          <p class="stat-desc">mais probabilidade de <strong>superar concorrentes</strong> em empresas data-driven.</p>
-          <div class="stat-source">McKinsey · Data-Driven Enterprise</div>
-        </div>
-        <div class="stat-card reveal reveal-d1">
-          <div class="stat-num">75%</div>
-          <p class="stat-desc">das empresas globais devem adotar <strong>Decision Intelligence</strong> em 2026.</p>
-          <div class="stat-source">Gartner · Decision Intelligence 2026</div>
+          <div class="stat-num">+74%</div>
+          <p class="stat-desc">de aumento médio na <strong>produtividade da equipe</strong> com automação implantada.</p>
+          <div class="stat-source">Benchmark Automação BR · 2026</div>
         </div>
         <div class="stat-card reveal reveal-d2">
-          <div class="stat-num">−40%</div>
-          <p class="stat-desc">no <strong>tempo de decisão</strong> em empresas com BI maduro implantado.</p>
-          <div class="stat-source">Mind Group · BI &amp; Decisão</div>
+          <div class="stat-num">−22%</div>
+          <p class="stat-desc">de redução em <strong>custos operacionais</strong> com tarefa repetitiva fora do humano.</p>
+          <div class="stat-source">Mind Group · ROI Automação</div>
         </div>
         <div class="stat-card reveal reveal-d3">
-          <div class="stat-num">+25%</div>
-          <p class="stat-desc">de aumento em <strong>eficiência operacional</strong> com KPIs visíveis ao vivo.</p>
-          <div class="stat-source">Benchmark BI BR · 2026</div>
+          <div class="stat-num">100h+</div>
+          <p class="stat-desc">economizadas por mês em <strong>cobrança via WhatsApp automatizada</strong>.</p>
+          <div class="stat-source">Moveo.ai · Cobrança Digital</div>
         </div>
         <div class="stat-card reveal reveal-d4">
-          <div class="stat-num">−30%</div>
-          <p class="stat-desc">em <strong>custos via identificação de ineficiências</strong> que ninguém vê na planilha.</p>
-          <div class="stat-source">ROQT · Data &amp; AI</div>
+          <div class="stat-num">400%</div>
+          <p class="stat-desc">é o <strong>ROI médio em 12 meses</strong> em automação bem implementada (chega a 1000%).</p>
+          <div class="stat-source">Discovery → Sprint → Operations</div>
         </div>
       </div>
     </div>
@@ -477,65 +532,65 @@
       <div class="section-label reveal">
         <span class="section-label-num">01</span>
         <div class="section-label-rule"></div>
-        <span class="section-label-tag">Decisão sem dado é achismo caro</span>
+        <span class="section-label-tag">Onde sua equipe está perdendo dia inteiro</span>
       </div>
       <div class="problema-head reveal reveal-d1">
         <h2 class="problema-title">
-          "Achismo" tem<br>
-          <span class="grad-text">um nome bonito: feeling.</span>
+          Tarefa repetida<br>
+          <span class="grad-text">não precisa ser feita no braço.</span>
         </h2>
         <p class="problema-sub">
-          E custa o trimestre inteiro. Se 3 das 6 dores abaixo são da sua operação,
-          você está pagando o preço de decidir com dado errado, atrasado — ou nenhum.
+          Se 3 das 6 dores abaixo são da sua operação, você está pagando salário pra fazer o que workflow resolve.
+          E pior: errando no que dependia de robô não esquecer.
         </p>
       </div>
       <div class="problema-grid">
         <div class="problema-card reveal reveal-d1">
           <div class="problema-card-num">01</div>
-          <h3 class="problema-card-title">Planilha de sexta, decide segunda</h3>
+          <h3 class="problema-card-title">Cópia-cola entre 5 abas</h3>
           <p class="problema-card-desc">
-            Alguém compila dado na sexta de tarde, manda no grupo. Segunda você abre — já mudou tudo.
-            A decisão é sobre uma realidade que não existe mais.
+            Vendedor abre planilha, copia, cola no CRM, depois no e-mail, depois no ERP.
+            30 minutos por venda. 200 vendas no mês. Faz a conta.
           </p>
         </div>
         <div class="problema-card reveal reveal-d2">
           <div class="problema-card-num">02</div>
-          <h3 class="problema-card-title">Não sabe qual fonte converte</h3>
+          <h3 class="problema-card-title">Follow-up que ninguém lembra</h3>
           <p class="problema-card-desc">
-            Meta Ads, Google, indicação, orgânico. Cada um traz lead. Quem fecha mais?
-            Nenhuma planilha junta os dados — então você gasta no canal errado.
+            "Vou ligar daqui 3 dias." 3 dias viram 3 semanas, lead esfria.
+            Sem trigger automático, follow-up depende de memória — e ela falha.
           </p>
         </div>
         <div class="problema-card reveal reveal-d3">
           <div class="problema-card-num">03</div>
-          <h3 class="problema-card-title">Vendedor travado descoberto tarde</h3>
+          <h3 class="problema-card-title">Chatbot que responde errado</h3>
           <p class="problema-card-desc">
-            Fim do mês: "poxa, o João não bateu meta de novo". Se você visse no dia 10,
-            teria coachado. No dia 30, é demissão ou perda de receita.
+            Bot genérico, treinado em script frio, respondendo "olá! como posso ajudar?" pra cliente furioso.
+            Isso afasta — não automatiza.
           </p>
         </div>
         <div class="problema-card reveal reveal-d1">
           <div class="problema-card-num">04</div>
-          <h3 class="problema-card-title">Dado em 5 lugares diferentes</h3>
+          <h3 class="problema-card-title">Lead novo perdido entre canais</h3>
           <p class="problema-card-desc">
-            CRM com lead, ERP com venda, e-commerce com pedido, Meta Ads com conversão, banco com fluxo.
-            Pra ver o quadro, alguém junta tudo na mão. Erro garantido.
+            Formulário do site → e-mail do gerente → ele esquece → cliente vai pro concorrente.
+            Sem distribuição automática, lead caro vira lead perdido.
           </p>
         </div>
         <div class="problema-card reveal reveal-d2">
           <div class="problema-card-num">05</div>
-          <h3 class="problema-card-title">Excel que ninguém abre</h3>
+          <h3 class="problema-card-title">Vendedor digitando contrato</h3>
           <p class="problema-card-desc">
-            Relatório lindo, 8 abas, gráfico colorido. Time olha 1 vez no mês.
-            Dashboard ao vivo no celular do vendedor é olhado 8× por dia.
+            Negócio fechado: digita no CRM, no ERP, na planilha de comissão, no controle interno.
+            4 vezes o mesmo dado. Erro garantido em alguma das 4.
           </p>
         </div>
         <div class="problema-card reveal reveal-d3">
           <div class="problema-card-num">06</div>
-          <h3 class="problema-card-title">Achismo com nome de "feeling"</h3>
+          <h3 class="problema-card-title">Relatório feito na sexta</h3>
           <p class="problema-card-desc">
-            "Acho que o produto X tá vendendo bem." Acha. Sem dado.
-            Bota R$ 50k em campanha pra produto que vende menos que o C — e descobre 60 dias depois.
+            Sexta de tarde: alguém compila CSV, monta no Excel, manda no grupo.
+            O dado já chega velho — e custou 4 horas de quem deveria estar vendendo.
           </p>
         </div>
       </div>
@@ -552,67 +607,67 @@
       </div>
       <div class="solucao-head reveal reveal-d1">
         <h2 class="solucao-title">
-          Não vendemos dashboard.<br>
-          <span class="grad-text">Vendemos decisão melhor.</span>
+          Não vendemos automação.<br>
+          <span class="grad-text">Vendemos automação rodando.</span>
         </h2>
         <p class="solucao-sub">
-          Três entregas, prazos definidos antes de começar. Stack Looker Studio, Power BI ou Metabase
-          — escolhemos junto com base em volume de dado, equipe e budget. Sem amarra de ferramenta.
+          Três entregas, prazos definidos antes de começar. Stack profissional (n8n + Make + APIs nativas)
+          com IA onde gera valor — e sem IA onde só atrapalha.
         </p>
       </div>
       <div class="solucao-grid">
         <div class="sol-card reveal reveal-d1">
           <span class="sol-big-num">01</span>
-          <div class="sol-label">Setup do Painel</div>
-          <h3 class="sol-title">Dashboard pelo SEU ciclo</h3>
-          <div class="sol-prazo">⏱ 15 a 25 dias</div>
+          <div class="sol-label">Setup com IA</div>
+          <h3 class="sol-title">Workflow desenhado pelo seu fluxo</h3>
+          <div class="sol-prazo">⏱ 15 a 30 dias</div>
           <p class="sol-desc">
-            Mapeamos o que VOCÊ precisa olhar pra decidir e construímos o painel
-            em torno disso. Nada de template "executive overview" genérico.
+            Mapeamos cada tarefa repetitiva da operação e desenhamos o workflow
+            que substitui o humano sem quebrar o que já funciona.
           </p>
           <ul class="sol-items">
-            <li><span class="arrow">→</span> KPIs definidos com você (não copiados)</li>
-            <li><span class="arrow">→</span> Dashboard executivo + operacional</li>
-            <li><span class="arrow">→</span> Drill-down por dimensão (vendedor, canal, etc)</li>
-            <li><span class="arrow">→</span> Mobile-friendly para o time em campo</li>
-            <li><span class="arrow">→</span> Permissões por cargo (vendedor não vê tudo)</li>
-            <li><span class="arrow">→</span> Treinamento de leitura do painel</li>
+            <li><span class="arrow">→</span> Fluxos n8n / Make customizados</li>
+            <li><span class="arrow">→</span> Agente IA (EVA.ia) com voz da sua marca</li>
+            <li><span class="arrow">→</span> Chatbot WhatsApp + Instagram + Site</li>
+            <li><span class="arrow">→</span> Follow-up personalizado por estágio</li>
+            <li><span class="arrow">→</span> SDR digital qualificando 24/7</li>
+            <li><span class="arrow">→</span> Treinamento da equipe operacional</li>
           </ul>
         </div>
         <div class="sol-card reveal reveal-d2">
           <span class="sol-big-num">02</span>
-          <div class="sol-label">Integrações de Dados</div>
-          <h3 class="sol-title">Conectado a tudo que gera dado</h3>
+          <div class="sol-label">Integrações Técnicas</div>
+          <h3 class="sol-title">Conectado ao que você já usa</h3>
           <div class="sol-prazo">⏱ Incluso no setup</div>
           <p class="sol-desc">
-            CRM, ERP, e-commerce, ads, planilhas — tudo num só painel.
-            Sem duplicação, sem export manual, sem "ah deixa eu atualizar".
+            Operamos APIs e webhooks direto. Conecta CRM, ERP, e-commerce, planilha e WhatsApp
+            sem precisar de plugin caro ou Zapier limitado.
           </p>
           <ul class="sol-items">
-            <li><span class="arrow">→</span> Kommo / RD Station / HubSpot / Pipedrive</li>
-            <li><span class="arrow">→</span> Meta Ads + Google Ads + TikTok Ads</li>
-            <li><span class="arrow">→</span> Shopify / Loja Integrada / Tray</li>
-            <li><span class="arrow">→</span> ERPs (Bling, Tiny, Omie, custom)</li>
-            <li><span class="arrow">→</span> Google Sheets como ponte (quando faz sentido)</li>
-            <li><span class="arrow">→</span> Atualização real-time ou agendada</li>
+            <li><span class="arrow">→</span> CRM ↔ ERP ↔ e-commerce ↔ WhatsApp</li>
+            <li><span class="arrow">→</span> WhatsApp via Evolution API ou oficial</li>
+            <li><span class="arrow">→</span> Disparador inteligente em escala</li>
+            <li><span class="arrow">→</span> Notificação automática de falha</li>
+            <li><span class="arrow">→</span> Base de conhecimento (RAG) com Supabase</li>
+            <li><span class="arrow">→</span> Métricas de campanha sincronizadas</li>
           </ul>
         </div>
         <div class="sol-card reveal reveal-d3">
           <span class="sol-big-num">03</span>
           <div class="sol-label">Ajustes Milimétricos</div>
-          <h3 class="sol-title">Painel que vira mais útil</h3>
+          <h3 class="sol-title">Calibração com dado real</h3>
           <div class="sol-prazo">⏱ 30 dias pós go-live</div>
           <p class="sol-desc">
-            Painel no ar é só o começo. A gente fica junto os primeiros 30 dias
-            ajustando o que você descobre que precisa olhar (e o que não precisa).
+            Workflow no ar é só o começo. A gente fica junto os primeiros 30 dias
+            calibrando IA, ajustando rotas e otimizando o que estiver dando atrito real.
           </p>
           <ul class="sol-items">
-            <li><span class="arrow">→</span> Revisão semanal com você</li>
-            <li><span class="arrow">→</span> Alertas calibrados por experiência real</li>
-            <li><span class="arrow">→</span> Novos KPIs conforme você descobre o que falta</li>
-            <li><span class="arrow">→</span> Limpeza de métrica que ninguém olha</li>
+            <li><span class="arrow">→</span> Revisão semanal de execuções</li>
+            <li><span class="arrow">→</span> Refinamento da IA com casos reais</li>
+            <li><span class="arrow">→</span> Otimização de gatilhos e condições</li>
             <li><span class="arrow">→</span> Suporte direto no WhatsApp</li>
-            <li><span class="arrow">→</span> Handoff para sua equipe se quiser</li>
+            <li><span class="arrow">→</span> Relatório do que economizou (em horas)</li>
+            <li><span class="arrow">→</span> Handoff técnico se quiser autonomia</li>
           </ul>
         </div>
       </div>
@@ -625,72 +680,72 @@
       <div class="section-label reveal">
         <span class="section-label-num">03</span>
         <div class="section-label-rule"></div>
-        <span class="section-label-tag">O que um BI bom faz (e o seu não faz)</span>
+        <span class="section-label-tag">Capacidades técnicas que destravamos</span>
       </div>
       <div class="features-head reveal reveal-d1">
         <h2 class="features-title">
-          Dashboard estático morreu.<br>
-          <span class="grad-text">Em 2026 o BI conversa.</span>
+          Não é "instalar Zapier".<br>
+          <span class="grad-text">É arquitetura que escala.</span>
         </h2>
         <p class="features-sub">
-          O dashboard de 2018 só mostrava número. O de 2026 puxa dado em real-time, alerta no WhatsApp
-          quando algo sai do esperado, e responde quando você pergunta. A Aruna entrega esse padrão.
+          Tudo já operando em clientes reais da Aruna agora mesmo —
+          desde fluxos simples até multi-agentes IA conversando entre si.
         </p>
       </div>
       <div class="features-grid">
         <div class="feat-card reveal reveal-d1">
-          <span class="feat-icon">⚡</span>
+          <span class="feat-icon">🤖</span>
           <div class="feat-rule"></div>
-          <div class="feat-title">Real-time data</div>
-          <p class="feat-desc">Cada venda nova, cada lead, cada conversão aparece em segundos no painel — não no dia seguinte. Você vê o que está acontecendo agora, não o que aconteceu.</p>
+          <div class="feat-title">Agente IA SDR (24/7)</div>
+          <p class="feat-desc">Lead chega, EVA.ia qualifica, descobre objeção, agenda reunião e entrega no CRM com contexto pronto. Em 23 segundos médios.</p>
         </div>
         <div class="feat-card reveal reveal-d2">
-          <span class="feat-icon">🔔</span>
+          <span class="feat-icon">🧠</span>
           <div class="feat-rule"></div>
-          <div class="feat-title">Alerta automático no WhatsApp</div>
-          <p class="feat-desc">Vendas caíram 20% do esperado? CAC subiu? Vendedor travou? O painel manda mensagem antes de você precisar olhar. Zero "descobri tarde".</p>
+          <div class="feat-title">Multi-Agentes</div>
+          <p class="feat-desc">Um agente qualifica, outro agenda, outro pesquisa. Conversam entre si por contexto. Mais preciso que um único agente fazendo tudo.</p>
         </div>
         <div class="feat-card reveal reveal-d3">
           <span class="feat-icon">📲</span>
           <div class="feat-rule"></div>
-          <div class="feat-title">Mobile-first</div>
-          <p class="feat-desc">Painel pensado pro celular do gestor e do vendedor — não só desktop bonito que ninguém abre fora do escritório.</p>
+          <div class="feat-title">Follow-up com IA personalizado</div>
+          <p class="feat-desc">A IA entende o estágio do lead, escreve a mensagem certa pra aquele momento e dispara. Cada lead recebe algo único — não template.</p>
         </div>
         <div class="feat-card reveal reveal-d1">
-          <span class="feat-icon">🔍</span>
+          <span class="feat-icon">🚀</span>
           <div class="feat-rule"></div>
-          <div class="feat-title">Drill-down por dimensão</div>
-          <p class="feat-desc">Vê o número total de vendas, clica e abre por vendedor. Clica em um vendedor e abre por dia. Por origem. Por produto. Granularidade total sem trocar de tela.</p>
+          <div class="feat-title">Disparador inteligente em escala</div>
+          <p class="feat-desc">Lista fria virando lista quente: a IA segmenta, escolhe horário, varia mensagem por perfil. Sem ban no WhatsApp.</p>
         </div>
         <div class="feat-card reveal reveal-d2">
-          <span class="feat-icon">🤖</span>
+          <span class="feat-icon">🔗</span>
           <div class="feat-rule"></div>
-          <div class="feat-title">BI conversacional (IA)</div>
-          <p class="feat-desc">"Quem vendeu mais nesta semana?" "Qual canal teve melhor CAC?". Em vez de procurar no painel, você pergunta em português — e a IA responde com gráfico.</p>
+          <div class="feat-title">Webhooks + APIs nativas</div>
+          <p class="feat-desc">Qualquer ferramenta com webhook ou API entra no fluxo. Já integramos Kommo, RD Station, Pipefy, Hotmart, Kiwify, Stripe, Asaas.</p>
         </div>
         <div class="feat-card reveal reveal-d3">
-          <span class="feat-icon">🎯</span>
+          <span class="feat-icon">🎙️</span>
           <div class="feat-rule"></div>
-          <div class="feat-title">KPIs definidos com você</div>
-          <p class="feat-desc">Não é template "Sales Dashboard v3". A gente entrevista você, descobre o que VOCÊ precisa decidir, e constrói o painel em torno disso.</p>
+          <div class="feat-title">Voz com Eleven Labs</div>
+          <p class="feat-desc">Áudio gerado por IA com voz da sua marca. Cliente recebe áudio personalizado no WhatsApp — não bot frio nem TTS robótico.</p>
         </div>
         <div class="feat-card reveal reveal-d1">
-          <span class="feat-icon">🔐</span>
+          <span class="feat-icon">📚</span>
           <div class="feat-rule"></div>
-          <div class="feat-title">Permissões por cargo</div>
-          <p class="feat-desc">Vendedor vê só o funil dele. Gerente vê o time. CEO vê tudo. Cada um foca no que importa pro cargo — sem informação desnecessária.</p>
+          <div class="feat-title">Base de conhecimento (RAG)</div>
+          <p class="feat-desc">A IA responde com base nos seus documentos reais (FAQ, manuais, política). Stack Supabase + embeddings — informação certa, não alucinação.</p>
         </div>
         <div class="feat-card reveal reveal-d2">
-          <span class="feat-icon">📈</span>
+          <span class="feat-icon">⚠️</span>
           <div class="feat-rule"></div>
-          <div class="feat-title">Cohort, LTV e tendência</div>
-          <p class="feat-desc">Não só "quantas vendas hoje" — mas "qual cohort tem maior LTV", "qual produto tem maior recorrência", "qual fonte trouxe cliente que mais voltou". Análise estratégica.</p>
+          <div class="feat-title">Notificação de falha</div>
+          <p class="feat-desc">Workflow quebrou? Você recebe alerta no WhatsApp em segundos — não descobre 3 dias depois quando lead já foi pro concorrente.</p>
         </div>
         <div class="feat-card reveal reveal-d3">
-          <span class="feat-icon">📧</span>
+          <span class="feat-icon">📊</span>
           <div class="feat-rule"></div>
-          <div class="feat-title">Relatório executivo automático</div>
-          <p class="feat-desc">Toda segunda às 8h, você recebe no WhatsApp ou e-mail um resumo executivo do que aconteceu na semana. Sem precisar abrir nada.</p>
+          <div class="feat-title">Métricas de campanha auto</div>
+          <p class="feat-desc">Meta Ads + Google Ads sincronizam sozinhos com seu painel. Sai relatório executivo no seu WhatsApp toda manhã sem ninguém montar.</p>
         </div>
       </div>
     </div>
@@ -719,24 +774,24 @@
           <div class="met-step-num">01</div>
           <h3 class="met-step-title">Automações <em>estratégicas</em></h3>
           <p class="met-step-desc">
-            Mapeamos todas as fontes de dado, descobrimos o que VOCÊ realmente precisa decidir,
-            e desenhamos a arquitetura: qual ferramenta, qual integração, quais KPIs.
+            Mapeamos toda tarefa repetitiva que sua equipe faz hoje, escolhemos o que vale
+            automatizar (nem tudo vale) e desenhamos a arquitetura técnica completa.
           </p>
         </div>
         <div class="met-step reveal reveal-d2">
           <div class="met-step-num">02</div>
           <h3 class="met-step-title">Ligando <em>os motores</em></h3>
           <p class="met-step-desc">
-            Construção do painel completo: integrações ativas, KPIs configurados,
-            alertas calibrados. No final, você abre o link e vê dado real do seu negócio ao vivo.
+            Implantação completa: workflows no n8n / Make rodando, IA treinada com a voz da marca,
+            integrações via API ativas. No final, a operação está economizando horas reais.
           </p>
         </div>
         <div class="met-step reveal reveal-d3">
           <div class="met-step-num">03</div>
           <h3 class="met-step-title">Ajustes <em>milimétricos</em></h3>
           <p class="met-step-desc">
-            Painel rodando, a gente calibra: ajusta thresholds de alerta, adiciona métrica que faltava,
-            tira o que ninguém olha. O painel vira mais útil a cada semana.
+            Com tudo rodando, a gente calibra: refina prompts da IA, ajusta condições,
+            otimiza gatilhos. Tudo guiado por log real do n8n — não por achismo.
           </p>
         </div>
       </div>
@@ -753,45 +808,65 @@
       </div>
       <div class="prova-head reveal reveal-d1">
         <h2 class="prova-title">
-          Estes painéis<br>
-          <span class="grad-text">estão rodando agora.</span>
+          Estes workflows<br>
+          <span class="grad-text">estão rodando agora mesmo.</span>
         </h2>
         <p class="prova-sub">
-          Telas reais, KPIs reais, dado real. Operação de cliente da Aruna em produção neste momento.
-          <strong style="color:var(--amber);">Empresas com BI maduro decidem 40% mais rápido e cortam até 30% de custo via identificação de ineficiência.</strong>
+          Clientes reais da Aruna com automações em produção há meses — não demo de comercial.
+          <strong style="color:var(--amber);">O benchmark de mercado é 400% de ROI em 12 meses, podendo chegar a 1000%.</strong>
         </p>
       </div>
-      <div class="prova-grid">
-        <div class="prova-shot reveal reveal-d1">
-          <img src="dashboard-comercial.png?v=3" alt="Dashboard comercial real construído pela Aruna com KPIs em tempo real">
-          <div class="prova-shot-label">
-            <div class="psl-title">Dashboard Comercial</div>
-            <div class="psl-desc">Meta diária · ticket médio · conversão · lead time</div>
+      <div class="prova-case-grid">
+        <div class="prova-case reveal reveal-d1">
+          <div class="case-tag">Case Automação · Seguros</div>
+          <div class="case-cliente">Essencial Corretora</div>
+          <p class="case-quote">
+            "Cada nova venda em Saúde, Vida, Consórcio e PDC virava planilha manual. A Aruna construiu
+            workflow no n8n: lead entra, dados sobem em planilha estruturada, vão pro RD Station, geram
+            mensagem de feedback automática. Zero digitação repetida."
+          </p>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-val">14</div>
+              <div class="case-stat-lab">workflows ativos</div>
+            </div>
+            <div>
+              <div class="case-stat-val">4</div>
+              <div class="case-stat-lab">segmentos automatizados</div>
+            </div>
+          </div>
+          <div class="case-stack">
+            <span>n8n</span>
+            <span>RD Station</span>
+            <span>Google Sheets</span>
+            <span>Webhooks</span>
+            <span>WhatsApp</span>
           </div>
         </div>
-        <div class="prova-shot reveal reveal-d2">
-          <img src="dashboard-executivo.png?v=3" alt="Dashboard executivo com ranking de closers e faturamento por origem">
-          <div class="prova-shot-label">
-            <div class="psl-title">Dashboard Executivo</div>
-            <div class="psl-desc">ARR · MRR · Ranking de closers · Faturamento por origem</div>
+        <div class="prova-case reveal reveal-d2">
+          <div class="case-tag">Case Automação · CRM</div>
+          <div class="case-cliente">Grupo Vorp</div>
+          <p class="case-quote">
+            "Reunião marcada no Google Calendar virava 'esqueci de criar o lead no CRM'. A Aruna montou
+            workflow que escuta o evento, cria contato no Kommo, atualiza lead se já existe e dispara
+            sequência de boas-vindas. Tudo sem ninguém apertar botão."
+          </p>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-val">0s</div>
+              <div class="case-stat-lab">delay entre evento e lead</div>
+            </div>
+            <div>
+              <div class="case-stat-val">100%</div>
+              <div class="case-stat-lab">leads cadastrados</div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="prova-case reveal reveal-d3">
-        <div class="case-tag">Case BI · Multi-fontes</div>
-        <div class="case-cliente">Operação Aruna interna</div>
-        <p class="case-quote">
-          "A própria Aruna usa dashboard ao vivo construído com a stack que a gente entrega: Meta Ads + Google Ads
-          + Kommo + planilhas + base de leads. Cada cliente novo, cada conversão, cada CPL aparece no painel em segundos.
-          Só recomendamos o que a gente come no almoço."
-        </p>
-        <div class="case-stack">
-          <span>Looker Studio</span>
-          <span>Meta Ads API</span>
-          <span>Google Ads API</span>
-          <span>Kommo</span>
-          <span>n8n</span>
-          <span>Supabase</span>
+          <div class="case-stack">
+            <span>n8n</span>
+            <span>Google Calendar</span>
+            <span>Kommo API v4</span>
+            <span>Webhooks</span>
+          </div>
         </div>
       </div>
     </div>
@@ -872,68 +947,56 @@
       <div class="faq-list">
         <div class="faq-item reveal reveal-d1">
           <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            Vocês usam Looker Studio, Power BI ou Metabase? Qual é melhor pra mim?
+            Vocês usam n8n hospedado próprio ou cloud? Faz diferença pra mim?
             <span class="faq-arrow">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <strong>Looker Studio</strong> é grátis (Google) — ótimo pra empresa pequena/média que já vive no Google Workspace.
-              <strong>Power BI</strong> é pago (a partir de US$ 10/mês) e é mais robusto pra dado pesado e ETL complexo —
-              ideal pra empresa Microsoft 365.
-              <strong>Metabase</strong> é open-source (self-hosted grátis) — perfeito pra equipe técnica que quer SQL nativo.
-              A gente decide juntos no setup, com base no seu volume de dado, equipe e budget. Sem amarra.
+              A gente opera as duas modalidades. Pra cliente com volume baixo (até 200 execuções/mês), n8n cloud
+              (Pro a partir de US$ 20/mês) compensa pela praticidade. Pra volume maior ou dado sensível, hospedamos
+              n8n na infraestrutura sua (ou nossa) — sem limite de execuções, sem mensalidade escalonada,
+              segurança total. Decidimos juntos no setup.
             </div>
           </div>
         </div>
         <div class="faq-item reveal reveal-d1">
           <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            E se meu CRM não for Kommo? Funciona com qualquer um?
+            Funciona se eu não tenho equipe técnica? Vou depender de vocês pra sempre?
             <span class="faq-arrow">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Funciona com qualquer CRM que tenha API ou exporte dado. Já conectamos com Kommo, RD Station, HubSpot,
-              Pipedrive, Bitrix, Pipefy, Salesforce, Bling, Tiny, Omie e ERPs custom. Se sua ferramenta tem webhook
-              ou exporta CSV, entra no painel. Antes de começar a gente confirma a viabilidade técnica — sem surpresa.
+              Funciona — e não. Você não precisa de equipe técnica pra USAR. Os workflows rodam sozinhos.
+              Mas pra MANUTENÇÃO (criar workflow novo, ajustar IA), tem 2 caminhos: contrato mensal de suporte
+              com a Aruna, ou handoff técnico completo (treinamos sua equipe ou TI). A escolha é sua.
+              Documentação fica com você sempre.
             </div>
           </div>
         </div>
         <div class="faq-item reveal reveal-d2">
           <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            Conecta com meu ERP? Ou só com CRM?
+            Vai substituir meu vendedor? Não quero demitir ninguém.
             <span class="faq-arrow">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Conecta com qualquer fonte de dado: CRM, ERP, e-commerce, ferramenta de marketing, banco, planilha.
-              A magia do BI é justamente JUNTAR fontes — pra você ver o quadro completo. ERP que fica isolado é metade
-              do valor. A Aruna conecta tudo num painel só.
+              Não. A automação tira do vendedor o trabalho que ele odeia (cópia-cola, follow-up esquecido, digitar
+              contrato 3 vezes) pra ele focar no que só humano faz bem: fechar venda complexa, construir relação,
+              negociar. Em vez de demitir, sua equipe fecha 2× mais com o mesmo número de pessoas. Quem corta
+              gente com automação está usando errado.
             </div>
           </div>
         </div>
         <div class="faq-item reveal reveal-d2">
           <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            Posso compartilhar com vendedor sem mostrar tudo?
+            Preciso trocar minhas ferramentas atuais?
             <span class="faq-arrow">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Sim. Configuramos permissões por cargo: vendedor vê só o funil dele, gerente vê o time, CEO vê tudo.
-              Cada um abre o mesmo link mas vê uma versão diferente do painel. Privacidade e foco mantidos.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            De quanto em quanto tempo o painel atualiza?
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Depende da fonte. <strong>CRM e e-commerce</strong>: tempo real (a venda nova aparece em segundos).
-              <strong>Meta Ads e Google Ads</strong>: a cada 1 hora (limite das APIs).
-              <strong>Banco e ERPs custom</strong>: a cada 4-6 horas, ou em real-time se tiver webhook.
-              A gente calibra no setup pra você ter o melhor dado disponível sem estourar limite de API.
+              Não. A Aruna automatiza em cima do que você já usa. Já integramos com Kommo, RD Station, Pipefy,
+              HubSpot, Bitrix, Hotmart, Kiwify, Asaas, Stripe, Google Sheets, Mercos, ERPs custom. Se sua ferramenta
+              tem webhook ou API (90% tem), entra no workflow. Se não tem, a gente fala antes — não vai ter surpresa.
             </div>
           </div>
         </div>
@@ -944,10 +1007,24 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Setup é único (orçamento por projeto, depende da quantidade de fontes e KPIs).
-              Manutenção tem 3 caminhos: <strong>(1)</strong> nada — painel roda sozinho, você só paga o Power BI/Metabase
-              se for licenciado. Looker Studio é grátis. <strong>(2)</strong> Suporte mensal a partir de R$ 1.000/mês —
-              ajuste de KPIs novos, novas fontes, otimização. <strong>(3)</strong> Hora avulsa — tweak ocasional. Sem multa.
+              Setup é único (orçamento por projeto). Manutenção tem 3 caminhos: <strong>(1)</strong> nada — workflow
+              roda sozinho, você só paga o n8n se for cloud. <strong>(2)</strong> Suporte mensal a partir de
+              R$ 1.000/mês — cuidamos de ajuste, novo workflow, monitoramento. <strong>(3)</strong> Hora avulsa —
+              se você só precisa de tweak ocasional. Sem fidelidade longa, sem multa.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            E se um workflow quebrar no meio da noite?
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Todo workflow que a Aruna entrega tem <strong>monitoramento de falha embutido</strong> —
+              se algo quebra, dispara alerta no WhatsApp pra você (e pra gente, se tiver suporte mensal).
+              Não é algo que você só descobre quando o cliente reclama. E como rodamos n8n, há log completo
+              de cada execução pra debug. Reparo costuma sair no mesmo dia.
             </div>
           </div>
         </div>
@@ -959,26 +1036,26 @@
   <section class="cta-section" id="contato">
     <div class="cta-glow"></div>
     <div class="cta-inner">
-      <div class="cta-eyebrow reveal">BI &amp; Decisão Data-Driven · Aruna</div>
+      <div class="cta-eyebrow reveal">EVA.ia · Automação Especializada</div>
       <h2 class="cta-title reveal reveal-d1">
-        Me manda o <em>print</em><br>
-        <span class="grad-text">do seu Excel atual.</span>
+        Me manda <em>uma tarefa</em><br>
+        <span class="grad-text">que sua equipe odeia fazer.</span>
       </h2>
       <p class="cta-sub reveal reveal-d2">
-        Eu te mostro em 10 minutos como ele vira painel ao vivo — com prazo, custo e o que muda na sua decisão.
+        Eu te mostro em 10 minutos como ela vira workflow — com prazo, custo e ROI estimado.
         <br><br>
-        <strong style="color:rgba(247,243,238,.78);">−40% no tempo de decisão e +25% em eficiência operacional</strong>
-        é o padrão de quem trata dado como ativo. Esse é o padrão da Aruna.
+        <strong style="color:rgba(247,243,238,.78);">+74% de produtividade e ROI médio de 400% em 12 meses</strong>
+        é o padrão de quem implanta automação direito. Esse é o padrão da Aruna.
       </p>
       <div class="reveal reveal-d3">
-        <a href="https://wa.me/5585920033627?text=Quero%20mandar%20um%20print%20do%20meu%20Excel%20atual%20pra%20virar%20painel%20da%20Aruna" class="btn-whatsapp">
+        <a href="https://wa.me/5585920033627?text=Quero%20mostrar%20uma%20tarefa%20repetitiva%20da%20minha%20equipe%20pra%20virar%20workflow" class="btn-whatsapp">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.961 1.395 5.658L.057 23.882l6.362-1.312A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.947 0-3.764-.528-5.321-1.438l-.38-.226-3.938.812.84-3.847-.249-.396A9.937 9.937 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          Mandar print do Excel
+          Mostrar uma tarefa
         </a>
         <p class="cta-action-note">Resposta em até 1 hora útil · Sem formulário, sem robô</p>
       </div>
       <p class="cta-signature reveal reveal-d4">
-        "Quem decide com dado escolhe certo. Quem decide com feeling escolhe rápido."
+        "Faça a máquina trabalhar. Você cuida do que só humano faz bem."
       </p>
     </div>
   </section>
@@ -1004,7 +1081,7 @@
       <div class="footer-name">ARUNA IA</div>
     </a>
     <div class="footer-center">
-      <span class="footer-copy">© 2026 Aruna IA · Business Intelligence &amp; Dashboards</span>
+      <span class="footer-copy">© 2026 Aruna IA · Automação especializada com IA</span>
       <a href="mailto:yanna@agenciaaruna.com" class="footer-email">yanna@agenciaaruna.com</a>
       <div class="footer-social">
         <a href="https://instagram.com/aagenciaaruna" target="_blank" rel="noopener">
@@ -1016,7 +1093,7 @@
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/kommo/">Kommo</a>
-      <a href="/automacao/">Automação</a>
+      <a href="/bi/">BI</a>
       <a href="#problema">O problema</a>
       <a href="#faq">FAQ</a>
     </div>
