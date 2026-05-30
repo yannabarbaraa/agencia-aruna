@@ -273,7 +273,7 @@
     .hero-mark-wrap {
       position: relative;
       width: 380px; height: 380px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
     }
     .hero-mark-ring {
       position: absolute; inset: 0;
@@ -297,7 +297,21 @@
     }
     .hero-mark-svg {
       position: relative; z-index: 1;
-      width: 220px; height: 220px;
+      width: 170px; height: 170px;
+    }
+    .hero-mark-text {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      margin-top: 4px;
+    }
+    .hero-mark-name {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 700; font-size: 30px; letter-spacing: 0.2em; line-height: 1;
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-mark-tag {
+      font-family: 'General Sans', sans-serif; font-size: 9px;
+      letter-spacing: 0.32em; color: rgba(255,255,255,0.34); text-transform: uppercase;
     }
 
     /* ── ORBIT SYSTEM ── */
@@ -1278,6 +1292,10 @@
           <circle cx="71" cy="58" r="3.5" fill="url(#hg)" filter="url(#hnglow)"/>
           <circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
         </svg>
+        <div class="hero-mark-text">
+          <div class="hero-mark-name">ARUNA</div>
+          <div class="hero-mark-tag">Automações &amp; I.A</div>
+        </div>
         <div class="orbit-path"></div>
         <div class="orbiter orb1">
           <div class="orbit-badge ob1">
