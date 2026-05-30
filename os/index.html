@@ -78,7 +78,11 @@ section{position:relative}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
   padding:18px 28px;background:linear-gradient(180deg,rgba(14,14,28,.92),rgba(14,14,28,0));backdrop-filter:blur(3px)}
 .brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
-.brand .mark{width:22px;height:22px;display:block;flex-shrink:0}
+.brand .mark{position:relative;width:14px;height:14px}
+.brand .mark span{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange)}
+.brand .mark span:nth-child(1){left:4px;top:-1px;background:var(--amber);box-shadow:0 0 10px var(--amber)}
+.brand .mark span:nth-child(2){left:-1px;bottom:0;background:var(--coral);box-shadow:0 0 10px var(--coral)}
+.brand .mark span:nth-child(3){right:-1px;bottom:0}
 .brand b{font-weight:800}
 .nav-cta{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line-strong);border-radius:999px;padding:9px 18px;color:var(--ink-mid);transition:.3s}
 .nav-cta:hover{border-color:var(--orange);color:var(--orange);box-shadow:0 0 24px var(--glow-soft)}
@@ -261,20 +265,7 @@ footer{border-top:1px solid var(--line);padding:48px 0}
 <body>
 
 <nav>
-  <a class="brand" href="#">
-    <svg class="mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs><linearGradient id="osa1" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/></linearGradient></defs>
-      <line x1="50" y1="7" x2="15" y2="86" stroke="url(#osa1)" stroke-width="6" stroke-linecap="round"/>
-      <line x1="50" y1="7" x2="85" y2="86" stroke="url(#osa1)" stroke-width="6" stroke-linecap="round"/>
-      <line x1="29" y1="58" x2="71" y2="58" stroke="url(#osa1)" stroke-width="6" stroke-linecap="round"/>
-      <circle cx="50" cy="7" r="7" fill="url(#osa1)"/>
-      <circle cx="15" cy="86" r="7" fill="url(#osa1)"/>
-      <circle cx="85" cy="86" r="7" fill="url(#osa1)"/>
-      <circle cx="29" cy="58" r="5" fill="url(#osa1)"/>
-      <circle cx="71" cy="58" r="5" fill="url(#osa1)"/>
-    </svg>
-    Aruna<b>&nbsp;OS</b>
-  </a>
+  <a class="brand" href="#"><span class="mark"><span></span><span></span><span></span></span>Aruna<b>&nbsp;OS</b></a>
   <a class="nav-cta" href="#preco">Ver preço</a>
 </nav>
 
@@ -500,20 +491,7 @@ footer{border-top:1px solid var(--line);padding:48px 0}
 
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="#">
-      <svg class="mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs><linearGradient id="osa2" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/></linearGradient></defs>
-        <line x1="50" y1="7" x2="15" y2="86" stroke="url(#osa2)" stroke-width="6" stroke-linecap="round"/>
-        <line x1="50" y1="7" x2="85" y2="86" stroke="url(#osa2)" stroke-width="6" stroke-linecap="round"/>
-        <line x1="29" y1="58" x2="71" y2="58" stroke="url(#osa2)" stroke-width="6" stroke-linecap="round"/>
-        <circle cx="50" cy="7" r="7" fill="url(#osa2)"/>
-        <circle cx="15" cy="86" r="7" fill="url(#osa2)"/>
-        <circle cx="85" cy="86" r="7" fill="url(#osa2)"/>
-        <circle cx="29" cy="58" r="5" fill="url(#osa2)"/>
-        <circle cx="71" cy="58" r="5" fill="url(#osa2)"/>
-      </svg>
-      Aruna<b>&nbsp;OS</b>
-    </a>
+    <a class="brand" href="#"><span class="mark"><span></span><span></span><span></span></span>Aruna<b>&nbsp;OS</b></a>
     <div class="foot-info">
       <span class="meta">© 2024-2026 · Aruna · Automação e IA</span>
       <a href="mailto:yanna@agenciaaruna.com">yanna@agenciaaruna.com</a>
