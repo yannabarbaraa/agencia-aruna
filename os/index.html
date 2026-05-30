@@ -77,12 +77,13 @@ section{position:relative}
 /* ============ NAV ============ */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
   padding:18px 28px;background:linear-gradient(180deg,rgba(14,14,28,.92),rgba(14,14,28,0));backdrop-filter:blur(3px)}
-.brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.01em;display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand .mark{width:26px;height:26px;display:block;flex-shrink:0}
-.brand-wordmark{display:flex;flex-direction:column;gap:2px;line-height:1}
-.brand-name{font-weight:700;letter-spacing:.16em;font-size:16px;background:linear-gradient(90deg,#E8485A,#FF6B35,#F5A623);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand .mark{width:38px;height:38px;display:block;flex-shrink:0}
+.brand-divider{width:1px;height:28px;background:linear-gradient(180deg,transparent,rgba(245,166,35,.3),transparent)}
+.brand-wordmark{display:flex;flex-direction:column;gap:3px;line-height:1}
+.brand-name{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.16em;background:linear-gradient(90deg,#E8485A,#FF6B35,#F5A623);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .brand-name b{font-weight:800}
-.brand-tag{font-family:'General Sans',sans-serif;font-size:7px;letter-spacing:.3em;color:rgba(255,255,255,.32);text-transform:uppercase}
+.brand-tag{font-family:'General Sans',sans-serif;font-size:7px;letter-spacing:.3em;color:rgba(255,255,255,.28);text-transform:uppercase}
 .nav-cta{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line-strong);border-radius:999px;padding:9px 18px;color:var(--ink-mid);transition:.3s}
 .nav-cta:hover{border-color:var(--orange);color:var(--orange);box-shadow:0 0 24px var(--glow-soft)}
 
@@ -266,15 +267,25 @@ footer{border-top:1px solid var(--line);padding:48px 0}
 <nav>
   <a class="brand" href="#">
     <svg class="mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs><linearGradient id="osa1" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/></linearGradient></defs>
-      <line x1="50" y1="7" x2="15" y2="86" stroke="url(#osa1)" stroke-width="6" stroke-linecap="round"/>
-      <line x1="50" y1="7" x2="85" y2="86" stroke="url(#osa1)" stroke-width="6" stroke-linecap="round"/>
-      <circle cx="50" cy="7" r="7" fill="url(#osa1)"/>
-      <circle cx="15" cy="86" r="7" fill="url(#osa1)"/>
-      <circle cx="85" cy="86" r="7" fill="url(#osa1)"/>
-      <circle cx="29" cy="58" r="5" fill="url(#osa1)"/>
-      <circle cx="71" cy="58" r="5" fill="url(#osa1)"/>
+      <defs>
+        <linearGradient id="osng" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/></linearGradient>
+        <filter id="osngl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="osnngl" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <line x1="50" y1="7" x2="15" y2="86" stroke="url(#osng)" stroke-width="2.6" stroke-linecap="round" filter="url(#osngl)"/>
+      <line x1="50" y1="7" x2="85" y2="86" stroke="url(#osng)" stroke-width="2.6" stroke-linecap="round" filter="url(#osngl)"/>
+      <circle cx="50" cy="7"  r="5"   fill="url(#osng)" filter="url(#osnngl)"/>
+      <circle cx="50" cy="7"  r="2.2" fill="#FFF4DE"/>
+      <circle cx="15" cy="86" r="5"   fill="url(#osng)" filter="url(#osnngl)"/>
+      <circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/>
+      <circle cx="85" cy="86" r="5"   fill="url(#osng)" filter="url(#osnngl)"/>
+      <circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/>
+      <circle cx="29" cy="58" r="3.5" fill="url(#osng)" filter="url(#osnngl)"/>
+      <circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/>
+      <circle cx="71" cy="58" r="3.5" fill="url(#osng)" filter="url(#osnngl)"/>
+      <circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
     </svg>
+    <span class="brand-divider"></span>
     <span class="brand-wordmark">
       <span class="brand-name">ARUNA<b> OS</b></span>
       <span class="brand-tag">Automações & I.A</span>
@@ -507,15 +518,25 @@ footer{border-top:1px solid var(--line);padding:48px 0}
   <div class="wrap foot">
     <a class="brand" href="#">
       <svg class="mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs><linearGradient id="osa2" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/></linearGradient></defs>
-        <line x1="50" y1="7" x2="15" y2="86" stroke="url(#osa2)" stroke-width="6" stroke-linecap="round"/>
-        <line x1="50" y1="7" x2="85" y2="86" stroke="url(#osa2)" stroke-width="6" stroke-linecap="round"/>
-        <circle cx="50" cy="7" r="7" fill="url(#osa2)"/>
-        <circle cx="15" cy="86" r="7" fill="url(#osa2)"/>
-        <circle cx="85" cy="86" r="7" fill="url(#osa2)"/>
-        <circle cx="29" cy="58" r="5" fill="url(#osa2)"/>
-        <circle cx="71" cy="58" r="5" fill="url(#osa2)"/>
+        <defs>
+          <linearGradient id="osfg" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/></linearGradient>
+          <filter id="osfgl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="osfnngl" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <line x1="50" y1="7" x2="15" y2="86" stroke="url(#osfg)" stroke-width="2.6" stroke-linecap="round" filter="url(#osfgl)"/>
+        <line x1="50" y1="7" x2="85" y2="86" stroke="url(#osfg)" stroke-width="2.6" stroke-linecap="round" filter="url(#osfgl)"/>
+        <circle cx="50" cy="7"  r="5"   fill="url(#osfg)" filter="url(#osfnngl)"/>
+        <circle cx="50" cy="7"  r="2.2" fill="#FFF4DE"/>
+        <circle cx="15" cy="86" r="5"   fill="url(#osfg)" filter="url(#osfnngl)"/>
+        <circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/>
+        <circle cx="85" cy="86" r="5"   fill="url(#osfg)" filter="url(#osfnngl)"/>
+        <circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/>
+        <circle cx="29" cy="58" r="3.5" fill="url(#osfg)" filter="url(#osfnngl)"/>
+        <circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/>
+        <circle cx="71" cy="58" r="3.5" fill="url(#osfg)" filter="url(#osfnngl)"/>
+        <circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
       </svg>
+      <span class="brand-divider"></span>
       <span class="brand-wordmark">
         <span class="brand-name">ARUNA<b> OS</b></span>
         <span class="brand-tag">Automações & I.A</span>
