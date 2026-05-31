@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aruna OS — O sistema operacional da sua empresa</title>
-<meta name="description" content="A Aruna instala os agentes de IA dentro de toda a sua operação. A gente hospeda, mantém e atualiza. Você só cresce.">
-<meta property="og:title" content="Aruna OS — O sistema operacional da sua empresa">
-<meta property="og:description" content="Agentes de IA instalados, hospedados e mantidos pela Aruna. Você só cresce.">
+<title>Aruna OS , Sua corretora andando sozinha</title>
+<meta name="description" content="A Aruna instala de 8 a 22 agentes de IA dentro da sua corretora. A gente desenha, hospeda e mantém. Em 15 dias úteis, tua corretora anda sozinha.">
+<meta property="og:title" content="Aruna OS , Sua corretora andando sozinha">
+<meta property="og:description" content="De 8 a 22 agentes de IA instalados, hospedados e mantidos pela Aruna. Você só comanda.">
 <meta property="og:image" content="assets/hero-network.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -23,7 +23,7 @@
   --ink:#F4EFE8;
   --ink-mid:rgba(244,239,232,.66);
   --ink-dim:rgba(244,239,232,.40);
-  --ghost:rgba(244,239,232,.13);     /* títulos gigantes fantasma */
+  --ghost:rgba(244,239,232,.13);
   --line:rgba(244,239,232,.09);
   --line-strong:rgba(244,239,232,.18);
   --coral:#E8485A;
@@ -50,14 +50,12 @@ body{
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 
-/* subtle warm atmosphere top */
 body::before{
   content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
     radial-gradient(1100px 600px at 78% -8%,rgba(255,107,53,.10),transparent 60%),
     radial-gradient(900px 500px at 8% 4%,rgba(232,72,90,.07),transparent 60%);
 }
-/* grain */
 body::after{
   content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -71,45 +69,44 @@ section{position:relative}
 
 .ghost-title{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,8.5vw,7rem);line-height:.92;letter-spacing:-.02em;color:var(--ghost);text-transform:uppercase}
 
-/* node dot */
 .node{width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 14px var(--orange),0 0 4px var(--amber)}
 
 /* ============ NAV ============ */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
   padding:18px 28px;background:linear-gradient(180deg,rgba(14,14,28,.92),rgba(14,14,28,0));backdrop-filter:blur(3px)}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-.brand .mark{width:38px;height:38px;display:block;flex-shrink:0}
-.brand-divider{width:1px;height:28px;background:linear-gradient(180deg,transparent,rgba(245,166,35,.3),transparent)}
-.brand-wordmark{display:flex;flex-direction:column;gap:3px;line-height:1}
-.brand-name{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.16em;background:linear-gradient(90deg,#E8485A,#FF6B35,#F5A623);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.brand-name b{font-weight:800}
-.brand-tag{font-family:'General Sans',sans-serif;font-size:7px;letter-spacing:.3em;color:rgba(255,255,255,.28);text-transform:uppercase}
+.brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.brand .mark{position:relative;width:14px;height:14px}
+.brand .mark span{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange)}
+.brand .mark span:nth-child(1){left:4px;top:-1px;background:var(--amber);box-shadow:0 0 10px var(--amber)}
+.brand .mark span:nth-child(2){left:-1px;bottom:0;background:var(--coral);box-shadow:0 0 10px var(--coral)}
+.brand .mark span:nth-child(3){right:-1px;bottom:0}
+.brand b{font-weight:800}
+.brand .niche{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);border-left:1px solid var(--line-strong);padding-left:10px;margin-left:6px}
 .nav-cta{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line-strong);border-radius:999px;padding:9px 18px;color:var(--ink-mid);transition:.3s}
 .nav-cta:hover{border-color:var(--orange);color:var(--orange);box-shadow:0 0 24px var(--glow-soft)}
 
 /* ============ HERO ============ */
 .hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:36px;align-items:center;width:100%}
-/* lockup ARUNA OS em evidência */
-.lockup{display:inline-flex;align-items:center;gap:14px;margin-bottom:26px}
+.lockup{display:inline-flex;align-items:center;gap:14px;margin-bottom:26px;flex-wrap:wrap}
 .lockup .badge{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,2.4vw,2rem);letter-spacing:.02em;line-height:1;
   background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lockup .pill{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);
   border:1px solid var(--line-strong);border-radius:999px;padding:6px 12px}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.9rem,6.2vw,5.4rem);line-height:.98;letter-spacing:-.025em;color:var(--ink)}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1;letter-spacing:-.025em;color:var(--ink)}
 .hero h1 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
-.hero .sub{margin-top:26px;max-width:500px;font-size:clamp(1.05rem,1.4vw,1.22rem);color:var(--ink-mid);line-height:1.55}
+.hero .sub{margin-top:26px;max-width:540px;font-size:clamp(1.05rem,1.4vw,1.22rem);color:var(--ink-mid);line-height:1.55}
 .hero .sub b{color:var(--ink);font-weight:600}
-.hero-actions{margin-top:36px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hero-actions{margin-top:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .btn{font-family:var(--body);font-weight:600;font-size:16px;letter-spacing:.01em;background:var(--grad);color:#1a0d05;
-  padding:16px 28px;border-radius:12px;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative}
+  padding:16px 26px;border-radius:12px;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative}
 .btn:hover{transform:translateY(-2px);box-shadow:0 16px 50px var(--glow),0 0 40px var(--glow-soft)}
 .btn .arrow{transition:.3s}
 .btn:hover .arrow{transform:translate(4px,-4px)}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong);box-shadow:none}
 .btn.ghost:hover{border-color:var(--orange);color:var(--orange)}
-.price-fine{margin-top:24px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.8}
-.price-fine b{color:var(--orange);font-weight:500}
+.hero-fine{margin-top:24px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.8}
+.hero-fine b{color:var(--orange);font-weight:500}
 
 .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;aspect-ratio:1;width:100%;max-width:560px;margin:0 auto}
 .hero-visual .glow{position:absolute;width:74%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 62%);filter:blur(38px);animation:pulse 7s ease-in-out infinite}
@@ -131,48 +128,123 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .pain .idx{font-family:var(--mono);font-size:13px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;flex:0 0 auto;padding-top:3px;width:26px}
 .pain p{font-size:1.06rem;color:var(--ink-mid);line-height:1.5}
 .pain p b{color:var(--ink);font-weight:600}
-.pain-foot{margin-top:34px;font-size:1.15rem;color:var(--ink);font-weight:500;max-width:700px}
+.pain-foot{margin-top:34px;font-size:1.15rem;color:var(--ink);font-weight:500;max-width:720px}
 .pain-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* ============ STATEMENTS ============ */
-.statement{max-width:880px}
+.statement{max-width:900px}
 .statement h2{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4vw,3.3rem);line-height:1.04;letter-spacing:-.02em;color:var(--ink)}
 .statement h2 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.statement .body{margin-top:30px;display:flex;flex-direction:column;gap:18px;font-size:1.18rem;color:var(--ink-mid);max-width:720px;line-height:1.62}
+.statement .body{margin-top:30px;display:flex;flex-direction:column;gap:18px;font-size:1.18rem;color:var(--ink-mid);max-width:760px;line-height:1.62}
 .statement .body strong{color:var(--ink);font-weight:600}
 
-/* ============ STEPS ============ */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.step{border:1px solid var(--line);border-radius:16px;padding:36px 30px 40px;background:linear-gradient(180deg,var(--void-2),var(--void));position:relative;overflow:hidden;transition:.4s}
-.step:hover{border-color:var(--line-strong);transform:translateY(-4px)}
-.step::before{content:attr(data-n);position:absolute;top:-24px;right:8px;font-family:var(--display);font-weight:800;font-size:8rem;color:var(--ghost);line-height:1}
-.step .k{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.step h3{font-family:var(--display);font-weight:700;font-size:1.4rem;margin:18px 0 14px;color:var(--ink);line-height:1.1;position:relative;z-index:2}
-.step p{font-size:1rem;color:var(--ink-mid);line-height:1.55;position:relative;z-index:2}
+/* ============ VOCÊ NÃO PRECISA ============ */
+.nope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px}
+.nope{display:flex;gap:14px;align-items:flex-start;padding:22px 24px;border:1px solid var(--line);border-radius:12px;background:var(--void-2);transition:.3s}
+.nope:hover{border-color:var(--line-strong)}
+.nope .x{font-family:var(--display);font-weight:800;color:var(--coral);font-size:1.2rem;line-height:1.2;flex:0 0 auto}
+.nope p{font-size:1.02rem;color:var(--ink);line-height:1.4}
+.nope p b{color:var(--ink);font-weight:600}
+.nope-foot{margin-top:36px;font-size:1.18rem;color:var(--ink);line-height:1.55;max-width:780px}
+.nope-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
 
-/* ============ SQUADS ============ */
+/* ============ ENCONTROS (3 cards grandes) ============ */
+.encontros{display:flex;flex-direction:column;gap:22px}
+.encontro{border:1px solid var(--line);border-radius:18px;padding:42px 40px;background:linear-gradient(180deg,var(--void-2),var(--void));position:relative;overflow:hidden;transition:.4s}
+.encontro:hover{border-color:var(--line-strong)}
+.encontro::before{content:attr(data-n);position:absolute;top:-30px;right:18px;font-family:var(--display);font-weight:800;font-size:9rem;color:var(--ghost);line-height:1;pointer-events:none}
+.encontro .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.encontro h3{position:relative;z-index:2;font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);margin:14px 0 12px;color:var(--ink);line-height:1.1;max-width:740px}
+.encontro h3 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.encontro .lede{position:relative;z-index:2;font-size:1.06rem;color:var(--ink-mid);line-height:1.55;max-width:780px;margin-bottom:24px}
+.encontro .lede b{color:var(--ink);font-weight:600}
+.entreg-label{position:relative;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:14px}
+.entreg{position:relative;z-index:2;list-style:none;display:flex;flex-direction:column;gap:10px;max-width:820px}
+.entreg li{display:flex;gap:12px;font-size:1rem;color:var(--ink-mid);line-height:1.5;align-items:flex-start}
+.entreg li::before{content:"";flex:0 0 auto;width:18px;height:18px;margin-top:3px;border-radius:5px;background:var(--glow-soft);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.encontro .seal{position:relative;z-index:2;margin-top:22px;font-size:1.05rem;color:var(--ink);font-weight:500}
+.encontro .seal .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
+
+/* ============ 60 DIAS ============ */
+.sixty{border:1px solid rgba(255,107,53,.3);border-radius:18px;padding:46px 42px;background:linear-gradient(155deg,var(--void-2),var(--void));position:relative;overflow:hidden}
+.sixty::before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:.35;pointer-events:none}
+.sixty>*{position:relative;z-index:2}
+.sixty .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sixty h3{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,2.6vw,2.1rem);margin:14px 0 14px;color:var(--ink);line-height:1.1;max-width:760px}
+.sixty .lede{font-size:1.08rem;color:var(--ink-mid);line-height:1.55;max-width:760px;margin-bottom:26px}
+.sixty .lede b{color:var(--ink);font-weight:600}
+.sixty-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:920px}
+.sixty-list li{display:flex;gap:12px;font-size:1rem;color:var(--ink);line-height:1.45;align-items:flex-start}
+.sixty-list li::before{content:"";flex:0 0 auto;width:18px;height:18px;margin-top:3px;border-radius:5px;background:var(--glow-soft);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.sixty-foot{margin-top:30px;font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--ink-mid)}
+.sixty-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:500}
+
+/* ============ SQUADS DE CORRETORA ============ */
 .squads{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.squad{background:var(--void);padding:34px 30px 38px;transition:.4s}
+.squad{background:var(--void);padding:34px 30px 36px;transition:.4s;display:flex;flex-direction:column}
 .squad:hover{background:var(--void-2)}
-.squad .top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.squad h3{font-family:var(--display);font-weight:700;font-size:1.45rem;color:var(--ink)}
-.squad p{font-size:.98rem;color:var(--ink-mid);line-height:1.55}
-.squads-cap{margin-top:26px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.04em}
+.squad .top{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.squad h3{font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ink)}
+.squad .count{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:18px}
+.squad ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.squad ul li{font-size:.96rem;color:var(--ink-mid);line-height:1.45;padding-left:14px;position:relative}
+.squad ul li::before{content:"·";position:absolute;left:0;color:var(--orange);font-weight:700}
+.squad ul li b{color:var(--ink);font-weight:600}
+.squads-cap{margin-top:26px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.04em;line-height:1.7}
+.squads-cap .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-/* ============ PROVA ============ */
-.prova{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
-.prova .panel{border:1px solid var(--line);border-radius:18px;padding:40px;background:linear-gradient(155deg,var(--void-2),var(--void));position:relative;overflow:hidden}
-.prova .panel .badge{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.prova .panel h2{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.06;margin:16px 0 22px;color:var(--ink)}
-.prova .panel p{color:var(--ink-mid);font-size:1.08rem;line-height:1.6}
-.live{margin-top:30px;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:13px;color:var(--ink-mid)}
-.live .pip{width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 12px var(--amber);animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
-.metric-stack{display:grid;gap:16px}
-.metric{border:1px solid var(--line);border-radius:14px;padding:26px 28px;display:flex;align-items:baseline;justify-content:space-between;gap:20px;transition:.35s}
-.metric:hover{border-color:var(--orange);box-shadow:0 0 40px var(--glow-soft)}
-.metric .n{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;letter-spacing:-.02em}
-.metric .l{font-size:.98rem;color:var(--ink-mid);text-align:right;max-width:55%}
+/* ============ ENTREGÁVEIS (prints reais) ============ */
+.deliver-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.deliver-grid .wide{grid-column:1 / -1}
+.panel-card{border:1px solid var(--line);border-radius:16px;background:var(--void-2);overflow:hidden;position:relative;transition:.4s}
+.panel-card:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+.panel-card .winbar{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line)}
+.winbar .dots{display:flex;gap:6px}
+.winbar .dots i{width:9px;height:9px;border-radius:50%;background:var(--ghost)}
+.winbar .dots i:nth-child(1){background:rgba(232,72,90,.6)}
+.winbar .dots i:nth-child(2){background:rgba(245,166,35,.6)}
+.winbar .dots i:nth-child(3){background:rgba(255,107,53,.6)}
+.winbar .title{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid)}
+.winbar .live{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+.winbar .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange);animation:pulse 2.4s ease-in-out infinite}
+.panel-card .shot{width:100%;height:auto;display:block;background:#0b0b16}
+.deliver-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.deliver-chips .chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-mid);border:1px solid var(--line);border-radius:999px;padding:8px 14px;display:inline-flex;align-items:center;gap:8px}
+.deliver-chips .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 8px var(--orange)}
+.deliver-note{margin-top:26px;font-family:var(--mono);font-size:12px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.6}
+
+/* feedbacks reais (prints WhatsApp) */
+.feed-label{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin:48px 0 18px}
+.feedshots{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.fshot{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--void-2);transition:.4s}
+.fshot:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+.fshot img{width:100%;height:auto;display:block}
+.fshot figcaption{padding:14px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-dim);display:flex;align-items:center;gap:9px;border-top:1px solid var(--line)}
+
+/* sobre nós / quem atende */
+.socios{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.socio{display:flex;gap:22px;align-items:flex-start;border:1px solid var(--line);border-radius:18px;padding:30px;background:linear-gradient(180deg,var(--void-2),var(--void));transition:.4s}
+.socio:hover{border-color:var(--line-strong)}
+.socio .avatar{flex:0 0 auto;width:94px;height:94px;border-radius:50%;overflow:hidden;border:1px solid var(--line-strong);position:relative}
+.socio .avatar img{width:100%;height:100%;object-fit:cover}
+.socio h3{font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ink);line-height:1.1}
+.socio .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:7px 0 12px}
+.socio p{font-size:.99rem;color:var(--ink-mid);line-height:1.5}
+.socios-foot{margin-top:30px;font-size:1.12rem;color:var(--ink);line-height:1.55;max-width:760px}
+.socios-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
+
+/* ============ O QUE ESTÃO FALANDO (mix) ============ */
+.say-grid{column-count:3;column-gap:20px}
+.say{break-inside:avoid;width:100%;margin:0 0 20px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--void-2);transition:.4s;display:inline-block;vertical-align:top}
+.say:hover{border-color:var(--line-strong)}
+.say.media img{width:100%;height:auto;display:block}
+.say figcaption{padding:13px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-dim);display:flex;align-items:center;gap:9px;border-top:1px solid var(--line)}
+.say.quote{background:linear-gradient(180deg,var(--void-2),var(--void));padding:30px 28px 24px;position:relative}
+.say.quote::before{content:"\201C";position:absolute;top:6px;left:18px;font-family:var(--display);font-weight:800;font-size:3.4rem;line-height:1;color:var(--ghost)}
+.say.quote blockquote{position:relative;z-index:2;font-size:1.04rem;color:var(--ink);line-height:1.5}
+.say.quote figcaption{padding:18px 0 0;border-top:0}
 
 /* ============ RESULTADOS ============ */
 .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
@@ -206,35 +278,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .plist li{display:flex;gap:13px;font-size:1rem;color:var(--ink-mid);line-height:1.45;align-items:flex-start}
 .plist li::before{content:"";flex:0 0 auto;width:18px;height:18px;margin-top:3px;border-radius:5px;background:var(--glow-soft);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
-.price-note{margin-top:26px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.03em}
+.price-note{margin-top:26px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.7}
 
 /* ============ GARANTIA ============ */
 .guarantee{border:1px solid var(--line);border-radius:20px;padding:60px;text-align:center;background:radial-gradient(circle at 50% 0%,var(--glow-soft),transparent 60%)}
 .guarantee .seal{font-family:var(--display);font-weight:800;font-size:clamp(3rem,9vw,6.5rem);color:var(--ink);line-height:.9;letter-spacing:-.03em}
 .guarantee .seal .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.guarantee p{margin:26px auto 0;max-width:620px;font-size:1.18rem;color:var(--ink-mid);line-height:1.6}
+.guarantee p{margin:26px auto 0;max-width:660px;font-size:1.18rem;color:var(--ink-mid);line-height:1.6}
 
 /* ============ CTA FINAL ============ */
 .final{padding:140px 0 120px;text-align:center;border-top:1px solid var(--line);position:relative;overflow:hidden}
 .final .aura{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 64%);filter:blur(56px);pointer-events:none}
-.final .lockup{margin-bottom:26px}
-.final h2{position:relative;font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,6vw,5rem);line-height:.98;letter-spacing:-.025em;color:var(--ink)}
+.final .lockup{margin-bottom:26px;justify-content:center}
+.final h2{position:relative;font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.98;letter-spacing:-.025em;color:var(--ink)}
 .final h2 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.final .sub{position:relative;margin:28px auto 0;max-width:560px;font-size:1.18rem;color:var(--ink-mid);line-height:1.55}
-.final .btn{margin-top:40px}
+.final .sub{position:relative;margin:28px auto 0;max-width:620px;font-size:1.18rem;color:var(--ink-mid);line-height:1.55}
+.final-actions{position:relative;margin-top:40px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
 .final .fine{position:relative;margin-top:24px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.04em}
 
 /* ============ FOOTER ============ */
 footer{border-top:1px solid var(--line);padding:48px 0}
 .foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
 .foot .brand{font-size:16px}
-.foot-info{display:flex;flex-direction:column;align-items:flex-end;gap:6px;font-family:var(--mono);text-align:right}
-.foot-info .meta{font-size:11.5px;color:var(--ink-dim);letter-spacing:.08em;text-transform:uppercase}
-.foot-info a{font-size:12px;color:var(--orange);text-decoration:none;letter-spacing:.04em}
-.foot-info a:hover{color:var(--amber)}
-.foot-info .ig{font-size:11px;color:var(--ink-dim);letter-spacing:.06em}
-.foot-info .ig:hover{color:var(--orange)}
-@media(max-width:640px){.foot-info{align-items:flex-start;text-align:left}}
+.foot .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-dim);letter-spacing:.08em;text-transform:uppercase}
 
 /* reveal */
 .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
@@ -247,51 +313,46 @@ footer{border-top:1px solid var(--line);padding:48px 0}
   .hero-grid{grid-template-columns:1fr;gap:8px}
   .hero-visual{order:-1;margin-bottom:4px}
   .hero-visual img{max-width:340px}
-  .steps,.squads,.price-grid,.prova,.pain-grid,.quotes{grid-template-columns:1fr}
+  .squads,.price-grid,.pain-grid,.quotes,.nope-grid,.sixty-list,.deliver-grid,.feedshots,.socios{grid-template-columns:1fr}
+  .say-grid{column-count:2}
   .results-grid{grid-template-columns:repeat(2,1fr)}
   .pain{border-right:0}
   .pain:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
   .pain:last-child{border-bottom:0}
-  .squad{padding:30px 26px}.prova{gap:30px}.sec{padding:84px 0}
-  .guarantee{padding:44px 24px}.final{padding:100px 0 90px}
+  .squad{padding:30px 26px}
+  .sec{padding:84px 0}
+  .guarantee{padding:44px 24px}
+  .final{padding:100px 0 90px}
+  .encontro{padding:34px 26px}
+  .sixty{padding:34px 26px}
 }
 @media(max-width:520px){
   .wrap{padding:0 20px}nav{padding:14px 20px}.nav-cta{display:none}
   .results-grid{grid-template-columns:1fr}
+  .say-grid{column-count:1}
   .hero{padding:100px 0 60px}.hero-actions{flex-direction:column;align-items:stretch}.btn{justify-content:center}
+  .final-actions{flex-direction:column;align-items:stretch}
+  .brand .niche{display:none}
 }
 </style>
+
+<!-- Meta Pixel Code (Aruna) -->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '805389752641637');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=805389752641637&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Aruna Tracking Client -->
+<script src="https://aruna-atendimento.yanna-barbara.workers.dev/track.js" defer></script>
 </head>
 <body>
 
 <nav>
-  <a class="brand" href="#">
-    <svg class="mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <linearGradient id="osng" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/></linearGradient>
-        <filter id="osngl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        <filter id="osnngl" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      </defs>
-      <line x1="50" y1="7" x2="15" y2="86" stroke="url(#osng)" stroke-width="2.6" stroke-linecap="round" filter="url(#osngl)"/>
-      <line x1="50" y1="7" x2="85" y2="86" stroke="url(#osng)" stroke-width="2.6" stroke-linecap="round" filter="url(#osngl)"/>
-      <circle cx="50" cy="7"  r="5"   fill="url(#osng)" filter="url(#osnngl)"/>
-      <circle cx="50" cy="7"  r="2.2" fill="#FFF4DE"/>
-      <circle cx="15" cy="86" r="5"   fill="url(#osng)" filter="url(#osnngl)"/>
-      <circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/>
-      <circle cx="85" cy="86" r="5"   fill="url(#osng)" filter="url(#osnngl)"/>
-      <circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/>
-      <circle cx="29" cy="58" r="3.5" fill="url(#osng)" filter="url(#osnngl)"/>
-      <circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/>
-      <circle cx="71" cy="58" r="3.5" fill="url(#osng)" filter="url(#osnngl)"/>
-      <circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
-    </svg>
-    <span class="brand-divider"></span>
-    <span class="brand-wordmark">
-      <span class="brand-name">ARUNA<b> OS</b></span>
-      <span class="brand-tag">Automações & I.A</span>
-    </span>
-  </a>
-  <a class="nav-cta" href="#preco">Ver preço</a>
+  <a class="brand" href="#"><span class="mark"><span></span><span></span><span></span></span>Aruna<b>&nbsp;OS</b></a>
+  <a class="nav-cta" href="#cta">Fale com a Aruna</a>
 </nav>
 
 <!-- HERO -->
@@ -300,195 +361,384 @@ footer{border-top:1px solid var(--line);padding:48px 0}
     <div class="hero-copy">
       <div class="lockup reveal in">
         <span class="badge">ARUNA OS</span>
-        <span class="pill">Sistema operacional</span>
+        <span class="pill">Corretora de Seguros</span>
       </div>
-      <h1 class="reveal in d1">O sistema<br>operacional da<br><span class="em">sua empresa.</span></h1>
-      <p class="sub reveal in d2">A Aruna instala os agentes de IA dentro de toda a sua operação. A gente hospeda, mantém e atualiza. <b>Você só cresce.</b></p>
+      <h1 class="reveal in d1">Você não precisa de mais lead.<br><span class="em">Você precisa parar de perder os que já tem.</span></h1>
+      <p class="sub reveal in d2">A Aruna instala de <b>8 a 22 agentes de IA</b> dentro da sua corretora. A gente desenha, hospeda e mantém. <b>Em 15 dias úteis, tua corretora anda sozinha.</b></p>
       <div class="hero-actions reveal in d3">
-        <a class="btn" href="#cta" data-wa>Quero ver rodando <span class="arrow">↗</span></a>
+        <a class="btn" href="#" data-wa>Quero a solução <span class="arrow">↗</span></a>
         <a class="btn ghost" href="#como">Como funciona</a>
       </div>
-      <p class="price-fine reveal in d4"><b>R$ 1.500</b> setup &nbsp;·&nbsp; <b>R$ 200/mês</b> com tudo incluso (até API de IA).<br>Sem letra miúda.</p>
+      <p class="hero-fine reveal in d4">15 dias úteis pra entregar · <b>30 dias</b> de acompanhamento intensivo com a Yanna e o Lucas.</p>
     </div>
     <div class="hero-visual reveal in d2">
       <div class="glow"></div>
-      <canvas id="orb" aria-label="Aruna OS — agentes de IA se organizando em uma rede conectada"></canvas>
+      <canvas id="orb" aria-label="Aruna OS , agentes de IA se organizando em rede"></canvas>
     </div>
   </div>
 </header>
 
-<!-- DOR -->
+<!-- DIAGNÓSTICO -->
 <section class="sec">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num reveal">01 — O diagnóstico</span>
-      <h2 class="ghost-title reveal d1">Por que sua<br>empresa não<br>anda sozinha?</h2>
+      <span class="sec-num reveal">01 , O diagnóstico</span>
+      <h2 class="ghost-title reveal d1">Sua corretora<br>tá vazando<br>onde dói.</h2>
     </div>
-    <p class="statement-lead reveal">O Flávio Augusto fala que empresa adulta é a que anda sozinha. A gente concorda. E vê todo dia o motivo de elas não andarem:</p>
+    <p class="statement-lead reveal">A conta nunca é o lead. A conta é o que acontece depois que o lead chega. Olha se você se reconhece:</p>
     <div class="pain-grid reveal d1">
-      <div class="pain"><span class="idx">01</span><p>Você termina o mês exausta. Mas a planilha veio <b>igual ao mês passado.</b></p></div>
-      <div class="pain"><span class="idx">02</span><p>Tem lead seu <b>há 11 dias sem resposta</b> no WhatsApp. E você não sabe.</p></div>
-      <div class="pain"><span class="idx">03</span><p>Você sabe que precisa fazer conteúdo, mas tá <b>há 3 semanas sem postar.</b></p></div>
-      <div class="pain"><span class="idx">04</span><p>Sua cobrança tá atrasada. Seu cliente já te avisou. <b>Você esqueceu de novo.</b></p></div>
-      <div class="pain"><span class="idx">05</span><p>Você tá em 100 lugares. Mas quando sai uma semana, <b>a empresa para.</b></p></div>
-      <div class="pain"><span class="idx">06</span><p>Tu sente que tem algo errado, <b>mas não consegue dizer o quê.</b></p></div>
+      <div class="pain"><span class="idx">01</span><p><b>Lead pediu cotação e sumiu.</b> Ninguém retomou.</p></div>
+      <div class="pain"><span class="idx">02</span><p><b>Cliente ia renovar</b> e foi pro concorrente.</p></div>
+      <div class="pain"><span class="idx">03</span><p>Cobrança atrasou e <b>o cliente esqueceu de pagar.</b></p></div>
+      <div class="pain"><span class="idx">04</span><p>Cliente disse <b>"vou pensar" há 2 meses.</b> Ninguém voltou.</p></div>
+      <div class="pain"><span class="idx">05</span><p>Sua equipe vive pedindo aumento <b>porque tá sufocada.</b></p></div>
+      <div class="pain"><span class="idx">06</span><p>Quando você sai uma semana, <b>a corretora para.</b></p></div>
     </div>
-    <p class="pain-foot reveal d1">Se você se reconheceu em pelo menos 2 dessas, sua empresa não tem sistema operacional. <span class="hl">Tem você.</span></p>
+    <p class="pain-foot reveal d1">Se você se reconheceu em 2 dessas, sua corretora não tem sistema. <span class="hl">Tem você.</span></p>
   </div>
 </section>
 
 <!-- INSIGHT -->
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num reveal">02 — O insight</span></div>
+    <div class="sec-head"><span class="sec-num reveal">02 , O insight</span></div>
     <div class="statement">
-      <h2 class="reveal">Toda empresa precisa de um SO. <span class="em">A sua tá rodando em você.</span></h2>
+      <h2 class="reveal">Não é a sua equipe. Não é o seu funil.<br><span class="em">É a sua corretora rodando manual enquanto os concorrentes automatizaram tudo.</span></h2>
       <div class="body">
-        <p class="reveal d1">Computador sem sistema operacional é só hardware caro. <strong>Empresa sem sistema operacional é só faturamento caro.</strong></p>
-        <p class="reveal d2">Hoje o sistema operacional da sua empresa é você. Quando você abre o WhatsApp, ela atende. Quando você lembra da cobrança, ela cobra. Quando você senta pra postar, ela posta. Tira você, ela para.</p>
-        <p class="reveal d3">O Aruna OS troca esse sistema operacional. <strong>Os agentes de IA assumem as funções que rodavam em você.</strong> Você sai do papel de servidor e volta pro papel de dono.</p>
+        <p class="reveal d1">O concorrente que tá te tirando renovação não é mais esperto. Ele só tem <strong>agente respondendo lead em 30 segundos</strong>, <strong>cadência de 11 toques recuperando "vou pensar"</strong> e <strong>aviso de renovação saindo 30 dias antes do vencimento</strong>, sem ninguém lembrar de apertar nada.</p>
+        <p class="reveal d2">Enquanto isso, a sua corretora depende de você abrir o WhatsApp, lembrar do follow-up, sentar pra cobrar, conferir comissão da seguradora. <strong>Tira você do meio, ela para.</strong></p>
+        <p class="reveal d3">O Aruna OS troca isso. Os agentes assumem o que rodava em você. <strong>Você volta a ser dono. Não operador.</strong></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- A VIRADA -->
+<!-- VOCÊ NÃO PRECISA -->
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num reveal">03 — A virada</span></div>
-    <div class="statement">
-      <h2 class="reveal">A gente entrega a empresa rodando. <span class="em">Você só cresce.</span></h2>
-      <div class="body">
-        <p class="reveal d1">Nada de "instala isso aqui no seu computador". Nada de terminal, prompt, "aprende essa ferramenta". A Aruna instala o sistema, hospeda na nossa estrutura, treina os agentes e mantém tudo rodando. <strong>Você só precisa do WhatsApp da sua empresa.</strong></p>
-      </div>
+    <div class="sec-head">
+      <span class="sec-num reveal">03 , Antes da entrega</span>
+      <h2 class="ghost-title reveal d1">Você NÃO<br>precisa.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Quebra a primeira objeção antes dela nascer. Olha tudo que <b>não</b> tá no seu colo:</p>
     </div>
+    <div class="nope-grid reveal d1">
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>contratar dev</b>.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>aprender prompt, n8n nem API</b>.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>hospedar nada</b> no seu servidor.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>"tirar uma semana pra implantar"</b>.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>ficar arrumando</b> quando algo quebrar.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>trocar de sistema</b> de gestão.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>entender de IA</b>.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>treinar a equipe</b> em ferramenta nova.</p></div>
+    </div>
+    <p class="nope-foot reveal d1">A Aruna instala, hospeda, mantém e atualiza. <span class="hl">Você só usa pelo WhatsApp.</span></p>
   </div>
 </section>
 
-<!-- COMO FUNCIONA -->
+<!-- COMO FUNCIONA: 3 ENCONTROS -->
 <section class="sec" id="como">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num reveal">04 — Como funciona</span>
-      <h2 class="ghost-title reveal d1">3 passos.<br>15 dias.</h2>
-      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:520px">E você não toca em nada técnico.</p>
+      <span class="sec-num reveal">04 , Como funciona</span>
+      <h2 class="ghost-title reveal d1">3 encontros.<br>Do desenho<br>ao ar.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:640px">Você e o seu sócio (se tiver) no Google Meet gravado com a Yanna e o Lucas. A Aruna executa, você acompanha e valida cada passo.</p>
     </div>
-    <div class="steps">
-      <div class="step reveal d1" data-n="1"><span class="k">Passo 01</span><h3>A gente entra na sua operação</h3><p>Não é call vazia. É uma conversa no WhatsApp onde a gente entende como sua empresa funciona hoje e desenha o sistema operacional que faz sentido pra você.</p></div>
-      <div class="step reveal d2" data-n="2"><span class="k">Passo 02</span><h3>Em 15 dias úteis, o Aruna OS tá instalado</h3><p>Os agentes ficam ativos, cada um com um trabalho claro. O time da Aruna acompanha tudo nesses dias.</p></div>
-      <div class="step reveal d3" data-n="3"><span class="k">Passo 03</span><h3>Você começa a usar</h3><p>Recebe avisos no WhatsApp. Relatório toda segunda às 8h. Qualquer agente novo, ajuste ou correção, é só pedir.</p></div>
+    <div class="encontros">
+      <div class="encontro reveal d1" data-n="1">
+        <span class="k">Encontro 01 · Dia 1 · 1h30</span>
+        <h3>A gente desenha o <span class="em">retorno automático</span> da sua corretora.</h3>
+        <p class="lede">A gente entra na sua operação, entende cada processo e desenha na sua frente o retorno automático, setor por setor. Já saímos com a lista confirmada de quais agentes vão começar a rodar. E conforme vai mapeando, a gente já aponta onde tá vazando e como corrigir.</p>
+        <p class="entreg-label">A gente passa setor por setor:</p>
+        <ul class="entreg">
+          <li><b>Comercial:</b> a cadência que traz o retorno, o principal. Lead respondido na hora, follow-up que não para, qualificação e fechamento, desenhados ponta a ponta.</li>
+          <li><b>Financeiro:</b> as recorrências estão automatizadas? A conciliação de Pix e cartão é automática? Tem DRE? Os relatórios estão funcionando de verdade? A gente acerta tudo isso.</li>
+          <li><b>Pós-venda:</b> renovação avisada antes do vencimento, retomada de cliente sumido, atendimento que não deixa ninguém esperando.</li>
+          <li>Lista confirmada dos 8 a 22 agentes que começam a rodar na sua corretora.</li>
+          <li>Os gargalos de hoje mapeados, com o plano de correção já na mão.</li>
+        </ul>
+        <p class="seal"><span class="hl">O retorno automático da sua corretora desenhado e confirmado.</span> ✓</p>
+      </div>
+      <div class="encontro reveal d2" data-n="2">
+        <span class="k">Encontro 02 · Dia 8 · 1h</span>
+        <h3>A gente garante que o que <span class="em">fechamos tá rodando.</span></h3>
+        <p class="lede">A gente coloca o que foi desenhado pra rodar e garante, na sua frente, que tá funcionando. Aqui é onde a gente vê o que ainda precisa melhorar pra automatização ficar completa, e acerta o que faltou no caminho, porque sempre aparece um detalhe que só some quando bate na operação real.</p>
+        <p class="entreg-label">Você sai com:</p>
+        <ul class="entreg">
+          <li>Os agentes fechados no Encontro 1 rodando e testados com você</li>
+          <li>O que ainda precisa de ajuste pra automação ficar 100% mapeado</li>
+          <li>Os pontos que faltaram no caminho identificados e corrigidos</li>
+          <li>Tom, regras e integrações afinados ao vivo com você</li>
+        </ul>
+        <p class="seal"><span class="hl">Sua corretora automatizada rodando, com os ajustes finais resolvidos.</span> ✓</p>
+      </div>
+      <div class="encontro reveal d3" data-n="3">
+        <span class="k">Encontro 03 · Dia 15 · 1h</span>
+        <h3>A gente valida tudo, <span class="em">de ponta a ponta.</span></h3>
+        <p class="lede">Revisa tudo dos dois primeiros, confere se está tudo entregue e de acordo, e a corretora já estará no ar.</p>
+        <p class="entreg-label">Você sai com:</p>
+        <ul class="entreg">
+          <li>Cada agente combinado validado e funcionando em produção real</li>
+          <li>Checklist de entrega conferido item por item com você</li>
+          <li>Sistema 100% no ar: WhatsApp real, financeiro e pós-venda rodando</li>
+          <li>Painel ao vivo no seu celular pra acompanhar tudo</li>
+        </ul>
+        <p class="seal"><span class="hl">Tudo validado, tudo de acordo. Sua corretora anda sozinha.</span> ✓</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SQUADS -->
+<!-- 60 DIAS DE ACOMPANHAMENTO -->
 <section class="sec">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num reveal">05 — Dentro do sistema</span>
-      <h2 class="ghost-title reveal d1">6 squads.<br>22 a 28<br>agentes.</h2>
-      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:560px">Tudo customizado pra sua empresa.</p>
+      <span class="sec-num reveal">05 , E depois</span>
+      <h2 class="ghost-title reveal d1">+30 dias<br>de mão dada.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">A entrega não termina no go-live. Por 30 dias depois, você tem a Yanna e o Lucas num grupo de WhatsApp dedicado à tua corretora.</p>
     </div>
-    <div class="squads">
-      <div class="squad reveal d1"><div class="top"><span class="node"></span><h3>Comercial</h3></div><p>SDR de WhatsApp, follow-up automático em 11 toques, pesquisa de lead, proposta personalizada, alerta de lead parado.</p></div>
-      <div class="squad reveal d2"><div class="top"><span class="node"></span><h3>Marketing</h3></div><p>Copy de anúncio, roteiro de Reels, caption de Instagram, email, análise de performance.</p></div>
-      <div class="squad reveal d3"><div class="top"><span class="node"></span><h3>Atendimento</h3></div><p>Triagem inicial, FAQ inteligente, escalonamento humano, NPS pós-venda.</p></div>
-      <div class="squad reveal d1"><div class="top"><span class="node"></span><h3>Financeiro</h3></div><p>Cobrança automatizada, conciliação de pagamento, DRE mensal, fluxo de caixa preditivo.</p></div>
-      <div class="squad reveal d2"><div class="top"><span class="node"></span><h3>Operação</h3></div><p>Briefing pra entrega, SOP viva, onboarding de cliente novo, triagem de tarefa, relatório semanal pro dono.</p></div>
-      <div class="squad reveal d3"><div class="top"><span class="node"></span><h3>Conteúdo</h3></div><p>Roteiro de vídeo, descrição de YouTube com SEO, posts de feed, stories, blog.</p></div>
+    <div class="sixty reveal d1">
+      <span class="k">Acompanhamento intensivo · 30 dias · sem cobrar nada extra</span>
+      <h3>A Yanna e o Lucas, <span class="grad-text">CEO e CTO da Aruna</span>, imersos na tua corretora.</h3>
+      <p class="lede">Mudou regra, mudou seguradora, mudou processo, equipe precisa de ajuste, agente respondendo torto, integração caiu? <b>É só mandar mensagem.</b> A gente resolve.</p>
+      <ul class="sixty-list">
+        <li>Grupo dedicado no WhatsApp com a Yanna e o Lucas, CEO e CTO da Aruna, imersos na tua corretora</li>
+        <li>Yanna e Lucas respondendo em até 1h em horário comercial Fortaleza</li>
+        <li>Ajustes ilimitados nos agentes durante os 30 dias</li>
+        <li>Relatório semanal automatizado no teu WhatsApp toda segunda 8h</li>
+        <li>2 reuniões de 1h agendáveis quando você quiser</li>
+        <li>Manutenção sempre que algo mudar na internet (Meta, WhatsApp, seguradora)</li>
+        <li>Mensalidade só entra ativa depois desses 30 dias</li>
+      </ul>
+      <p class="sixty-foot">// <span class="hl">Tudo incluso.</span> Nada cobrado a mais. A mensalidade entra ativa só a partir do Dia 46.</p>
     </div>
-    <p class="squads-cap reveal">// cada agente com um trabalho claro · ativos 24/7 · mantidos pela Aruna</p>
   </div>
 </section>
 
-<!-- RESULTADOS -->
+<!-- SQUAD DE CORRETORA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">06 , Dentro do sistema</span>
+      <h2 class="ghost-title reveal d1">22 agentes.<br>3 squads.<br>Sob medida.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">A gente monta o squad da sua corretora logo no começo, junto com você. De 8 a 22 agentes, depende do porte e do briefing. Cardápio completo:</p>
+    </div>
+    <div class="squads">
+      <div class="squad reveal d1">
+        <div class="top"><span class="node"></span><h3>Comercial</h3></div>
+        <p class="count">Até 7 agentes</p>
+        <ul>
+          <li><b>SDR WhatsApp:</b> responde lead novo em até 30s, qualifica em 5 perguntas, encaminha pro corretor certo</li>
+          <li><b>Pesquisa de lead:</b> monta dossiê de 1 página antes do corretor falar</li>
+          <li><b>Cotação rápida com áudio:</b> primeira dúvida respondida em 10 min, com áudio humano</li>
+          <li><b>Follow-up 11 toques:</b> ressuscita lead frio em sequência de 21 dias</li>
+          <li><b>Reentrada na base:</b> alerta vendedor quando ex-lead volta a clicar</li>
+          <li><b>Quebra de "vou pensar":</b> volta no cliente esquecido com argumento novo</li>
+          <li><b>Alerta de lead parado:</b> notifica corretor se lead não responde em 24h</li>
+        </ul>
+      </div>
+      <div class="squad reveal d2">
+        <div class="top"><span class="node"></span><h3>Financeiro</h3></div>
+        <p class="count">Até 6 agentes</p>
+        <ul>
+          <li><b>Cobrança automatizada:</b> lembra cliente 3 dias antes, no dia e depois</li>
+          <li><b>Conciliação Pix/cartão:</b> verifica entrada, dá baixa automática</li>
+          <li><b>Lembrete de boleto/parcela:</b> avisa 5 dias antes, com link pra pagar</li>
+          <li><b>Acompanhamento de comissão:</b> detecta atraso da seguradora e alerta</li>
+          <li><b>Relatório financeiro mensal:</b> DRE pronto dia 5 de cada mês</li>
+          <li><b>Fluxo de caixa preditivo:</b> projeta 30/60/90 dias e alerta se ficar negativo</li>
+        </ul>
+      </div>
+      <div class="squad reveal d3">
+        <div class="top"><span class="node"></span><h3>Pós-venda</h3></div>
+        <p class="count">Até 9 agentes</p>
+        <ul>
+          <li><b>Renovação automática:</b> avisa 30 dias antes, agenda revisão (essencial)</li>
+          <li><b>Retomada de cliente esquecido:</b> identifica quem sumiu há +60 dias</li>
+          <li><b>FAQ inteligente:</b> dúvidas frequentes respondidas em até 30s</li>
+          <li><b>Triagem inicial:</b> classifica mensagem e encaminha pra pessoa certa</li>
+          <li><b>NPS pós-venda:</b> pesquisa 30 dias depois do contrato</li>
+          <li><b>Onboarding cliente novo:</b> sequência de 5-7 mensagens nos primeiros 7 dias</li>
+          <li><b>Aniversário do contrato:</b> mensagem no dia certo, sem ninguém lembrar</li>
+          <li><b>Endosso/sinistro:</b> detecta pelo texto e escala pra humano em segundos</li>
+          <li><b>Pesquisa de satisfação semestral:</b> abre conversa pra reter cliente</li>
+        </ul>
+      </div>
+    </div>
+    <p class="squads-cap reveal">// <span class="hl">22 agentes disponíveis.</span> Sua corretora recebe de 8 a 22, conforme porte. Cada agente com um trabalho claro, ativo 24/7, mantido pela Aruna.</p>
+  </div>
+</section>
+
+<!-- EXEMPLOS DE ENTREGÁVEIS -->
+<section class="sec" id="entregaveis">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">07 , Exemplos de entregáveis</span>
+      <h2 class="ghost-title reveal d1">Você vê tudo<br>rodando ao vivo.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:640px">Não é caixa-preta. Você abre o painel no celular e enxerga os agentes trabalhando, o funil enchendo e a renovação sendo garantida. Um exemplo do que você recebe:</p>
+    </div>
+    <div class="deliver-grid reveal d1">
+      <div class="panel-card wide">
+        <div class="winbar"><span class="dots"><i></i><i></i><i></i></span><span class="title">Painel comercial</span><span class="live">ao vivo</span></div>
+        <img class="shot" src="assets/dashboard-comercial.png" alt="Painel comercial da corretora: total de vendas, meta diária, ticket médio, conversão e lead time" loading="lazy">
+      </div>
+      <div class="panel-card">
+        <div class="winbar"><span class="dots"><i></i><i></i><i></i></span><span class="title">Painel executivo · BI</span></div>
+        <img class="shot" src="assets/dashboard-executivo.png" alt="Painel executivo com faturamento, ranking de cliente e faturamento por origem e produto" loading="lazy">
+      </div>
+      <div class="panel-card">
+        <div class="winbar"><span class="dots"><i></i><i></i><i></i></span><span class="title">Funil de vendas · Kommo</span></div>
+        <img class="shot" src="assets/pipeline-kommo.png" alt="Funil de vendas no Kommo: entrada, em atendimento, qualificado, negociação e compra posterior" loading="lazy">
+      </div>
+    </div>
+    <div class="deliver-chips reveal d2">
+      <span class="chip">Mapa visual da corretora</span>
+      <span class="chip">Catálogo dos agentes</span>
+      <span class="chip">Diagrama de integrações</span>
+      <span class="chip">Regras de cada agente</span>
+      <span class="chip">Manual em PDF</span>
+      <span class="chip">Relatório semanal automático</span>
+    </div>
+    <p class="deliver-note reveal">// painéis reais de operação que a Aruna entrega · você acessa pelo celular, com alertas em tempo real</p>
+  </div>
+</section>
+
+<!-- RESULTADOS REAIS -->
 <section class="sec" id="resultados">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num reveal">06 — Resultados reais</span>
-      <h2 class="ghost-title reveal d1">O que muda<br>quando o sistema<br>assume.</h2>
+      <span class="sec-num reveal">08 , Resultados reais</span>
+      <h2 class="ghost-title reveal d1">O que muda<br>quando os agentes<br>assumem.</h2>
     </div>
 
-    <!-- métricas-herói -->
     <div class="results-grid">
       <div class="result reveal d1">
         <div class="rn">+15%</div>
         <div class="rl">de faturamento</div>
-        <p>Menos lead perdido no caminho, follow-up que não falha, proposta saindo na hora. A venda para de vazar.</p>
+        <p>Menos lead perdido no caminho, follow-up que não falha, cotação saindo na hora. A venda para de vazar.</p>
       </div>
       <div class="result reveal d2">
-        <div class="rn">até −30%</div>
+        <div class="rn">até -30%</div>
         <div class="rl">de custo com folha</div>
         <p>A operação roda com time enxuto. Menos contratação só pra dar conta do operacional repetitivo.</p>
       </div>
       <div class="result reveal d3">
-        <div class="rn">cliente</div>
-        <div class="rl">bem mais satisfeito</div>
-        <p>Resposta em segundos, nada esquecido, atendimento que não some. A experiência sobe sem aumentar equipe.</p>
+        <div class="rn">renovação</div>
+        <div class="rl">não escapa mais</div>
+        <p>Aviso de renovação saindo 30 dias antes do vencimento. Cliente lembrado, agendado, retido.</p>
       </div>
       <div class="result reveal d4">
         <div class="rn">a equipe<br>respira</div>
-        <div class="rl">menos insatisfação</div>
-        <p>O time sai do modo "apagar incêndio". O que era manual e cansativo, agora simplesmente anda.</p>
+        <div class="rl">sai do modo bombeiro</div>
+        <p>O time sai do "apagar incêndio". O que era manual e cansativo, agora simplesmente anda.</p>
       </div>
     </div>
 
-    <!-- depoimentos -->
-    <div class="quotes">
-      <figure class="quote reveal d1">
-        <blockquote>"Cortei uma contratação que ia fazer e o faturamento ainda subiu. A empresa parou de depender de eu estar lá o dia todo."</blockquote>
-        <figcaption><span class="node"></span> Dono de operação que roda o Aruna OS</figcaption>
-      </figure>
-      <figure class="quote reveal d2">
-        <blockquote>"Antes eu vivia correndo atrás de tudo, sempre tinha algo atrasado. Agora as coisas andam sozinhas, sobra cabeça pro que importa."</blockquote>
-        <figcaption><span class="node"></span> Da equipe do cliente</figcaption>
-      </figure>
-      <figure class="quote reveal d3">
-        <blockquote>"Mandei mensagem e me responderam na hora, num domingo. Achei que tinha gente plantão. Era o sistema."</blockquote>
-        <figcaption><span class="node"></span> Cliente atendido pela operação</figcaption>
-      </figure>
-    </div>
-    <p class="results-note reveal">// resultados de clientes reais que rodam o Aruna OS · varia conforme a operação · faturamento medido, demais como potencial observado</p>
+    <p class="results-note reveal">// resultados observados em corretoras que rodam o Aruna OS · varia conforme operação e nicho · faturamento medido, demais como padrão observado</p>
   </div>
 </section>
 
-<!-- PREÇO -->
+<!-- O QUE ESTÃO FALANDO -->
+<section class="sec" id="falam">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">09 , O que estão falando</span>
+      <h2 class="ghost-title reveal d1">Veja o que<br>as pessoas e as<br>empresas falam.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Feedback real de quem já trabalhou com a gente. Vídeo, print e palavra de cliente, sem retoque.</p>
+    </div>
+    <div class="say-grid reveal d1">
+      <figure class="say media">
+        <img src="assets/feedback-video.gif" alt="Vídeo de feedback de cliente da Aruna" loading="lazy">
+        <figcaption><span class="node"></span> Feedback em vídeo · cliente da Aruna</figcaption>
+      </figure>
+      <figure class="say media">
+        <img src="assets/feedback1.jpg" alt="Print de WhatsApp: cliente conta que com a Yanna conseguiu focar no que importa" loading="lazy">
+        <figcaption><span class="node"></span> Print real do WhatsApp</figcaption>
+      </figure>
+      <figure class="say quote">
+        <blockquote>A própria Aruna roda os agentes dentro da agência. A IA virou sócia: pesquisa lead, atende cliente, manda relatório, cobra. Sobra cabeça pro estratégico.</blockquote>
+        <figcaption><span class="node"></span> Agência Aruna · usa o próprio sistema</figcaption>
+      </figure>
+      <figure class="say media">
+        <img src="assets/feedback2.jpg" alt="Print de WhatsApp: cliente agradece a implementação e o atendimento rápido" loading="lazy">
+        <figcaption><span class="node"></span> Print real do WhatsApp</figcaption>
+      </figure>
+      <figure class="say quote">
+        <blockquote>Corretora cliente rodando agentes de IA em qualificação de lead, retomada de lead frio e cadência de 10 toques. O dono parou de ser SDR da própria corretora.</blockquote>
+        <figcaption><span class="node"></span> Corretora cliente · operação anônima</figcaption>
+      </figure>
+    </div>
+    <p class="results-note reveal" style="margin-top:26px">// feedbacks reais de clientes · vídeo e prints sem edição · identidade preservada</p>
+  </div>
+</section>
+
+<!-- QUEM ATENDE VOCÊ -->
+<section class="sec" id="quem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">10 , Quem atende você</span>
+      <h2 class="ghost-title reveal d1">A gente é<br>dois sócios<br>na ponta.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Sem comercial terceirizado, sem atendente intermediária. Quem fecha contigo e quem entrega é a gente, do início ao fim.</p>
+    </div>
+    <div class="socios reveal d1">
+      <div class="socio">
+        <div class="avatar"><img src="assets/yanna.jpg" alt="Yanna Bárbara, sócia da Aruna"></div>
+        <div>
+          <h3>Yanna Bárbara</h3>
+          <div class="role">CEO · Operação e Comercial</div>
+          <p>Sou eu quem conversa com você do início ao fim: entendo a dor da corretora, monto a estratégia e acompanho a operação no dia a dia.</p>
+        </div>
+      </div>
+      <div class="socio">
+        <div class="avatar"><img src="assets/lucas.jpg" alt="Lucas Nogueira, sócio da Aruna"></div>
+        <div>
+          <h3>Lucas Nogueira</h3>
+          <div class="role">CTO · Tecnologia e Agentes</div>
+          <p>Quem coloca os agentes pra rodar: implantação, integrações com seguradora e WhatsApp, automações e toda a parte técnica, pra você não precisar pensar nisso.</p>
+        </div>
+      </div>
+    </div>
+    <p class="socios-foot reveal">No acompanhamento, vocês ficam num grupo direto com a gente. <span class="hl">Teus CEO e CTO de IA, imersos na corretora.</span></p>
+  </div>
+</section>
+
+<!-- PREÇO TRANSPARENTE (depois dos resultados) -->
 <section class="sec" id="preco">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num reveal">07 — Preço transparente</span>
+      <span class="sec-num reveal">11 , Preço transparente</span>
       <h2 class="ghost-title reveal d1">R$ 1.500 pra<br>instalar. R$ 200<br>por mês pra rodar.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Tudo incluso. Nada de fatura por fora de IA, hospedagem ou ajuste. <b>A mensalidade entra ativa só depois dos 30 dias de acompanhamento.</b></p>
     </div>
     <div class="price-grid">
       <div class="pcard reveal d1">
-        <span class="tag">Setup — uma vez</span>
+        <span class="tag">Setup , uma vez</span>
         <div class="amt">R$ 1.500</div>
         <div class="when">pagamento único</div>
         <ul class="plist">
-          <li>Sistema operacional customizado pro seu negócio</li>
-          <li>22 a 28 agentes ativos no seu Aruna OS</li>
+          <li>De 8 a 22 agentes de IA customizados pra sua corretora</li>
+          <li>Implantação completa: desenho, teste e go-live</li>
           <li>Instalação completa em 15 dias úteis</li>
-          <li>Integração com WhatsApp, Kommo, Google Drive, email, planilhas e sistemas internos</li>
-          <li>1 hora de treinamento gravado</li>
-          <li>30 dias de suporte intensivo pós-entrega</li>
+          <li>Integração com WhatsApp, planilha de cotação, sistema da seguradora, Drive, email</li>
+          <li>Manual em PDF + 1h de treinamento gravado</li>
+          <li>30 dias de acompanhamento intensivo (grupo de WhatsApp dedicado com a Yanna e o Lucas, CEO e CTO da Aruna)</li>
         </ul>
       </div>
       <div class="pcard feature reveal d2">
-        <span class="ribbon">incluso</span>
-        <span class="tag">Manutenção — mensal</span>
+        <span class="ribbon">depois dos 30 dias</span>
+        <span class="tag">Manutenção , mensal</span>
         <div class="amt">R$ 200<span class="per">/mês</span></div>
-        <div class="when">tudo incluso, sem fatura de fora</div>
+        <div class="when">entra ativa só a partir do Dia 46</div>
         <ul class="plist">
           <li>Hospedagem dos agentes na infraestrutura Aruna</li>
           <li>Custos de IA cobertos (Anthropic, OpenAI). Você nunca recebe fatura de fora.</li>
-          <li>Manutenção sempre que algo na internet mudar</li>
-          <li>2 agentes novos ou ajustes por mês</li>
+          <li>Manutenção quando algo mudar (Meta, WhatsApp, seguradora)</li>
+          <li>2 ajustes ou agentes novos por mês</li>
           <li>Suporte no WhatsApp em horário comercial</li>
           <li>1 reunião mensal de 30 minutos pra revisar</li>
         </ul>
       </div>
     </div>
-    <p class="price-note reveal">// Pix sem juros · Cartão em 12x com juros do cliente</p>
+    <p class="price-note reveal">// Pix sem juros à vista · Cartão em 12x com juros do cliente<br>// A mensalidade entra ativa só depois dos 30 dias de acompanhamento intensivo</p>
   </div>
 </section>
 
@@ -497,7 +747,7 @@ footer{border-top:1px solid var(--line);padding:48px 0}
   <div class="wrap">
     <div class="guarantee reveal">
       <div class="seal"><span class="em">30</span> dias<br>pra você sentir.</div>
-      <p>Se em 30 dias depois da entrega você sentir que pelo menos um processo da sua empresa não virou no automático, a gente devolve. Sem formulário, sem perguntas, sem cara feia.</p>
+      <p>Se em 30 dias depois do go-live você sentir que pelo menos um processo da sua corretora não virou no automático, a gente devolve. Sem formulário, sem perguntas, sem cara feia.</p>
     </div>
   </div>
 </section>
@@ -506,54 +756,28 @@ footer{border-top:1px solid var(--line);padding:48px 0}
 <section class="final" id="cta">
   <div class="aura"></div>
   <div class="wrap">
-    <div class="lockup reveal" style="justify-content:center"><span class="badge">ARUNA OS</span></div>
-    <h2 class="reveal">A sua empresa anda.<br><span class="em">Mas anda sozinha?</span></h2>
-    <p class="sub reveal d1">O Aruna OS é o sistema que faz ela andar. A gente instala, hospeda e mantém. Você só cresce.</p>
-    <a class="btn reveal d2" href="#" data-wa>Quero ver o sistema rodando <span class="arrow">↗</span></a>
+    <div class="lockup reveal"><span class="badge">ARUNA OS</span><span class="pill">Corretora de Seguros</span></div>
+    <h2 class="reveal">Tua corretora anda.<br><span class="em">Mas anda sozinha?</span></h2>
+    <p class="sub reveal d1">Fala com a gente no WhatsApp. A gente responde em até 15 minutos no horário comercial Fortaleza.</p>
+    <div class="final-actions">
+      <a class="btn reveal d2" href="#" data-wa>Quero a proposta <span class="arrow">↗</span></a>
+      <a class="btn ghost reveal d3" href="https://instagram.com/aagenciaaruna" target="_blank" rel="noopener">Ver o Instagram da Aruna</a>
+    </div>
     <p class="fine reveal d3">A gente responde em até 15 minutos · horário comercial Fortaleza</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="#">
-      <svg class="mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="osfg" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/></linearGradient>
-          <filter id="osfgl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          <filter id="osfnngl" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        </defs>
-        <line x1="50" y1="7" x2="15" y2="86" stroke="url(#osfg)" stroke-width="2.6" stroke-linecap="round" filter="url(#osfgl)"/>
-        <line x1="50" y1="7" x2="85" y2="86" stroke="url(#osfg)" stroke-width="2.6" stroke-linecap="round" filter="url(#osfgl)"/>
-        <circle cx="50" cy="7"  r="5"   fill="url(#osfg)" filter="url(#osfnngl)"/>
-        <circle cx="50" cy="7"  r="2.2" fill="#FFF4DE"/>
-        <circle cx="15" cy="86" r="5"   fill="url(#osfg)" filter="url(#osfnngl)"/>
-        <circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/>
-        <circle cx="85" cy="86" r="5"   fill="url(#osfg)" filter="url(#osfnngl)"/>
-        <circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/>
-        <circle cx="29" cy="58" r="3.5" fill="url(#osfg)" filter="url(#osfnngl)"/>
-        <circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/>
-        <circle cx="71" cy="58" r="3.5" fill="url(#osfg)" filter="url(#osfnngl)"/>
-        <circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
-      </svg>
-      <span class="brand-divider"></span>
-      <span class="brand-wordmark">
-        <span class="brand-name">ARUNA<b> OS</b></span>
-        <span class="brand-tag">Automações & I.A</span>
-      </span>
-    </a>
-    <div class="foot-info">
-      <span class="meta">© 2024-2026 · Aruna · Automação e IA</span>
-      <a href="mailto:yanna@agenciaaruna.com">yanna@agenciaaruna.com</a>
-      <a class="ig" href="https://instagram.com/aagenciaaruna" target="_blank" rel="noopener">@aagenciaaruna</a>
-    </div>
+    <a class="brand" href="#"><span class="mark"><span></span><span></span><span></span></span>Aruna<b>&nbsp;OS</b></a>
+    <span class="meta">Agência Aruna · A corretora que anda sozinha</span>
   </div>
 </footer>
 
 <script>
 (function(){
   var phone='5585920033627';
-  var msg=encodeURIComponent('Oi! Vim pela página do Aruna OS e quero ver o sistema rodando.');
+  var msg=encodeURIComponent('Oi! Vim pela página do Aruna OS e quero a proposta.');
   var href='https://wa.me/'+phone+'?text='+msg;
   document.querySelectorAll('[data-wa]').forEach(function(a){a.setAttribute('href',href);a.setAttribute('target','_blank');a.setAttribute('rel','noopener')});
 })();
@@ -573,7 +797,6 @@ footer{border-top:1px solid var(--line);padding:48px 0}
   var nodes=[];
   var startT=null, paused=false, mx=0,my=0;
 
-  // ciclo: segura emaranhado -> organiza -> segura esfera -> emaranha -> repete
   var TANGLE_HOLD=1100, ORGANIZE=2600, SPHERE_HOLD=4200, TANGLE=1800;
   var CYCLE=TANGLE_HOLD+ORGANIZE+SPHERE_HOLD+TANGLE;
 
@@ -592,21 +815,18 @@ footer{border-top:1px solid var(--line);padding:48px 0}
   function build(){
     nodes=[];
     for(var i=0;i<N;i++){
-      // alvo organizado: esfera (Fibonacci)
       var k=i+0.5;
       var phi=Math.acos(1-2*k/N);
       var theta=Math.PI*(1+Math.sqrt(5))*k;
       var tx=Math.sin(phi)*Math.cos(theta);
       var ty=Math.sin(phi)*Math.sin(theta);
       var tz=Math.cos(phi);
-      // emaranhado: aglomerado caótico denso (novelo), nós próximos -> muitas linhas cruzando
       var u=Math.random()*Math.PI*2, v=Math.random()*Math.PI*2, rr=0.25+Math.random()*1.05;
       nodes.push({
         tx:tx,ty:ty,tz:tz,
         cx0:Math.cos(u)*Math.sin(v)*rr,
         cy0:Math.cos(v)*rr,
         cz0:Math.sin(u)*Math.sin(v)*rr,
-        // cada nó com seu drift caótico próprio (emaranhado vivo)
         sx1:0.6+Math.random()*1.2, sy1:0.6+Math.random()*1.2, sz1:0.6+Math.random()*1.2,
         px1:Math.random()*6.28, py1:Math.random()*6.28, pz1:Math.random()*6.28,
         col:flame(i/N), ph:Math.random()*Math.PI*2
@@ -615,7 +835,6 @@ footer{border-top:1px solid var(--line);padding:48px 0}
   }
   function easeIO(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
 
-  // retorna org 0..1 (0=emaranhado, 1=esfera) conforme a fase do ciclo
   function phaseOrg(el){
     var t=el%CYCLE;
     if(t<TANGLE_HOLD)return 0;
@@ -632,7 +851,7 @@ footer{border-top:1px solid var(--line);padding:48px 0}
     if(paused){requestAnimationFrame(frame);return;}
     var el=ts-startT;
     var org=phaseOrg(el);
-    var tangle=1-org;                 // quanto de bagunça
+    var tangle=1-org;
     var rot=el*0.00018+mx*0.6;
     var tilt=-0.32+my*0.5;
 
@@ -641,11 +860,9 @@ footer{border-top:1px solid var(--line);padding:48px 0}
     var proj=[];
     for(var i=0;i<N;i++){
       var n=nodes[i];
-      // posição emaranhada: aglomerado + drift caótico (só quando emaranhado)
       var ex=n.cx0+Math.sin(ts*0.0006*n.sx1+n.px1)*0.5*tangle;
       var ey=n.cy0+Math.sin(ts*0.0006*n.sy1+n.py1)*0.5*tangle;
       var ez=n.cz0+Math.sin(ts*0.0006*n.sz1+n.pz1)*0.5*tangle;
-      // interpola emaranhado -> esfera
       var px=ex+(n.tx-ex)*org;
       var py=ey+(n.ty-ey)*org;
       var pz=ez+(n.tz-ez)*org;
@@ -655,7 +872,6 @@ footer{border-top:1px solid var(--line);padding:48px 0}
       var scale=R*(1.7/(2.6-rz2));
       proj.push({sx:cx+rx*scale,sy:cy+ry*scale,depth:rz2,col:n.col,r:Math.max(.6,(rz2+1.4)*1.5)});
     }
-    // conexões: visíveis sempre (no emaranhado cruzam caótico, na esfera ficam estruturadas)
     var maxd=R*0.98;
     for(var a=0;a<N;a++){
       for(var b=a+1;b<N;b++){
