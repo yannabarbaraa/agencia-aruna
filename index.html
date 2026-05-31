@@ -1,1991 +1,912 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <!-- Google Tag Manager Aruna, substituir GTM-PLACEHOLDER pelo ID real apos criar container no GTM -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PLACEHOLDER');</script>
-  <!-- End Google Tag Manager -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="facebook-domain-verification" content="o2qd0ox1mglfczlf1c76vh72shts7z" />
-  <title>Aruna IA — CRM Kommo, Automação e BI | Operação invisível</title>
-  <meta name="description" content="A Aruna constrói a operação que sustenta crescer: implantação de CRM Kommo, automação de processos e BI em painel. Parceira oficial Kommo.">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://agenciaaruna.com/">
-  <meta property="og:title" content="Aruna IA — Operação invisível em Kommo, Automação e BI">
-  <meta property="og:description" content="Empresa boa tem operação invisível. Número que aparece sozinho, venda que não escapa, tarefa que se faz no automático. Aruna cuida disso.">
-  <meta property="og:image" content="https://agenciaaruna.com/pipeline-kommo.png">
-  <meta property="og:site_name" content="Agência Aruna">
-  <meta property="og:locale" content="pt_BR">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700,800&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aruna OS , Sua corretora andando sozinha</title>
+<meta name="description" content="A Aruna instala de 8 a 22 agentes de IA dentro da sua corretora. A gente desenha, hospeda e mantém. Em 15 dias úteis, tua corretora anda sozinha.">
+<meta property="og:title" content="Aruna OS , Sua corretora andando sozinha">
+<meta property="og:description" content="De 8 a 22 agentes de IA instalados, hospedados e mantidos pela Aruna. Você só comanda.">
+<meta property="og:image" content="assets/hero-network.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500&f[]=general-sans@400,500,600&f[]=jetbrains-mono@400,500&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js';</script>
+<style>
+:root{
+  /* paleta oficial Aruna */
+  --void:#0E0E1C;
+  --void-2:#141425;
+  --void-3:#1b1b30;
+  --panel:#15152a;
+  --cream:#F4EFE8;
+  --ink:#F4EFE8;
+  --ink-mid:rgba(244,239,232,.66);
+  --ink-dim:rgba(244,239,232,.40);
+  --ghost:rgba(244,239,232,.13);
+  --line:rgba(244,239,232,.09);
+  --line-strong:rgba(244,239,232,.18);
+  --coral:#E8485A;
+  --orange:#FF6B35;
+  --amber:#F5A623;
+  --grad:linear-gradient(110deg,#E8485A 0%,#FF6B35 48%,#F5A623 100%);
+  --grad-soft:linear-gradient(110deg,rgba(232,72,90,.16),rgba(255,107,53,.16) 50%,rgba(245,166,35,.16));
+  --flame:#FF6B35;
+  --glow:rgba(255,107,53,.20);
+  --glow-soft:rgba(255,107,53,.12);
+  --maxw:1180px;
+  --display:'Cabinet Grotesk',sans-serif;
+  --body:'General Sans',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--void);color:var(--ink);
+  font-family:var(--body);font-weight:400;line-height:1.6;letter-spacing:.01em;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--orange);color:#160a04}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
 
-    :root {
-      --coral:   #E8485A;
-      --orange:  #FF6B35;
-      --amber:   #F5A623;
-      --dark:    #07070D;
-      --dark-2:  #0E0E1C;
-      --dark-3:  #151526;
-      --light:   #F7F3EE;
-      --muted:   rgba(247,243,238,0.52);
-      --faint:   rgba(247,243,238,0.16);
-      --rule:    rgba(247,243,238,0.08);
-      --grad:    linear-gradient(120deg, var(--coral) 0%, var(--orange) 45%, var(--amber) 100%);
-    }
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(1100px 600px at 78% -8%,rgba(255,107,53,.10),transparent 60%),
+    radial-gradient(900px 500px at 8% 4%,rgba(232,72,90,.07),transparent 60%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 
-    html { scroll-behavior: smooth; }
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+section{position:relative}
 
-    body {
-      background: var(--dark);
-      color: var(--light);
-      font-family: 'Cabinet Grotesk', sans-serif;
-      overflow-x: hidden;
-    }
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-dim)}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-    /* ── GRAIN OVERLAY ── */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      pointer-events: none;
-      opacity: 0.028;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 180px 180px;
-    }
+.ghost-title{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,8.5vw,7rem);line-height:.92;letter-spacing:-.02em;color:var(--ghost);text-transform:uppercase}
 
-    /* ── UTILITY ── */
-    .grad-text {
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+.node{width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 14px var(--orange),0 0 4px var(--amber)}
 
-    /* ── BUTTONS ── */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 15px 30px;
-      background: var(--grad);
-      color: var(--dark);
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 16px 40px rgba(255,107,53,0.3); }
+/* ============ NAV ============ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:18px 28px;background:linear-gradient(180deg,rgba(14,14,28,.92),rgba(14,14,28,0));backdrop-filter:blur(3px)}
+.brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.brand .mark{position:relative;width:14px;height:14px}
+.brand .mark span{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange)}
+.brand .mark span:nth-child(1){left:4px;top:-1px;background:var(--amber);box-shadow:0 0 10px var(--amber)}
+.brand .mark span:nth-child(2){left:-1px;bottom:0;background:var(--coral);box-shadow:0 0 10px var(--coral)}
+.brand .mark span:nth-child(3){right:-1px;bottom:0}
+.brand b{font-weight:800}
+.brand .niche{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);border-left:1px solid var(--line-strong);padding-left:10px;margin-left:6px}
+.nav-cta{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line-strong);border-radius:999px;padding:9px 18px;color:var(--ink-mid);transition:.3s}
+.nav-cta:hover{border-color:var(--orange);color:var(--orange);box-shadow:0 0 24px var(--glow-soft)}
 
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      background: transparent;
-      color: rgba(247,243,238,0.65);
-      font-family: 'General Sans', sans-serif;
-      font-weight: 400;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-ghost:hover { border-color: rgba(255,107,53,0.4); color: var(--light); }
+/* ============ HERO ============ */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:36px;align-items:center;width:100%}
+.lockup{display:inline-flex;align-items:center;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.lockup .badge{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,2.4vw,2rem);letter-spacing:.02em;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lockup .pill{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);
+  border:1px solid var(--line-strong);border-radius:999px;padding:6px 12px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1;letter-spacing:-.025em;color:var(--ink)}
+.hero h1 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.hero .sub{margin-top:26px;max-width:540px;font-size:clamp(1.05rem,1.4vw,1.22rem);color:var(--ink-mid);line-height:1.55}
+.hero .sub b{color:var(--ink);font-weight:600}
+.hero-actions{margin-top:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn{font-family:var(--body);font-weight:600;font-size:16px;letter-spacing:.01em;background:var(--grad);color:#1a0d05;
+  padding:16px 26px;border-radius:12px;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 50px var(--glow),0 0 40px var(--glow-soft)}
+.btn .arrow{transition:.3s}
+.btn:hover .arrow{transform:translate(4px,-4px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong);box-shadow:none}
+.btn.ghost:hover{border-color:var(--orange);color:var(--orange)}
+.hero-fine{margin-top:24px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.8}
+.hero-fine b{color:var(--orange);font-weight:500}
 
-    .btn-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 20px 48px;
-      background: #25D366;
-      color: #fff;
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-whatsapp:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 16px 48px rgba(37,211,102,0.3); }
-    .btn-whatsapp svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;aspect-ratio:1;width:100%;max-width:560px;margin:0 auto}
+.hero-visual .glow{position:absolute;width:74%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 62%);filter:blur(38px);animation:pulse 7s ease-in-out infinite}
+.hero-visual canvas{width:100%;height:100%;position:relative;z-index:2;display:block}
+@keyframes pulse{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.8;transform:scale(1.05)}}
 
-    /* ── CANVAS ── */
-    #constellation-canvas {
-      position: fixed; inset: 0;
-      z-index: 50;
-      pointer-events: none;
-      opacity: 1;
-    }
+/* ============ section frame ============ */
+.sec{padding:120px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:18px;margin-bottom:60px}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content}
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 22px 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      background: rgba(7,7,13,0.75);
-      border-bottom: 1px solid var(--rule);
-      transition: padding 0.3s;
-    }
-    nav.scrolled { padding: 15px 56px; }
+/* ============ DOR ============ */
+.statement-lead{max-width:680px;font-size:1.15rem;color:var(--ink-mid);margin-bottom:44px;line-height:1.6}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.pain{padding:34px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:flex-start;transition:.35s}
+.pain:nth-child(2n){border-right:0}
+.pain:nth-last-child(-n+2){border-bottom:0}
+.pain:hover{background:var(--void-2)}
+.pain .idx{font-family:var(--mono);font-size:13px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;flex:0 0 auto;padding-top:3px;width:26px}
+.pain p{font-size:1.06rem;color:var(--ink-mid);line-height:1.5}
+.pain p b{color:var(--ink);font-weight:600}
+.pain-foot{margin-top:34px;font-size:1.15rem;color:var(--ink);font-weight:500;max-width:720px}
+.pain-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-    .nav-logo svg { width: 38px; height: 38px; }
-    .nav-divider {
-      width: 1px; height: 28px;
-      background: linear-gradient(180deg, transparent, rgba(245,166,35,0.3), transparent);
-    }
-    .nav-wordmark { display: flex; flex-direction: column; gap: 3px; }
-    .nav-name {
-      font-weight: 700; font-size: 18px; letter-spacing: 0.16em; line-height: 1;
-      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .nav-tag {
-      font-family: 'General Sans', sans-serif; font-size: 7px;
-      letter-spacing: 0.3em; color: rgba(255,255,255,0.28); text-transform: uppercase;
-    }
-    .nav-links { display: flex; align-items: center; gap: 40px; }
-    .nav-links a {
-      font-family: 'General Sans', sans-serif; font-size: 10px;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: rgba(255,255,255,0.38); text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--amber); }
+/* ============ STATEMENTS ============ */
+.statement{max-width:900px}
+.statement h2{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4vw,3.3rem);line-height:1.04;letter-spacing:-.02em;color:var(--ink)}
+.statement h2 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.statement .body{margin-top:30px;display:flex;flex-direction:column;gap:18px;font-size:1.18rem;color:var(--ink-mid);max-width:760px;line-height:1.62}
+.statement .body strong{color:var(--ink);font-weight:600}
 
-    /* ── HERO ── */
-    .hero {
-      position: relative; z-index: 1;
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 540px;
-      gap: 0;
-      align-items: center;
-      padding: 130px 56px 80px;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,107,53,0.2), transparent);
-    }
+/* ============ VOCÊ NÃO PRECISA ============ */
+.nope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px}
+.nope{display:flex;gap:14px;align-items:flex-start;padding:22px 24px;border:1px solid var(--line);border-radius:12px;background:var(--void-2);transition:.3s}
+.nope:hover{border-color:var(--line-strong)}
+.nope .x{font-family:var(--display);font-weight:800;color:var(--coral);font-size:1.2rem;line-height:1.2;flex:0 0 auto}
+.nope p{font-size:1.02rem;color:var(--ink);line-height:1.4}
+.nope p b{color:var(--ink);font-weight:600}
+.nope-foot{margin-top:36px;font-size:1.18rem;color:var(--ink);line-height:1.55;max-width:780px}
+.nope-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
 
-    .hero-left {
-      padding-right: 48px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+/* ============ ENCONTROS (3 cards grandes) ============ */
+.encontros{display:flex;flex-direction:column;gap:22px}
+.encontro{border:1px solid var(--line);border-radius:18px;padding:42px 40px;background:linear-gradient(180deg,var(--void-2),var(--void));position:relative;overflow:hidden;transition:.4s}
+.encontro:hover{border-color:var(--line-strong)}
+.encontro::before{content:attr(data-n);position:absolute;top:-30px;right:18px;font-family:var(--display);font-weight:800;font-size:9rem;color:var(--ghost);line-height:1;pointer-events:none}
+.encontro .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.encontro h3{position:relative;z-index:2;font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);margin:14px 0 12px;color:var(--ink);line-height:1.1;max-width:740px}
+.encontro h3 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.encontro .lede{position:relative;z-index:2;font-size:1.06rem;color:var(--ink-mid);line-height:1.55;max-width:780px;margin-bottom:24px}
+.encontro .lede b{color:var(--ink);font-weight:600}
+.entreg-label{position:relative;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:14px}
+.entreg{position:relative;z-index:2;list-style:none;display:flex;flex-direction:column;gap:10px;max-width:820px}
+.entreg li{display:flex;gap:12px;font-size:1rem;color:var(--ink-mid);line-height:1.5;align-items:flex-start}
+.entreg li::before{content:"";flex:0 0 auto;width:18px;height:18px;margin-top:3px;border-radius:5px;background:var(--glow-soft);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.encontro .seal{position:relative;z-index:2;margin-top:22px;font-size:1.05rem;color:var(--ink);font-weight:500}
+.encontro .seal .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
 
-    .hero-kicker {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 36px;
-      animation: fadeUp 0.7s both;
-    }
-    .hero-kicker-line {
-      width: 32px; height: 1px;
-      background: var(--orange);
-    }
-    .hero-kicker-text {
-      font-family: 'General Sans', sans-serif;
-      font-size: 10px; letter-spacing: 0.28em;
-      text-transform: uppercase; color: var(--orange);
-    }
+/* ============ 60 DIAS ============ */
+.sixty{border:1px solid rgba(255,107,53,.3);border-radius:18px;padding:46px 42px;background:linear-gradient(155deg,var(--void-2),var(--void));position:relative;overflow:hidden}
+.sixty::before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:.35;pointer-events:none}
+.sixty>*{position:relative;z-index:2}
+.sixty .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sixty h3{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,2.6vw,2.1rem);margin:14px 0 14px;color:var(--ink);line-height:1.1;max-width:760px}
+.sixty .lede{font-size:1.08rem;color:var(--ink-mid);line-height:1.55;max-width:760px;margin-bottom:26px}
+.sixty .lede b{color:var(--ink);font-weight:600}
+.sixty-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:920px}
+.sixty-list li{display:flex;gap:12px;font-size:1rem;color:var(--ink);line-height:1.45;align-items:flex-start}
+.sixty-list li::before{content:"";flex:0 0 auto;width:18px;height:18px;margin-top:3px;border-radius:5px;background:var(--glow-soft);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.sixty-foot{margin-top:30px;font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--ink-mid)}
+.sixty-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:500}
 
-    .hero-title {
-      font-size: clamp(52px, 6.5vw, 88px);
-      font-weight: 700;
-      line-height: 1.0;
-      letter-spacing: -0.02em;
-      margin-bottom: 32px;
-      animation: fadeUp 0.7s 0.12s both;
-    }
-    .hero-title em {
-      font-style: normal;
-      display: block;
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+/* ============ SQUADS DE CORRETORA ============ */
+.squads{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.squad{background:var(--void);padding:34px 30px 36px;transition:.4s;display:flex;flex-direction:column}
+.squad:hover{background:var(--void-2)}
+.squad .top{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.squad h3{font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ink)}
+.squad .count{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:18px}
+.squad ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.squad ul li{font-size:.96rem;color:var(--ink-mid);line-height:1.45;padding-left:14px;position:relative}
+.squad ul li::before{content:"·";position:absolute;left:0;color:var(--orange);font-weight:700}
+.squad ul li b{color:var(--ink);font-weight:600}
+.squads-cap{margin-top:26px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.04em;line-height:1.7}
+.squads-cap .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-    .hero-sub {
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 1.75;
-      color: var(--muted);
-      max-width: 480px;
-      margin-bottom: 48px;
-      border-left: 2px solid rgba(255,107,53,0.35);
-      padding-left: 20px;
-      animation: fadeUp 0.7s 0.24s both;
-    }
+/* ============ ENTREGÁVEIS (prints reais) ============ */
+.deliver-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.deliver-grid .wide{grid-column:1 / -1}
+.panel-card{border:1px solid var(--line);border-radius:16px;background:var(--void-2);overflow:hidden;position:relative;transition:.4s}
+.panel-card:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+.panel-card .winbar{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line)}
+.winbar .dots{display:flex;gap:6px}
+.winbar .dots i{width:9px;height:9px;border-radius:50%;background:var(--ghost)}
+.winbar .dots i:nth-child(1){background:rgba(232,72,90,.6)}
+.winbar .dots i:nth-child(2){background:rgba(245,166,35,.6)}
+.winbar .dots i:nth-child(3){background:rgba(255,107,53,.6)}
+.winbar .title{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid)}
+.winbar .live{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+.winbar .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange);animation:pulse 2.4s ease-in-out infinite}
+.panel-card .shot{width:100%;height:auto;display:block;background:#0b0b16}
+.deliver-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.deliver-chips .chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-mid);border:1px solid var(--line);border-radius:999px;padding:8px 14px;display:inline-flex;align-items:center;gap:8px}
+.deliver-chips .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 8px var(--orange)}
+.deliver-note{margin-top:26px;font-family:var(--mono);font-size:12px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.6}
 
-    .hero-cta {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      animation: fadeUp 0.7s 0.36s both;
-    }
+/* feedbacks reais (prints WhatsApp) */
+.feed-label{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin:48px 0 18px}
+.feedshots{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.fshot{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--void-2);transition:.4s}
+.fshot:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+.fshot img{width:100%;height:auto;display:block}
+.fshot figcaption{padding:14px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-dim);display:flex;align-items:center;gap:9px;border-top:1px solid var(--line)}
 
-    .hero-right {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: fadeIn 1.2s 0.5s both;
-    }
+/* sobre nós / quem atende */
+.socios{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.socio{display:flex;gap:22px;align-items:flex-start;border:1px solid var(--line);border-radius:18px;padding:30px;background:linear-gradient(180deg,var(--void-2),var(--void));transition:.4s}
+.socio:hover{border-color:var(--line-strong)}
+.socio .avatar{flex:0 0 auto;width:94px;height:94px;border-radius:50%;overflow:hidden;border:1px solid var(--line-strong);position:relative}
+.socio .avatar img{width:100%;height:100%;object-fit:cover}
+.socio h3{font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ink);line-height:1.1}
+.socio .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:7px 0 12px}
+.socio p{font-size:.99rem;color:var(--ink-mid);line-height:1.5}
+.socios-foot{margin-top:30px;font-size:1.12rem;color:var(--ink);line-height:1.55;max-width:760px}
+.socios-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
 
-    .hero-mark-wrap {
-      position: relative;
-      width: 380px; height: 380px;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-    }
-    .hero-mark-ring {
-      position: absolute; inset: 0;
-      border-radius: 50%;
-      border: 1px solid rgba(255,107,53,0.18);
-      animation: spinSlow 18s linear infinite;
-    }
-    .hero-mark-ring-2 {
-      position: absolute;
-      inset: 32px;
-      border-radius: 50%;
-      border: 1px dashed rgba(245,166,35,0.16);
-      animation: spinSlow 12s linear infinite reverse;
-    }
-    .hero-mark-glow {
-      position: absolute;
-      width: 330px; height: 330px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,107,53,0.22) 0%, transparent 70%);
-      animation: breatheGlow 3.5s ease-in-out infinite;
-    }
-    .hero-mark-svg {
-      position: relative; z-index: 1;
-      width: 170px; height: 170px;
-    }
-    .hero-mark-text {
-      position: relative; z-index: 1;
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
-      margin-top: 4px;
-    }
-    .hero-mark-name {
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-weight: 700; font-size: 30px; letter-spacing: 0.2em; line-height: 1;
-      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .hero-mark-tag {
-      font-family: 'General Sans', sans-serif; font-size: 9px;
-      letter-spacing: 0.32em; color: rgba(255,255,255,0.34); text-transform: uppercase;
-    }
+/* ============ O QUE ESTÃO FALANDO (mix) ============ */
+.say-grid{column-count:3;column-gap:20px}
+.say{break-inside:avoid;width:100%;margin:0 0 20px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--void-2);transition:.4s;display:inline-block;vertical-align:top}
+.say:hover{border-color:var(--line-strong)}
+.say.media img{width:100%;height:auto;display:block}
+.say figcaption{padding:13px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-dim);display:flex;align-items:center;gap:9px;border-top:1px solid var(--line)}
+.say.quote{background:linear-gradient(180deg,var(--void-2),var(--void));padding:30px 28px 24px;position:relative}
+.say.quote::before{content:"\201C";position:absolute;top:6px;left:18px;font-family:var(--display);font-weight:800;font-size:3.4rem;line-height:1;color:var(--ghost)}
+.say.quote blockquote{position:relative;z-index:2;font-size:1.04rem;color:var(--ink);line-height:1.5}
+.say.quote figcaption{padding:18px 0 0;border-top:0}
 
-    /* ── ORBIT SYSTEM ── */
-    .orbit-path {
-      position: absolute;
-      width: 460px; height: 460px;
-      top: 50%; left: 50%;
-      margin: -230px 0 0 -230px;
-      border-radius: 50%;
-      border: 1px dashed rgba(255,107,53,0.1);
-      pointer-events: none;
-    }
-    .orbiter {
-      position: absolute;
-      top: 50%; left: 50%;
-      width: 0; height: 0;
-    }
-    .orb1 { animation: spinOrb1 18s linear infinite; }
-    .orb2 { animation: spinOrb2 26s linear infinite; }
-    .orb3 { animation: spinOrb3 34s linear infinite; }
+/* ============ RESULTADOS ============ */
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.result{background:var(--void);padding:34px 28px 32px;transition:.4s}
+.result:hover{background:var(--void-2)}
+.result .rn{font-family:var(--display);font-weight:800;font-size:clamp(2rem,3vw,2.7rem);line-height:1;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.result .rl{margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+.result p{margin-top:18px;font-size:.97rem;color:var(--ink-mid);line-height:1.5}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+.quote{border:1px solid var(--line);border-radius:16px;padding:32px 30px;background:linear-gradient(180deg,var(--void-2),var(--void));position:relative;transition:.4s}
+.quote:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+.quote::before{content:"\201C";position:absolute;top:8px;left:20px;font-family:var(--display);font-weight:800;font-size:4rem;line-height:1;color:var(--ghost)}
+.quote blockquote{font-size:1.05rem;color:var(--ink);line-height:1.5;position:relative;z-index:2}
+.quote figcaption{margin-top:20px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--ink-dim)}
+.results-note{margin-top:26px;font-family:var(--mono);font-size:12px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.6}
 
-    .orbit-badge {
-      position: absolute;
-      top: -230px;
-      left: 0;
-      background: rgba(10,10,20,0.96);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 6px;
-      padding: 13px 17px;
-      white-space: nowrap;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-    }
-    .ob1 { animation: spinBadge1 18s linear infinite; }
-    .ob2 { animation: spinBadge2 26s linear infinite; }
-    .ob3 { animation: spinBadge3 34s linear infinite; }
+/* ============ PRICE ============ */
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pcard{border:1px solid var(--line);border-radius:18px;padding:40px 36px;background:var(--void-2);position:relative;transition:.4s;overflow:hidden}
+.pcard.feature{border-color:rgba(255,107,53,.4)}
+.pcard.feature::before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:.5;pointer-events:none}
+.pcard.feature .ribbon{position:absolute;top:18px;right:-34px;transform:rotate(45deg);background:var(--grad);color:#1a0d05;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.12em;padding:5px 40px;text-transform:uppercase}
+.pcard:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+.pcard>*{position:relative;z-index:2}
+.pcard .tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim)}
+.pcard .amt{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,5vw,3.6rem);color:var(--ink);margin:10px 0 4px;letter-spacing:-.02em}
+.pcard .amt .per{font-family:var(--body);font-weight:500;font-size:1.1rem;color:var(--ink-dim)}
+.pcard.feature .amt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pcard .when{font-size:.95rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:500;margin-bottom:26px;width:fit-content}
+.plist{list-style:none;display:flex;flex-direction:column;gap:14px}
+.plist li{display:flex;gap:13px;font-size:1rem;color:var(--ink-mid);line-height:1.45;align-items:flex-start}
+.plist li::before{content:"";flex:0 0 auto;width:18px;height:18px;margin-top:3px;border-radius:5px;background:var(--glow-soft);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.price-note{margin-top:26px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.7}
 
-    .orbit-badge .s-val {
-      font-size: 18px; font-weight: 700; line-height: 1;
-      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .orbit-badge .s-lab {
-      font-family: 'General Sans', sans-serif; font-size: 7.5px;
-      letter-spacing: 0.2em; color: rgba(255,255,255,0.28);
-      text-transform: uppercase; margin-top: 4px;
-    }
+/* ============ GARANTIA ============ */
+.guarantee{border:1px solid var(--line);border-radius:20px;padding:60px;text-align:center;background:radial-gradient(circle at 50% 0%,var(--glow-soft),transparent 60%)}
+.guarantee .seal{font-family:var(--display);font-weight:800;font-size:clamp(3rem,9vw,6.5rem);color:var(--ink);line-height:.9;letter-spacing:-.03em}
+.guarantee .seal .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.guarantee p{margin:26px auto 0;max-width:660px;font-size:1.18rem;color:var(--ink-mid);line-height:1.6}
 
-    /* Orb 1: CW, starts ~10 o'clock (-70deg) */
-    @keyframes spinOrb1   { from{transform:rotate(-70deg)} to{transform:rotate(290deg)} }
-    @keyframes spinBadge1 { from{transform:translate(-50%,-50%) rotate(70deg)} to{transform:translate(-50%,-50%) rotate(-290deg)} }
-    /* Orb 2: CCW, starts ~4 o'clock (110deg) */
-    @keyframes spinOrb2   { from{transform:rotate(110deg)} to{transform:rotate(-250deg)} }
-    @keyframes spinBadge2 { from{transform:translate(-50%,-50%) rotate(-110deg)} to{transform:translate(-50%,-50%) rotate(250deg)} }
-    /* Orb 3: CW, starts ~7 o'clock (200deg) */
-    @keyframes spinOrb3   { from{transform:rotate(200deg)} to{transform:rotate(560deg)} }
-    @keyframes spinBadge3 { from{transform:translate(-50%,-50%) rotate(-200deg)} to{transform:translate(-50%,-50%) rotate(-560deg)} }
+/* ============ CTA FINAL ============ */
+.final{padding:140px 0 120px;text-align:center;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.final .aura{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 64%);filter:blur(56px);pointer-events:none}
+.final .lockup{margin-bottom:26px;justify-content:center}
+.final h2{position:relative;font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.98;letter-spacing:-.025em;color:var(--ink)}
+.final h2 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.final .sub{position:relative;margin:28px auto 0;max-width:620px;font-size:1.18rem;color:var(--ink-mid);line-height:1.55}
+.final-actions{position:relative;margin-top:40px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.final .fine{position:relative;margin-top:24px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.04em}
 
-    .hero-scroll {
-      position: absolute;
-      bottom: 36px; left: 56px;
-      display: flex; align-items: center; gap: 12px;
-      z-index: 2;
-      animation: fadeUp 0.7s 0.7s both;
-    }
-    .hero-scroll span {
-      font-family: 'General Sans', sans-serif; font-size: 9px;
-      letter-spacing: 0.3em; color: rgba(255,255,255,0.2); text-transform: uppercase;
-    }
-    .scroll-line {
-      width: 40px; height: 1px;
-      background: linear-gradient(90deg, rgba(245,166,35,0.5), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0%,100%{transform:scaleX(1)} 50%{transform:scaleX(1.4);transform-origin:left}
-    }
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--line);padding:48px 0}
+.foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.foot .brand{font-size:16px}
+.foot .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-dim);letter-spacing:.08em;text-transform:uppercase}
 
-    /* ── MARQUEE ── */
-    .marquee-strip {
-      position: relative; z-index: 1;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      padding: 18px 0;
-      overflow: hidden;
-      background: rgba(14,14,28,0.6);
-    }
-    .marquee-track {
-      display: flex;
-      gap: 0;
-      animation: marqueeScroll 28s linear infinite;
-      width: max-content;
-    }
-    .marquee-track:hover { animation-play-state: paused; }
-    @keyframes marqueeScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .marquee-item {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      padding: 0 40px;
-      font-family: 'General Sans', sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: rgba(247,243,238,0.3);
-      white-space: nowrap;
-    }
-    .marquee-dot {
-      width: 4px; height: 4px; border-radius: 50%;
-      background: var(--orange); opacity: 0.5; flex-shrink: 0;
-    }
-    .marquee-item.hi { color: rgba(245,166,35,0.6); }
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
 
-    /* ── SECTION COMMON ── */
-    section { position: relative; z-index: 2; }
+/* responsive */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:8px}
+  .hero-visual{order:-1;margin-bottom:4px}
+  .hero-visual img{max-width:340px}
+  .squads,.price-grid,.pain-grid,.quotes,.nope-grid,.sixty-list,.deliver-grid,.feedshots,.socios{grid-template-columns:1fr}
+  .say-grid{column-count:2}
+  .results-grid{grid-template-columns:repeat(2,1fr)}
+  .pain{border-right:0}
+  .pain:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+  .pain:last-child{border-bottom:0}
+  .squad{padding:30px 26px}
+  .sec{padding:84px 0}
+  .guarantee{padding:44px 24px}
+  .final{padding:100px 0 90px}
+  .encontro{padding:34px 26px}
+  .sixty{padding:34px 26px}
+}
+@media(max-width:520px){
+  .wrap{padding:0 20px}nav{padding:14px 20px}.nav-cta{display:none}
+  .results-grid{grid-template-columns:1fr}
+  .say-grid{column-count:1}
+  .hero{padding:100px 0 60px}.hero-actions{flex-direction:column;align-items:stretch}.btn{justify-content:center}
+  .final-actions{flex-direction:column;align-items:stretch}
+  .brand .niche{display:none}
+}
+</style>
 
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 56px;
-    }
-    .section-label-num {
-      font-family: 'General Sans', sans-serif;
-      font-size: 10px; letter-spacing: 0.2em;
-      color: var(--orange); text-transform: uppercase;
-    }
-    .section-label-rule {
-      flex: 1; height: 1px;
-      background: var(--rule);
-    }
-    .section-label-tag {
-      font-family: 'General Sans', sans-serif;
-      font-size: 9px; letter-spacing: 0.25em;
-      color: rgba(255,255,255,0.2); text-transform: uppercase;
-    }
+<!-- Meta Pixel Code (Aruna) -->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '805389752641637');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=805389752641637&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 
-    /* ── SERVIÇOS ── */
-    .services { padding: 100px 56px; }
-    .services-inner { max-width: 1100px; margin: 0 auto; }
-
-    .services-head {
-      margin-bottom: 72px;
-    }
-    .services-title {
-      font-size: clamp(36px, 5vw, 64px);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-    }
-    .services-sub {
-      margin-top: 20px;
-      font-size: 16px; color: var(--muted);
-      max-width: 480px; line-height: 1.7;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      overflow: hidden;
-      background: var(--rule);
-    }
-    .service-card {
-      background: var(--dark-2);
-      padding: 56px 48px;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-    }
-    .service-card:hover { background: rgba(21,21,38,0.95); }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--grad);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s;
-    }
-    .service-card:hover::before { transform: scaleX(1); }
-
-    .service-big-num {
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 120px;
-      font-weight: 700;
-      line-height: 1;
-      color: rgba(255,255,255,0.03);
-      position: absolute;
-      top: 20px; right: 24px;
-      letter-spacing: -0.05em;
-      pointer-events: none;
-      user-select: none;
-    }
-    .service-label {
-      font-family: 'General Sans', sans-serif;
-      font-size: 9px; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--orange);
-      margin-bottom: 24px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .service-label::before {
-      content: ''; display: block;
-      width: 20px; height: 1px; background: var(--orange);
-    }
-    .service-title {
-      font-size: 30px; font-weight: 700;
-      letter-spacing: -0.01em; line-height: 1.15;
-      margin-bottom: 18px;
-    }
-    .service-desc {
-      font-size: 14px; color: var(--muted); line-height: 1.75;
-      margin-bottom: 36px;
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 36px;
-    }
-    .service-items {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .service-items li {
-      display: flex; align-items: flex-start; gap: 12px;
-      font-size: 13px; color: rgba(247,243,238,0.6); line-height: 1.5;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-    .service-items li:last-child { border-bottom: none; padding-bottom: 0; }
-    .service-items li .item-arrow {
-      color: var(--orange); flex-shrink: 0; font-size: 11px; margin-top: 1px;
-      font-family: 'General Sans', sans-serif;
-    }
-
-    /* ── KOMMO ── */
-    .kommo {
-      padding: 100px 56px;
-      border-top: 1px solid var(--rule);
-    }
-    .kommo-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: center;
-    }
-
-    .kommo-partner-tag {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 8px 16px;
-      border: 1px solid rgba(245,166,35,0.25);
-      border-radius: 3px;
-      background: rgba(245,166,35,0.06);
-      font-family: 'General Sans', sans-serif;
-      font-size: 9px; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--amber);
-      margin-bottom: 28px;
-    }
-    .partner-star { font-size: 10px; }
-
-    .kommo-title {
-      font-size: clamp(30px, 3.5vw, 48px);
-      font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-    .kommo-desc {
-      font-size: 15px; color: var(--muted); line-height: 1.8;
-      margin-bottom: 40px;
-    }
-
-    .kommo-list {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 0;
-      margin-bottom: 40px;
-      border: 1px solid var(--rule);
-      border-radius: 4px; overflow: hidden;
-    }
-    .kommo-list li {
-      display: flex; align-items: center; gap: 16px;
-      padding: 16px 20px;
-      font-size: 14px; color: rgba(247,243,238,0.7);
-      border-bottom: 1px solid var(--rule);
-      transition: background 0.2s;
-    }
-    .kommo-list li:last-child { border-bottom: none; }
-    .kommo-list li:hover { background: rgba(255,107,53,0.04); }
-    .kommo-list li .li-icon { font-size: 16px; flex-shrink: 0; }
-    .kommo-list li .li-arrow {
-      margin-left: auto;
-      font-family: 'General Sans', sans-serif;
-      font-size: 10px; color: rgba(255,255,255,0.15);
-    }
-
-    .kommo-visual { position: relative; }
-    .kommo-card-mock {
-      border-radius: 8px;
-      background: var(--dark-3);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 28px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
-      position: relative; overflow: hidden;
-    }
-    .kommo-card-mock::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: var(--grad);
-    }
-    .mock-header {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 22px; padding-bottom: 18px;
-      border-bottom: 1px solid var(--rule);
-    }
-    .mock-title {
-      font-family: 'General Sans', sans-serif; font-size: 9.5px;
-      letter-spacing: 0.22em; color: rgba(255,255,255,0.28); text-transform: uppercase;
-    }
-    .mock-dots { display: flex; gap: 5px; }
-    .mock-dot { width: 7px; height: 7px; border-radius: 50%; }
-    .mock-dot:nth-child(1) { background: #E8485A; }
-    .mock-dot:nth-child(2) { background: #F5A623; }
-    .mock-dot:nth-child(3) { background: rgba(255,255,255,0.15); }
-    .mock-pipeline { display: flex; flex-direction: column; gap: 8px; }
-    .mock-stage {
-      display: flex; align-items: center; gap: 10px;
-      padding: 11px 14px; border-radius: 6px;
-      background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.04);
-    }
-    .mock-stage-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-    .mock-stage-label {
-      font-family: 'General Sans', sans-serif; font-size: 9.5px;
-      letter-spacing: 0.12em; color: rgba(255,255,255,0.35); flex: 1;
-    }
-    .mock-bar-wrap { width: 80px; height: 3px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
-    .mock-bar { height: 100%; border-radius: 3px; background: var(--grad); }
-    .mock-count {
-      font-family: 'General Sans', sans-serif; font-size: 9px;
-      color: rgba(255,255,255,0.2); letter-spacing: 0.1em;
-    }
-    .kommo-float-badge {
-      position: absolute; bottom: -16px; right: -16px;
-      padding: 14px 20px; border-radius: 6px;
-      background: var(--dark-2); border: 1px solid rgba(245,166,35,0.25);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
-    .badge-val {
-      font-size: 28px; font-weight: 700; line-height: 1;
-      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .badge-lab {
-      font-family: 'General Sans', sans-serif; font-size: 8px;
-      letter-spacing: 0.2em; color: rgba(255,255,255,0.28);
-      text-transform: uppercase; margin-top: 4px;
-    }
-
-    /* ── AUTOMAÇÕES ── */
-    .automacoes {
-      padding: 100px 56px;
-      border-top: 1px solid var(--rule);
-      background: rgba(14,14,28,0.4);
-    }
-    .automacoes-inner { max-width: 1100px; margin: 0 auto; }
-    .automacoes-head { margin-bottom: 64px; }
-    .automacoes-title {
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 700; line-height: 1.05; letter-spacing: -0.02em;
-    }
-
-    .auto-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      overflow: hidden;
-      background: var(--rule);
-    }
-    .auto-card {
-      background: var(--dark);
-      padding: 36px 32px;
-      position: relative;
-      transition: background 0.3s;
-    }
-    .auto-card:hover { background: rgba(14,14,28,0.98); }
-    .auto-card:hover .auto-num { color: rgba(255,107,53,0.15); }
-
-    .auto-num {
-      position: absolute; top: 20px; right: 20px;
-      font-family: 'General Sans', sans-serif;
-      font-size: 11px; letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.07);
-      transition: color 0.3s;
-    }
-    .auto-icon {
-      font-size: 26px; margin-bottom: 16px; display: block;
-      line-height: 1;
-    }
-    .auto-rule {
-      width: 24px; height: 2px;
-      background: var(--grad); margin-bottom: 16px;
-    }
-    .auto-title {
-      font-size: 16px; font-weight: 700; letter-spacing: 0.01em;
-      margin-bottom: 10px; line-height: 1.3;
-    }
-    .auto-desc {
-      font-size: 13px; color: rgba(247,243,238,0.45); line-height: 1.65;
-    }
-
-    /* ── PROCESSO ── */
-    .process { padding: 100px 56px; border-top: 1px solid var(--rule); }
-    .process-inner { max-width: 1100px; margin: 0 auto; }
-    .process-head { margin-bottom: 64px; }
-    .process-title {
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 700; line-height: 1.05; letter-spacing: -0.02em;
-    }
-
-    .process-steps {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; background: var(--rule);
-      border: 1px solid var(--rule); border-radius: 4px; overflow: hidden;
-    }
-    .p-step {
-      background: var(--dark);
-      padding: 40px 32px;
-      position: relative;
-      transition: background 0.3s;
-    }
-    .p-step:hover { background: rgba(14,14,28,0.98); }
-
-    .p-step-num {
-      font-family: 'General Sans', sans-serif;
-      font-size: 40px; font-weight: 400;
-      line-height: 1;
-      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      margin-bottom: 32px; display: block;
-    }
-    .p-step-title {
-      font-size: 17px; font-weight: 700; margin-bottom: 12px; line-height: 1.3;
-    }
-    .p-step-desc {
-      font-size: 13px; color: rgba(247,243,238,0.45); line-height: 1.65;
-    }
-
-    /* ── CTA FINAL ── */
-    .cta-section {
-      padding: 120px 56px;
-      border-top: 1px solid var(--rule);
-      position: relative; overflow: hidden;
-    }
-    .cta-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr auto;
-      gap: 80px; align-items: center;
-    }
-    .cta-glow {
-      position: absolute;
-      width: 600px; height: 400px;
-      background: radial-gradient(ellipse, rgba(232,72,90,0.08) 0%, transparent 70%);
-      top: 50%; left: 30%; transform: translate(-50%,-50%);
-      pointer-events: none;
-    }
-    .cta-eyebrow {
-      font-family: 'General Sans', sans-serif;
-      font-size: 10px; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--orange);
-      margin-bottom: 20px;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .cta-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--orange); }
-    .cta-title {
-      font-size: clamp(36px, 5vw, 68px);
-      font-weight: 700; line-height: 1.0; letter-spacing: -0.02em;
-      margin-bottom: 22px;
-    }
-    .cta-sub {
-      font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 480px;
-    }
-    .cta-action {
-      display: flex; flex-direction: column;
-      align-items: flex-end; gap: 16px;
-      flex-shrink: 0;
-    }
-    .cta-action-note {
-      font-family: 'General Sans', sans-serif;
-      font-size: 9px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: rgba(255,255,255,0.2);
-      text-align: right;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      position: relative; z-index: 1;
-      padding: 48px 56px;
-      border-top: 1px solid var(--rule);
-      display: flex; align-items: center;
-      justify-content: space-between; flex-wrap: wrap; gap: 20px;
-    }
-    .footer-left { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-    .footer-left svg { width: 32px; height: 32px; }
-    .footer-name {
-      font-weight: 700; font-size: 16px; letter-spacing: 0.16em;
-      background: var(--grad); -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .footer-center {
-      display: flex; flex-direction: column; align-items: center; gap: 5px;
-    }
-    .footer-copy {
-      font-family: 'General Sans', sans-serif; font-size: 9.5px;
-      letter-spacing: 0.2em; color: rgba(255,255,255,0.18); text-transform: uppercase;
-    }
-    .footer-email {
-      font-family: 'General Sans', sans-serif; font-size: 8.5px;
-      letter-spacing: 0.15em; color: rgba(255,255,255,0.1);
-      text-decoration: none; text-transform: lowercase;
-      transition: color 0.2s;
-    }
-    .footer-email:hover { color: rgba(255,255,255,0.3); }
-    .footer-social { display: flex; align-items: center; gap: 14px; margin-top: 6px; }
-    .footer-social a {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: 'General Sans', sans-serif; font-size: 8.5px;
-      letter-spacing: 0.15em; color: rgba(255,255,255,0.18);
-      text-decoration: none; transition: color 0.2s;
-    }
-    .footer-social a:hover { color: var(--orange); }
-    .footer-social svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
-    .footer-links { display: flex; gap: 28px; }
-    .footer-links a {
-      font-family: 'General Sans', sans-serif; font-size: 9.5px;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: rgba(255,255,255,0.22); text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--orange); }
-
-    /* ── DEPOIMENTOS ── */
-    .testimonials {
-      padding: 100px 56px;
-      border-top: 1px solid var(--rule);
-      background: rgba(14,14,28,0.4);
-    }
-    .testimonials-inner { max-width: 1100px; margin: 0 auto; }
-    .testimonials-head { margin-bottom: 64px; }
-    .testimonials-title {
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 700; line-height: 1.05; letter-spacing: -0.02em;
-    }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 36px;
-      align-items: start;
-    }
-    .testimonial-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .testimonial-phone {
-      position: relative;
-      width: 100%;
-      max-width: 340px;
-      border-radius: 24px;
-      overflow: hidden;
-      background: var(--dark-2);
-      border: 2px solid rgba(255,255,255,0.08);
-      box-shadow:
-        0 0 0 1px rgba(255,107,53,0.08),
-        0 24px 64px rgba(0,0,0,0.6),
-        0 0 120px rgba(255,107,53,0.06);
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-    .testimonial-phone:hover {
-      transform: translateY(-6px);
-      box-shadow:
-        0 0 0 1px rgba(255,107,53,0.15),
-        0 32px 80px rgba(0,0,0,0.7),
-        0 0 160px rgba(255,107,53,0.1);
-    }
-    .testimonial-phone::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 3px;
-      background: var(--grad);
-      z-index: 2;
-    }
-    .testimonial-phone-header {
-      padding: 14px 20px;
-      background: rgba(7,7,13,0.9);
-      border-bottom: 1px solid var(--rule);
-      display: flex; align-items: center; gap: 10px;
-      z-index: 1; position: relative;
-    }
-    .testimonial-phone-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: #25D366;
-      box-shadow: 0 0 8px rgba(37,211,102,0.4);
-    }
-    .testimonial-phone-name {
-      font-family: 'General Sans', sans-serif;
-      font-size: 9px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: rgba(255,255,255,0.4);
-    }
-    .testimonial-phone-badge {
-      margin-left: auto;
-      font-family: 'General Sans', sans-serif;
-      font-size: 8px; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--orange);
-      padding: 3px 8px;
-      border: 1px solid rgba(255,107,53,0.2);
-      border-radius: 3px;
-    }
-    .testimonial-phone img {
-      width: 100%; height: auto; display: block;
-    }
-    .testimonial-label {
-      margin-top: 20px;
-      text-align: center;
-    }
-    .testimonial-label-title {
-      font-size: 15px; font-weight: 700; margin-bottom: 4px;
-    }
-    .testimonial-label-desc {
-      font-family: 'General Sans', sans-serif;
-      font-size: 9px; letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.28); text-transform: uppercase;
-    }
-    .testimonial-glow {
-      position: absolute;
-      width: 200px; height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: -1;
-    }
-    .testimonial-glow-1 { top: -40px; left: -40px; }
-    .testimonial-glow-2 { bottom: -20px; right: -40px; }
-    .testimonial-phone video {
-      width: 100%; height: auto; display: block;
-    }
-    .testimonial-play-hint {
-      position: absolute;
-      bottom: 60px; left: 50%;
-      transform: translateX(-50%);
-      display: flex; align-items: center; gap: 8px;
-      padding: 8px 16px;
-      background: rgba(7,7,13,0.85);
-      border: 1px solid rgba(255,107,53,0.2);
-      border-radius: 20px;
-      font-family: 'General Sans', sans-serif;
-      font-size: 9px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: rgba(255,255,255,0.5);
-      pointer-events: none;
-      transition: opacity 0.3s;
-      z-index: 2;
-    }
-    .testimonial-play-icon {
-      width: 0; height: 0;
-      border-left: 8px solid var(--orange);
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-    }
-    .testimonial-phone:has(video:not([paused])) .testimonial-play-hint,
-    .testimonial-phone.playing .testimonial-play-hint { opacity: 0; }
-
-    /* ── PORTFOLIO / TELAS ── */
-    .portfolio {
-      padding: 100px 56px;
-      border-top: 1px solid var(--rule);
-    }
-    .portfolio-inner { max-width: 1100px; margin: 0 auto; }
-    .portfolio-head { margin-bottom: 64px; }
-    .portfolio-title {
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 700; line-height: 1.05; letter-spacing: -0.02em;
-    }
-    .portfolio-sub {
-      margin-top: 20px;
-      font-size: 16px; color: var(--muted);
-      max-width: 540px; line-height: 1.7;
-    }
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .portfolio-item {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--rule);
-      background: var(--dark-2);
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .portfolio-item:hover { border-color: rgba(255,107,53,0.25); transform: translateY(-4px); }
-    .portfolio-item.wide { grid-column: span 2; }
-    .portfolio-item img {
-      width: 100%; height: auto; display: block;
-      opacity: 0.85; transition: opacity 0.3s;
-    }
-    .portfolio-item:hover img { opacity: 1; }
-    .portfolio-caption {
-      padding: 20px 24px;
-      border-top: 1px solid var(--rule);
-    }
-    .portfolio-caption-title {
-      font-size: 14px; font-weight: 700; margin-bottom: 4px;
-    }
-    .portfolio-caption-desc {
-      font-family: 'General Sans', sans-serif;
-      font-size: 10px; letter-spacing: 0.15em;
-      color: rgba(255,255,255,0.3); text-transform: uppercase;
-    }
-
-    /* ── FAQ ── */
-    .faq {
-      padding: 100px 56px;
-      border-top: 1px solid var(--rule);
-      background: rgba(14,14,28,0.4);
-    }
-    .faq-inner { max-width: 800px; margin: 0 auto; }
-    .faq-head { margin-bottom: 64px; text-align: center; }
-    .faq-title {
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 700; line-height: 1.05; letter-spacing: -0.02em;
-    }
-    .faq-list {
-      display: flex; flex-direction: column; gap: 0;
-      border: 1px solid var(--rule);
-      border-radius: 8px; overflow: hidden;
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--rule);
-      background: var(--dark-2);
-      transition: background 0.3s;
-    }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-item:hover { background: rgba(21,21,38,0.95); }
-    .faq-question {
-      width: 100%;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 20px;
-      padding: 24px 28px;
-      background: none; border: none; cursor: pointer;
-      text-align: left; color: var(--light);
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 16px; font-weight: 700;
-      line-height: 1.4;
-    }
-    .faq-question:hover { color: var(--amber); }
-    .faq-arrow {
-      flex-shrink: 0;
-      width: 24px; height: 24px;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'General Sans', sans-serif;
-      font-size: 18px; color: var(--orange);
-      transition: transform 0.3s;
-    }
-    .faq-item.open .faq-arrow { transform: rotate(45deg); }
-    .faq-answer {
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-    }
-    .faq-item.open .faq-answer { max-height: 300px; }
-    .faq-answer-inner {
-      padding: 0 28px 24px;
-      font-size: 14px; color: var(--muted);
-      line-height: 1.75;
-    }
-
-    /* ── RESPONSIVE ADDITIONS ── */
-    @media (max-width: 1024px) {
-      .testimonials,.portfolio,.faq { padding: 80px 32px; }
-      .testimonials-grid { grid-template-columns: 1fr 1fr; }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .portfolio-item.wide { grid-column: span 1; }
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
-    }
-    @keyframes spinSlow { to { transform: rotate(360deg); } }
-    @keyframes breatheGlow {
-      0%,100% { transform: scale(1); opacity: 1; }
-      50%      { transform: scale(1.1); opacity: 0.7; }
-    }
-    @keyframes nodePulse {
-      0%,100% { opacity: 1; } 50% { opacity: 0.6; }
-    }
-    .hero-mark-svg circle.apex { animation: nodePulse 2.8s ease-in-out infinite; }
-    .hero-mark-svg circle.bl   { animation: nodePulse 2.8s ease-in-out infinite 0.4s; }
-    .hero-mark-svg circle.br   { animation: nodePulse 2.8s ease-in-out infinite 0.8s; }
-
-    .reveal {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
-    .reveal-d3 { transition-delay: 0.3s; }
-    .reveal-d4 { transition-delay: 0.4s; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; padding: 120px 32px 80px; }
-      .hero-right { display: none; }
-      .hero-left { padding-right: 0; }
-      nav { padding: 18px 32px; }
-      nav.scrolled { padding: 14px 32px; }
-      .nav-links { display: none; }
-      .services,.kommo,.automacoes,.process,.cta-section { padding: 80px 32px; }
-      footer { padding: 40px 32px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .kommo-inner { grid-template-columns: 1fr; gap: 48px; }
-      .kommo-visual { display: none; }
-      .auto-grid { grid-template-columns: 1fr 1fr; }
-      .process-steps { grid-template-columns: 1fr 1fr; }
-      .cta-inner { grid-template-columns: 1fr; gap: 40px; }
-      .cta-action { align-items: flex-start; }
-    }
-    @media (max-width: 640px) {
-      .hero { padding: 110px 24px 60px; }
-      .hero-mark-wrap { width: 280px; height: 280px; }
-      .hero-mark-svg { width: 160px; height: 160px; }
-      .hero-mark-glow { width: 240px; height: 240px; }
-      .orbit-path { width: 340px; height: 340px; margin: -170px 0 0 -170px; }
-      .orbit-badge { top: -170px; padding: 11px 15px; }
-      .auto-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr; }
-      .hero-cta { flex-direction: column; align-items: flex-start; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '805389752641637');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=805389752641637&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+<!-- Aruna Tracking Client -->
+<script src="https://aruna-atendimento.yanna-barbara.workers.dev/track.js" defer></script>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) Aruna -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLACEHOLDER"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
-  <canvas id="constellation-canvas"></canvas>
+<nav>
+  <a class="brand" href="#"><span class="mark"><span></span><span></span><span></span></span>Aruna<b>&nbsp;OS</b></a>
+  <a class="nav-cta" href="#cta">Fale com a Aruna</a>
+</nav>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <a href="#" class="nav-logo">
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ng" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse">
-            <stop offset="0%"   stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/>
-          </linearGradient>
-          <filter id="ngl" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="nngl" x="-120%" y="-120%" width="340%" height="340%">
-            <feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <line x1="50" y1="7" x2="15" y2="86" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round" filter="url(#ngl)"/>
-        <line x1="50" y1="7" x2="85" y2="86" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round" filter="url(#ngl)"/>
-        <circle cx="50" cy="7"  r="5"   fill="url(#ng)" filter="url(#nngl)"/>
-        <circle cx="50" cy="7"  r="2.2" fill="#FFF4DE"/>
-        <circle cx="15" cy="86" r="5"   fill="url(#ng)" filter="url(#nngl)"/>
-        <circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/>
-        <circle cx="85" cy="86" r="5"   fill="url(#ng)" filter="url(#nngl)"/>
-        <circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/>
-        <circle cx="29" cy="58" r="3.5" fill="url(#ng)" filter="url(#nngl)"/>
-        <circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/>
-        <circle cx="71" cy="58" r="3.5" fill="url(#ng)" filter="url(#nngl)"/>
-        <circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
-      </svg>
-      <div class="nav-divider"></div>
-      <div class="nav-wordmark">
-        <div class="nav-name">ARUNA</div>
-        <div class="nav-tag">Automações & I.A</div>
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="lockup reveal in">
+        <span class="badge">ARUNA OS</span>
+        <span class="pill">Corretora de Seguros</span>
       </div>
-    </a>
-    <div class="nav-links">
-      <a href="#servicos">Serviços</a>
-      <a href="#kommo">Kommo CRM</a>
-      <a href="#portfolio">Resultados</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contato">Contato</a>
-    </div>
-    <a href="https://wa.me/5585920033627?text=Ol%C3%A1!%20Vim%20do%20site%20da%20Aruna%20e%20quero%20conversar" class="btn-primary">Falar com a Aruna</a>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-left">
-      <div class="hero-kicker">
-        <div class="hero-kicker-line"></div>
-        <span class="hero-kicker-text">Kommo CRM · Automação · BI</span>
+      <h1 class="reveal in d1">Você não precisa de mais lead.<br><span class="em">Você precisa parar de perder os que já tem.</span></h1>
+      <p class="sub reveal in d2">A Aruna instala de <b>8 a 22 agentes de IA</b> dentro da sua corretora. A gente desenha, hospeda e mantém. <b>Em 15 dias úteis, tua corretora anda sozinha.</b></p>
+      <div class="hero-actions reveal in d3">
+        <a class="btn" href="#" data-wa>Quero a solução <span class="arrow">↗</span></a>
+        <a class="btn ghost" href="#como">Como funciona</a>
       </div>
-      <h1 class="hero-title">
-        BI, CRM ou<br>
-        Automação?<br>
-        <em>Pelo que dói mais primeiro.</em>
-      </h1>
-      <p class="hero-sub">
-        Lead perdido entre canais, número que ninguém entende, tarefa repetitiva sugando hora da equipe — a Aruna implanta o produto que resolve o que tá sangrando agora. Um por vez, com prazo definido.
-      </p>
-      <div class="hero-cta">
-        <a href="/kommo/" class="btn-primary">Conhecer o Kommo →</a>
-        <a href="/bi/" class="btn-ghost">Conhecer o BI →</a>
-        <a href="/automacao/" class="btn-ghost">Conhecer Automação →</a>
-      </div>
+      <p class="hero-fine reveal in d4">15 dias úteis pra entregar · <b>30 dias</b> de acompanhamento intensivo com a Yanna e o Lucas.</p>
     </div>
-
-    <div class="hero-right">
-      <div class="hero-mark-wrap">
-        <div class="hero-mark-ring"></div>
-        <div class="hero-mark-ring-2"></div>
-        <div class="hero-mark-glow"></div>
-        <svg class="hero-mark-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="hg" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse">
-              <stop offset="0%"   stop-color="#E8485A"/>
-              <stop offset="45%"  stop-color="#FF6B35"/>
-              <stop offset="100%" stop-color="#F5A623"/>
-            </linearGradient>
-            <radialGradient id="hbg" cx="50%" cy="60%" r="45%">
-              <stop offset="0%"   stop-color="#FF6B35" stop-opacity="0.14"/>
-              <stop offset="100%" stop-color="#FF6B35" stop-opacity="0"/>
-            </radialGradient>
-            <filter id="hglow" x="-60%" y="-60%" width="220%" height="220%">
-              <feGaussianBlur stdDeviation="3" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <filter id="hnglow" x="-120%" y="-120%" width="340%" height="340%">
-              <feGaussianBlur stdDeviation="4" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <ellipse cx="50" cy="62" rx="42" ry="38" fill="url(#hbg)"/>
-          <line x1="15" y1="86" x2="4"  y2="97" stroke="url(#hg)" stroke-width="0.7" stroke-opacity="0.25"/>
-          <line x1="15" y1="86" x2="3"  y2="75" stroke="url(#hg)" stroke-width="0.7" stroke-opacity="0.25"/>
-          <line x1="85" y1="86" x2="96" y2="97" stroke="url(#hg)" stroke-width="0.7" stroke-opacity="0.25"/>
-          <line x1="85" y1="86" x2="97" y2="75" stroke="url(#hg)" stroke-width="0.7" stroke-opacity="0.25"/>
-          <line x1="50" y1="7"  x2="50" y2="0"  stroke="url(#hg)" stroke-width="0.7" stroke-opacity="0.25"/>
-          <line x1="50" y1="7"  x2="15" y2="86" stroke="url(#hg)" stroke-width="2.6" stroke-linecap="round" filter="url(#hglow)"/>
-          <line x1="50" y1="7"  x2="85" y2="86" stroke="url(#hg)" stroke-width="2.6" stroke-linecap="round" filter="url(#hglow)"/>
-          <circle class="apex" cx="50" cy="7"  r="5"   fill="url(#hg)" filter="url(#hnglow)"/>
-          <circle cx="50" cy="7"  r="2.2" fill="#FFF4DE"/>
-          <circle class="bl"   cx="15" cy="86" r="5"   fill="url(#hg)" filter="url(#hnglow)"/>
-          <circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/>
-          <circle class="br"   cx="85" cy="86" r="5"   fill="url(#hg)" filter="url(#hnglow)"/>
-          <circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/>
-          <circle cx="29" cy="58" r="3.5" fill="url(#hg)" filter="url(#hnglow)"/>
-          <circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/>
-          <circle cx="71" cy="58" r="3.5" fill="url(#hg)" filter="url(#hnglow)"/>
-          <circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
-        </svg>
-        <div class="hero-mark-text">
-          <div class="hero-mark-name">ARUNA</div>
-          <div class="hero-mark-tag">Automações &amp; I.A</div>
-        </div>
-        <div class="orbit-path"></div>
-        <div class="orbiter orb1">
-          <div class="orbit-badge ob1">
-            <div class="s-val">24/7</div>
-            <div class="s-lab">IA ativa</div>
-          </div>
-        </div>
-        <div class="orbiter orb2">
-          <div class="orbit-badge ob2">
-            <div class="s-val">+2×</div>
-            <div class="s-lab">Leads respondidos</div>
-          </div>
-        </div>
-        <div class="orbiter orb3">
-          <div class="orbit-badge ob3">
-            <div class="s-val">80%</div>
-            <div class="s-lab">Menos manual</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <div class="marquee-item hi">Kommo CRM<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Automação de WhatsApp<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Dashboard em Tempo Real<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Funil de Vendas<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Make · n8n · Zapier<span class="marquee-dot"></span></div>
-      <div class="marquee-item">KPIs de Vendas<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Distribuição de Leads<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Follow-up Automático<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Relatórios Automáticos<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Pipeline Visual<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Integração de Sistemas<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Métricas em Painel<span class="marquee-dot"></span></div>
-      <!-- duplicate for seamless loop -->
-      <div class="marquee-item hi">Kommo CRM<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Automação de WhatsApp<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Dashboard em Tempo Real<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Funil de Vendas<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Make · n8n · Zapier<span class="marquee-dot"></span></div>
-      <div class="marquee-item">KPIs de Vendas<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Distribuição de Leads<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Follow-up Automático<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Relatórios Automáticos<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Pipeline Visual<span class="marquee-dot"></span></div>
-      <div class="marquee-item hi">Integração de Sistemas<span class="marquee-dot"></span></div>
-      <div class="marquee-item">Métricas em Painel<span class="marquee-dot"></span></div>
+    <div class="hero-visual reveal in d2">
+      <div class="glow"></div>
+      <canvas id="orb" aria-label="Aruna OS , agentes de IA se organizando em rede"></canvas>
     </div>
   </div>
+</header>
 
-  <!-- SERVIÇOS -->
-  <section class="services" id="servicos">
-    <div class="services-inner">
-      <div class="section-label reveal">
-        <span class="section-label-num">01</span>
-        <div class="section-label-rule"></div>
-        <span class="section-label-tag">Serviços</span>
-      </div>
-      <div class="services-head reveal reveal-d1">
-        <h2 class="services-title">
-          Três alavancas.<br><span class="grad-text">Um único objetivo: você vender mais.</span>
-        </h2>
-        <p class="services-sub">Sem promessa vaga. Cada entrega tem resultado mensurável, prazo definido e ROI que se paga no primeiro mês.</p>
-      </div>
-      <div class="services-grid">
-        <a href="/kommo/" class="service-card reveal reveal-d1" style="text-decoration:none; color:inherit; cursor:pointer;">
-          <span class="service-big-num">01</span>
-          <div class="service-label">Kommo CRM</div>
-          <h3 class="service-title">
-            CRM que sua equipe<br><span class="grad-text">realmente vai usar</span>
-          </h3>
-          <p class="service-desc">
-            A maioria dos CRMs vira planilha cara porque ninguém configura direito.
-            A gente monta o funil, conecta os canais, treina o time e fica junto até o faturamento mudar.
-          </p>
-          <ul class="service-items">
-            <li><span class="item-arrow">→</span> Pipeline de vendas montado sob medida</li>
-            <li><span class="item-arrow">→</span> WhatsApp, Instagram e e-mail integrados</li>
-            <li><span class="item-arrow">→</span> Salesbot com IA dentro do Kommo</li>
-            <li><span class="item-arrow">→</span> Treinamento completo da equipe comercial</li>
-            <li><span class="item-arrow">→</span> Suporte e otimização contínua</li>
-          </ul>
-          <div style="margin-top:24px; font-family:'General Sans', sans-serif; font-size:10px; letter-spacing:.22em; color:var(--orange); text-transform:uppercase;">Ver detalhes →</div>
-        </a>
-        <a href="/automacao/" class="service-card reveal reveal-d2" style="text-decoration:none; color:inherit; cursor:pointer;">
-          <span class="service-big-num">02</span>
-          <div class="service-label">Automação de Processos</div>
-          <h3 class="service-title">
-            Tarefa repetida<br><span class="grad-text">não precisa ser feita no braço</span>
-          </h3>
-          <p class="service-desc">
-            Atendimento, follow-up, integração entre sistemas, disparo no WhatsApp — tudo rodando sozinho,
-            do jeito que sua operação precisa. Menos esquecimento, menos erro, menos gente travada no operacional.
-          </p>
-          <ul class="service-items">
-            <li><span class="item-arrow">→</span> Chatbots treinados com a voz da sua marca</li>
-            <li><span class="item-arrow">→</span> WhatsApp, e-mail e redes no piloto automático</li>
-            <li><span class="item-arrow">→</span> Integrações via Make, n8n e Zapier</li>
-            <li><span class="item-arrow">→</span> Qualificação e scoring de leads com IA</li>
-            <li><span class="item-arrow">→</span> Follow-up que nunca esquece de ninguém</li>
-          </ul>
-          <div style="margin-top:24px; font-family:'General Sans', sans-serif; font-size:10px; letter-spacing:.22em; color:var(--orange); text-transform:uppercase;">Ver detalhes →</div>
-        </a>
-        <a href="/bi/" class="service-card reveal reveal-d3" style="text-decoration:none; color:inherit; cursor:pointer;">
-          <span class="service-big-num">03</span>
-          <div class="service-label">BI &amp; Dashboards</div>
-          <h3 class="service-title">
-            Você vai saber<br><span class="grad-text">o que está dando dinheiro</span>
-          </h3>
-          <p class="service-desc">
-            Chega de "acho que está vendendo bem". Painéis visuais conectados à operação mostram
-            onde investir mais, o que cortar e qual vendedor está travando o funil — em tempo real.
-          </p>
-          <ul class="service-items">
-            <li><span class="item-arrow">→</span> Dashboards conectados ao CRM e ferramentas</li>
-            <li><span class="item-arrow">→</span> KPIs de vendas, atendimento e marketing</li>
-            <li><span class="item-arrow">→</span> Alertas automáticos quando algo sai da meta</li>
-            <li><span class="item-arrow">→</span> Relatórios entregues por WhatsApp ou e-mail</li>
-            <li><span class="item-arrow">→</span> Looker Studio, Metabase e Power BI</li>
-          </ul>
-          <div style="margin-top:24px; font-family:'General Sans', sans-serif; font-size:10px; letter-spacing:.22em; color:var(--orange); text-transform:uppercase;">Ver detalhes →</div>
-        </a>
+<!-- DIAGNÓSTICO -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">01 , O diagnóstico</span>
+      <h2 class="ghost-title reveal d1">Sua corretora<br>tá vazando<br>onde dói.</h2>
+    </div>
+    <p class="statement-lead reveal">A conta nunca é o lead. A conta é o que acontece depois que o lead chega. Olha se você se reconhece:</p>
+    <div class="pain-grid reveal d1">
+      <div class="pain"><span class="idx">01</span><p><b>Lead pediu cotação e sumiu.</b> Ninguém retomou.</p></div>
+      <div class="pain"><span class="idx">02</span><p><b>Cliente ia renovar</b> e foi pro concorrente.</p></div>
+      <div class="pain"><span class="idx">03</span><p>Cobrança atrasou e <b>o cliente esqueceu de pagar.</b></p></div>
+      <div class="pain"><span class="idx">04</span><p>Cliente disse <b>"vou pensar" há 2 meses.</b> Ninguém voltou.</p></div>
+      <div class="pain"><span class="idx">05</span><p>Sua equipe vive pedindo aumento <b>porque tá sufocada.</b></p></div>
+      <div class="pain"><span class="idx">06</span><p>Quando você sai uma semana, <b>a corretora para.</b></p></div>
+    </div>
+    <p class="pain-foot reveal d1">Se você se reconheceu em 2 dessas, sua corretora não tem sistema. <span class="hl">Tem você.</span></p>
+  </div>
+</section>
+
+<!-- INSIGHT -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num reveal">02 , O insight</span></div>
+    <div class="statement">
+      <h2 class="reveal">Não é a sua equipe. Não é o seu funil.<br><span class="em">É a sua corretora rodando manual enquanto os concorrentes automatizaram tudo.</span></h2>
+      <div class="body">
+        <p class="reveal d1">O concorrente que tá te tirando renovação não é mais esperto. Ele só tem <strong>agente respondendo lead em 30 segundos</strong>, <strong>cadência de 11 toques recuperando "vou pensar"</strong> e <strong>aviso de renovação saindo 30 dias antes do vencimento</strong>, sem ninguém lembrar de apertar nada.</p>
+        <p class="reveal d2">Enquanto isso, a sua corretora depende de você abrir o WhatsApp, lembrar do follow-up, sentar pra cobrar, conferir comissão da seguradora. <strong>Tira você do meio, ela para.</strong></p>
+        <p class="reveal d3">O Aruna OS troca isso. Os agentes assumem o que rodava em você. <strong>Você volta a ser dono. Não operador.</strong></p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- KOMMO -->
-  <section class="kommo" id="kommo">
-    <div class="kommo-inner">
-      <div class="kommo-content">
-        <div class="section-label reveal" style="margin-bottom:32px;">
-          <span class="section-label-num">02</span>
-          <div class="section-label-rule"></div>
-          <span class="section-label-tag">Parceria Oficial</span>
-        </div>
-        <div class="kommo-partner-tag reveal reveal-d1">
-          <span class="partner-star">★</span> Parceira Especialista Kommo CRM
-        </div>
-        <h2 class="kommo-title reveal reveal-d1">
-          Quantos leads você<br>perdeu essa semana<br><span class="grad-text">por falta de resposta?</span>
-        </h2>
-        <p class="kommo-desc reveal reveal-d2">
-          O Kommo junta WhatsApp, Instagram, e-mail e telefone num único painel.
-          Nenhuma conversa cai no esquecimento. Com nossa implantação, sua equipe começa a vender
-          diferente já na primeira semana.
-        </p>
-        <ul class="kommo-list reveal reveal-d3">
-          <li>
-            <span class="li-icon">💬</span>
-            WhatsApp, Instagram e e-mail num único painel
-            <span class="li-arrow">→</span>
-          </li>
-          <li>
-            <span class="li-icon">🤖</span>
-            Salesbot com IA que qualifica e responde sozinho
-            <span class="li-arrow">→</span>
-          </li>
-          <li>
-            <span class="li-icon">📊</span>
-            Pipeline visual com métricas em tempo real
-            <span class="li-arrow">→</span>
-          </li>
-          <li>
-            <span class="li-icon">🔗</span>
-            Mais de 200 integrações nativas via API
-            <span class="li-arrow">→</span>
-          </li>
+<!-- VOCÊ NÃO PRECISA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">03 , Antes da entrega</span>
+      <h2 class="ghost-title reveal d1">Você NÃO<br>precisa.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Quebra a primeira objeção antes dela nascer. Olha tudo que <b>não</b> tá no seu colo:</p>
+    </div>
+    <div class="nope-grid reveal d1">
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>contratar dev</b>.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>aprender prompt, n8n nem API</b>.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>hospedar nada</b> no seu servidor.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>"tirar uma semana pra implantar"</b>.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>ficar arrumando</b> quando algo quebrar.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>trocar de sistema</b> de gestão.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>entender de IA</b>.</p></div>
+      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>treinar a equipe</b> em ferramenta nova.</p></div>
+    </div>
+    <p class="nope-foot reveal d1">A Aruna instala, hospeda, mantém e atualiza. <span class="hl">Você só usa pelo WhatsApp.</span></p>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA: 3 ENCONTROS -->
+<section class="sec" id="como">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">04 , Como funciona</span>
+      <h2 class="ghost-title reveal d1">3 encontros.<br>Do desenho<br>ao ar.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:640px">Você e o seu sócio (se tiver) no Google Meet gravado com a Yanna e o Lucas. A Aruna executa, você acompanha e valida cada passo.</p>
+    </div>
+    <div class="encontros">
+      <div class="encontro reveal d1" data-n="1">
+        <span class="k">Encontro 01 · Dia 1 · 1h30</span>
+        <h3>A gente desenha o <span class="em">retorno automático</span> da sua corretora.</h3>
+        <p class="lede">A gente entra na sua operação, entende cada processo e desenha na sua frente o retorno automático, setor por setor. Já saímos com a lista confirmada de quais agentes vão começar a rodar. E conforme vai mapeando, a gente já aponta onde tá vazando e como corrigir.</p>
+        <p class="entreg-label">A gente passa setor por setor:</p>
+        <ul class="entreg">
+          <li><b>Comercial:</b> a cadência que traz o retorno, o principal. Lead respondido na hora, follow-up que não para, qualificação e fechamento, desenhados ponta a ponta.</li>
+          <li><b>Financeiro:</b> as recorrências estão automatizadas? A conciliação de Pix e cartão é automática? Tem DRE? Os relatórios estão funcionando de verdade? A gente acerta tudo isso.</li>
+          <li><b>Pós-venda:</b> renovação avisada antes do vencimento, retomada de cliente sumido, atendimento que não deixa ninguém esperando.</li>
+          <li>Lista confirmada dos 8 a 22 agentes que começam a rodar na sua corretora.</li>
+          <li>Os gargalos de hoje mapeados, com o plano de correção já na mão.</li>
         </ul>
-        <div class="reveal reveal-d4">
-          <a href="https://wa.me/5585920033627?text=Quero%20recuperar%20os%20leads%20que%20est%C3%A3o%20escapando%20da%20minha%20opera%C3%A7%C3%A3o" class="btn-primary">Quero recuperar esses leads</a>
+        <p class="seal"><span class="hl">O retorno automático da sua corretora desenhado e confirmado.</span> ✓</p>
+      </div>
+      <div class="encontro reveal d2" data-n="2">
+        <span class="k">Encontro 02 · Dia 8 · 1h</span>
+        <h3>A gente garante que o que <span class="em">fechamos tá rodando.</span></h3>
+        <p class="lede">A gente coloca o que foi desenhado pra rodar e garante, na sua frente, que tá funcionando. Aqui é onde a gente vê o que ainda precisa melhorar pra automatização ficar completa, e acerta o que faltou no caminho, porque sempre aparece um detalhe que só some quando bate na operação real.</p>
+        <p class="entreg-label">Você sai com:</p>
+        <ul class="entreg">
+          <li>Os agentes fechados no Encontro 1 rodando e testados com você</li>
+          <li>O que ainda precisa de ajuste pra automação ficar 100% mapeado</li>
+          <li>Os pontos que faltaram no caminho identificados e corrigidos</li>
+          <li>Tom, regras e integrações afinados ao vivo com você</li>
+        </ul>
+        <p class="seal"><span class="hl">Sua corretora automatizada rodando, com os ajustes finais resolvidos.</span> ✓</p>
+      </div>
+      <div class="encontro reveal d3" data-n="3">
+        <span class="k">Encontro 03 · Dia 15 · 1h</span>
+        <h3>A gente valida tudo, <span class="em">de ponta a ponta.</span></h3>
+        <p class="lede">Revisa tudo dos dois primeiros, confere se está tudo entregue e de acordo, e a corretora já estará no ar.</p>
+        <p class="entreg-label">Você sai com:</p>
+        <ul class="entreg">
+          <li>Cada agente combinado validado e funcionando em produção real</li>
+          <li>Checklist de entrega conferido item por item com você</li>
+          <li>Sistema 100% no ar: WhatsApp real, financeiro e pós-venda rodando</li>
+          <li>Painel ao vivo no seu celular pra acompanhar tudo</li>
+        </ul>
+        <p class="seal"><span class="hl">Tudo validado, tudo de acordo. Sua corretora anda sozinha.</span> ✓</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 60 DIAS DE ACOMPANHAMENTO -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">05 , E depois</span>
+      <h2 class="ghost-title reveal d1">+30 dias<br>de mão dada.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">A entrega não termina no go-live. Por 30 dias depois, você tem a Yanna e o Lucas num grupo de WhatsApp dedicado à tua corretora.</p>
+    </div>
+    <div class="sixty reveal d1">
+      <span class="k">Acompanhamento intensivo · 30 dias · sem cobrar nada extra</span>
+      <h3>A Yanna e o Lucas, <span class="grad-text">CEO e CTO da Aruna</span>, imersos na tua corretora.</h3>
+      <p class="lede">Mudou regra, mudou seguradora, mudou processo, equipe precisa de ajuste, agente respondendo torto, integração caiu? <b>É só mandar mensagem.</b> A gente resolve.</p>
+      <ul class="sixty-list">
+        <li>Grupo dedicado no WhatsApp com a Yanna e o Lucas, CEO e CTO da Aruna, imersos na tua corretora</li>
+        <li>Yanna e Lucas respondendo em até 1h em horário comercial Fortaleza</li>
+        <li>Ajustes ilimitados nos agentes durante os 30 dias</li>
+        <li>Relatório semanal automatizado no teu WhatsApp toda segunda 8h</li>
+        <li>2 reuniões de 1h agendáveis quando você quiser</li>
+        <li>Manutenção sempre que algo mudar na internet (Meta, WhatsApp, seguradora)</li>
+        <li>Mensalidade só entra ativa depois desses 30 dias</li>
+      </ul>
+      <p class="sixty-foot">// <span class="hl">Tudo incluso.</span> Nada cobrado a mais. A mensalidade entra ativa só a partir do Dia 46.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SQUAD DE CORRETORA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">06 , Dentro do sistema</span>
+      <h2 class="ghost-title reveal d1">22 agentes.<br>3 squads.<br>Sob medida.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">A gente monta o squad da sua corretora logo no começo, junto com você. De 8 a 22 agentes, depende do porte e do briefing. Cardápio completo:</p>
+    </div>
+    <div class="squads">
+      <div class="squad reveal d1">
+        <div class="top"><span class="node"></span><h3>Comercial</h3></div>
+        <p class="count">Até 7 agentes</p>
+        <ul>
+          <li><b>SDR WhatsApp:</b> responde lead novo em até 30s, qualifica em 5 perguntas, encaminha pro corretor certo</li>
+          <li><b>Pesquisa de lead:</b> monta dossiê de 1 página antes do corretor falar</li>
+          <li><b>Cotação rápida com áudio:</b> primeira dúvida respondida em 10 min, com áudio humano</li>
+          <li><b>Follow-up 11 toques:</b> ressuscita lead frio em sequência de 21 dias</li>
+          <li><b>Reentrada na base:</b> alerta vendedor quando ex-lead volta a clicar</li>
+          <li><b>Quebra de "vou pensar":</b> volta no cliente esquecido com argumento novo</li>
+          <li><b>Alerta de lead parado:</b> notifica corretor se lead não responde em 24h</li>
+        </ul>
+      </div>
+      <div class="squad reveal d2">
+        <div class="top"><span class="node"></span><h3>Financeiro</h3></div>
+        <p class="count">Até 6 agentes</p>
+        <ul>
+          <li><b>Cobrança automatizada:</b> lembra cliente 3 dias antes, no dia e depois</li>
+          <li><b>Conciliação Pix/cartão:</b> verifica entrada, dá baixa automática</li>
+          <li><b>Lembrete de boleto/parcela:</b> avisa 5 dias antes, com link pra pagar</li>
+          <li><b>Acompanhamento de comissão:</b> detecta atraso da seguradora e alerta</li>
+          <li><b>Relatório financeiro mensal:</b> DRE pronto dia 5 de cada mês</li>
+          <li><b>Fluxo de caixa preditivo:</b> projeta 30/60/90 dias e alerta se ficar negativo</li>
+        </ul>
+      </div>
+      <div class="squad reveal d3">
+        <div class="top"><span class="node"></span><h3>Pós-venda</h3></div>
+        <p class="count">Até 9 agentes</p>
+        <ul>
+          <li><b>Renovação automática:</b> avisa 30 dias antes, agenda revisão (essencial)</li>
+          <li><b>Retomada de cliente esquecido:</b> identifica quem sumiu há +60 dias</li>
+          <li><b>FAQ inteligente:</b> dúvidas frequentes respondidas em até 30s</li>
+          <li><b>Triagem inicial:</b> classifica mensagem e encaminha pra pessoa certa</li>
+          <li><b>NPS pós-venda:</b> pesquisa 30 dias depois do contrato</li>
+          <li><b>Onboarding cliente novo:</b> sequência de 5-7 mensagens nos primeiros 7 dias</li>
+          <li><b>Aniversário do contrato:</b> mensagem no dia certo, sem ninguém lembrar</li>
+          <li><b>Endosso/sinistro:</b> detecta pelo texto e escala pra humano em segundos</li>
+          <li><b>Pesquisa de satisfação semestral:</b> abre conversa pra reter cliente</li>
+        </ul>
+      </div>
+    </div>
+    <p class="squads-cap reveal">// <span class="hl">22 agentes disponíveis.</span> Sua corretora recebe de 8 a 22, conforme porte. Cada agente com um trabalho claro, ativo 24/7, mantido pela Aruna.</p>
+  </div>
+</section>
+
+<!-- EXEMPLOS DE ENTREGÁVEIS -->
+<section class="sec" id="entregaveis">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">07 , Exemplos de entregáveis</span>
+      <h2 class="ghost-title reveal d1">Você vê tudo<br>rodando ao vivo.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:640px">Não é caixa-preta. Você abre o painel no celular e enxerga os agentes trabalhando, o funil enchendo e a renovação sendo garantida. Um exemplo do que você recebe:</p>
+    </div>
+    <div class="deliver-grid reveal d1">
+      <div class="panel-card wide">
+        <div class="winbar"><span class="dots"><i></i><i></i><i></i></span><span class="title">Painel comercial</span><span class="live">ao vivo</span></div>
+        <img class="shot" src="assets/dashboard-comercial.png" alt="Painel comercial da corretora: total de vendas, meta diária, ticket médio, conversão e lead time" loading="lazy">
+      </div>
+      <div class="panel-card">
+        <div class="winbar"><span class="dots"><i></i><i></i><i></i></span><span class="title">Painel executivo · BI</span></div>
+        <img class="shot" src="assets/dashboard-executivo.png" alt="Painel executivo com faturamento, ranking de cliente e faturamento por origem e produto" loading="lazy">
+      </div>
+      <div class="panel-card">
+        <div class="winbar"><span class="dots"><i></i><i></i><i></i></span><span class="title">Funil de vendas · Kommo</span></div>
+        <img class="shot" src="assets/pipeline-kommo.png" alt="Funil de vendas no Kommo: entrada, em atendimento, qualificado, negociação e compra posterior" loading="lazy">
+      </div>
+    </div>
+    <div class="deliver-chips reveal d2">
+      <span class="chip">Mapa visual da corretora</span>
+      <span class="chip">Catálogo dos agentes</span>
+      <span class="chip">Diagrama de integrações</span>
+      <span class="chip">Regras de cada agente</span>
+      <span class="chip">Manual em PDF</span>
+      <span class="chip">Relatório semanal automático</span>
+    </div>
+    <p class="deliver-note reveal">// painéis reais de operação que a Aruna entrega · você acessa pelo celular, com alertas em tempo real</p>
+  </div>
+</section>
+
+<!-- RESULTADOS REAIS -->
+<section class="sec" id="resultados">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">08 , Resultados reais</span>
+      <h2 class="ghost-title reveal d1">O que muda<br>quando os agentes<br>assumem.</h2>
+    </div>
+
+    <div class="results-grid">
+      <div class="result reveal d1">
+        <div class="rn">+15%</div>
+        <div class="rl">de faturamento</div>
+        <p>Menos lead perdido no caminho, follow-up que não falha, cotação saindo na hora. A venda para de vazar.</p>
+      </div>
+      <div class="result reveal d2">
+        <div class="rn">até -30%</div>
+        <div class="rl">de custo com folha</div>
+        <p>A operação roda com time enxuto. Menos contratação só pra dar conta do operacional repetitivo.</p>
+      </div>
+      <div class="result reveal d3">
+        <div class="rn">renovação</div>
+        <div class="rl">não escapa mais</div>
+        <p>Aviso de renovação saindo 30 dias antes do vencimento. Cliente lembrado, agendado, retido.</p>
+      </div>
+      <div class="result reveal d4">
+        <div class="rn">a equipe<br>respira</div>
+        <div class="rl">sai do modo bombeiro</div>
+        <p>O time sai do "apagar incêndio". O que era manual e cansativo, agora simplesmente anda.</p>
+      </div>
+    </div>
+
+    <p class="results-note reveal">// resultados observados em corretoras que rodam o Aruna OS · varia conforme operação e nicho · faturamento medido, demais como padrão observado</p>
+  </div>
+</section>
+
+<!-- O QUE ESTÃO FALANDO -->
+<section class="sec" id="falam">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">09 , O que estão falando</span>
+      <h2 class="ghost-title reveal d1">Veja o que<br>as pessoas e as<br>empresas falam.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Feedback real de quem já trabalhou com a gente. Vídeo, print e palavra de cliente, sem retoque.</p>
+    </div>
+    <div class="say-grid reveal d1">
+      <figure class="say media">
+        <img src="assets/feedback-video.gif" alt="Vídeo de feedback de cliente da Aruna" loading="lazy">
+        <figcaption><span class="node"></span> Feedback em vídeo · cliente da Aruna</figcaption>
+      </figure>
+      <figure class="say media">
+        <img src="assets/feedback1.jpg" alt="Print de WhatsApp: cliente conta que com a Yanna conseguiu focar no que importa" loading="lazy">
+        <figcaption><span class="node"></span> Print real do WhatsApp</figcaption>
+      </figure>
+      <figure class="say quote">
+        <blockquote>A própria Aruna roda os agentes dentro da agência. A IA virou sócia: pesquisa lead, atende cliente, manda relatório, cobra. Sobra cabeça pro estratégico.</blockquote>
+        <figcaption><span class="node"></span> Agência Aruna · usa o próprio sistema</figcaption>
+      </figure>
+      <figure class="say media">
+        <img src="assets/feedback2.jpg" alt="Print de WhatsApp: cliente agradece a implementação e o atendimento rápido" loading="lazy">
+        <figcaption><span class="node"></span> Print real do WhatsApp</figcaption>
+      </figure>
+      <figure class="say quote">
+        <blockquote>Corretora cliente rodando agentes de IA em qualificação de lead, retomada de lead frio e cadência de 10 toques. O dono parou de ser SDR da própria corretora.</blockquote>
+        <figcaption><span class="node"></span> Corretora cliente · operação anônima</figcaption>
+      </figure>
+    </div>
+    <p class="results-note reveal" style="margin-top:26px">// feedbacks reais de clientes · vídeo e prints sem edição · identidade preservada</p>
+  </div>
+</section>
+
+<!-- QUEM ATENDE VOCÊ -->
+<section class="sec" id="quem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">10 , Quem atende você</span>
+      <h2 class="ghost-title reveal d1">A gente é<br>dois sócios<br>na ponta.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Sem comercial terceirizado, sem atendente intermediária. Quem fecha contigo e quem entrega é a gente, do início ao fim.</p>
+    </div>
+    <div class="socios reveal d1">
+      <div class="socio">
+        <div class="avatar"><img src="assets/yanna.jpg" alt="Yanna Bárbara, sócia da Aruna"></div>
+        <div>
+          <h3>Yanna Bárbara</h3>
+          <div class="role">CEO · Operação e Comercial</div>
+          <p>Sou eu quem conversa com você do início ao fim: entendo a dor da corretora, monto a estratégia e acompanho a operação no dia a dia.</p>
         </div>
       </div>
-
-      <div class="kommo-visual reveal reveal-d2">
-        <div class="kommo-card-mock" style="padding:0; overflow:hidden;">
-          <div class="mock-header">
-            <span class="mock-title">Kommo · Pipeline de Vendas Real</span>
-            <div class="mock-dots">
-              <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
-            </div>
-          </div>
-          <img src="pipeline-kommo.png?v=2" alt="Pipeline de vendas real no Kommo CRM" style="width:100%; height:auto; display:block;">
-        </div>
-        <div class="kommo-float-badge">
-          <div class="badge-val">3×</div>
-          <div class="badge-lab">Mais rápido no 1º contato</div>
+      <div class="socio">
+        <div class="avatar"><img src="assets/lucas.jpg" alt="Lucas Nogueira, sócio da Aruna"></div>
+        <div>
+          <h3>Lucas Nogueira</h3>
+          <div class="role">CTO · Tecnologia e Agentes</div>
+          <p>Quem coloca os agentes pra rodar: implantação, integrações com seguradora e WhatsApp, automações e toda a parte técnica, pra você não precisar pensar nisso.</p>
         </div>
       </div>
     </div>
-  </section>
+    <p class="socios-foot reveal">No acompanhamento, vocês ficam num grupo direto com a gente. <span class="hl">Teus CEO e CTO de IA, imersos na corretora.</span></p>
+  </div>
+</section>
 
-  <!-- AUTOMAÇÕES -->
-  <section class="automacoes" id="automacoes">
-    <div class="automacoes-inner">
-      <div class="section-label reveal">
-        <span class="section-label-num">03</span>
-        <div class="section-label-rule"></div>
-        <span class="section-label-tag">Automações</span>
+<!-- PREÇO TRANSPARENTE (depois dos resultados) -->
+<section class="sec" id="preco">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num reveal">11 , Preço transparente</span>
+      <h2 class="ghost-title reveal d1">R$ 1.500 pra<br>instalar. R$ 200<br>por mês pra rodar.</h2>
+      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Tudo incluso. Nada de fatura por fora de IA, hospedagem ou ajuste. <b>A mensalidade entra ativa só depois dos 30 dias de acompanhamento.</b></p>
+    </div>
+    <div class="price-grid">
+      <div class="pcard reveal d1">
+        <span class="tag">Setup , uma vez</span>
+        <div class="amt">R$ 1.500</div>
+        <div class="when">pagamento único</div>
+        <ul class="plist">
+          <li>De 8 a 22 agentes de IA customizados pra sua corretora</li>
+          <li>Implantação completa: desenho, teste e go-live</li>
+          <li>Instalação completa em 15 dias úteis</li>
+          <li>Integração com WhatsApp, planilha de cotação, sistema da seguradora, Drive, email</li>
+          <li>Manual em PDF + 1h de treinamento gravado</li>
+          <li>30 dias de acompanhamento intensivo (grupo de WhatsApp dedicado com a Yanna e o Lucas, CEO e CTO da Aruna)</li>
+        </ul>
       </div>
-      <div class="automacoes-head reveal reveal-d1">
-        <h2 class="automacoes-title">
-          Tudo isso rodando<br><span class="grad-text">sem você precisar abrir o computador</span>
-        </h2>
-      </div>
-      <div class="auto-grid">
-        <div class="auto-card reveal reveal-d1">
-          <span class="auto-num">01</span>
-          <span class="auto-icon">🤖</span>
-          <div class="auto-rule"></div>
-          <div class="auto-title">Atendimento 24h com IA</div>
-          <p class="auto-desc">Seu cliente manda mensagem às 23h e recebe resposta em segundos — não no dia seguinte. A IA qualifica, responde e agenda com a voz da sua marca.</p>
-        </div>
-        <div class="auto-card reveal reveal-d2">
-          <span class="auto-num">02</span>
-          <span class="auto-icon">📲</span>
-          <div class="auto-rule"></div>
-          <div class="auto-title">WhatsApp que Vende Sozinho</div>
-          <p class="auto-desc">Follow-up, promoção, lembrete de carrinho — tudo no app que seu cliente já abre 80× por dia. Sem depender de humano.</p>
-        </div>
-        <div class="auto-card reveal reveal-d3">
-          <span class="auto-num">03</span>
-          <span class="auto-icon">🔗</span>
-          <div class="auto-rule"></div>
-          <div class="auto-title">Sistemas que Conversam</div>
-          <p class="auto-desc">CRM, e-commerce, ERP e marketing trocando dados automaticamente. Acabou o copiar-e-colar entre 5 abas diferentes.</p>
-        </div>
-        <div class="auto-card reveal reveal-d1">
-          <span class="auto-num">04</span>
-          <span class="auto-icon">📧</span>
-          <div class="auto-rule"></div>
-          <div class="auto-title">E-mail na Hora Certa</div>
-          <p class="auto-desc">A pessoa visitou seu site, abriu o orçamento, mas não respondeu? O e-mail certo dispara sozinho — sem você lembrar.</p>
-        </div>
-        <div class="auto-card reveal reveal-d2">
-          <span class="auto-num">05</span>
-          <span class="auto-icon">📊</span>
-          <div class="auto-rule"></div>
-          <div class="auto-title">Números sem Pedir</div>
-          <p class="auto-desc">Acordou e quer saber quanto vendeu ontem? O dashboard já está lá — atualizado, visual e sem precisar ligar pra ninguém.</p>
-        </div>
-        <div class="auto-card reveal reveal-d3">
-          <span class="auto-num">06</span>
-          <span class="auto-icon">🎯</span>
-          <div class="auto-rule"></div>
-          <div class="auto-title">Foco em Quem Vai Comprar</div>
-          <p class="auto-desc">A IA analisa comportamento e diz quem está pronto pra fechar. Sua equipe para de perder tempo com curioso e foca em quem tem cartão na mão.</p>
-        </div>
+      <div class="pcard feature reveal d2">
+        <span class="ribbon">depois dos 30 dias</span>
+        <span class="tag">Manutenção , mensal</span>
+        <div class="amt">R$ 200<span class="per">/mês</span></div>
+        <div class="when">entra ativa só a partir do Dia 46</div>
+        <ul class="plist">
+          <li>Hospedagem dos agentes na infraestrutura Aruna</li>
+          <li>Custos de IA cobertos (Anthropic, OpenAI). Você nunca recebe fatura de fora.</li>
+          <li>Manutenção quando algo mudar (Meta, WhatsApp, seguradora)</li>
+          <li>2 ajustes ou agentes novos por mês</li>
+          <li>Suporte no WhatsApp em horário comercial</li>
+          <li>1 reunião mensal de 30 minutos pra revisar</li>
+        </ul>
       </div>
     </div>
-  </section>
+    <p class="price-note reveal">// Pix sem juros à vista · Cartão em 12x com juros do cliente<br>// A mensalidade entra ativa só depois dos 30 dias de acompanhamento intensivo</p>
+  </div>
+</section>
 
-  <!-- PROCESSO -->
-  <section class="process" id="processo">
-    <div class="process-inner">
-      <div class="section-label reveal">
-        <span class="section-label-num">04</span>
-        <div class="section-label-rule"></div>
-        <span class="section-label-tag">Como funciona</span>
-      </div>
-      <div class="process-head reveal reveal-d1">
-        <h2 class="process-title">
-          Do primeiro papo à operação rodando<br><span class="grad-text">em quatro passos.</span>
-        </h2>
-      </div>
-      <div class="process-steps">
-        <div class="p-step reveal reveal-d1">
-          <span class="p-step-num">01</span>
-          <div class="p-step-title">Raio-X</div>
-          <p class="p-step-desc">Ouvimos sua operação e achamos o gargalo — onde você está perdendo lead, tempo ou dinheiro agora.</p>
-        </div>
-        <div class="p-step reveal reveal-d2">
-          <span class="p-step-num">02</span>
-          <div class="p-step-title">Estratégia</div>
-          <p class="p-step-desc">Você recebe um plano com prazo real, ROI estimado e tudo que vai ser entregue — antes de investir um centavo.</p>
-        </div>
-        <div class="p-step reveal reveal-d3">
-          <span class="p-step-num">03</span>
-          <div class="p-step-title">Implantação</div>
-          <p class="p-step-desc">Configuramos tudo, integramos, testamos com dados reais e entregamos funcionando. Nada de "tá quase pronto".</p>
-        </div>
-        <div class="p-step reveal reveal-d4">
-          <span class="p-step-num">04</span>
-          <div class="p-step-title">Crescimento</div>
-          <p class="p-step-desc">Acompanhamos os números com você. O que funciona, escala. O que não funciona, a gente ajusta — sem custo surpresa.</p>
-        </div>
-      </div>
+<!-- GARANTIA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="guarantee reveal">
+      <div class="seal"><span class="em">30</span> dias<br>pra você sentir.</div>
+      <p>Se em 30 dias depois do go-live você sentir que pelo menos um processo da sua corretora não virou no automático, a gente devolve. Sem formulário, sem perguntas, sem cara feia.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- DEPOIMENTOS -->
-  <section class="testimonials" id="depoimentos">
-    <div class="testimonials-inner">
-      <div class="section-label reveal">
-        <span class="section-label-num">05</span>
-        <div class="section-label-rule"></div>
-        <span class="section-label-tag">Quem já trabalhou com a gente</span>
-      </div>
-      <div class="testimonials-head reveal reveal-d1">
-        <h2 class="testimonials-title">
-          Não acredite na gente.<br><span class="grad-text">Acredite em quem já contratou.</span>
-        </h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal reveal-d1">
-          <div class="testimonial-glow testimonial-glow-1"></div>
-          <div class="testimonial-phone">
-            <div class="testimonial-phone-header">
-              <div class="testimonial-phone-dot"></div>
-              <span class="testimonial-phone-name">Feedback real · WhatsApp</span>
-              <span class="testimonial-phone-badge">Verificado</span>
-            </div>
-            <img src="feedback1.jpg" alt="Depoimento de cliente sobre implantação de CRM — destaca proatividade e suporte da Yanna">
-          </div>
-          <div class="testimonial-label">
-            <div class="testimonial-label-title">Implantação de CRM</div>
-            <div class="testimonial-label-desc">Migração de sistema anterior</div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-d2">
-          <div class="testimonial-glow testimonial-glow-2"></div>
-          <div class="testimonial-phone">
-            <div class="testimonial-phone-header">
-              <div class="testimonial-phone-dot"></div>
-              <span class="testimonial-phone-name">Feedback real · WhatsApp</span>
-              <span class="testimonial-phone-badge">Verificado</span>
-            </div>
-            <img src="feedback2.jpg" alt="Depoimento de cliente sobre chatbot com IA — destaca atendimento rápido e disponibilidade">
-          </div>
-          <div class="testimonial-label">
-            <div class="testimonial-label-title">Chatbot com IA</div>
-            <div class="testimonial-label-desc">Automação de atendimento</div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-d3">
-          <div class="testimonial-glow testimonial-glow-1"></div>
-          <div class="testimonial-phone">
-            <div class="testimonial-phone-header">
-              <div class="testimonial-phone-dot"></div>
-              <span class="testimonial-phone-name">Depoimento em vídeo</span>
-              <span class="testimonial-phone-badge">Verificado</span>
-            </div>
-            <img src="feedback-video.gif" alt="Depoimento em vídeo de cliente satisfeito com a Aruna">
-          </div>
-          <div class="testimonial-label">
-            <div class="testimonial-label-title">Depoimento em Vídeo</div>
-            <div class="testimonial-label-desc">Cliente real · Sem roteiro</div>
-          </div>
-        </div>
-      </div>
+<!-- CTA FINAL -->
+<section class="final" id="cta">
+  <div class="aura"></div>
+  <div class="wrap">
+    <div class="lockup reveal"><span class="badge">ARUNA OS</span><span class="pill">Corretora de Seguros</span></div>
+    <h2 class="reveal">Tua corretora anda.<br><span class="em">Mas anda sozinha?</span></h2>
+    <p class="sub reveal d1">Fala com a gente no WhatsApp. A gente responde em até 15 minutos no horário comercial Fortaleza.</p>
+    <div class="final-actions">
+      <a class="btn reveal d2" href="#" data-wa>Quero a proposta <span class="arrow">↗</span></a>
+      <a class="btn ghost reveal d3" href="https://instagram.com/aagenciaaruna" target="_blank" rel="noopener">Ver o Instagram da Aruna</a>
     </div>
-  </section>
+    <p class="fine reveal d3">A gente responde em até 15 minutos · horário comercial Fortaleza</p>
+  </div>
+</section>
 
-  <!-- PORTFÓLIO DE TELAS -->
-  <section class="portfolio" id="portfolio">
-    <div class="portfolio-inner">
-      <div class="section-label reveal">
-        <span class="section-label-num">06</span>
-        <div class="section-label-rule"></div>
-        <span class="section-label-tag">Na prática</span>
-      </div>
-      <div class="portfolio-head reveal reveal-d1">
-        <h2 class="portfolio-title">
-          Isso aqui não é mockup.<br><span class="grad-text">É o que a gente entrega.</span>
-        </h2>
-        <p class="portfolio-sub">Telas reais de projetos implantados pela Aruna. CRM configurado, dashboard rodando, funil convertendo.</p>
-      </div>
-      <div class="portfolio-grid">
-        <div class="portfolio-item wide reveal reveal-d1">
-          <img src="pipeline-kommo.png?v=2" alt="Pipeline de vendas no Kommo CRM com etapas de funil configuradas" loading="lazy">
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-title">Pipeline de Vendas — Kommo CRM</div>
-            <div class="portfolio-caption-desc">Funil completo com etapas personalizadas · Leads organizados por estágio</div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal reveal-d2">
-          <img src="dashboard-comercial.png?v=2" alt="Dashboard comercial com métricas de vendas em tempo real" loading="lazy">
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-title">Dashboard Comercial</div>
-            <div class="portfolio-caption-desc">Meta diária · Ticket médio · Conversão · Lead time</div>
-          </div>
-        </div>
-        <div class="portfolio-item reveal reveal-d3">
-          <img src="dashboard-executivo.png?v=2" alt="Dashboard executivo com funil de vendas e faturamento por origem" loading="lazy">
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-title">Dashboard Executivo</div>
-            <div class="portfolio-caption-desc">ARR · MRR · Ranking de closers · Faturamento por origem</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#"><span class="mark"><span></span><span></span><span></span></span>Aruna<b>&nbsp;OS</b></a>
+    <span class="meta">Agência Aruna · A corretora que anda sozinha</span>
+  </div>
+</footer>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="faq-inner">
-      <div class="faq-head reveal">
-        <h2 class="faq-title">
-          Perguntas que todo mundo faz<br><span class="grad-text">antes de fechar.</span>
-        </h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            Quanto tempo leva pra ficar tudo funcionando?
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Depende do escopo, mas a maioria dos projetos está rodando em 2 a 4 semanas.
-              A gente define prazo antes de começar — e cumpre. Se falar que entrega dia 15, entrega dia 15.
-              Não é promessa genérica, é compromisso com data no calendário.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal reveal-d1">
-          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            E se eu precisar de suporte depois da implantação?
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Você não vai ficar sozinho. O atendimento da Aruna é o que mais elogiam — resposta rápida
-              no WhatsApp, disponibilidade real pra resolver problema, e proatividade pra antecipar o que
-              pode dar errado. A gente não some depois de entregar.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            Vocês entregam exatamente o que combinam?
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Sim — e esse é nosso maior diferencial. Antes de começar, você recebe um plano detalhado
-              com tudo que vai ser entregue, prazo e ROI estimado. Nada de escopo que muda sozinho
-              ou surpresa no meio do caminho. O que foi combinado é o que vai pro ar.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal reveal-d2">
-          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            Preciso entender de tecnologia pra usar?
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Não. A gente configura tudo, treina sua equipe e deixa rodando. Se surgir dúvida,
-              é só chamar no WhatsApp. Nosso trabalho é traduzir a tecnologia pro seu dia a dia —
-              não te encher de termos técnicos.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            Quanto custa?
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Cada projeto tem escopo e valor diferente. Em vez de tabela genérica, a gente faz uma
-              conversa de 15 minutos e monta uma proposta personalizada com tudo que você precisa —
-              sem gordura. Você sabe exatamente onde cada real vai ser investido.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item reveal reveal-d3">
-          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            E se eu não gostar do resultado?
-            <span class="faq-arrow">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              A gente trabalha com validação em cada etapa. Você acompanha o progresso, aprova antes
-              de ir pro ar, e pede ajuste quando quiser. Ninguém entrega coisa pronta que você nunca viu.
-              E se algo não sair como esperado, a gente ajusta junto com você até ficar certo.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+(function(){
+  var phone='5585920033627';
+  var msg=encodeURIComponent('Oi! Vim pela página do Aruna OS e quero a proposta.');
+  var href='https://wa.me/'+phone+'?text='+msg;
+  document.querySelectorAll('[data-wa]').forEach(function(a){a.setAttribute('href',href);a.setAttribute('target','_blank');a.setAttribute('rel','noopener')});
+})();
+(function(){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){io.observe(el)});
+})();
+/* ===== Esfera de agentes: emaranhado -> ordem, em loop ===== */
+(function(){
+  var canvas=document.getElementById('orb');if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var DPR=Math.min(window.devicePixelRatio||1,2);
+  var W=0,H=0,R=0,cx=0,cy=0;
+  var N=64;
+  var nodes=[];
+  var startT=null, paused=false, mx=0,my=0;
 
-  <!-- CTA FINAL -->
-  <section class="cta-section" id="contato">
-    <div class="cta-glow"></div>
-    <div class="cta-inner">
-      <div>
-        <div class="cta-eyebrow reveal">Operação invisível não nasce sozinha.</div>
-        <h2 class="cta-title reveal reveal-d1">
-          Você decide por onde<br>
-          <span class="grad-text">a Aruna entra.</span>
-        </h2>
-        <p class="cta-sub reveal reveal-d2">
-          Kommo, automação ou BI — começamos pelo que tá doendo mais.
-          Manda mensagem no WhatsApp e a gente conversa sem pressa.
-        </p>
-      </div>
-      <div class="cta-action reveal reveal-d2">
-        <a href="https://wa.me/5585920033627?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20por%20onde%20come%C3%A7ar%20com%20a%20Aruna" class="btn-whatsapp">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.961 1.395 5.658L.057 23.882l6.362-1.312A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.947 0-3.764-.528-5.321-1.438l-.38-.226-3.938.812.84-3.847-.249-.396A9.937 9.937 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-          Quero saber como a Aruna funciona
-        </a>
-        <p class="cta-action-note">Resposta no WhatsApp em até 1 hora útil</p>
-      </div>
-    </div>
-  </section>
+  var TANGLE_HOLD=1100, ORGANIZE=2600, SPHERE_HOLD=4200, TANGLE=1800;
+  var CYCLE=TANGLE_HOLD+ORGANIZE+SPHERE_HOLD+TANGLE;
 
-  <!-- FOOTER -->
-  <footer>
-    <a href="#" class="footer-left">
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="fg" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/>
-          </linearGradient>
-          <filter id="fgl" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="fngl" x="-120%" y="-120%" width="340%" height="340%">
-            <feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <line x1="50" y1="7" x2="15" y2="86" stroke="url(#fg)" stroke-width="2.6" stroke-linecap="round" filter="url(#fgl)"/>
-        <line x1="50" y1="7" x2="85" y2="86" stroke="url(#fg)" stroke-width="2.6" stroke-linecap="round" filter="url(#fgl)"/>
-        <circle cx="50" cy="7"  r="5"   fill="url(#fg)" filter="url(#fngl)"/><circle cx="50" cy="7"  r="2.2" fill="#FFF4DE"/>
-        <circle cx="15" cy="86" r="5"   fill="url(#fg)" filter="url(#fngl)"/><circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/>
-        <circle cx="85" cy="86" r="5"   fill="url(#fg)" filter="url(#fngl)"/><circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/>
-        <circle cx="29" cy="58" r="3.5" fill="url(#fg)" filter="url(#fngl)"/><circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/>
-        <circle cx="71" cy="58" r="3.5" fill="url(#fg)" filter="url(#fngl)"/><circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
-      </svg>
-      <div class="footer-name">ARUNA IA</div>
-    </a>
-    <div class="footer-center">
-      <span class="footer-copy">© 2024-2026 · Aruna · Automação e IA</span>
-      <a href="mailto:yanna@agenciaaruna.com" class="footer-email">yanna@agenciaaruna.com</a>
-      <div class="footer-social">
-        <a href="https://instagram.com/aagenciaaruna" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 011.47.958c.453.453.78.898.958 1.47.163.46.349 1.26.404 2.43.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 01-.958 1.47 4.088 4.088 0 01-1.47.958c-.46.163-1.26.349-2.43.404-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 01-1.47-.958 4.088 4.088 0 01-.958-1.47c-.163-.46-.349-1.26-.404-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 01.958-1.47 4.088 4.088 0 011.47-.958c.46-.163 1.26-.349 2.43-.404C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a5.876 5.876 0 00-2.126 1.384A5.876 5.876 0 00.63 4.14C.333 4.902.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.059 1.278.261 2.151.558 2.913a5.876 5.876 0 001.384 2.126 5.876 5.876 0 002.126 1.384c.762.297 1.635.499 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.059 2.151-.261 2.913-.558a5.876 5.876 0 002.126-1.384 5.876 5.876 0 001.384-2.126c.297-.762.499-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.059-1.278-.261-2.151-.558-2.913a5.876 5.876 0 00-1.384-2.126A5.876 5.876 0 0019.86.63C19.098.333 18.225.131 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          @aagenciaaruna
-        </a>
-      </div>
-    </div>
-    <div class="footer-links">
-      <a href="#servicos">Serviços</a>
-      <a href="#kommo">Kommo</a>
-      <a href="#portfolio">Resultados</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contato">Contato</a>
-      <a href="https://instagram.com/aagenciaaruna" target="_blank" rel="noopener">Instagram</a>
-    </div>
-  </footer>
-
-  <script>
-    // ── CONSTELLATION CANVAS ──
-    const canvas = document.getElementById('constellation-canvas');
-    const ctx = canvas.getContext('2d');
-    let W, H, nodes = [], mouse = { x: -9999, y: -9999 };
-    const COUNT = 70, LINK = 155, MDIST = 190;
-    const COLS = ['#E8485A','#FF6B35','#F5A623'];
-
-    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-
-    function init() {
-      nodes = Array.from({length: COUNT}, () => ({
-        x: Math.random()*W, y: Math.random()*H,
-        vx: (Math.random()-0.5)*0.3, vy: (Math.random()-0.5)*0.3,
-        r: Math.random()*1.4+0.5,
-        color: COLS[Math.floor(Math.random()*3)],
-        a: Math.random()*0.45+0.15,
-      }));
-    }
-
-    function draw() {
-      ctx.clearRect(0,0,W,H);
-      for (let i=0;i<nodes.length;i++) {
-        const a=nodes[i];
-        for (let j=i+1;j<nodes.length;j++) {
-          const b=nodes[j], dx=a.x-b.x, dy=a.y-b.y, d=Math.sqrt(dx*dx+dy*dy);
-          if (d<LINK) { ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.strokeStyle=`rgba(255,107,53,${(1-d/LINK)*0.15})`; ctx.lineWidth=0.5; ctx.stroke(); }
-        }
-        const mdx=a.x-mouse.x, mdy=a.y-mouse.y, md=Math.sqrt(mdx*mdx+mdy*mdy);
-        if (md<MDIST) { ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(mouse.x,mouse.y); ctx.strokeStyle=`rgba(245,166,35,${(1-md/MDIST)*0.4})`; ctx.lineWidth=0.6; ctx.stroke(); }
-        ctx.beginPath(); ctx.arc(a.x,a.y,a.r,0,Math.PI*2);
-        ctx.fillStyle=a.color; ctx.globalAlpha=a.a; ctx.fill(); ctx.globalAlpha=1;
-        a.x+=a.vx; a.y+=a.vy;
-        if(a.x<-8)a.x=W+8; if(a.x>W+8)a.x=-8;
-        if(a.y<-8)a.y=H+8; if(a.y>H+8)a.y=-8;
-      }
-      requestAnimationFrame(draw);
-    }
-
-    window.addEventListener('mousemove', e => { mouse.x=e.clientX; mouse.y=e.clientY; });
-    window.addEventListener('resize', () => { resize(); init(); });
-    resize(); init(); draw();
-
-    // ── NAV SCROLL ──
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
-
-    // ── REVEAL ──
-    const revealEls = document.querySelectorAll('.reveal');
-    const showAll = () => revealEls.forEach(el => el.classList.add('visible'));
-    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      showAll();
-    } else {
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
-      }, { threshold: 0, rootMargin: '0px 0px 15% 0px' });
-      revealEls.forEach(el => obs.observe(el));
-      // rede de seguranca: nenhum conteudo pode ficar invisivel pra sempre
-      const safety = () => revealEls.forEach(el => {
-        if (!el.classList.contains('visible') && el.getBoundingClientRect().top < innerHeight) el.classList.add('visible');
+  function flame(t){
+    t=Math.max(0,Math.min(1,t));
+    var c1=[232,72,90],c2=[255,107,53],c3=[245,166,35],a,b,k;
+    if(t<.5){k=t/.5;a=c1;b=c2;}else{k=(t-.5)/.5;a=c2;b=c3;}
+    return [Math.round(a[0]+(b[0]-a[0])*k),Math.round(a[1]+(b[1]-a[1])*k),Math.round(a[2]+(b[2]-a[2])*k)];
+  }
+  function resize(){
+    var rect=canvas.getBoundingClientRect();
+    W=Math.max(1,rect.width);H=Math.max(1,rect.height);
+    canvas.width=W*DPR;canvas.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
+    cx=W/2;cy=H/2;R=Math.min(W,H)*0.38;
+  }
+  function build(){
+    nodes=[];
+    for(var i=0;i<N;i++){
+      var k=i+0.5;
+      var phi=Math.acos(1-2*k/N);
+      var theta=Math.PI*(1+Math.sqrt(5))*k;
+      var tx=Math.sin(phi)*Math.cos(theta);
+      var ty=Math.sin(phi)*Math.sin(theta);
+      var tz=Math.cos(phi);
+      var u=Math.random()*Math.PI*2, v=Math.random()*Math.PI*2, rr=0.25+Math.random()*1.05;
+      nodes.push({
+        tx:tx,ty:ty,tz:tz,
+        cx0:Math.cos(u)*Math.sin(v)*rr,
+        cy0:Math.cos(v)*rr,
+        cz0:Math.sin(u)*Math.sin(v)*rr,
+        sx1:0.6+Math.random()*1.2, sy1:0.6+Math.random()*1.2, sz1:0.6+Math.random()*1.2,
+        px1:Math.random()*6.28, py1:Math.random()*6.28, pz1:Math.random()*6.28,
+        col:flame(i/N), ph:Math.random()*Math.PI*2
       });
-      addEventListener('scroll', safety, { passive: true });
-      addEventListener('load', () => setTimeout(safety, 300));
     }
+  }
+  function easeIO(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
 
-    // ── META PIXEL · tracking ampliado (Lead + sinais de qualidade) ──
-    (function () {
-      if (typeof fbq !== 'function') return;
-      const path = location.pathname.replace(/\/index\.html?$/, '/');
-      const pagina = path === '/' ? 'home'
-        : (path.split('/').filter(Boolean)[0] || 'home').toLowerCase();
+  function phaseOrg(el){
+    var t=el%CYCLE;
+    if(t<TANGLE_HOLD)return 0;
+    t-=TANGLE_HOLD;
+    if(t<ORGANIZE)return easeIO(t/ORGANIZE);
+    t-=ORGANIZE;
+    if(t<SPHERE_HOLD)return 1;
+    t-=SPHERE_HOLD;
+    return 1-easeIO(t/TANGLE);
+  }
 
-      // detecta interacao humana (mouse/scroll/teclado/touch) — bots geralmente nao acionam
-      let humanInteracted = false;
-      ['mousemove', 'scroll', 'keydown', 'touchstart'].forEach(function (ev) {
-        window.addEventListener(ev, function () { humanInteracted = true; }, { once: true, passive: true });
-      });
+  function frame(ts){
+    if(startT===null)startT=ts;
+    if(paused){requestAnimationFrame(frame);return;}
+    var el=ts-startT;
+    var org=phaseOrg(el);
+    var tangle=1-org;
+    var rot=el*0.00018+mx*0.6;
+    var tilt=-0.32+my*0.5;
 
-      // 1 Lead por sessao · evita inflar com pessoa clicando em multiplos CTAs
-      let leadFired = false;
-
-      // ViewContent ao chegar em pagina de produto (qualifica interesse)
-      if (pagina !== 'home') {
-        fbq('track', 'ViewContent', { content_name: pagina, content_type: 'produto' });
+    ctx.clearRect(0,0,W,H);
+    var cosT=Math.cos(tilt),sinT=Math.sin(tilt),cosR=Math.cos(rot),sinR=Math.sin(rot);
+    var proj=[];
+    for(var i=0;i<N;i++){
+      var n=nodes[i];
+      var ex=n.cx0+Math.sin(ts*0.0006*n.sx1+n.px1)*0.5*tangle;
+      var ey=n.cy0+Math.sin(ts*0.0006*n.sy1+n.py1)*0.5*tangle;
+      var ez=n.cz0+Math.sin(ts*0.0006*n.sz1+n.pz1)*0.5*tangle;
+      var px=ex+(n.tx-ex)*org;
+      var py=ey+(n.ty-ey)*org;
+      var pz=ez+(n.tz-ez)*org;
+      var br=1+Math.sin(ts*0.001+n.ph)*0.02*org; px*=br;py*=br;pz*=br;
+      var rx=px*cosR-pz*sinR, rz=px*sinR+pz*cosR;
+      var ry=py*cosT-rz*sinT, rz2=py*sinT+rz*cosT;
+      var scale=R*(1.7/(2.6-rz2));
+      proj.push({sx:cx+rx*scale,sy:cy+ry*scale,depth:rz2,col:n.col,r:Math.max(.6,(rz2+1.4)*1.5)});
+    }
+    var maxd=R*0.98;
+    for(var a=0;a<N;a++){
+      for(var b=a+1;b<N;b++){
+        var dx=proj[a].sx-proj[b].sx, dy=proj[a].sy-proj[b].sy;
+        var d=Math.sqrt(dx*dx+dy*dy);
+        if(d<maxd){
+          var depthf=((proj[a].depth+proj[b].depth)/2+1.4)/2.8;
+          var al=(1-d/maxd)*(0.32+0.20*org)*depthf;
+          if(al<=0.005)continue;
+          var c=proj[a].col;
+          ctx.strokeStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+al.toFixed(3)+')';
+          ctx.lineWidth=0.7;
+          ctx.beginPath();ctx.moveTo(proj[a].sx,proj[a].sy);ctx.lineTo(proj[b].sx,proj[b].sy);ctx.stroke();
+        }
       }
+    }
+    for(var i2=0;i2<N;i2++){
+      var p=proj[i2],c=p.col,br2=(p.depth+1.6)/3.2;
+      ctx.beginPath();
+      ctx.fillStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(0.55+br2*0.45).toFixed(3)+')';
+      ctx.shadowColor='rgba('+c[0]+','+c[1]+','+c[2]+',0.9)';
+      ctx.shadowBlur=10*br2+2;
+      ctx.arc(p.sx,p.sy,p.r,0,Math.PI*2);ctx.fill();
+    }
+    ctx.shadowBlur=0;
+    requestAnimationFrame(frame);
+  }
 
-      // Lead = clique em WhatsApp · event delegation (funciona com botoes dinamicos / SPA)
-      document.addEventListener('click', function (e) {
-        const wa = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
-        if (wa) {
-          if (!humanInteracted) return; // sem interacao previa = provavel bot/crawler
-          if (leadFired) return;        // ja contou nesta sessao
-          leadFired = true;
-          const sec = wa.closest('section');
-          const pos = (sec && (sec.id || sec.getAttribute('data-section'))) || 'cta';
-          fbq('track', 'Lead', { content_name: pagina + ' · ' + pos });
-          return;
-        }
-        const out = e.target.closest('a[href^="http"]');
-        if (out && !/agenciaaruna\.com/.test(out.href)) {
-          fbq('trackCustom', 'OutboundClick', { url: out.href, page: pagina });
-        }
-      }, true);
-
-      // ScrollDepth · 50 e 100 % (sinaliza leitura real da pagina)
-      let max = 0;
-      const fired = new Set();
-      window.addEventListener('scroll', function () {
-        const h = document.documentElement;
-        const total = h.scrollHeight - h.clientHeight;
-        if (total <= 0) return;
-        const pct = Math.round((h.scrollTop / total) * 100);
-        if (pct > max) max = pct;
-        [50, 100].forEach(function (m) {
-          if (max >= m && !fired.has(m)) {
-            fired.add(m);
-            fbq('trackCustom', 'ScrollDepth', { depth: m, page: pagina });
-          }
-        });
-      }, { passive: true });
-
-      // TimeOnPage · 60 s (sessao engajada)
-      setTimeout(function () {
-        fbq('trackCustom', 'TimeOnPage', { seconds: 60, page: pagina });
-      }, 60000);
-    })();
-  </script>
-
-  <script src="/assets/js/utm-capture.js" defer></script>
+  function init(){resize();build();requestAnimationFrame(frame);}
+  window.addEventListener('resize',resize,{passive:true});
+  window.addEventListener('mousemove',function(e){mx=(e.clientX/window.innerWidth-.5);my=(e.clientY/window.innerHeight-.5);},{passive:true});
+  var vis=new IntersectionObserver(function(en){en.forEach(function(e){paused=!e.isIntersecting;});});
+  vis.observe(canvas);
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(init);}else{init();}
+})();
+</script>
 </body>
 </html>
