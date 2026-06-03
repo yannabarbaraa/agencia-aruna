@@ -908,5 +908,64 @@ footer{border-top:1px solid var(--line);padding:48px 0}
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(init);}else{init();}
 })();
 </script>
+
+<!-- META PIXEL · tracking ampliado (Lead + sinais de qualidade) -->
+<script>
+(function () {
+  if (typeof fbq !== 'function') return;
+  const path = location.pathname.replace(/\/index\.html?$/, '/');
+  const pagina = path === '/' ? 'home'
+    : (path.split('/').filter(Boolean)[0] || 'home').toLowerCase();
+
+  let humanInteracted = false;
+  ['mousemove', 'scroll', 'keydown', 'touchstart'].forEach(function (ev) {
+    window.addEventListener(ev, function () { humanInteracted = true; }, { once: true, passive: true });
+  });
+
+  let leadFired = false;
+
+  if (pagina !== 'home') {
+    fbq('track', 'ViewContent', { content_name: pagina, content_type: 'produto' });
+  }
+
+  document.addEventListener('click', function (e) {
+    const wa = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+    if (wa) {
+      if (!humanInteracted) return;
+      if (leadFired) return;
+      leadFired = true;
+      const sec = wa.closest('section');
+      const pos = (sec && (sec.id || sec.getAttribute('data-section'))) || 'cta';
+      fbq('track', 'Lead', { content_name: pagina + ' · ' + pos });
+      return;
+    }
+    const out = e.target.closest('a[href^="http"]');
+    if (out && !/agenciaaruna\.com/.test(out.href)) {
+      fbq('trackCustom', 'OutboundClick', { url: out.href, page: pagina });
+    }
+  }, true);
+
+  let max = 0;
+  const fired = new Set();
+  window.addEventListener('scroll', function () {
+    const h = document.documentElement;
+    const total = h.scrollHeight - h.clientHeight;
+    if (total <= 0) return;
+    const pct = Math.round((h.scrollTop / total) * 100);
+    if (pct > max) max = pct;
+    [50, 100].forEach(function (m) {
+      if (max >= m && !fired.has(m)) {
+        fired.add(m);
+        fbq('trackCustom', 'ScrollDepth', { depth: m, page: pagina });
+      }
+    });
+  }, { passive: true });
+
+  setTimeout(function () {
+    fbq('trackCustom', 'TimeOnPage', { seconds: 60, page: pagina });
+  }, 60000);
+})();
+</script>
+<script src="/assets/js/utm-capture.js" defer></script>
 </body>
 </html>
