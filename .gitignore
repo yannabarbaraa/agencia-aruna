@@ -1,2 +1,9 @@
-.DS_Store
-index_v*_*.html
+# rascunhos e versões antigas: nunca vão para o site publicado
+_versoes/
+_exports_tipografia/
+_shoot-landing.js
+_shoot-4landings.js
+index-2*.html
+index-venda-novo.html
+*_pre-*.html
+*-pre-*.html

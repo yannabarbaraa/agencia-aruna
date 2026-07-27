@@ -1,987 +1,1384 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" data-grad="metal" data-view="desk" data-fundo="azul" data-rede="fundo">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aruna OS · A empresa que anda sozinha</title>
-<meta name="description" content="A Aruna instala 5 agentes de IA sob medida dentro da sua empresa. A gente desenha, hospeda e mantém. Você só comanda pelo WhatsApp.">
-<meta property="og:title" content="Aruna OS · A empresa que anda sozinha">
-<meta property="og:description" content="5 agentes de IA sob medida, instalados, hospedados e mantidos pela Aruna. Você só comanda.">
-<meta property="og:image" content="assets/hero-network.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aruna OS · 5 agentes de IA instalados na sua empresa</title>
+<meta name="description" content="A Aruna instala 5 agentes de IA sob medida dentro da sua empresa em 15 dias. A gente desenha, hospeda e mantém. Você só comanda pelo WhatsApp.">
+<link rel="canonical" href="https://agenciaaruna.com/">
+<meta name="theme-color" content="#0E0E1C">
+
+<!-- prévia ao compartilhar (WhatsApp, Instagram, LinkedIn) -->
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500&f[]=general-sans@400,500,600&f[]=jetbrains-mono@400,500&display=swap" rel="stylesheet">
-<script>document.documentElement.className='js';</script>
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://agenciaaruna.com/">
+<meta property="og:site_name" content="Agência Aruna">
+<meta property="og:title" content="Aruna OS · 5 agentes de IA instalados na sua empresa">
+<meta property="og:description" content="Instalados, hospedados e mantidos pela Aruna, em 15 dias. Você não configura nada: só comanda pelo WhatsApp.">
+<meta property="og:image" content="https://agenciaaruna.com/img/og-aruna-os.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- favicon: o nó da marca, em SVG dentro do próprio arquivo (zero requisição) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='16' y1='86' x2='84' y2='6' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E8485A'/%3E%3Cstop offset='.45' stop-color='%23FF6B35'/%3E%3Cstop offset='1' stop-color='%23F5A623'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230E0E1C'/%3E%3Cline x1='50' y1='20' x2='24' y2='78' stroke='url(%23g)' stroke-width='5' stroke-linecap='round'/%3E%3Cline x1='50' y1='20' x2='76' y2='78' stroke='url(%23g)' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='20' r='9' fill='url(%23g)'/%3E%3Ccircle cx='24' cy='78' r='9' fill='url(%23g)'/%3E%3Ccircle cx='76' cy='78' r='9' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Só os pesos que a página realmente usa. Os quatro pesos originais custavam
+     267 KB de fonte; Inter Tight 500 e 700 e JetBrains 700 não eram usados em
+     lugar nenhum e saíram: 118 KB a menos. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js'</script>
+
+<!-- Pixel da Aruna (805389752641637). Sem ele o teste A/B da headline não mede nada. -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','805389752641637'); fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=805389752641637&ev=PageView&noscript=1"></noscript>
+
+<!-- tracking da Aruna: gera o [REF:] que liga esta visita à conversa no WhatsApp -->
+<script src="https://aruna-atendimento.yanna-barbara.workers.dev/track.js" defer></script>
 <style>
+/* ================================================================
+   ARUNA OS · MODELO VISUAL
+   Tipografia, escala de espaço e tempos de animação copiados da
+   referência (medidos no CSS e no JS publicados dela):
+
+   h1 .......... clamp(44px, 6vw, 80px) · 600 · lh 1.02 · ls -0.04em
+   h2 .......... clamp(36px, 4vw, 48px) · 600 · lh 1.05 · ls -0.03em · máx 672px
+   parágrafo ... 16px (hero 18px) · lh 1.625 · máx 576px
+   etiqueta .... mono 11/12px · ls 0.30em
+   seção ....... 112px no celular · 160px no desktop
+   ritmo ....... etiqueta→título 32 · título→texto 24 · h1→sub 28 · bloco→grade 56
+   entrada ..... 0.7s cubic-bezier(.21,.6,.35,1) · atrasos 100/150/180ms
+   hover ....... 0.15s / 0.2s / 0.3s
+   contínuas ... feixe 7s linear · flutuação 7s ease-in-out (-12px)
+                 pulso 4.5s ease-in-out (.45→1 / .92→1.06)
+                 brilho 6s ease-in-out com pausa · cursor 1.05s step-end
+                 granulado 0.9s steps(4,end) ±2%
+   ================================================================ */
+
+@property --beam-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+
 :root{
-  /* paleta oficial Aruna */
-  --void:#0E0E1C;
-  --void-2:#141425;
-  --void-3:#1b1b30;
-  --panel:#15152a;
-  --cream:#F4EFE8;
-  --ink:#F4EFE8;
-  --ink-mid:rgba(244,239,232,.66);
-  --ink-dim:rgba(244,239,232,.40);
-  --ghost:rgba(244,239,232,.13);
-  --line:rgba(244,239,232,.09);
-  --line-strong:rgba(244,239,232,.18);
-  --coral:#E8485A;
-  --orange:#FF6B35;
-  --amber:#F5A623;
-  --grad:linear-gradient(110deg,#E8485A 0%,#FF6B35 48%,#F5A623 100%);
-  --grad-soft:linear-gradient(110deg,rgba(232,72,90,.16),rgba(255,107,53,.16) 50%,rgba(245,166,35,.16));
-  --flame:#FF6B35;
-  --glow:rgba(255,107,53,.20);
-  --glow-soft:rgba(255,107,53,.12);
-  --maxw:1180px;
-  --display:'Cabinet Grotesk',sans-serif;
-  --body:'General Sans',sans-serif;
+  --cream:#F4EFE8; --coral:#E8485A; --orange:#FF6B35; --amber:#F5A623;
+  --grad-cta:linear-gradient(110deg,#E8485A 0%,#FF6B35 48%,#F5A623 100%);
+  --fog:#C7C7CD; --smoke:#8A8A93;
+  --display:'Inter Tight',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
+  --saida:cubic-bezier(.21,.6,.35,1);   /* curva de entrada deles */
+  --pop:cubic-bezier(.22,1,.36,1);
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+[data-fundo="azul"]{ --void:#0E0E1C; --card:#15151F; --steel:#1E1E2B; }
+[data-fundo="neutro"]{ --void:#070709; --card:#0F0F12; --steel:#1C1C20; }
+
+[data-grad="metal"]{
+  /* miolo travado em #B8382F: 3,33:1 sobre o fundo. O #8E2230 dava 2,21:1 e reprovava. */
+  --grad-display:linear-gradient(175deg,#FFE7BE 0%,#F5A623 27%,#C0392B 47%,#B8382F 55%,#FF6B35 73%,#FFDCA8 100%);
+  --grad-title:var(--grad-display); --title-solid:transparent;
+}
+[data-grad="fogo"]{
+  --grad-display:linear-gradient(115deg,#F4EFE8 0%,#F5A623 34%,#FF6B35 64%,#E8485A 100%);
+  --grad-title:var(--grad-display); --title-solid:transparent;
+}
+[data-grad="creme"]{
+  --grad-display:var(--grad-cta); --grad-title:none; --title-solid:var(--cream);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+/* o padrão do navegador para <b> é 700, peso que não baixamos mais */
+b,strong{font-weight:600}
 body{
-  background:var(--void);color:var(--ink);
-  font-family:var(--body);font-weight:400;line-height:1.6;letter-spacing:.01em;
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;
-}
-::selection{background:var(--orange);color:#160a04}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-
-body::before{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(1100px 600px at 78% -8%,rgba(255,107,53,.10),transparent 60%),
-    radial-gradient(900px 500px at 8% 4%,rgba(232,72,90,.07),transparent 60%);
-}
-body::after{
-  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background:var(--void); color:var(--cream);
+  font-family:var(--display); font-size:16px; line-height:1.625;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
 
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-section{position:relative}
 
-.eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-dim)}
-.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stage{container-type:inline-size; margin:0 auto; transition:max-width .3s var(--saida); position:relative}
+[data-view="mob"] .stage{max-width:390px; border-inline:1px solid var(--steel); min-height:100vh}
 
-.ghost-title{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,8.5vw,7rem);line-height:.92;letter-spacing:-.02em;color:var(--ghost);text-transform:uppercase}
-
-.node{width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 14px var(--orange),0 0 4px var(--amber)}
-
-/* ============ NAV ============ */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-  padding:18px 28px;background:linear-gradient(180deg,rgba(14,14,28,.92),rgba(14,14,28,0));backdrop-filter:blur(3px)}
-.brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
-.brand .mark{position:relative;width:14px;height:14px}
-.brand .mark span{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange)}
-.brand .mark span:nth-child(1){left:4px;top:-1px;background:var(--amber);box-shadow:0 0 10px var(--amber)}
-.brand .mark span:nth-child(2){left:-1px;bottom:0;background:var(--coral);box-shadow:0 0 10px var(--coral)}
-.brand .mark span:nth-child(3){right:-1px;bottom:0}
-.brand b{font-weight:800}
-.brand .logo{width:30px;height:30px;flex:0 0 auto;display:block}
-.brand .niche{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);border-left:1px solid var(--line-strong);padding-left:10px;margin-left:6px}
-.nav-cta{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line-strong);border-radius:999px;padding:9px 18px;color:var(--ink-mid);transition:.3s}
-.nav-cta:hover{border-color:var(--orange);color:var(--orange);box-shadow:0 0 24px var(--glow-soft)}
-
-/* ============ HERO ============ */
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:36px;align-items:center;width:100%}
-.lockup{display:inline-flex;align-items:center;gap:14px;margin-bottom:26px;flex-wrap:wrap}
-.lockup .badge{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,2.4vw,2rem);letter-spacing:.02em;line-height:1;
-  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lockup .pill{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);
-  border:1px solid var(--line-strong);border-radius:999px;padding:6px 12px}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1;letter-spacing:-.025em;color:var(--ink)}
-.hero h1 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
-.hero .sub{margin-top:26px;max-width:540px;font-size:clamp(1.05rem,1.4vw,1.22rem);color:var(--ink-mid);line-height:1.55}
-.hero .sub b{color:var(--ink);font-weight:600}
-.hero-actions{margin-top:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.btn{font-family:var(--body);font-weight:600;font-size:16px;letter-spacing:.01em;background:var(--grad);color:#1a0d05;
-  padding:16px 26px;border-radius:12px;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:.3s;position:relative}
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 50px var(--glow),0 0 40px var(--glow-soft)}
-.btn .arrow{transition:.3s}
-.btn:hover .arrow{transform:translate(4px,-4px)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong);box-shadow:none}
-.btn.ghost:hover{border-color:var(--orange);color:var(--orange)}
-.hero-fine{margin-top:24px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.8}
-.hero-fine b{color:var(--orange);font-weight:500}
-
-.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;aspect-ratio:1;width:100%;max-width:560px;margin:0 auto}
-.hero-visual .glow{position:absolute;width:74%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 62%);filter:blur(38px);animation:pulse 7s ease-in-out infinite}
-.hero-visual canvas{width:100%;height:100%;position:relative;z-index:2;display:block}
-@keyframes pulse{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.8;transform:scale(1.05)}}
-
-/* ============ section frame ============ */
-.sec{padding:120px 0;border-top:1px solid var(--line)}
-.sec-head{display:flex;flex-direction:column;gap:18px;margin-bottom:60px}
-.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content}
-
-/* ============ DOR ============ */
-.statement-lead{max-width:680px;font-size:1.15rem;color:var(--ink-mid);margin-bottom:44px;line-height:1.6}
-.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.pain{padding:34px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:flex-start;transition:.35s}
-.pain:nth-child(2n){border-right:0}
-.pain:nth-last-child(-n+2){border-bottom:0}
-.pain:hover{background:var(--void-2)}
-.pain .idx{font-family:var(--mono);font-size:13px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;flex:0 0 auto;padding-top:3px;width:26px}
-.pain p{font-size:1.06rem;color:var(--ink-mid);line-height:1.5}
-.pain p b{color:var(--ink);font-weight:600}
-.pain-foot{margin-top:34px;font-size:1.15rem;color:var(--ink);font-weight:500;max-width:720px}
-.pain-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-/* ============ STATEMENTS ============ */
-.statement{max-width:900px}
-.statement h2{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4vw,3.3rem);line-height:1.04;letter-spacing:-.02em;color:var(--ink)}
-.statement h2 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.statement .body{margin-top:30px;display:flex;flex-direction:column;gap:18px;font-size:1.18rem;color:var(--ink-mid);max-width:760px;line-height:1.62}
-.statement .body strong{color:var(--ink);font-weight:600}
-
-/* ============ VOCÊ NÃO PRECISA ============ */
-.nope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px}
-.nope{display:flex;gap:14px;align-items:flex-start;padding:22px 24px;border:1px solid var(--line);border-radius:12px;background:var(--void-2);transition:.3s}
-.nope:hover{border-color:var(--line-strong)}
-.nope .x{font-family:var(--display);font-weight:800;color:var(--coral);font-size:1.2rem;line-height:1.2;flex:0 0 auto}
-.nope p{font-size:1.02rem;color:var(--ink);line-height:1.4}
-.nope p b{color:var(--ink);font-weight:600}
-.nope-foot{margin-top:36px;font-size:1.18rem;color:var(--ink);line-height:1.55;max-width:780px}
-.nope-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
-
-/* ============ ENCONTROS (3 cards grandes) ============ */
-.encontros{display:flex;flex-direction:column;gap:22px}
-.encontro{border:1px solid var(--line);border-radius:18px;padding:42px 40px;background:linear-gradient(180deg,var(--void-2),var(--void));position:relative;overflow:hidden;transition:.4s}
-.encontro:hover{border-color:var(--line-strong)}
-.encontro::before{content:attr(data-n);position:absolute;top:-30px;right:18px;font-family:var(--display);font-weight:800;font-size:9rem;color:var(--ghost);line-height:1;pointer-events:none}
-.encontro .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.encontro h3{position:relative;z-index:2;font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);margin:14px 0 12px;color:var(--ink);line-height:1.1;max-width:740px}
-.encontro h3 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.encontro .lede{position:relative;z-index:2;font-size:1.06rem;color:var(--ink-mid);line-height:1.55;max-width:780px;margin-bottom:24px}
-.encontro .lede b{color:var(--ink);font-weight:600}
-.entreg-label{position:relative;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:14px}
-.entreg{position:relative;z-index:2;list-style:none;display:flex;flex-direction:column;gap:10px;max-width:820px}
-.entreg li{display:flex;gap:12px;font-size:1rem;color:var(--ink-mid);line-height:1.5;align-items:flex-start}
-.entreg li::before{content:"";flex:0 0 auto;width:18px;height:18px;margin-top:3px;border-radius:5px;background:var(--glow-soft);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
-.encontro .seal{position:relative;z-index:2;margin-top:22px;font-size:1.05rem;color:var(--ink);font-weight:500}
-.encontro .seal .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
-
-/* ============ 30 DIAS ============ */
-.sixty{border:1px solid rgba(255,107,53,.3);border-radius:18px;padding:46px 42px;background:linear-gradient(155deg,var(--void-2),var(--void));position:relative;overflow:hidden}
-.sixty::before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:.35;pointer-events:none}
-.sixty>*{position:relative;z-index:2}
-.sixty .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sixty h3{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,2.6vw,2.1rem);margin:14px 0 14px;color:var(--ink);line-height:1.1;max-width:760px}
-.sixty .lede{font-size:1.08rem;color:var(--ink-mid);line-height:1.55;max-width:760px;margin-bottom:26px}
-.sixty .lede b{color:var(--ink);font-weight:600}
-.sixty-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:920px}
-.sixty-list li{display:flex;gap:12px;font-size:1rem;color:var(--ink);line-height:1.45;align-items:flex-start}
-.sixty-list li::before{content:"";flex:0 0 auto;width:18px;height:18px;margin-top:3px;border-radius:5px;background:var(--glow-soft);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
-.sixty-foot{margin-top:30px;font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--ink-mid)}
-.sixty-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:500}
-
-/* ============ SQUADS ============ */
-.squads{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.squad{background:var(--void);padding:34px 30px 36px;transition:.4s;display:flex;flex-direction:column}
-.squad:hover{background:var(--void-2)}
-.squad .top{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.squad h3{font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ink)}
-.squad .count{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:18px}
-.squad ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.squad ul li{font-size:.96rem;color:var(--ink-mid);line-height:1.45;padding-left:14px;position:relative}
-.squad ul li::before{content:"·";position:absolute;left:0;color:var(--orange);font-weight:700}
-.squad ul li b{color:var(--ink);font-weight:600}
-.squads-cap{margin-top:26px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.04em;line-height:1.7}
-.squads-cap .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-/* ============ ENTREGÁVEIS (prints reais) ============ */
-.deliver-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.deliver-grid .wide{grid-column:1 / -1}
-.panel-card{border:1px solid var(--line);border-radius:16px;background:var(--void-2);overflow:hidden;position:relative;transition:.4s}
-.panel-card:hover{border-color:var(--line-strong);transform:translateY(-3px)}
-.panel-card .winbar{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line)}
-.winbar .dots{display:flex;gap:6px}
-.winbar .dots i{width:9px;height:9px;border-radius:50%;background:var(--ghost)}
-.winbar .dots i:nth-child(1){background:rgba(232,72,90,.6)}
-.winbar .dots i:nth-child(2){background:rgba(245,166,35,.6)}
-.winbar .dots i:nth-child(3){background:rgba(255,107,53,.6)}
-.winbar .title{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid)}
-.winbar .live{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
-.winbar .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange);animation:pulse 2.4s ease-in-out infinite}
-.panel-card .shot{width:100%;height:auto;display:block;background:#0b0b16}
-.deliver-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.deliver-chips .chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-mid);border:1px solid var(--line);border-radius:999px;padding:8px 14px;display:inline-flex;align-items:center;gap:8px}
-.deliver-chips .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 8px var(--orange)}
-.deliver-note{margin-top:26px;font-family:var(--mono);font-size:12px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.6}
-
-/* feedbacks reais (prints WhatsApp) */
-.feed-label{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);margin:48px 0 18px}
-.feedshots{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
-.fshot{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--void-2);transition:.4s}
-.fshot:hover{border-color:var(--line-strong);transform:translateY(-3px)}
-.fshot img{width:100%;height:auto;display:block}
-.fshot figcaption{padding:14px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-dim);display:flex;align-items:center;gap:9px;border-top:1px solid var(--line)}
-
-/* sobre nós / quem atende */
-.socios{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.socio{display:flex;gap:22px;align-items:flex-start;border:1px solid var(--line);border-radius:18px;padding:30px;background:linear-gradient(180deg,var(--void-2),var(--void));transition:.4s}
-.socio:hover{border-color:var(--line-strong)}
-.socio .avatar{flex:0 0 auto;width:94px;height:94px;border-radius:50%;overflow:hidden;border:1px solid var(--line-strong);position:relative}
-.socio .avatar img{width:100%;height:100%;object-fit:cover}
-.socio h3{font-family:var(--display);font-weight:700;font-size:1.4rem;color:var(--ink);line-height:1.1}
-.socio .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:7px 0 12px}
-.socio p{font-size:.99rem;color:var(--ink-mid);line-height:1.5}
-.socios-foot{margin-top:30px;font-size:1.12rem;color:var(--ink);line-height:1.55;max-width:760px}
-.socios-foot .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
-
-/* ============ O QUE ESTÃO FALANDO (mix) ============ */
-.say-grid{column-count:3;column-gap:20px}
-.say{break-inside:avoid;width:100%;margin:0 0 20px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--void-2);transition:.4s;display:inline-block;vertical-align:top}
-.say:hover{border-color:var(--line-strong)}
-.say.media img{width:100%;height:auto;display:block}
-.say figcaption{padding:13px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-dim);display:flex;align-items:center;gap:9px;border-top:1px solid var(--line)}
-.say.quote{background:linear-gradient(180deg,var(--void-2),var(--void));padding:30px 28px 24px;position:relative}
-.say.quote::before{content:"\201C";position:absolute;top:6px;left:18px;font-family:var(--display);font-weight:800;font-size:3.4rem;line-height:1;color:var(--ghost)}
-.say.quote blockquote{position:relative;z-index:2;font-size:1.04rem;color:var(--ink);line-height:1.5}
-.say.quote figcaption{padding:18px 0 0;border-top:0}
-
-/* ============ PRICE ============ */
-.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.pcard{border:1px solid var(--line);border-radius:18px;padding:40px 36px;background:var(--void-2);position:relative;transition:.4s;overflow:hidden}
-.pcard.feature{border-color:rgba(255,107,53,.4)}
-.pcard.feature::before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:.5;pointer-events:none}
-.pcard.feature .ribbon{position:absolute;top:18px;right:-34px;transform:rotate(45deg);background:var(--grad);color:#1a0d05;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.12em;padding:5px 40px;text-transform:uppercase}
-.pcard:hover{transform:translateY(-4px);border-color:var(--line-strong)}
-.pcard>*{position:relative;z-index:2}
-.pcard .tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim)}
-.pcard .amt{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,5vw,3.6rem);color:var(--ink);margin:10px 0 4px;letter-spacing:-.02em}
-.pcard .amt .per{font-family:var(--body);font-weight:500;font-size:1.1rem;color:var(--ink-dim)}
-.pcard.feature .amt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.pcard .when{font-size:.95rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:500;margin-bottom:26px;width:fit-content}
-.plist{list-style:none;display:flex;flex-direction:column;gap:14px}
-.plist li{display:flex;gap:13px;font-size:1rem;color:var(--ink-mid);line-height:1.45;align-items:flex-start}
-.plist li::before{content:"";flex:0 0 auto;width:18px;height:18px;margin-top:3px;border-radius:5px;background:var(--glow-soft);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
-.price-note{margin-top:26px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.03em;line-height:1.7}
-
-/* ============ FAQ ============ */
-.faq-list{display:flex;flex-direction:column;gap:12px;max-width:820px}
-.faq-item{border:1px solid var(--line);border-radius:12px;padding:22px 24px;background:var(--void-2);transition:.3s}
-.faq-item:hover{border-color:var(--line-strong)}
-.faq-item summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--ink);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+";font-family:var(--mono);font-size:1.3rem;color:var(--orange);flex:0 0 auto;transition:.3s}
-.faq-item[open] summary::after{content:"\2212"}
-.faq-item p{margin-top:14px;font-size:1rem;color:var(--ink-mid);line-height:1.55;max-width:720px}
-
-/* ============ GARANTIA ============ */
-.guarantee{border:1px solid var(--line);border-radius:20px;padding:60px;text-align:center;background:radial-gradient(circle at 50% 0%,var(--glow-soft),transparent 60%)}
-.guarantee .seal{font-family:var(--display);font-weight:800;font-size:clamp(3rem,9vw,6.5rem);color:var(--ink);line-height:.9;letter-spacing:-.03em}
-.guarantee .seal .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.guarantee p{margin:26px auto 0;max-width:660px;font-size:1.18rem;color:var(--ink-mid);line-height:1.6}
-
-/* ============ CTA FINAL ============ */
-.final{padding:140px 0 120px;text-align:center;border-top:1px solid var(--line);position:relative;overflow:hidden}
-.final .aura{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 64%);filter:blur(56px);pointer-events:none}
-.final .lockup{margin-bottom:26px;justify-content:center}
-.final h2{position:relative;font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.98;letter-spacing:-.025em;color:var(--ink)}
-.final h2 .em{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.final .sub{position:relative;margin:28px auto 0;max-width:620px;font-size:1.18rem;color:var(--ink-mid);line-height:1.55}
-.final-actions{position:relative;margin-top:40px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
-.final .fine{position:relative;margin-top:24px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);letter-spacing:.04em}
-
-/* ============ FOOTER ============ */
-footer{border-top:1px solid var(--line);padding:48px 0}
-.foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
-.foot .brand{font-size:16px}
-.foot .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-dim);letter-spacing:.08em;text-transform:uppercase}
-
-/* reveal */
-.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
-@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
-.reveal.in{opacity:1;transform:none}
-.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
-
-/* responsive */
-@media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr;gap:8px}
-  .hero-visual{order:-1;margin-bottom:4px}
-  .hero-visual img{max-width:340px}
-  .squads,.price-grid,.pain-grid,.nope-grid,.sixty-list,.deliver-grid,.feedshots,.socios{grid-template-columns:1fr}
-  .say-grid{column-count:2}
-  .pain{border-right:0}
-  .pain:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
-  .pain:last-child{border-bottom:0}
-  .squad{padding:30px 26px}
-  .sec{padding:84px 0}
-  .guarantee{padding:44px 24px}
-  .final{padding:100px 0 90px}
-  .encontro{padding:34px 26px}
-  .sixty{padding:34px 26px}
+/* ---------------- barra do site: 64px, borda, desfoque ---------------- */
+.nav{
+  position:sticky; top:0; z-index:50; height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 32px; border-bottom:1px solid var(--steel);
+  background:color-mix(in srgb, var(--void) 82%, transparent); backdrop-filter:blur(12px);
 }
-@media(max-width:520px){
-  .wrap{padding:0 20px}nav{padding:14px 20px}.nav-cta{display:none}
-  .say-grid{column-count:1}
-  .hero{padding:100px 0 60px}.hero-actions{flex-direction:column;align-items:stretch}.btn{justify-content:center}
-  .final-actions{flex-direction:column;align-items:stretch}
-  .brand .niche{display:none}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--cream)}
+.brand svg{width:26px; height:26px; flex:none}
+.brand .nome{font-size:15px; font-weight:600; letter-spacing:-.02em}
+.brand .nome b{font-weight:600; background:var(--grad-cta); -webkit-background-clip:text; background-clip:text; color:transparent}
+.nav-cta{
+  font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.14em;
+  text-decoration:none; color:var(--fog); border:1px solid var(--steel);
+  background:var(--card); border-radius:8px; padding:9px 14px;
+  transition:border-color .2s, color .2s;
+}
+.nav-cta:hover{border-color:var(--smoke); color:var(--cream)}
+
+/* ---------------- estrutura ---------------- */
+.wrap{width:100%; max-width:1152px; margin:0 auto; padding:0 32px}
+.wrap.estreito{max-width:896px}
+.sec{padding:160px 0; border-top:1px solid rgba(255,255,255,.055); position:relative}
+.dots{
+  position:absolute; inset:0; pointer-events:none; opacity:.55;
+  background-image:radial-gradient(circle,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:28px 28px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%);
+          mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%);
+}
+
+/* ---------------- tipografia (medidas deles) ---------------- */
+.eyebrow{
+  font-family:var(--mono); font-size:11px; text-transform:uppercase;
+  letter-spacing:.30em; color:var(--smoke);
+}
+.eyebrow .n{color:var(--fog); margin-right:12px}
+h1{
+  /* Mesma medida da referência: clamp(44px,6vw,80px). Cabe porque a headline nova
+     tem 36 caracteres (a antiga tinha 89 e quebrava em 5 linhas). */
+  font-size:clamp(44px,6cqw,80px); font-weight:600;
+  line-height:1.02; letter-spacing:-.04em; text-wrap:balance;
+}
+h2{
+  font-size:clamp(36px,4cqw,48px); font-weight:600;
+  line-height:1.05; letter-spacing:-.03em; text-wrap:balance; max-width:672px;
+}
+.centro h2{margin-inline:auto}
+h3{font-size:19px; font-weight:600; letter-spacing:-.01em}
+.card-plano h3{font-size:24px; letter-spacing:-.02em}
+/* Uma palavra em outra cor, com brilho varrendo por cima.
+   Mecânica copiada da referência: gradiente de cor no texto + camada de brilho
+   linear-gradient(transparent 30%, branco 50%, transparent 70%) em 200% 0/250% 100%,
+   recortada no texto e animada em 6s ease-in-out (varre rápido e espera). */
+.palavra{
+  position:relative; display:inline-block;
+  background:var(--grad-display);
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; -webkit-text-fill-color:transparent;
+}
+.palavra::after{
+  content:attr(data-texto);
+  position:absolute; left:0; top:0; white-space:pre;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.9) 50%,transparent 70%) 200% 0/250% 100%;
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; -webkit-text-fill-color:transparent;
+  animation:shine-sweep 6s ease-in-out infinite;
+  pointer-events:none;
+}
+p.lead{font-size:16px; line-height:1.625; color:var(--fog); max-width:576px}
+.hero p.lead{font-size:18px}
+.centro p.lead{margin-inline:auto}
+.fine{font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--smoke); line-height:1.9}
+
+/* ritmo vertical medido na referência */
+.mt-etiqueta{margin-top:32px}   /* etiqueta → título */
+.mt-texto{margin-top:24px}      /* título → texto */
+.mt-sub{margin-top:28px}        /* h1 → subtítulo */
+.mt-cta{margin-top:40px}
+.mt-grade{margin-top:56px}
+
+/* ---------------- botões ---------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:48px; padding:13px 24px; border-radius:10px;
+  font-family:var(--mono); font-size:13px; font-weight:500;
+  text-transform:uppercase; letter-spacing:.12em; text-decoration:none;
+  background:var(--cream); color:#0B0B12; border:1px solid var(--cream);
+  transition:background .2s, color .2s, transform .15s;
+}
+.btn:hover{background:transparent; color:var(--cream)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent; color:var(--fog); border-color:var(--steel)}
+.btn.ghost:hover{color:var(--cream); border-color:var(--smoke)}
+.btn::before{content:"> "; white-space:pre; max-width:0; overflow:hidden; display:inline-block; transition:max-width .2s}
+.btn:hover::before{max-width:2ch}
+.btn::after{content:"_"; width:0; overflow:hidden; display:inline-block}
+.btn:hover::after{width:auto; animation:blink 1.05s step-end infinite}
+.linha-cmd{font-family:var(--mono); font-size:13px; color:var(--smoke)}
+.linha-cmd .cifrao{color:var(--fog)}
+.caret::after{content:"█"; margin-left:2px; animation:blink 1.05s step-end infinite}
+
+@keyframes blink{50%{opacity:0}}
+@keyframes beam-rotate{to{--beam-angle:360deg}}
+@keyframes float-y{0%,to{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes glow-pulse{0%,to{opacity:.45;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+@keyframes shine-sweep{0%,72%{background-position:200% 0}88%,to{background-position:-60% 0}}
+@keyframes grain-shift{0%{transform:translate(0)}25%{transform:translate(-2%,1%)}50%{transform:translate(1%,-2%)}75%{transform:translate(-1%,2%)}to{transform:translate(0)}}
+
+/* ---------------- cards ---------------- */
+.card{
+  position:relative; isolation:isolate; overflow:hidden;
+  background:color-mix(in srgb, var(--card) 50%, transparent);
+  border:1px solid var(--steel); border-radius:12px; padding:28px;
+  transition:border-color .2s, transform .2s;
+}
+.card:hover{border-color:color-mix(in srgb, var(--smoke) 50%, transparent); transform:translateY(-2px)}
+.card .spot{
+  position:absolute; inset:0; z-index:0; pointer-events:none; opacity:0; transition:opacity .3s;
+  background:radial-gradient(320px circle at var(--sx,50%) var(--sy,50%),rgba(255,107,53,.12),transparent 65%);
+}
+.card:hover .spot{opacity:1}
+.card>*:not(.spot):not(.grao){position:relative; z-index:1}
+.beam::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; padding:1.5px;
+  background:conic-gradient(from var(--beam-angle),
+    transparent 0%, transparent 72%,
+    rgba(245,166,35,.26) 82%, rgba(255,107,53,.9) 88%, rgba(232,72,90,.28) 94%, transparent 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  pointer-events:none; z-index:2; animation:beam-rotate 7s linear infinite;
+}
+.beam--delay::before{animation-delay:-3.5s}
+/* granulado tremendo, igual ao deles */
+.grao{
+  position:absolute; inset:-20%; z-index:0; pointer-events:none; opacity:.5;
+  background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.024) 0 1px,transparent 1px 3px);
+  animation:grain-shift .9s steps(4,end) infinite;
+}
+/* brilho que varre e espera */
+.brilho{
+  background-image:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.07) 38%,transparent 55%);
+  background-size:220% 100%; animation:shine-sweep 6s ease-in-out infinite;
+}
+
+/* ---------------- entrada por scroll (tempo e curva deles) ---------------- */
+.js .reveal{opacity:0; transform:translateY(14px); transition:opacity .7s var(--saida), transform .7s var(--saida)}
+.js .reveal.in{opacity:1; transform:none}
+
+/* ---------------- hero centralizado ---------------- */
+.hero{padding:120px 0 128px; position:relative; overflow:hidden}
+.hero .conteudo{position:relative; z-index:10; display:flex; flex-direction:column; align-items:center; text-align:center}
+/* véu entre a rede e o texto: a rede ficou 58% mais presente, e sem isto o
+   título perderia contraste. Fica no z-index 5, entre a rede (1) e o texto (10). */
+.hero .veu{
+  position:absolute; inset:0; z-index:5; pointer-events:none;
+  background:radial-gradient(ellipse 46% 42% at 50% 52%,
+    color-mix(in srgb, var(--void) 88%, transparent) 0%,
+    color-mix(in srgb, var(--void) 55%, transparent) 55%,
+    transparent 78%);
+}
+.hero h1{margin-top:24px; max-width:1000px}
+.hero .lead{margin-top:28px}
+.hero-actions{margin-top:40px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
+.hero .linha-cmd{margin-top:20px}
+.hero .fine{margin-top:14px}
+.lockup{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+/* teste A/B: só a variante sorteada aparece */
+.var-a,.var-b{display:none}
+[data-variante="A"] .var-a{display:block}
+[data-variante="B"] .var-b{display:block}
+.tag{
+  font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.2em;
+  border:1px solid var(--steel); border-radius:6px; padding:6px 11px; color:var(--smoke);
+  background:var(--card);
+}
+.tag.on{border-color:rgba(255,107,53,.35); color:#E9A87E}
+
+/* ---------------- a rede de nós da Aruna, em 3 posições ---------------- */
+.rede{position:absolute; pointer-events:none; z-index:1}
+.rede canvas{display:block; width:100%; height:100%}
+.rede .halo{
+  position:absolute; left:50%; top:50%; translate:-50% -50%;
+  width:68%; aspect-ratio:1; border-radius:50%;
+  background:radial-gradient(circle,rgba(255,107,53,.30),transparent 64%);
+  filter:blur(42px); animation:glow-pulse 4.5s ease-in-out infinite;
+}
+/* atrás do título: buraco menor e mais opacidade, a rede chega perto do texto */
+[data-rede="fundo"] .rede{
+  inset:0; opacity:.92;
+  -webkit-mask-image:radial-gradient(ellipse 36% 34% at 50% 52%, transparent 22%, #000 72%);
+          mask-image:radial-gradient(ellipse 36% 34% at 50% 52%, transparent 22%, #000 72%);
+}
+/* só nas laterais, como as peças flutuantes da referência */
+[data-rede="laterais"] .rede{
+  inset:0; opacity:1;
+  -webkit-mask-image:linear-gradient(90deg,#000 0 22%,transparent 40% 60%,#000 78% 100%);
+          mask-image:linear-gradient(90deg,#000 0 22%,transparent 40% 60%,#000 78% 100%);
+}
+/* peça própria, abaixo do bloco de texto */
+[data-rede="abaixo"] .rede{
+  position:relative; inset:auto; margin:56px auto 0;
+  width:min(520px,80cqw); aspect-ratio:1; opacity:1; z-index:2;
+  animation:float-y 7s ease-in-out infinite;
+}
+[data-rede="abaixo"] .hero{padding-bottom:96px}
+[data-rede="nenhuma"] .rede{display:none}
+/* o véu só existe para proteger o texto de quem passa atrás dele */
+[data-rede="abaixo"] .veu, [data-rede="nenhuma"] .veu{display:none}
+
+/* ---------------- grade ---------------- */
+.sec-head{margin-bottom:56px}
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.squad .top{display:flex; align-items:center; gap:11px; margin-bottom:6px}
+.node{width:9px; height:9px; border-radius:50%; background:var(--grad-cta); flex:none}
+.count{font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.2em; color:var(--smoke); margin-bottom:22px}
+.squad ul{list-style:none; display:grid; gap:13px; border-top:1px solid var(--steel); padding-top:22px}
+.squad li{font-size:13.5px; line-height:1.5; color:var(--fog); display:flex; gap:11px}
+.squad li::before{content:"■"; color:rgba(255,107,53,.6); font-size:7px; line-height:2.6; flex:none}
+.more{font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--smoke); margin-top:18px}
+.cap{margin-top:40px; font-family:var(--mono); font-size:12px; color:var(--smoke); letter-spacing:.03em}
+.cap .hl{color:var(--cream)}
+
+/* ---------------- lista de reconhecimento (a dor) ---------------- */
+.reconhece{display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:1px solid var(--steel)}
+.item{
+  display:flex; gap:18px; padding:24px 4px;
+  border-bottom:1px solid var(--steel); transition:background .2s;
+}
+.item:nth-child(odd){padding-right:28px; border-right:1px solid var(--steel)}
+.item:nth-child(even){padding-left:28px}
+.item .num{font-family:var(--mono); font-size:11px; letter-spacing:.18em; color:var(--smoke); flex:none; padding-top:3px}
+.item p{font-size:15.5px; line-height:1.55; color:var(--fog)}
+.veredito{
+  margin-top:36px; padding:22px 26px; border-radius:12px;
+  border:1px solid var(--steel); background:color-mix(in srgb, var(--card) 50%, transparent);
+  font-size:17px; color:var(--cream);
+}
+
+/* ---------------- lista do "você não precisa" ---------------- */
+.nao{display:grid; grid-template-columns:repeat(2,1fr); gap:12px 32px}
+.nao li{list-style:none; display:flex; gap:12px; font-size:15px; line-height:1.5; color:var(--fog)}
+.nao li::before{content:"✕"; color:var(--coral); font-size:13px; flex:none; padding-top:2px}
+.nao li b{color:var(--cream)}
+
+/* ---------------- os 3 encontros ---------------- */
+.encontros{display:grid; gap:16px}
+.encontro{display:grid; grid-template-columns:220px minmax(0,1fr); gap:0; overflow:hidden}
+.encontro .lado{
+  padding:28px; border-right:1px solid var(--steel);
+  background:color-mix(in srgb, var(--card) 70%, transparent);
+}
+.encontro .quando{font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.2em; color:var(--smoke)}
+.encontro .numero{font-size:44px; font-weight:600; letter-spacing:-.04em; line-height:1; margin-top:10px}
+.encontro .corpo{padding:28px}
+.encontro h3{font-size:21px; margin-bottom:12px}
+.encontro p{font-size:15px; line-height:1.6; color:var(--fog)}
+.saiu{list-style:none; display:grid; gap:10px; margin-top:20px; border-top:1px solid var(--steel); padding-top:18px}
+.saiu li{font-size:14px; line-height:1.5; color:var(--fog); display:flex; gap:11px}
+.saiu li::before{content:"■"; color:rgba(255,107,53,.6); font-size:7px; line-height:2.6; flex:none}
+
+/* ---------------- sócios ---------------- */
+.socios{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.socio{display:grid; grid-template-columns:132px minmax(0,1fr); overflow:hidden}
+.socio img{width:100%; height:100%; object-fit:cover; display:block; border-right:1px solid var(--steel)}
+.socio .txt{padding:26px}
+.socio .papel{font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.18em; color:var(--smoke); margin:6px 0 14px}
+.socio p{font-size:14.5px; line-height:1.55; color:var(--fog)}
+
+/* ---------------- ancoragem de custo ---------------- */
+.versus{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.versus .tag{display:inline-block; margin-bottom:6px}
+
+/* ---------------- garantia ---------------- */
+.garantia{
+  display:flex; align-items:center; gap:32px; padding:36px;
+  border:1px solid var(--steel); border-radius:12px;
+  background:color-mix(in srgb, var(--card) 50%, transparent); position:relative; overflow:hidden;
+}
+.selo{
+  flex:none; width:132px; height:132px; border-radius:50%;
+  display:grid; place-content:center; text-align:center; line-height:1.15;
+  border:1px solid rgba(255,107,53,.35); background:radial-gradient(circle,rgba(255,107,53,.10),transparent 70%);
+  font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--fog);
+}
+.selo b{display:block; font-family:var(--display); font-size:40px; letter-spacing:-.03em; color:var(--cream); margin-bottom:2px}
+.garantia p{font-size:16px; line-height:1.6; color:var(--fog); max-width:560px}
+
+/* ---------------- FAQ em acordeão ---------------- */
+.faq{border-top:1px solid var(--steel); max-width:768px}
+.faq details{border-bottom:1px solid var(--steel)}
+.faq summary{
+  list-style:none; cursor:pointer; padding:24px 40px 24px 0; position:relative;
+  font-size:17px; font-weight:600; letter-spacing:-.01em; color:var(--cream);
+  transition:color .2s;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+"; position:absolute; right:6px; top:22px;
+  font-family:var(--mono); font-size:20px; color:var(--smoke); transition:transform .2s, color .2s;
+}
+.faq details[open] summary::after{content:"−"; color:var(--cream)}
+.faq summary:hover{color:var(--cream)}
+.faq .resposta{padding:0 40px 26px 0; font-size:15.5px; line-height:1.65; color:var(--fog)}
+
+/* ---------------- painéis em moldura de janela ----------------
+   Mesmo recurso que a referência usa no Discord e no podcast: barra
+   com três bolinhas e endereço, que faz a imagem ler como produto real. */
+.paineis{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.janela{
+  grid-column:span 1; overflow:hidden; border:1px solid var(--steel);
+  border-radius:12px; background:color-mix(in srgb, var(--card) 60%, transparent);
+  transition:border-color .2s, transform .2s;
+}
+.janela.larga{grid-column:1 / -1}
+.janela:hover{border-color:color-mix(in srgb, var(--smoke) 50%, transparent); transform:translateY(-2px)}
+.winbar{
+  display:flex; align-items:center; gap:12px; padding:11px 16px;
+  border-bottom:1px solid var(--steel); background:color-mix(in srgb, var(--card) 90%, transparent);
+}
+.winbar .bolas{display:flex; gap:6px}
+.winbar .bolas i{width:9px; height:9px; border-radius:50%; background:var(--steel); display:block}
+.winbar .titulo{font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.2em; color:var(--smoke)}
+.winbar .vivo{
+  margin-left:auto; font-family:var(--mono); font-size:9px; text-transform:uppercase; letter-spacing:.2em;
+  color:#E9A87E; border:1px solid rgba(255,107,53,.35); border-radius:5px; padding:3px 8px;
+  display:flex; align-items:center; gap:6px;
+}
+.winbar .vivo::before{
+  content:""; width:5px; height:5px; border-radius:50%; background:var(--orange);
+  animation:glow-pulse 4.5s ease-in-out infinite;
+}
+.janela img{display:block; width:100%; height:auto}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:24px}
+.chip{
+  font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.14em;
+  color:var(--fog); border:1px solid var(--steel); background:var(--card);
+  border-radius:6px; padding:7px 11px;
+}
+
+/* ---------------- prova: prints reais de WhatsApp ---------------- */
+.provas{columns:3; column-gap:16px}
+.prova{
+  break-inside:avoid; margin-bottom:16px; overflow:hidden;
+  border:1px solid var(--steel); border-radius:12px;
+  background:color-mix(in srgb, var(--card) 50%, transparent);
+  transition:border-color .2s, transform .2s;
+}
+.prova:hover{border-color:color-mix(in srgb, var(--smoke) 50%, transparent); transform:translateY(-2px)}
+.prova img{display:block; width:100%; height:auto}
+.prova.frase{padding:26px}
+.prova.frase p{font-size:15px; line-height:1.6; color:var(--fog)}
+.prova.frase .quem{
+  display:block; margin-top:16px; font-family:var(--mono); font-size:10px;
+  text-transform:uppercase; letter-spacing:.18em; color:var(--smoke);
+}
+
+/* ---------------- preço ---------------- */
+.price{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.amt{font-size:clamp(40px,5cqw,60px); font-weight:600; letter-spacing:-.04em; line-height:1; margin:14px 0 8px}
+.amt .per{font-family:var(--mono); font-size:14px; font-weight:400; letter-spacing:.05em; color:var(--smoke); margin-left:6px}
+.when{font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--smoke); margin-bottom:26px}
+.plist{list-style:none; display:grid; gap:12px; border-top:1px solid var(--steel); padding-top:22px}
+.plist li{font-size:14px; line-height:1.5; color:var(--fog); display:flex; gap:11px}
+.plist li::before{content:"■"; color:var(--cream); font-size:7px; line-height:2.7; flex:none}
+.ribbon{
+  position:absolute; top:22px; right:22px; z-index:3;
+  font-family:var(--mono); font-size:9px; text-transform:uppercase; letter-spacing:.2em;
+  padding:5px 10px; border-radius:6px; color:#0B0B12; background:var(--grad-cta);
+}
+
+/* ---------------- rodapé ---------------- */
+.rodape{border-top:1px solid var(--steel); padding:56px 0 64px}
+.rodape .linhas{display:flex; flex-wrap:wrap; gap:32px; justify-content:space-between; align-items:flex-start}
+.rodape .marca{display:flex; align-items:center; gap:12px}
+.rodape .marca svg{width:34px; height:34px}
+.rodape .marca .nome{font-size:17px; font-weight:600; letter-spacing:-.02em}
+.rodape .frase{margin-top:10px; font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--smoke); max-width:34ch; line-height:1.8}
+.rodape nav{display:flex; flex-direction:column; gap:10px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase}
+.rodape nav a{color:var(--smoke); text-decoration:none; transition:color .2s}
+.rodape nav a:hover{color:var(--cream)}
+.rodape .fim{
+  margin-top:44px; padding-top:22px; border-top:1px solid var(--steel);
+  font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--smoke);
+}
+
+/* ---------------- fechamento centralizado ---------------- */
+.final{padding:160px 0; text-align:center; position:relative}
+.final h2{margin:20px auto 0; max-width:18ch}
+.final .lead{margin:24px auto 0}
+.final .btn{margin-top:40px}
+
+/* ---------------- responsivo ---------------- */
+@container (max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .provas{columns:2}
+  .socios{grid-template-columns:1fr}
+}
+@container (max-width:760px){
+  /* o card de encontro e o de sócio são de duas colunas fixas: abaixo disso
+     a coluna de texto some, então viram empilhados */
+  .encontro{grid-template-columns:1fr}
+  .encontro .lado{
+    border-right:0; border-bottom:1px solid var(--steel);
+    display:flex; align-items:baseline; gap:14px; padding:20px 24px;
+  }
+  .encontro .numero{font-size:28px; margin-top:0; order:-1}
+  .socio{grid-template-columns:1fr}
+  .socio img{height:220px; border-right:0; border-bottom:1px solid var(--steel); object-position:center 25%}
+  .versus{grid-template-columns:1fr}
+  .garantia{flex-direction:column; text-align:center; gap:24px; padding:32px 24px}
+  .garantia p{max-width:none}
+}
+@container (max-width:640px){
+  .sec,.final{padding:112px 0}
+  .hero{padding:72px 0 80px}
+  .wrap{padding:0 20px}
+  .nav{padding:0 20px}
+  .grid,.price,.paineis{grid-template-columns:1fr}
+  .janela.larga{grid-column:auto}
+  .provas{columns:1}
+  /* listas de duas colunas ficam estreitas demais abaixo disto */
+  .reconhece,.nao{grid-template-columns:1fr}
+  .item:nth-child(odd){padding-right:4px; border-right:0}
+  .item:nth-child(even){padding-left:4px}
+  .faq summary{font-size:16px; padding-right:34px}
+  .selo{width:112px; height:112px}
+  .encontro .corpo{padding:24px}
+  .btn{width:100%}
+  .sec-head{margin-bottom:38px}
+  .card{padding:24px}
+  .eyebrow{font-size:11px}
+}
+
+@media (hover:none){
+  .beam::before{animation:none; opacity:.3}
+  .card .spot{display:none}
+  .btn::before,.btn::after{display:none}
+  .grao{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .beam::before,.grao,.brilho,.rede .halo,[data-rede="abaixo"] .rede{animation:none}
+  .reveal{opacity:1; transform:none; transition:none}
+  .btn:hover::after,.caret::after{animation:none}
 }
 </style>
-
-<!-- Meta Pixel Code (Aruna) -->
-<script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '805389752641637');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=805389752641637&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
-
-<!-- Aruna Tracking Client -->
-<script src="https://aruna-atendimento.yanna-barbara.workers.dev/track.js" defer></script>
 </head>
 <body>
 
-<nav>
-  <a class="brand" href="#"><svg class="logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="ng" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/></linearGradient><filter id="ngl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="nngl" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><line x1="50" y1="7" x2="15" y2="86" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round" filter="url(#ngl)"/><line x1="50" y1="7" x2="85" y2="86" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round" filter="url(#ngl)"/><circle cx="50" cy="7" r="5" fill="url(#ng)" filter="url(#nngl)"/><circle cx="50" cy="7" r="2.2" fill="#FFF4DE"/><circle cx="15" cy="86" r="5" fill="url(#ng)" filter="url(#nngl)"/><circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/><circle cx="85" cy="86" r="5" fill="url(#ng)" filter="url(#nngl)"/><circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/><circle cx="29" cy="58" r="3.5" fill="url(#ng)" filter="url(#nngl)"/><circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/><circle cx="71" cy="58" r="3.5" fill="url(#ng)" filter="url(#nngl)"/><circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/></svg>Aruna<b>&nbsp;OS</b></a>
-  <a class="nav-cta" href="https://pay.cakto.com.br/wwjd4ua">Quero contratar</a>
-</nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <div class="lockup reveal in">
-        <span class="badge">ARUNA OS</span>
-        <span class="pill">Para donos de empresa</span>
-      </div>
-      <h1 class="reveal in d1">Você não precisa de mais um funcionário.<br><span class="em">Precisa parar de ser o gargalo da própria empresa.</span></h1>
-      <p class="sub reveal in d2">A Aruna instala <b>5 agentes de IA sob medida</b> dentro da sua empresa. A gente desenha, hospeda e mantém. <b>Você só comanda pelo WhatsApp.</b></p>
-      <div class="hero-actions reveal in d3">
-        <a class="btn" href="https://pay.cakto.com.br/wwjd4ua">Quero contratar o Aruna OS <span class="arrow">↗</span></a>
-        <a class="btn ghost" href="#" data-wa>Tirar dúvida no WhatsApp</a>
-      </div>
-      <p class="hero-fine reveal in d4">Setup em até <b>15 dias úteis</b> · <b>30 dias</b> de acompanhamento intensivo com a Yanna e o Lucas · garantia de 30 dias.</p>
-    </div>
-    <div class="hero-visual reveal in d2">
-      <div class="glow"></div>
-      <canvas id="orb" aria-label="Aruna OS, agentes de IA se organizando em rede"></canvas>
-    </div>
-  </div>
-</header>
+<div class="stage">
 
-<!-- REFRAME: VOCÊ É O GARGALO -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num reveal">01 · O que ninguém te conta</span>
-      <h2 class="ghost-title reveal d1">Você virou<br>o gargalo da<br>própria empresa.</h2>
-    </div>
-    <p class="statement-lead reveal">Não é falta de lead. Não é falta de cliente. É que hoje, sem você no meio de tudo, nada anda. Olha se você se reconhece:</p>
-    <div class="pain-grid reveal d1">
-      <div class="pain"><span class="idx">01</span><p><b>Cliente manda mensagem</b> e só anda quando você mesmo responde.</p></div>
-      <div class="pain"><span class="idx">02</span><p><b>Orçamento fica parado</b> porque ninguém retoma o contato.</p></div>
-      <div class="pain"><span class="idx">03</span><p>Cobrança atrasa e <b>ninguém lembra de cobrar de novo.</b></p></div>
-      <div class="pain"><span class="idx">04</span><p>Cliente disse <b>"depois eu vejo" há semanas.</b> Ninguém voltou nele.</p></div>
-      <div class="pain"><span class="idx">05</span><p>Sua equipe te pergunta tudo, porque <b>só você sabe o processo inteiro.</b></p></div>
-      <div class="pain"><span class="idx">06</span><p>Quando você viaja ou fica doente, <b>a empresa trava.</b></p></div>
-    </div>
-    <p class="pain-foot reveal d1">Se você se reconheceu em 2 dessas, sua empresa não tem sistema. <span class="hl">Tem você.</span></p>
-  </div>
-</section>
+  <nav class="nav">
+    <a class="brand" href="#">
+      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <defs><linearGradient id="ng" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/>
+        </linearGradient></defs>
+        <line x1="50" y1="7" x2="15" y2="86" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="50" y1="7" x2="85" y2="86" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="50" cy="7" r="5" fill="url(#ng)"/><circle cx="50" cy="7" r="2.2" fill="#FFF4DE"/>
+        <circle cx="15" cy="86" r="5" fill="url(#ng)"/><circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/>
+        <circle cx="85" cy="86" r="5" fill="url(#ng)"/><circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/>
+        <circle cx="29" cy="58" r="3.5" fill="url(#ng)"/><circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/>
+        <circle cx="71" cy="58" r="3.5" fill="url(#ng)"/><circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
+      </svg>
+      <span class="nome">Aruna<b>&nbsp;OS</b></span>
+    </a>
+    <a class="nav-cta" href="https://pay.cakto.com.br/wwjd4ua">Quero contratar</a>
+  </nav>
 
-<!-- MECANISMO -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num reveal">02 · O mecanismo</span></div>
-    <div class="statement">
-      <h2 class="reveal">Não é mais gente.<br><span class="em">É a sua empresa trabalhando 24 horas, mesmo sem você por perto.</span></h2>
-      <div class="body">
-        <p class="reveal d1">O Aruna OS coloca agentes de IA pra fazer o que hoje depende só de você: responder cliente na hora, cobrar quem atrasou, retomar quem sumiu e avisar quando alguém precisa comprar de novo.</p>
-        <p class="reveal d2">Cada agente cuida de <strong>uma etapa só</strong>: um responde no WhatsApp em segundos, outro roda a cobrança sozinho, outro vai atrás de quem esfriou. Juntos, formam a operação que hoje só roda quando você está por perto.</p>
-        <p class="reveal d3">Você não aperta botão nenhum. <strong>Os agentes trabalham. Você só acompanha e comanda, tudo pelo WhatsApp.</strong></p>
-      </div>
-    </div>
-    <p class="entreg-label reveal d3" style="margin-top:34px">O que muda no dia a dia, sem jargão:</p>
-    <ul class="entreg reveal d3">
-      <li>Responde cliente e lead na hora, mesmo às 23h ou no fim de semana.</li>
-      <li>Cobra sozinho quem atrasou o pagamento, sem ninguém precisar lembrar.</li>
-      <li>Vai atrás de quem sumiu ou disse "depois eu vejo".</li>
-      <li>Avisa quando é hora do cliente comprar de novo ou renovar o contrato.</li>
-      <li>Manda relatório automático toda semana, sem você pedir.</li>
-    </ul>
-  </div>
-</section>
+  <!-- ================= HERO (centralizado) ================= -->
+  <header class="hero">
+    <div class="dots"></div>
+    <div class="veu" aria-hidden="true"></div>
 
-<!-- VOCÊ NÃO PRECISA -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num reveal">03 · Antes da entrega</span>
-      <h2 class="ghost-title reveal d1">Você NÃO<br>precisa.</h2>
-      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Quebra a primeira objeção antes dela nascer. Olha tudo que <b>não</b> tá no seu colo:</p>
-    </div>
-    <div class="nope-grid reveal d1">
-      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>contratar dev</b>.</p></div>
-      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>aprender prompt, n8n nem API</b>.</p></div>
-      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>hospedar nada</b> no seu servidor.</p></div>
-      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>"tirar uma semana pra implantar"</b>.</p></div>
-      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>ficar arrumando</b> quando algo quebrar.</p></div>
-      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>trocar de sistema</b> de gestão.</p></div>
-      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>entender de IA</b>.</p></div>
-      <div class="nope"><span class="x">✕</span><p>Você NÃO precisa <b>treinar a equipe</b> em ferramenta nova.</p></div>
-    </div>
-    <p class="nope-foot reveal d1">A Aruna instala, hospeda, mantém e atualiza. <span class="hl">Você só usa pelo WhatsApp.</span></p>
-  </div>
-</section>
-
-<!-- O QUE VOCÊ RECEBE: 3 ENCONTROS -->
-<section class="sec" id="como">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num reveal">04 · O que você recebe</span>
-      <h2 class="ghost-title reveal d1">3 encontros.<br>Do desenho<br>ao ar.</h2>
-      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:640px">Você e o seu sócio (se tiver) no Google Meet gravado com a Yanna e o Lucas. A Aruna executa, você acompanha e valida cada passo.</p>
-    </div>
-    <div class="encontros">
-      <div class="encontro reveal d1" data-n="1">
-        <span class="k">Encontro 01 · Dia 1 · 1h30</span>
-        <h3>A gente desenha o <span class="em">retorno automático</span> da sua empresa.</h3>
-        <p class="lede">A gente entra na sua operação, entende cada processo e desenha na sua frente o retorno automático, setor por setor. Já saímos com a lista confirmada de quais agentes vão começar a rodar. E conforme vai mapeando, a gente já aponta onde tá vazando e como corrigir.</p>
-        <p class="entreg-label">A gente passa setor por setor:</p>
-        <ul class="entreg">
-          <li><b>Comercial:</b> a cadência que retoma lead e orçamento parado, responde na hora, qualifica e fecha, desenhada ponta a ponta.</li>
-          <li><b>Financeiro:</b> as recorrências estão automatizadas? A conciliação de Pix e cartão é automática? Tem DRE? Os relatórios estão funcionando de verdade? A gente acerta tudo isso.</li>
-          <li><b>Pós-venda:</b> aviso de recompra ou renovação antes do vencimento, retomada de cliente sumido, atendimento que não deixa ninguém esperando.</li>
-          <li>Lista confirmada dos 5 agentes que começam a rodar na sua empresa.</li>
-          <li>Os gargalos de hoje mapeados, com o plano de correção já na mão.</li>
-        </ul>
-        <p class="seal"><span class="hl">O retorno automático da sua empresa desenhado e confirmado.</span> ✓</p>
-      </div>
-      <div class="encontro reveal d2" data-n="2">
-        <span class="k">Encontro 02 · Dia 8 · 1h</span>
-        <h3>A gente garante que o que <span class="em">fechamos tá rodando.</span></h3>
-        <p class="lede">A gente coloca o que foi desenhado pra rodar e garante, na sua frente, que tá funcionando. Aqui é onde a gente vê o que ainda precisa melhorar pra automatização ficar completa, e acerta o que faltou no caminho, porque sempre aparece um detalhe que só some quando bate na operação real.</p>
-        <p class="entreg-label">Você sai com:</p>
-        <ul class="entreg">
-          <li>Os agentes fechados no Encontro 1 rodando e testados com você</li>
-          <li>O que ainda precisa de ajuste pra automação ficar 100% mapeado</li>
-          <li>Os pontos que faltaram no caminho identificados e corrigidos</li>
-          <li>Tom, regras e integrações afinados ao vivo com você</li>
-        </ul>
-        <p class="seal"><span class="hl">Sua empresa automatizada rodando, com os ajustes finais resolvidos.</span> ✓</p>
-      </div>
-      <div class="encontro reveal d3" data-n="3">
-        <span class="k">Encontro 03 · Dia 15 · 1h</span>
-        <h3>A gente valida tudo, <span class="em">de ponta a ponta.</span></h3>
-        <p class="lede">Revisa tudo dos dois primeiros, confere se está tudo entregue e de acordo, e a sua empresa já estará no ar.</p>
-        <p class="entreg-label">Você sai com:</p>
-        <ul class="entreg">
-          <li>Cada agente combinado validado e funcionando em produção real</li>
-          <li>Checklist de entrega conferido item por item com você</li>
-          <li>Sistema 100% no ar: WhatsApp real, financeiro e pós-venda rodando</li>
-          <li>Painel ao vivo no seu celular pra acompanhar tudo</li>
-        </ul>
-        <p class="seal"><span class="hl">Tudo validado, tudo de acordo. Sua empresa anda sozinha.</span> ✓</p>
+    <div class="wrap">
+      <div class="conteudo">
+        <div class="lockup reveal in">
+          <span class="tag on">ARUNA OS</span>
+          <span class="tag">Para donos de empresa</span>
+        </div>
+        <!-- ===== TESTE A/B DA HEADLINE ===== -->
+        <!-- A: perda de venda (dor). Nasce do argumento anti-objeção do próprio bot de vendas. -->
+        <div class="var-a">
+          <h1 class="reveal in">Sua empresa perde venda enquanto você <span class="palavra" data-texto="dorme">dorme</span>.</h1>
+          <p class="lead reveal in">A Aruna instala <b>5 agentes de IA sob medida</b> que respondem, cobram e
+            retomam cliente <b>24 horas por dia</b>. Você só comanda pelo WhatsApp.</p>
+        </div>
+        <!-- B: contraste de categoria. Padrão dos dois melhores da pesquisa (Botpress, Tidio),
+             e o espaço que nenhum concorrente brasileiro ocupa. -->
+        <div class="var-b">
+          <h1 class="reveal in">IA não se compra.<br>Se <span class="palavra" data-texto="instala">instala</span>.</h1>
+          <p class="lead reveal in">A Aruna instala <b>5 agentes de IA sob medida</b> dentro da sua empresa,
+            em <b>15 dias</b>. Você não configura nada: a gente desenha, hospeda e mantém.</p>
+        </div>
+        <div class="hero-actions reveal in">
+          <a class="btn" href="https://pay.cakto.com.br/wwjd4ua">Quero contratar o Aruna OS</a>
+          <a class="btn ghost" href="https://wa.me/558598026295">Tirar dúvida no WhatsApp</a>
+        </div>
+        <p class="linha-cmd caret reveal in"><span class="cifrao">$</span> aruna os instalar --agentes 5</p>
+        <p class="fine reveal in">Setup em até <b>15 dias úteis</b> · <b>30 dias</b> de acompanhamento · garantia de 30 dias.</p>
       </div>
     </div>
 
-    <p class="entreg-label reveal" style="margin:56px 0 18px">Você vê tudo rodando ao vivo:</p>
-    <div class="deliver-grid reveal d1">
-      <div class="panel-card wide">
-        <div class="winbar"><span class="dots"><i></i><i></i><i></i></span><span class="title">Painel comercial</span><span class="live">ao vivo</span></div>
-        <img class="shot" src="assets/dashboard-comercial.png" alt="Painel comercial da empresa: total de vendas, meta diária, ticket médio, conversão e lead time" loading="lazy">
-      </div>
-      <div class="panel-card">
-        <div class="winbar"><span class="dots"><i></i><i></i><i></i></span><span class="title">Painel executivo · BI</span></div>
-        <img class="shot" src="assets/dashboard-executivo.png" alt="Painel executivo com faturamento, ranking de cliente e faturamento por origem e produto" loading="lazy">
-      </div>
-      <div class="panel-card">
-        <div class="winbar"><span class="dots"><i></i><i></i><i></i></span><span class="title">Funil de vendas · Kommo</span></div>
-        <img class="shot" src="assets/pipeline-kommo.png" alt="Funil de vendas no Kommo: entrada, em atendimento, qualificado, negociação e compra posterior" loading="lazy">
-      </div>
+    <!-- fica depois do texto no HTML: nos modos "atrás" e "laterais" ela é posicionada
+         de forma absoluta e a ordem não importa; no modo "abaixo" ela cai naturalmente aqui -->
+    <div class="rede" aria-hidden="true">
+      <span class="halo"></span>
+      <canvas id="orb" aria-label="Agentes de IA se organizando em rede"></canvas>
     </div>
-    <div class="deliver-chips reveal d2">
-      <span class="chip">Mapa visual da sua empresa</span>
-      <span class="chip">Catálogo dos agentes</span>
-      <span class="chip">Diagrama de integrações</span>
-      <span class="chip">Regras de cada agente</span>
-      <span class="chip">Manual em PDF</span>
-      <span class="chip">Relatório semanal automático</span>
-    </div>
-    <p class="deliver-note reveal">// painéis reais de operação que a Aruna entrega · você acessa pelo celular, com alertas em tempo real</p>
-  </div>
-</section>
+  </header>
 
-<!-- 30 DIAS DE ACOMPANHAMENTO -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num reveal">05 · E depois do go-live</span>
-      <h2 class="ghost-title reveal d1">+30 dias<br>de mão dada.</h2>
-      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">A entrega não termina no go-live. Por 30 dias depois, você tem a Yanna e o Lucas num grupo de WhatsApp dedicado à tua empresa.</p>
+  <!-- ================= 01 · A DOR ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">01</span>[ o que ninguém te conta ]</p>
+        <h2 class="mt-etiqueta reveal">Sem você no meio de tudo, <span class="palavra" data-texto="nada anda">nada anda</span>.</h2>
+        <p class="lead mt-texto reveal">Não é falta de lead. Não é falta de cliente. Olha se você se reconhece:</p>
+      </div>
+
+      <div class="reconhece">
+        <div class="item reveal"><span class="num">01</span><p>Cliente manda mensagem e só anda quando você mesmo responde.</p></div>
+        <div class="item reveal"><span class="num">02</span><p>Orçamento fica parado porque ninguém retoma o contato.</p></div>
+        <div class="item reveal"><span class="num">03</span><p>Cobrança atrasa e ninguém lembra de cobrar de novo.</p></div>
+        <div class="item reveal"><span class="num">04</span><p>Cliente disse "depois eu vejo" há semanas. Ninguém voltou nele.</p></div>
+        <div class="item reveal"><span class="num">05</span><p>Sua equipe te pergunta tudo, porque só você sabe o processo inteiro.</p></div>
+        <div class="item reveal"><span class="num">06</span><p>Quando você viaja ou fica doente, a empresa trava.</p></div>
+      </div>
+
+      <p class="veredito reveal">Se você se reconheceu em 2 dessas, sua empresa não tem sistema. <b>Tem você.</b></p>
     </div>
-    <div class="sixty reveal d1">
-      <span class="k">Acompanhamento intensivo · 30 dias · sem cobrar nada extra</span>
-      <h3>A Yanna e o Lucas, <span class="grad-text">CEO e CTO da Aruna</span>, imersos na tua empresa.</h3>
-      <p class="lede">Mudou processo, equipe precisa de ajuste, agente respondendo torto, integração caiu? <b>É só mandar mensagem.</b> A gente resolve.</p>
-      <ul class="sixty-list">
-        <li>Grupo dedicado no WhatsApp com a Yanna e o Lucas, CEO e CTO da Aruna, imersos na tua empresa</li>
-        <li>Resposta em até 1 hora em horário comercial</li>
-        <li>Ajuste ilimitado nos agentes durante os 30 dias</li>
-        <li>Relatório semanal automatizado no teu WhatsApp toda segunda</li>
-        <li>Manutenção sempre que algo mudar na internet (Meta, WhatsApp, sistemas conectados)</li>
-        <li>Mensalidade só começa a contar 31 dias depois do fechamento do setup</li>
+  </section>
+
+  <!-- ================= 02 · O MECANISMO ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">02</span>[ o mecanismo ]</p>
+        <h2 class="mt-etiqueta reveal">Não é mais gente. É a sua empresa trabalhando <span class="palavra" data-texto="24 horas">24 horas</span>.</h2>
+        <p class="lead mt-texto reveal">O Aruna OS coloca agentes de IA pra fazer o que hoje depende só de você: responder cliente na hora,
+          cobrar quem atrasou, retomar quem sumiu e avisar quando alguém precisa comprar de novo.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card beam squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Responde na hora</h3></div>
+          <p class="count">mesmo às 23h ou no sábado</p>
+          <ul><li>Cliente e lead não ficam esperando ninguém acordar.</li></ul>
+        </div>
+        <div class="card beam beam--delay squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Cobra sozinho</h3></div>
+          <p class="count">sem ninguém precisar lembrar</p>
+          <ul><li>Quem atrasou o pagamento é cobrado antes, no dia e depois.</li></ul>
+        </div>
+        <div class="card beam squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Vai atrás de quem sumiu</h3></div>
+          <p class="count">e de quem disse "depois eu vejo"</p>
+          <ul><li>Lead frio volta pra conversa com argumento novo.</li></ul>
+        </div>
+        <div class="card beam beam--delay squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Avisa da recompra</h3></div>
+          <p class="count">antes do vencimento</p>
+          <ul><li>Renovação e recompra não dependem mais da sua memória.</li></ul>
+        </div>
+        <div class="card beam squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Manda relatório</h3></div>
+          <p class="count">toda semana, sem você pedir</p>
+          <ul><li>O que entrou, o que travou e o que precisa da sua decisão.</li></ul>
+        </div>
+        <div class="card beam beam--delay squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Você não aperta botão</h3></div>
+          <p class="count">só acompanha e comanda</p>
+          <ul><li>Tudo pelo WhatsApp, do jeito que você já usa hoje.</li></ul>
+        </div>
+      </div>
+
+      <p class="cap reveal">// cada agente cuida de uma etapa só. Juntos, formam a operação que hoje só roda quando <span class="hl">você está no meio</span>.</p>
+    </div>
+  </section>
+
+  <!-- ================= 03 · VOCÊ NÃO PRECISA ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">03</span>[ antes da entrega ]</p>
+        <h2 class="mt-etiqueta reveal">Você <span class="palavra" data-texto="NÃO">NÃO</span> precisa.</h2>
+        <p class="lead mt-texto reveal">Olha tudo que não fica no seu colo:</p>
+      </div>
+
+      <ul class="nao reveal">
+        <li>Você <b>não</b> precisa contratar dev.</li>
+        <li>Você <b>não</b> precisa aprender prompt, n8n nem API.</li>
+        <li>Você <b>não</b> precisa hospedar nada no seu servidor.</li>
+        <li>Você <b>não</b> precisa tirar uma semana pra implantar.</li>
+        <li>Você <b>não</b> precisa ficar arrumando quando algo quebrar.</li>
+        <li>Você <b>não</b> precisa trocar de sistema de gestão.</li>
+        <li>Você <b>não</b> precisa entender de IA.</li>
+        <li>Você <b>não</b> precisa treinar a equipe em ferramenta nova.</li>
       </ul>
-      <p class="sixty-foot">// <span class="hl">Tudo incluso.</span> Nada cobrado a mais durante esses 30 dias de acompanhamento.</p>
-    </div>
-  </div>
-</section>
 
-<!-- SQUAD DE AGENTES -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num reveal">06 · Dentro do sistema</span>
-      <h2 class="ghost-title reveal d1">5 agentes.<br>Os certos.<br>Sob medida.</h2>
-      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">A gente monta o squad da sua empresa logo no começo, junto com você. Do cardápio completo, saem os 5 agentes certos pra sua operação, escolhidos com você conforme o que mais aperta. Este é o cardápio, setor por setor:</p>
+      <p class="veredito reveal">A Aruna instala, hospeda, mantém e atualiza. <b>Você só usa pelo WhatsApp.</b></p>
     </div>
-    <div class="squads">
-      <div class="squad reveal d1">
-        <div class="top"><span class="node"></span><h3>Comercial</h3></div>
-        <p class="count">Até 7 agentes</p>
-        <ul>
-          <li><b>SDR WhatsApp:</b> responde lead novo em até 30s, qualifica em 5 perguntas, encaminha pro vendedor certo</li>
-          <li><b>Pesquisa de lead:</b> monta dossiê de 1 página antes do time comercial falar</li>
-          <li><b>Orçamento rápido com áudio:</b> primeira dúvida respondida em 10 min, com áudio humano</li>
-          <li><b>Follow-up 11 toques:</b> ressuscita lead frio em sequência de 21 dias</li>
-          <li><b>Reentrada na base:</b> alerta vendedor quando ex-lead volta a clicar</li>
-          <li><b>Quebra de "depois eu vejo":</b> volta no cliente esquecido com argumento novo</li>
-          <li><b>Alerta de lead parado:</b> notifica vendedor se lead não responde em 24h</li>
-        </ul>
-      </div>
-      <div class="squad reveal d2">
-        <div class="top"><span class="node"></span><h3>Financeiro</h3></div>
-        <p class="count">Até 6 agentes</p>
-        <ul>
-          <li><b>Cobrança automatizada:</b> lembra cliente 3 dias antes, no dia e depois</li>
-          <li><b>Conciliação Pix/cartão:</b> verifica entrada, dá baixa automática</li>
-          <li><b>Lembrete de boleto/parcela:</b> avisa 5 dias antes, com link pra pagar</li>
-          <li><b>Acompanhamento de recebíveis:</b> detecta atraso de fornecedor/parceiro e alerta</li>
-          <li><b>Relatório financeiro mensal:</b> DRE pronto dia 5 de cada mês</li>
-          <li><b>Fluxo de caixa preditivo:</b> projeta 30/60/90 dias e alerta se ficar negativo</li>
-        </ul>
-      </div>
-      <div class="squad reveal d3">
-        <div class="top"><span class="node"></span><h3>Pós-venda</h3></div>
-        <p class="count">Até 9 agentes</p>
-        <ul>
-          <li><b>Renovação ou recompra automática:</b> avisa antes do vencimento ou da próxima compra, agenda revisão (essencial)</li>
-          <li><b>Retomada de cliente esquecido:</b> identifica quem sumiu há +60 dias</li>
-          <li><b>FAQ inteligente:</b> dúvidas frequentes respondidas em até 30s</li>
-          <li><b>Triagem inicial:</b> classifica mensagem e encaminha pra pessoa certa</li>
-          <li><b>NPS pós-venda:</b> pesquisa 30 dias depois da compra</li>
-          <li><b>Onboarding cliente novo:</b> sequência de 5-7 mensagens nos primeiros 7 dias</li>
-          <li><b>Aniversário do contrato/compra:</b> mensagem no dia certo, sem ninguém lembrar</li>
-          <li><b>Reclamação ou dúvida crítica:</b> detecta pelo texto e escala pra humano em segundos</li>
-          <li><b>Pesquisa de satisfação semestral:</b> abre conversa pra reter cliente</li>
-        </ul>
-      </div>
-      <div class="squad reveal d1">
-        <div class="top"><span class="node"></span><h3>Marketing</h3></div>
-        <p class="count">Até 6 agentes</p>
-        <ul>
-          <li><b>Conteúdo e social:</b> cria e agenda post, mantém o calendário e responde comentário e direct</li>
-          <li><b>Campanha de anúncios:</b> monta e monitora Meta e Google Ads, alerta quando o custo por lead sobe</li>
-          <li><b>E-mail e CRM:</b> sequência de nutrição, segmentação da base e reativação de quem esfriou</li>
-          <li><b>SEO e blog:</b> pauta, otimiza e publica artigo pra atrair tráfego orgânico</li>
-          <li><b>Criativo de anúncio:</b> gera variação de headline, copy e imagem a partir do que já performou</li>
-          <li><b>Relatório de marketing:</b> consolida tráfego, custo e conversão num resumo semanal claro</li>
-        </ul>
-      </div>
-      <div class="squad reveal d2">
-        <div class="top"><span class="node"></span><h3>RH e Pessoas</h3></div>
-        <p class="count">Até 5 agentes</p>
-        <ul>
-          <li><b>Triagem de currículo:</b> filtra e ranqueia candidato pelos critérios da vaga</li>
-          <li><b>Agendamento de entrevista:</b> marca horário, confirma e lembra o candidato</li>
-          <li><b>Onboarding de funcionário:</b> conduz os primeiros dias, com documentos e acessos</li>
-          <li><b>Banco de talentos:</b> reengaja candidato bom que não fechou numa vaga anterior</li>
-          <li><b>Clima e feedback:</b> pesquisa interna periódica e alerta risco de saída</li>
-        </ul>
-      </div>
-      <div class="squad reveal d3">
-        <div class="top"><span class="node"></span><h3>Operações</h3></div>
-        <p class="count">Até 5 agentes</p>
-        <ul>
-          <li><b>Agendamento e agenda:</b> marca, confirma e lembra compromisso ou serviço</li>
-          <li><b>Follow de fornecedor:</b> cobra prazo e status de pedido, alerta atraso</li>
-          <li><b>Controle de estoque:</b> avisa quando item está acabando e sugere reposição</li>
-          <li><b>Ordem de serviço:</b> abre, encaminha e acompanha até concluir</li>
-          <li><b>Central de avisos:</b> comunica a equipe sobre mudança de processo ou meta</li>
-        </ul>
-      </div>
-    </div>
-    <p class="squads-cap reveal">// <span class="hl">38 agentes no cardápio.</span> A gente escolhe com você os 5 certos pra rodar na sua empresa. Cada um com um trabalho claro, ativo 24/7, mantido pela Aruna.</p>
-  </div>
-</section>
+  </section>
 
-<!-- QUEM ATENDE VOCÊ -->
-<section class="sec" id="quem">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num reveal">07 · Quem atende você</span>
-      <h2 class="ghost-title reveal d1">A gente é<br>dois sócios<br>na ponta.</h2>
-      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Sem comercial terceirizado, sem atendente intermediária. Quem fecha contigo e quem entrega é a gente, do início ao fim.</p>
-    </div>
-    <div class="socios reveal d1">
-      <div class="socio">
-        <div class="avatar"><img src="assets/yanna.jpg" alt="Yanna Bárbara, sócia da Aruna"></div>
-        <div>
-          <h3>Yanna Bárbara</h3>
-          <div class="role">CEO · Operação e Comercial</div>
-          <p>Sou eu quem conversa com você do início ao fim: entendo a dor do seu negócio, monto a estratégia e acompanho a operação no dia a dia.</p>
+  <!-- ================= 04 · 5 AGENTES ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">04</span>[ dentro do sistema ]</p>
+        <h2 class="mt-etiqueta reveal"><span class="palavra" data-texto="5 agentes.">5 agentes.</span> Os certos. Sob medida.</h2>
+        <p class="lead mt-texto reveal">A gente monta o squad da sua empresa junto com você. Do cardápio completo, saem os 5 certos pra sua operação.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card beam squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Comercial</h3></div>
+          <p class="count">Até 7 agentes</p>
+          <ul>
+            <li>Responde lead novo em 30s e qualifica</li>
+            <li>Dossiê do lead antes da conversa</li>
+            <li>Ressuscita lead frio em 21 dias</li>
+          </ul>
+          <p class="more">+ 4 no cardápio</p>
+        </div>
+
+        <div class="card beam beam--delay squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Financeiro</h3></div>
+          <p class="count">Até 6 agentes</p>
+          <ul>
+            <li>Cobra antes, no dia e depois do vencimento</li>
+            <li>Concilia Pix e cartão, dá baixa sozinho</li>
+            <li>Projeta o caixa e avisa antes de faltar</li>
+          </ul>
+          <p class="more">+ 3 no cardápio</p>
+        </div>
+
+        <div class="card beam squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Pós-venda</h3></div>
+          <p class="count">Até 9 agentes</p>
+          <ul>
+            <li>Avisa da renovação antes de vencer</li>
+            <li>Busca quem sumiu há mais de 60 dias</li>
+            <li>Detecta reclamação e chama humano</li>
+          </ul>
+          <p class="more">+ 6 no cardápio</p>
+        </div>
+
+        <div class="card beam beam--delay squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Marketing</h3></div>
+          <p class="count">Até 6 agentes</p>
+          <ul>
+            <li>Cria, agenda e responde comentário</li>
+            <li>Avisa quando o custo por lead sobe</li>
+            <li>Resumo semanal de tráfego e conversão</li>
+          </ul>
+          <p class="more">+ 3 no cardápio</p>
+        </div>
+
+        <div class="card beam squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>RH e Pessoas</h3></div>
+          <p class="count">Até 5 agentes</p>
+          <ul>
+            <li>Filtra e ranqueia currículo pela vaga</li>
+            <li>Marca, confirma e lembra a entrevista</li>
+            <li>Conduz os primeiros dias do contratado</li>
+          </ul>
+          <p class="more">+ 2 no cardápio</p>
+        </div>
+
+        <div class="card beam beam--delay squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Operações</h3></div>
+          <p class="count">Até 5 agentes</p>
+          <ul>
+            <li>Marca, confirma e lembra compromisso</li>
+            <li>Cobra prazo de fornecedor e alerta atraso</li>
+            <li>Avisa item acabando e sugere reposição</li>
+          </ul>
+          <p class="more">+ 2 no cardápio</p>
         </div>
       </div>
-      <div class="socio">
-        <div class="avatar"><img src="assets/lucas.jpg" alt="Lucas Nogueira, sócio da Aruna"></div>
-        <div>
-          <h3>Lucas Nogueira</h3>
-          <div class="role">CTO · Tecnologia e Agentes</div>
-          <p>Quem coloca os agentes pra rodar: implantação, integrações com WhatsApp e os sistemas que você já usa, automações e toda a parte técnica, pra você não precisar pensar nisso.</p>
+
+      <p class="cap reveal">// <span class="hl">38 agentes no cardápio.</span> A gente escolhe com você os 5 certos pra rodar na sua empresa.</p>
+    </div>
+  </section>
+
+  <!-- ================= 05 · OS 3 ENCONTROS ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">05</span>[ como entra na sua empresa ]</p>
+        <h2 class="mt-etiqueta reveal"><span class="palavra" data-texto="3 encontros">3 encontros</span>. Do desenho ao ar.</h2>
+        <p class="lead mt-texto reveal">Você e o seu sócio no Google Meet gravado, com a Yanna e o Lucas. A Aruna executa, você acompanha e valida cada passo.</p>
+      </div>
+
+      <div class="encontros">
+        <article class="card encontro beam reveal">
+          <div class="lado">
+            <p class="quando">Dia 1 · 1h30</p>
+            <p class="numero">01</p>
+          </div>
+          <div class="corpo">
+            <h3>A gente desenha o retorno automático da sua empresa.</h3>
+            <p>Entramos na sua operação, entendemos cada processo e desenhamos na sua frente, setor por setor: comercial, financeiro e pós-venda.</p>
+            <ul class="saiu">
+              <li>Lista confirmada dos 5 agentes que começam a rodar</li>
+              <li>Os gargalos de hoje mapeados, com o plano de correção na mão</li>
+              <li>O retorno automático da sua empresa desenhado e confirmado</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card encontro beam beam--delay reveal">
+          <div class="lado">
+            <p class="quando">Dia 8 · 1h</p>
+            <p class="numero">02</p>
+          </div>
+          <div class="corpo">
+            <h3>A gente garante que o que fechamos está rodando.</h3>
+            <p>Colocamos o que foi desenhado pra rodar e mostramos funcionando, na sua frente. É aqui que acertamos o que ainda falta.</p>
+            <ul class="saiu">
+              <li>Os agentes do encontro 1 rodando e testados com você</li>
+              <li>Tom, regras e integrações afinados ao vivo</li>
+              <li>Os pontos que faltaram identificados e corrigidos</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card encontro beam reveal">
+          <div class="lado">
+            <p class="quando">Dia 15 · 1h</p>
+            <p class="numero">03</p>
+          </div>
+          <div class="corpo">
+            <h3>A gente valida tudo, de ponta a ponta.</h3>
+            <p>Revisamos os dois primeiros encontros, conferimos item por item e a sua empresa entra no ar.</p>
+            <ul class="saiu">
+              <li>Cada agente combinado validado e funcionando em produção real</li>
+              <li>Sistema no ar: WhatsApp real, financeiro e pós-venda rodando</li>
+              <li>Painel ao vivo no seu celular pra acompanhar tudo</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 06 · +30 DIAS ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">06</span>[ e depois do go-live ]</p>
+        <h2 class="mt-etiqueta reveal">Mais <span class="palavra" data-texto="30 dias">30 dias</span> de mão dada.</h2>
+        <p class="lead mt-texto reveal">A entrega não termina no go-live. Por 30 dias, você tem a Yanna e o Lucas num grupo de WhatsApp dedicado à sua empresa.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card beam squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Grupo direto</h3></div>
+          <p class="count">com a CEO e o CTO</p>
+          <ul><li>Mudou processo, agente respondendo torto, integração caiu? Manda mensagem.</li></ul>
+        </div>
+        <div class="card beam beam--delay squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Resposta em 1 hora</h3></div>
+          <p class="count">em horário comercial</p>
+          <ul><li>Sem fila, sem chamado, sem atendente intermediária.</li></ul>
+        </div>
+        <div class="card beam squad reveal">
+          <span class="spot"></span>
+          <div class="top"><span class="node"></span><h3>Ajuste ilimitado</h3></div>
+          <p class="count">durante os 30 dias</p>
+          <ul><li>Nada cobrado a mais nesse período de acompanhamento.</li></ul>
         </div>
       </div>
-    </div>
-    <p class="socios-foot reveal">No acompanhamento, vocês ficam num grupo direto com a gente. <span class="hl">Teus CEO e CTO de IA, imersos na tua empresa.</span></p>
-  </div>
-</section>
 
-<!-- PROVA-META -->
-<section class="sec" id="prova">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num reveal">08 · A prova que você já viu</span>
-      <h2 class="ghost-title reveal d1">O agente que<br>te atendeu já é<br>o Aruna OS.</h2>
-      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:640px">Antes de chegar até essa página, alguém te respondeu no WhatsApp da Aruna. Não foi estagiário. Não foi terceirizado.</p>
+      <p class="cap reveal">// a mensalidade só começa a contar <span class="hl">31 dias depois</span> do fechamento do setup</p>
     </div>
-    <div class="sixty reveal d1">
-      <span class="k">Prova ao vivo · sem ator, sem mockup</span>
-      <h3>A própria Aruna roda o Aruna OS <span class="grad-text">dentro de casa.</span></h3>
-      <p class="lede"><b>"O agente que te atendeu é o mesmo que vai trabalhar por você."</b> A gente não vende o que não usa. Foi um agente do Aruna OS que te respondeu, te pesquisou, te qualificou. O mesmo tipo de agente que vai rodar dentro da sua empresa.</p>
-      <p class="lede" style="margin-bottom:0">A própria Aruna roda os agentes dentro de casa: atendimento, follow-up, relatório e cobrança, tudo automatizado pela mesma ferramenta que você está prestes a contratar.</p>
-    </div>
+  </section>
 
-    <p class="feed-label reveal" style="margin-top:48px">O que dizem no WhatsApp</p>
-    <div class="say-grid reveal d1">
-      <figure class="say media">
-        <img src="assets/feedback-video.gif" alt="Vídeo de feedback de cliente da Aruna" loading="lazy">
-      </figure>
-      <figure class="say media">
-        <img src="assets/feedback1.jpg" alt="Print de WhatsApp: cliente conta que com a Yanna conseguiu focar no que importa" loading="lazy">
-      </figure>
-      <figure class="say quote">
-        <blockquote>A própria Aruna roda os agentes dentro da agência. A IA virou sócia: pesquisa lead, atende cliente, manda relatório, cobra. Sobra cabeça pro estratégico.</blockquote>
-      </figure>
-      <figure class="say media">
-        <img src="assets/feedback3.jpg" alt="Print de WhatsApp: cliente conta que a agenda encheu com o atendimento automático de madrugada e fim de semana" loading="lazy">
-      </figure>
-      <figure class="say media">
-        <img src="assets/feedback2.jpg" alt="Print de WhatsApp: cliente agradece a implementação e o atendimento rápido" loading="lazy">
-      </figure>
-      <figure class="say media">
-        <img src="assets/feedback4.jpg" alt="Print de WhatsApp: cliente conta que a atendente saiu do WhatsApp o dia todo e a IA responde até 23h" loading="lazy">
-      </figure>
-      <figure class="say quote">
-        <blockquote>Empresa cliente rodando agentes de IA em qualificação de lead, retomada de lead frio e cadência de 10 toques. O dono parou de ser SDR do próprio negócio.</blockquote>
-      </figure>
-    </div>
-    <p class="deliver-note reveal" style="margin-top:26px">// conversas de clientes no WhatsApp · identidade preservada</p>
-  </div>
-</section>
-
-<!-- ANCORAGEM DE PREÇO -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num reveal">09 · Antes de falar de preço</span>
-      <h2 class="ghost-title reveal d1">Quanto custa<br>UM funcionário<br>só pra isso?</h2>
-      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:640px">Antes de olhar o valor do Aruna OS, olha o que custa fazer isso do jeito manual, com gente.</p>
-    </div>
-    <div class="price-grid reveal d1">
-      <div class="pcard">
-        <span class="tag">Contratar uma pessoa</span>
-        <div class="amt">R$ 2 a 3 mil<span class="per">/mês</span></div>
-        <div class="when">salário + encargos, 1 pessoa só</div>
-        <ul class="plist">
-          <li>Faz só cobrança, follow-up e retomada de cliente sumido</li>
-          <li>Trabalha 8h por dia, 5 dias por semana</li>
-          <li>Tira férias, falta, pede aumento, pode pedir demissão</li>
-          <li>Se ela sair, o processo para de novo até contratar outra</li>
-        </ul>
+  <!-- ================= PAINÉIS: O QUE VOCÊ RECEBE ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">07</span>[ o que você recebe ]</p>
+        <h2 class="mt-etiqueta reveal">Você vê tudo rodando <span class="palavra" data-texto="ao vivo">ao vivo</span>.</h2>
+        <p class="lead mt-texto reveal">Painéis reais de operação que a Aruna entrega. Você acessa pelo celular, com alerta em tempo real.</p>
       </div>
-      <div class="pcard feature">
-        <span class="ribbon">sem folha extra</span>
-        <span class="tag">Aruna OS</span>
-        <div class="amt">R$ 897<span class="per">/mês</span></div>
-        <div class="when">todos os agentes, sem exceção</div>
-        <ul class="plist">
-          <li>Faz cobrança, follow-up, retomada e muito mais, ao mesmo tempo</li>
-          <li>Trabalha 24 horas, todo santo dia, sem parar</li>
-          <li>Não tira férias, não falta, não pede aumento, não pede demissão</li>
-          <li>A Aruna mantém, atualiza e conserta se algo quebrar</li>
-        </ul>
+
+      <div class="paineis">
+        <div class="janela larga reveal">
+          <div class="winbar">
+            <span class="bolas"><i></i><i></i><i></i></span>
+            <span class="titulo">Painel comercial</span>
+            <span class="vivo">ao vivo</span>
+          </div>
+          <img src="img/dashboard-comercial.webp" width="2968" height="1434" loading="lazy"
+               alt="Painel comercial: total de vendas, meta diária, ticket médio, conversão e tempo de resposta">
+        </div>
+
+        <div class="janela reveal">
+          <div class="winbar">
+            <span class="bolas"><i></i><i></i><i></i></span>
+            <span class="titulo">Painel executivo · BI</span>
+          </div>
+          <img src="img/dashboard-executivo.webp" width="1208" height="624" loading="lazy"
+               alt="Painel executivo com faturamento, ranking de cliente e faturamento por origem e produto">
+        </div>
+
+        <div class="janela reveal">
+          <div class="winbar">
+            <span class="bolas"><i></i><i></i><i></i></span>
+            <span class="titulo">Funil de vendas · Kommo</span>
+          </div>
+          <img src="img/pipeline-kommo.webp" loading="lazy"
+               alt="Funil de vendas: entrada, em atendimento, qualificado, negociação e compra posterior">
+        </div>
+      </div>
+
+      <div class="chips reveal">
+        <span class="chip">Mapa visual da sua empresa</span>
+        <span class="chip">Catálogo dos agentes</span>
+        <span class="chip">Diagrama de integrações</span>
+        <span class="chip">Regras de cada agente</span>
+        <span class="chip">Manual em PDF</span>
+        <span class="chip">Relatório semanal automático</span>
       </div>
     </div>
-    <p class="price-note reveal">// comparação com o custo médio de contratação CLT no Brasil (salário + encargos) para uma função de cobrança/follow-up · não inclui benefícios, treinamento nem tempo de gestão</p>
-  </div>
-</section>
+  </section>
 
-<!-- PREÇO TRANSPARENTE -->
-<section class="sec" id="preco">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num reveal">10 · Preço transparente</span>
-      <h2 class="ghost-title reveal d1">R$ 1.997 pra<br>instalar. R$ 897<br>por mês pra rodar.</h2>
-      <p class="reveal d2" style="font-size:1.1rem;color:var(--ink-mid);max-width:620px">Tudo incluso. Nada de fatura por fora de IA, hospedagem ou ajuste. <b>A mensalidade só começa a contar 31 dias depois do fechamento do setup.</b></p>
-    </div>
-    <div class="price-grid">
-      <div class="pcard reveal d1">
-        <span class="tag">Setup · uma vez</span>
-        <div class="amt">R$ 1.997</div>
-        <div class="when">à vista no Pix, ou em até 12x no cartão</div>
-        <ul class="plist">
-          <li>5 agentes de IA customizados pra sua empresa</li>
-          <li>Implantação completa: desenho, teste e go-live</li>
-          <li>Instalação completa em 15 dias úteis</li>
-          <li>Integração com WhatsApp, seus sistemas atuais (CRM, planilha, ERP), Drive, e-mail</li>
-          <li>Manual em PDF + treinamento gravado</li>
-          <li>30 dias de acompanhamento intensivo (grupo de WhatsApp dedicado com a Yanna e o Lucas, CEO e CTO da Aruna)</li>
-        </ul>
+  <!-- ================= PROVA: O QUE DIZEM NO WHATSAPP ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">08</span>[ a prova que você já viu ]</p>
+        <h2 class="mt-etiqueta reveal">O agente que te atendeu já é o <span class="palavra" data-texto="Aruna OS">Aruna OS</span>.</h2>
+        <p class="lead mt-texto reveal">Antes de chegar aqui, alguém te respondeu no WhatsApp da Aruna. Não foi uma pessoa. A gente não vende o que não usa.</p>
       </div>
-      <div class="pcard feature reveal d2">
-        <span class="ribbon">a partir do dia 31</span>
-        <span class="tag">Mensalidade</span>
-        <div class="amt">R$ 897<span class="per">/mês</span></div>
-        <div class="when">só começa a contar 31 dias depois do fechamento do setup</div>
-        <ul class="plist">
-          <li>Hospedagem dos agentes na infraestrutura Aruna</li>
-          <li>Custos de IA cobertos (Anthropic, OpenAI). Você nunca recebe fatura de fora.</li>
-          <li>Manutenção sempre que algo mudar (Meta, WhatsApp, sistemas conectados)</li>
-          <li>Ajustes nos agentes incluídos</li>
-          <li>Suporte no WhatsApp em horário comercial</li>
-          <li>Relatório automático toda semana</li>
-        </ul>
+
+      <div class="provas">
+        <figure class="prova reveal">
+          <img src="img/feedback1.webp" width="1003" height="721" loading="lazy"
+               alt="Print de WhatsApp: cliente conta que conseguiu focar no que importa">
+        </figure>
+        <figure class="prova frase reveal">
+          <p>A própria Aruna roda os agentes dentro da agência. A IA virou sócia: pesquisa lead, atende cliente, manda relatório, cobra. Sobra cabeça pro estratégico.</p>
+          <span class="quem">operação interna da Aruna</span>
+        </figure>
+        <figure class="prova reveal">
+          <img src="img/feedback3.webp" width="1003" height="730" loading="lazy"
+               alt="Print de WhatsApp: agenda encheu com atendimento automático de madrugada e fim de semana">
+        </figure>
+        <figure class="prova reveal">
+          <img src="img/feedback2.webp" loading="lazy"
+               alt="Print de WhatsApp: cliente agradece a implementação e o atendimento rápido">
+        </figure>
+        <figure class="prova frase reveal">
+          <p>Empresa cliente rodando agentes em qualificação de lead, retomada de lead frio e cadência de 10 toques. O dono parou de ser SDR do próprio negócio.</p>
+          <span class="quem">cliente Aruna OS</span>
+        </figure>
+        <figure class="prova reveal">
+          <img src="img/feedback4.webp" loading="lazy"
+               alt="Print de WhatsApp: a atendente saiu do WhatsApp o dia todo e a IA responde até 23h">
+        </figure>
+      </div>
+
+      <p class="cap reveal">// conversas de clientes no WhatsApp · identidade preservada</p>
+    </div>
+  </section>
+
+  <!-- ================= 09 · QUEM ATENDE ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">09</span>[ quem atende você ]</p>
+        <h2 class="mt-etiqueta reveal">A gente é dois sócios <span class="palavra" data-texto="na ponta">na ponta</span>.</h2>
+        <p class="lead mt-texto reveal">Sem comercial terceirizado, sem atendente intermediária. Quem fecha com você e quem entrega é a gente, do início ao fim.</p>
+      </div>
+
+      <div class="socios">
+        <article class="card socio beam reveal">
+          <img src="img/yanna.webp" width="520" height="520" loading="lazy" alt="Yanna Bárbara, CEO da Agência Aruna">
+          <div class="txt">
+            <h3>Yanna Bárbara</h3>
+            <p class="papel">CEO · Operação e Comercial</p>
+            <p>Sou eu quem conversa com você do início ao fim: entendo a dor do seu negócio, monto a estratégia e acompanho a operação no dia a dia.</p>
+          </div>
+        </article>
+
+        <article class="card socio beam beam--delay reveal">
+          <img src="img/lucas.webp" width="520" height="520" loading="lazy" alt="Lucas Nogueira, CTO da Agência Aruna">
+          <div class="txt">
+            <h3>Lucas Nogueira</h3>
+            <p class="papel">CTO · Tecnologia e Agentes</p>
+            <p>Quem coloca os agentes pra rodar: implantação, integrações com WhatsApp e os sistemas que você já usa, e toda a parte técnica.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="cap reveal">// no acompanhamento, vocês ficam num grupo direto com a gente. <span class="hl">Seus CEO e CTO de IA</span>, imersos na sua empresa.</p>
+    </div>
+  </section>
+
+  <!-- ================= 10 · ANTES DE FALAR DE PREÇO ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">10</span>[ antes de falar de preço ]</p>
+        <h2 class="mt-etiqueta reveal">Quanto custa <span class="palavra" data-texto="UM funcionário">UM funcionário</span> só pra isso?</h2>
+        <p class="lead mt-texto reveal">Antes de olhar o valor do Aruna OS, olha o que custa fazer isso do jeito tradicional.</p>
+      </div>
+
+      <div class="versus">
+        <div class="card reveal">
+          <span class="spot"></span>
+          <span class="tag">Contratar uma pessoa</span>
+          <div class="amt">R$ 2 a 3 mil<span class="per">/mês</span></div>
+          <p class="when">salário mais encargos, uma pessoa só</p>
+          <ul class="plist">
+            <li>Faz só cobrança, follow-up e retomada de cliente sumido</li>
+            <li>Trabalha 8h por dia, 5 dias por semana</li>
+            <li>Tira férias, falta, pede aumento, pode pedir demissão</li>
+            <li>Se ela sair, o processo para de novo até contratar outra</li>
+          </ul>
+        </div>
+
+        <div class="card beam beam--delay reveal">
+          <span class="spot"></span>
+          <span class="ribbon">sem folha extra</span>
+          <span class="tag">Aruna OS</span>
+          <div class="amt">R$ 897<span class="per">/mês</span></div>
+          <p class="when">todos os agentes, sem exceção</p>
+          <ul class="plist">
+            <li>Faz cobrança, follow-up e retomada ao mesmo tempo</li>
+            <li>Trabalha 24 horas, todo santo dia, sem parar</li>
+            <li>Não tira férias, não falta, não pede aumento</li>
+            <li>A Aruna mantém, atualiza e conserta se algo quebrar</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="cap reveal">// comparação com o custo médio de contratação CLT no Brasil, salário mais encargos</p>
+    </div>
+  </section>
+
+  <!-- ================= PREÇO ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">11</span>[ preço transparente ]</p>
+        <h2 class="mt-etiqueta reveal">Instala por <span class="palavra" data-texto="R$ 1.997">R$ 1.997</span>. Roda por R$ 897 por mês.</h2>
+        <p class="lead mt-texto reveal">Tudo incluso. Nada de fatura por fora de IA, hospedagem ou manutenção.</p>
+      </div>
+
+      <div class="price">
+        <div class="card card-plano reveal">
+          <span class="spot"></span>
+          <span class="tag">Setup · uma vez</span>
+          <div class="amt">R$ 1.997</div>
+          <p class="when">à vista no Pix, ou em até 12x no cartão</p>
+          <ul class="plist">
+            <li>5 agentes de IA customizados pra sua empresa</li>
+            <li>Implantação completa: desenho, teste e go-live</li>
+            <li>Instalação completa em 15 dias úteis</li>
+            <li>Integração com WhatsApp, CRM, planilha, ERP e e-mail</li>
+            <li>Manual em PDF e treinamento gravado</li>
+            <li>30 dias de acompanhamento com a Yanna e o Lucas</li>
+          </ul>
+        </div>
+
+        <div class="card card-plano beam beam--delay brilho reveal">
+          <span class="spot"></span><span class="grao"></span>
+          <span class="ribbon">a partir do dia 31</span>
+          <span class="tag">Mensalidade</span>
+          <div class="amt">R$ 897<span class="per">/mês</span></div>
+          <p class="when">só começa a contar 31 dias depois do setup</p>
+          <ul class="plist">
+            <li>Hospedagem dos agentes na infraestrutura Aruna</li>
+            <li>Custos de IA cobertos. Você nunca recebe fatura de fora.</li>
+            <li>Manutenção quando algo mudar no WhatsApp ou nos sistemas</li>
+            <li>Ajustes nos agentes incluídos</li>
+            <li>Suporte no WhatsApp em horário comercial</li>
+            <li>Relatório automático toda semana</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="cap reveal">// Pix à vista, sem juros · cartão em até 12x com juros da operadora</p>
+    </div>
+  </section>
+
+  <!-- ================= 12 · GARANTIA ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="garantia reveal">
+        <div class="selo"><b>30</b>dias pra<br>você sentir</div>
+        <p>Se em 30 dias depois do go-live você sentir que pelo menos um processo da sua empresa não virou automático,
+          a gente devolve o setup. <b>Sem formulário, sem pergunta, sem cara feia.</b></p>
       </div>
     </div>
-    <p class="price-note reveal">// Pix à vista, sem juros · Cartão em até 12x, com juros da operadora<br>// A mensalidade só entra ativa 31 dias depois do fechamento do setup</p>
-    <div class="reveal d3" style="margin-top:40px;text-align:center">
-      <a class="btn" href="https://pay.cakto.com.br/wwjd4ua">Quero contratar o Aruna OS <span class="arrow">↗</span></a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- GARANTIA -->
-<section class="sec">
-  <div class="wrap">
-    <div class="guarantee reveal">
-      <div class="seal"><span class="em">30</span> dias<br>pra você sentir.</div>
-      <p>Se em 30 dias depois do go-live você sentir que pelo menos um processo da sua empresa não virou automático, a gente devolve o setup. Sem formulário, sem pergunta, sem cara feia.</p>
-    </div>
-  </div>
-</section>
+  <!-- ================= 13 · FAQ ================= -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow reveal"><span class="n">12</span>[ perguntas que já sabemos que você tem ]</p>
+        <h2 class="mt-etiqueta reveal">Antes de perguntar, <span class="palavra" data-texto="já respondemos">já respondemos</span>.</h2>
+      </div>
 
-<!-- FAQ -->
-<section class="sec" id="faq">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num reveal">11 · Perguntas que já sabemos que você tem</span>
-      <h2 class="ghost-title reveal d1">Antes de<br>perguntar,<br>já respondemos.</h2>
+      <div class="faq reveal">
+        <details>
+          <summary>E se não funcionar no meu ramo?</summary>
+          <p class="resposta">A Aruna já rodou agentes em corretora, e-commerce, prestação de serviço e consultório, entre outros.
+            O desenho dos agentes é feito em cima do seu processo real, no primeiro encontro. Se a sua empresa tem lead, cliente e cobrança, funciona.</p>
+        </details>
+        <details>
+          <summary>Preciso entender de IA?</summary>
+          <p class="resposta">Não. Você não mexe em prompt, não mexe em código e não aprende ferramenta nova.
+            Você comanda tudo pelo WhatsApp, do jeito que já usa hoje.</p>
+        </details>
+        <details>
+          <summary>Preciso trocar de sistema?</summary>
+          <p class="resposta">Não. Os agentes se conectam no que você já usa: WhatsApp, planilha, CRM, sistema de gestão.
+            A Aruna se adapta ao que já existe.</p>
+        </details>
+        <details>
+          <summary>E se eu não gostar?</summary>
+          <p class="resposta">Você tem garantia de 30 dias. Se algum processo não virar automático nesse período,
+            a gente devolve o setup. Sem formulário, sem pergunta, sem cara feia.</p>
+        </details>
+        <details>
+          <summary>Quanto tempo até ir ao ar?</summary>
+          <p class="resposta">15 dias úteis, em 3 encontros gravados no Google Meet.
+            No terceiro encontro, sua empresa já está no ar, rodando de verdade.</p>
+        </details>
+        <details>
+          <summary>Como funciona o pagamento?</summary>
+          <p class="resposta">R$ 1.997 de setup, à vista no Pix ou em até 12x no cartão, mais R$ 897 por mês,
+            que só começa a contar 31 dias depois do fechamento do setup.</p>
+        </details>
+      </div>
     </div>
-    <div class="faq-list reveal d1">
-      <details class="faq-item">
-        <summary>E se não funcionar no meu ramo?</summary>
-        <p>A Aruna já rodou agentes em corretora, e-commerce, prestação de serviço, consultório, entre outros. O desenho dos agentes é feito em cima do SEU processo real, no primeiro encontro. Se a sua empresa tem lead, cliente, cobrança ou follow-up (praticamente toda empresa tem), o Aruna OS se encaixa.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Preciso entender de IA?</summary>
-        <p>Não. Você não mexe em prompt, não mexe em código, não aprende ferramenta nova. Você comanda tudo pelo WhatsApp, do jeito que você já usa hoje.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Preciso trocar de sistema?</summary>
-        <p>Não. Os agentes se conectam no que você já usa: WhatsApp, planilha, CRM, sistema de gestão. A Aruna se adapta ao que já existe, você não muda nada.</p>
-      </details>
-      <details class="faq-item">
-        <summary>E se eu não gostar?</summary>
-        <p>Você tem garantia de 30 dias. Se algum processo não virar automático nesse período, a gente devolve o setup. Sem formulário, sem pergunta, sem cara feia.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Quanto tempo até ir ao ar?</summary>
-        <p>15 dias úteis, em 3 encontros gravados no Google Meet. No terceiro encontro, sua empresa já está no ar, rodando de verdade.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Como funciona o pagamento?</summary>
-        <p>R$ 1.997 de setup (à vista no Pix ou em até 12x no cartão) + R$ 897 por mês, que só começa a contar 31 dias depois do fechamento do setup.</p>
-      </details>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA FINAL -->
-<section class="final" id="cta">
-  <div class="aura"></div>
-  <div class="wrap">
-    <div class="lockup reveal"><span class="badge">ARUNA OS</span><span class="pill">Para donos de empresa</span></div>
-    <h2 class="reveal">Sua empresa anda.<br><span class="em">Mas anda sozinha?</span></h2>
-    <p class="sub reveal d1">Fala com a gente no WhatsApp ou já contrata direto. A gente responde em até 15 minutos no horário comercial Fortaleza.</p>
-    <div class="final-actions">
-      <a class="btn reveal d2" href="https://pay.cakto.com.br/wwjd4ua">Quero contratar o Aruna OS <span class="arrow">↗</span></a>
-      <a class="btn ghost reveal d3" href="#" data-wa>Tirar dúvida no WhatsApp</a>
+  <!-- ================= FECHAMENTO (centralizado) ================= -->
+  <section class="final centro">
+    <div class="dots"></div>
+    <div class="wrap estreito">
+      <p class="eyebrow reveal">[ o próximo passo ]</p>
+      <h2 class="reveal">Sua empresa anda. Mas anda <span class="palavra" data-texto="sozinha">sozinha</span>?</h2>
+      <p class="lead reveal">Setup em 15 dias úteis, 30 dias de mão dada e garantia de 30 dias.</p>
+      <a class="btn reveal" href="https://pay.cakto.com.br/wwjd4ua">Quero contratar o Aruna OS</a>
     </div>
-    <p class="fine reveal d3">Setup em até 15 dias úteis · garantia de 30 dias · a gente responde em até 15 minutos no horário comercial Fortaleza</p>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="wrap foot">
-    <a class="brand" href="#"><svg class="logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="ng2" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/></linearGradient><filter id="ngl2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="nngl2" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><line x1="50" y1="7" x2="15" y2="86" stroke="url(#ng2)" stroke-width="2.6" stroke-linecap="round" filter="url(#ngl2)"/><line x1="50" y1="7" x2="85" y2="86" stroke="url(#ng2)" stroke-width="2.6" stroke-linecap="round" filter="url(#ngl2)"/><circle cx="50" cy="7" r="5" fill="url(#ng2)" filter="url(#nngl2)"/><circle cx="50" cy="7" r="2.2" fill="#FFF4DE"/><circle cx="15" cy="86" r="5" fill="url(#ng2)" filter="url(#nngl2)"/><circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/><circle cx="85" cy="86" r="5" fill="url(#ng2)" filter="url(#nngl2)"/><circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/><circle cx="29" cy="58" r="3.5" fill="url(#ng2)" filter="url(#nngl2)"/><circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/><circle cx="71" cy="58" r="3.5" fill="url(#ng2)" filter="url(#nngl2)"/><circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/></svg>Aruna<b>&nbsp;OS</b></a>
-    <span class="meta">Agência Aruna · A empresa que anda sozinha</span>
-  </div>
-</footer>
+  <!-- ================= RODAPÉ ================= -->
+  <footer class="rodape">
+    <div class="wrap">
+      <div class="linhas">
+        <div>
+          <div class="marca">
+            <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+              <defs><linearGradient id="ngf" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/>
+              </linearGradient></defs>
+              <line x1="50" y1="7" x2="15" y2="86" stroke="url(#ngf)" stroke-width="2.6" stroke-linecap="round"/>
+              <line x1="50" y1="7" x2="85" y2="86" stroke="url(#ngf)" stroke-width="2.6" stroke-linecap="round"/>
+              <circle cx="50" cy="7" r="5" fill="url(#ngf)"/><circle cx="15" cy="86" r="5" fill="url(#ngf)"/>
+              <circle cx="85" cy="86" r="5" fill="url(#ngf)"/>
+              <circle cx="29" cy="58" r="3.5" fill="url(#ngf)"/><circle cx="71" cy="58" r="3.5" fill="url(#ngf)"/>
+            </svg>
+            <span class="nome">Aruna<b>&nbsp;OS</b></span>
+          </div>
+          <p class="frase">Agência Aruna · a empresa que anda sozinha.<br>Fortaleza, Ceará.</p>
+        </div>
+
+        <nav aria-label="Links do rodapé">
+          <a href="https://wa.me/558598026295">[ WhatsApp · 85 9802-6295 ]</a>
+          <a href="mailto:yanna@agenciaaruna.com">[ yanna@agenciaaruna.com ]</a>
+          <a href="/politica-de-privacidade/">[ política de privacidade ]</a>
+        </nav>
+      </div>
+
+      <p class="fim">© <span id="ano">2026</span> Agência Aruna · todos os direitos reservados</p>
+    </div>
+  </footer>
+
+</div>
 
 <script>
-(function(){
-  var phone='5585920033627';
-  var msg=encodeURIComponent('Oi! Vim pela página do Aruna OS e quero tirar uma dúvida.');
-  var href='https://wa.me/'+phone+'?text='+msg;
-  document.querySelectorAll('[data-wa]').forEach(function(a){a.setAttribute('href',href);a.setAttribute('target','_blank');a.setAttribute('rel','noopener')});
+/* ============================================================
+   TESTE A/B DA HEADLINE
+   Mesmo mecanismo do formulário (FORM_CONFIGS): sorteio 50/50 preso
+   ao navegador, para o visitante ver sempre a mesma versão.
+   A variante é carimbada no pixel e nos destinos (WhatsApp e checkout),
+   para dar pra medir conversa e venda por versão, não só clique.
+   ============================================================ */
+const VARIANTE = (()=>{
+  const forcada = (location.hash.match(/var=([AB])/)||[])[1];
+  if(forcada) return forcada;
+  const chave='aruna_ab_headline';
+  let v=null; try{ v=localStorage.getItem(chave) }catch(e){}
+  if(v!=='A' && v!=='B'){ v = Math.random()<.5 ? 'A' : 'B'; try{ localStorage.setItem(chave,v) }catch(e){} }
+  return v;
 })();
-(function(){
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-  },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){io.observe(el)});
+document.documentElement.dataset.variante = VARIANTE;
+
+// carimba a variante onde ela pode ser medida depois
+document.querySelectorAll('a[href*="wa.me"]').forEach(a=>{
+  const u=new URL(a.href);
+  u.searchParams.set('text', (u.searchParams.get('text')||'Quero saber do Aruna OS')+` [AB:${VARIANTE}]`);
+  a.href=u.toString();
+});
+document.querySelectorAll('a[href*="cakto"]').forEach(a=>{
+  a.href += (a.href.includes('?')?'&':'?') + 'ab=' + VARIANTE;
+});
+if (window.fbq) fbq('trackCustom','HeadlineView',{variante:VARIANTE});
+
+/* ---- escolhas vindas pelo endereço (usado pelo comparador) ---- */
+(()=>{
+  const h=location.hash;
+  const pega=(chave,valores)=>(h.match(new RegExp(chave+'=('+valores+')'))||[])[1];
+  const g=pega('grad','metal|fogo|creme'), f=pega('fundo','azul|neutro'), r=pega('rede','fundo|laterais|abaixo|nenhuma');
+  if(g) document.documentElement.dataset.grad=g;
+  if(f) document.documentElement.dataset.fundo=f;
+  if(r) document.documentElement.dataset.rede=r;
 })();
-/* ===== Esfera de agentes: emaranhado -> ordem, em loop ===== */
+
+
+/* ---- spotlight: só onde existe cursor ---- */
+if (window.matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.card').forEach(c=>{
+    c.addEventListener('pointermove',e=>{
+      const r=c.getBoundingClientRect();
+      c.style.setProperty('--sx',(e.clientX-r.left)+'px');
+      c.style.setProperty('--sy',(e.clientY-r.top)+'px');
+    });
+  });
+}
+
+/* ---- entrada por scroll: 0.7s, atrasos de 100/150/180ms ---- */
+const io=new IntersectionObserver((es)=>{
+  es.forEach((e,i)=>{ if(e.isIntersecting){
+    setTimeout(()=>e.target.classList.add('in'), Math.min(i,4)*100);
+    io.unobserve(e.target);
+  }});
+},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const resgatar=()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>{
+  if(el.getBoundingClientRect().top < innerHeight*1.1) el.classList.add('in');
+});
+requestAnimationFrame(resgatar);
+addEventListener('load',()=>setTimeout(resgatar,900));
+addEventListener('resize',()=>setTimeout(resgatar,120));
+
+/* ============================================================
+   REDE DE AGENTES (mesma animação da landing atual da Aruna):
+   emaranhado → organiza em esfera → segura → emaranha de novo.
+   Ciclo de 9,7s. Cores de chama: coral → laranja → âmbar.
+   ============================================================ */
 (function(){
-  var canvas=document.getElementById('orb');if(!canvas)return;
+  var canvas=document.getElementById('orb'); if(!canvas) return;
   var ctx=canvas.getContext('2d');
   var DPR=Math.min(window.devicePixelRatio||1,2);
-  var W=0,H=0,R=0,cx=0,cy=0;
-  var N=64;
-  var nodes=[];
-  var startT=null, paused=false, mx=0,my=0;
-
+  var W=0,H=0,R=0,cx=0,cy=0, N=64, nodes=[], startT=null, paused=false, mx=0,my=0;
   var TANGLE_HOLD=1100, ORGANIZE=2600, SPHERE_HOLD=4200, TANGLE=1800;
   var CYCLE=TANGLE_HOLD+ORGANIZE+SPHERE_HOLD+TANGLE;
 
   function flame(t){
     t=Math.max(0,Math.min(1,t));
     var c1=[232,72,90],c2=[255,107,53],c3=[245,166,35],a,b,k;
-    if(t<.5){k=t/.5;a=c1;b=c2;}else{k=(t-.5)/.5;a=c2;b=c3;}
+    if(t<.5){k=t/.5;a=c1;b=c2;} else {k=(t-.5)/.5;a=c2;b=c3;}
     return [Math.round(a[0]+(b[0]-a[0])*k),Math.round(a[1]+(b[1]-a[1])*k),Math.round(a[2]+(b[2]-a[2])*k)];
   }
   function resize(){
     var rect=canvas.getBoundingClientRect();
-    W=Math.max(1,rect.width);H=Math.max(1,rect.height);
-    canvas.width=W*DPR;canvas.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
-    cx=W/2;cy=H/2;R=Math.min(W,H)*0.38;
+    W=Math.max(1,rect.width); H=Math.max(1,rect.height);
+    canvas.width=W*DPR; canvas.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+    cx=W/2; cy=H/2;
+    /* 0.38 era o valor da landing atual, onde a rede ficava num quadrado de 560px ao
+       lado do texto. Aqui ela ocupa a largura toda do hero, então o raio sobe para
+       preencher e ficar evidente. */
+    R=Math.min(W,H)*0.46;
   }
   function build(){
     nodes=[];
     for(var i=0;i<N;i++){
-      var k=i+0.5;
-      var phi=Math.acos(1-2*k/N);
-      var theta=Math.PI*(1+Math.sqrt(5))*k;
-      var tx=Math.sin(phi)*Math.cos(theta);
-      var ty=Math.sin(phi)*Math.sin(theta);
-      var tz=Math.cos(phi);
+      var k=i+0.5, phi=Math.acos(1-2*k/N), theta=Math.PI*(1+Math.sqrt(5))*k;
       var u=Math.random()*Math.PI*2, v=Math.random()*Math.PI*2, rr=0.25+Math.random()*1.05;
       nodes.push({
-        tx:tx,ty:ty,tz:tz,
-        cx0:Math.cos(u)*Math.sin(v)*rr,
-        cy0:Math.cos(v)*rr,
-        cz0:Math.sin(u)*Math.sin(v)*rr,
+        tx:Math.sin(phi)*Math.cos(theta), ty:Math.sin(phi)*Math.sin(theta), tz:Math.cos(phi),
+        cx0:Math.cos(u)*Math.sin(v)*rr, cy0:Math.cos(v)*rr, cz0:Math.sin(u)*Math.sin(v)*rr,
         sx1:0.6+Math.random()*1.2, sy1:0.6+Math.random()*1.2, sz1:0.6+Math.random()*1.2,
         px1:Math.random()*6.28, py1:Math.random()*6.28, pz1:Math.random()*6.28,
         col:flame(i/N), ph:Math.random()*Math.PI*2
       });
     }
   }
-  function easeIO(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
-
+  function easeIO(t){ return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
   function phaseOrg(el){
     var t=el%CYCLE;
-    if(t<TANGLE_HOLD)return 0;
-    t-=TANGLE_HOLD;
-    if(t<ORGANIZE)return easeIO(t/ORGANIZE);
-    t-=ORGANIZE;
-    if(t<SPHERE_HOLD)return 1;
-    t-=SPHERE_HOLD;
-    return 1-easeIO(t/TANGLE);
+    if(t<TANGLE_HOLD) return 0;
+    t-=TANGLE_HOLD; if(t<ORGANIZE) return easeIO(t/ORGANIZE);
+    t-=ORGANIZE;     if(t<SPHERE_HOLD) return 1;
+    t-=SPHERE_HOLD;  return 1-easeIO(t/TANGLE);
   }
-
   function frame(ts){
-    if(startT===null)startT=ts;
-    if(paused){requestAnimationFrame(frame);return;}
-    var el=ts-startT;
-    var org=phaseOrg(el);
-    var tangle=1-org;
-    var rot=el*0.00018+mx*0.6;
-    var tilt=-0.32+my*0.5;
-
+    if(startT===null) startT=ts;
+    if(paused){ requestAnimationFrame(frame); return; }
+    var el=ts-startT, org=phaseOrg(el), tangle=1-org;
+    var rot=el*0.00018+mx*0.6, tilt=-0.32+my*0.5;
     ctx.clearRect(0,0,W,H);
-    var cosT=Math.cos(tilt),sinT=Math.sin(tilt),cosR=Math.cos(rot),sinR=Math.sin(rot);
-    var proj=[];
+    var cosT=Math.cos(tilt),sinT=Math.sin(tilt),cosR=Math.cos(rot),sinR=Math.sin(rot), proj=[];
     for(var i=0;i<N;i++){
       var n=nodes[i];
       var ex=n.cx0+Math.sin(ts*0.0006*n.sx1+n.px1)*0.5*tangle;
       var ey=n.cy0+Math.sin(ts*0.0006*n.sy1+n.py1)*0.5*tangle;
       var ez=n.cz0+Math.sin(ts*0.0006*n.sz1+n.pz1)*0.5*tangle;
-      var px=ex+(n.tx-ex)*org;
-      var py=ey+(n.ty-ey)*org;
-      var pz=ez+(n.tz-ez)*org;
-      var br=1+Math.sin(ts*0.001+n.ph)*0.02*org; px*=br;py*=br;pz*=br;
+      var px=ex+(n.tx-ex)*org, py=ey+(n.ty-ey)*org, pz=ez+(n.tz-ez)*org;
+      var br=1+Math.sin(ts*0.001+n.ph)*0.02*org; px*=br; py*=br; pz*=br;
       var rx=px*cosR-pz*sinR, rz=px*sinR+pz*cosR;
       var ry=py*cosT-rz*sinT, rz2=py*sinT+rz*cosT;
       var scale=R*(1.7/(2.6-rz2));
-      proj.push({sx:cx+rx*scale,sy:cy+ry*scale,depth:rz2,col:n.col,r:Math.max(.6,(rz2+1.4)*1.5)});
+      proj.push({sx:cx+rx*scale, sy:cy+ry*scale, depth:rz2, col:n.col, r:Math.max(.9,(rz2+1.4)*2.1)});
     }
     var maxd=R*0.98;
     for(var a=0;a<N;a++){
       for(var b=a+1;b<N;b++){
-        var dx=proj[a].sx-proj[b].sx, dy=proj[a].sy-proj[b].sy;
-        var d=Math.sqrt(dx*dx+dy*dy);
+        var dx=proj[a].sx-proj[b].sx, dy=proj[a].sy-proj[b].sy, d=Math.sqrt(dx*dx+dy*dy);
         if(d<maxd){
           var depthf=((proj[a].depth+proj[b].depth)/2+1.4)/2.8;
-          var al=(1-d/maxd)*(0.32+0.20*org)*depthf;
-          if(al<=0.005)continue;
+          var al=(1-d/maxd)*(0.48+0.30*org)*depthf;
+          if(al<=0.005) continue;
           var c=proj[a].col;
           ctx.strokeStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+al.toFixed(3)+')';
-          ctx.lineWidth=0.7;
-          ctx.beginPath();ctx.moveTo(proj[a].sx,proj[a].sy);ctx.lineTo(proj[b].sx,proj[b].sy);ctx.stroke();
+          ctx.lineWidth=1;
+          ctx.beginPath(); ctx.moveTo(proj[a].sx,proj[a].sy); ctx.lineTo(proj[b].sx,proj[b].sy); ctx.stroke();
         }
       }
     }
     for(var i2=0;i2<N;i2++){
-      var p=proj[i2],c=p.col,br2=(p.depth+1.6)/3.2;
+      var p=proj[i2], c2=p.col, br2=(p.depth+1.6)/3.2;
       ctx.beginPath();
-      ctx.fillStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(0.55+br2*0.45).toFixed(3)+')';
-      ctx.shadowColor='rgba('+c[0]+','+c[1]+','+c[2]+',0.9)';
-      ctx.shadowBlur=10*br2+2;
-      ctx.arc(p.sx,p.sy,p.r,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='rgba('+c2[0]+','+c2[1]+','+c2[2]+','+(0.7+br2*0.3).toFixed(3)+')';
+      ctx.shadowColor='rgba('+c2[0]+','+c2[1]+','+c2[2]+',1)';
+      ctx.shadowBlur=16*br2+4;
+      ctx.arc(p.sx,p.sy,p.r,0,Math.PI*2); ctx.fill();
     }
     ctx.shadowBlur=0;
     requestAnimationFrame(frame);
   }
-
-  function init(){resize();build();requestAnimationFrame(frame);}
-  window.addEventListener('resize',resize,{passive:true});
-  window.addEventListener('mousemove',function(e){mx=(e.clientX/window.innerWidth-.5);my=(e.clientY/window.innerHeight-.5);},{passive:true});
-  var vis=new IntersectionObserver(function(en){en.forEach(function(e){paused=!e.isIntersecting;});});
-  vis.observe(canvas);
-  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(init);}else{init();}
+  function init(){ resize(); build(); requestAnimationFrame(frame); }
+  addEventListener('resize',()=>setTimeout(resize,60),{passive:true});
+  addEventListener('mousemove',function(e){ mx=(e.clientX/innerWidth-.5); my=(e.clientY/innerHeight-.5); },{passive:true});
+  new IntersectionObserver(function(en){ en.forEach(function(e){ paused=!e.isIntersecting; }); }).observe(canvas);
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){ resize(); build(); requestAnimationFrame(function(t){ startT=t-(1100+2600); frame(t); paused=true; }); return; }
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(init); } else { init(); }
 })();
 </script>
 </body>
