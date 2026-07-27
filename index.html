@@ -1239,6 +1239,30 @@ document.querySelectorAll('a[href*="cakto"]').forEach(a=>{
 });
 if (window.fbq) fbq('trackCustom','HeadlineView',{variante:VARIANTE});
 
+/* ============================================================
+   SEMPRE A VERSÃO NOVA NO TOQUE DO CLIENTE
+   O GitHub Pages responde cache-control: max-age=600, então quem já
+   visitou pode ver a página velha por até 10 minutos depois de publicar.
+   Aqui a página consulta um arquivo de 30 bytes que nunca é cacheado e,
+   se a versão publicada for outra, recarrega uma única vez.
+   O guard em sessionStorage impede laço de recarga.
+   ============================================================ */
+(async () => {
+  const MINHA_VERSAO = '20260726-2127';
+  try{
+    const r = await fetch('/versao.json?' + Date.now(), {cache:'no-store'});
+    if(!r.ok) return;
+    const { versao } = await r.json();
+    if(!versao || versao === MINHA_VERSAO) return;
+    const marca = 'aruna-recarga-' + versao;
+    if(sessionStorage.getItem(marca)) return;      // já tentou nesta sessão
+    sessionStorage.setItem(marca, '1');
+    const url = new URL(location.href);
+    url.searchParams.set('v', versao);             // troca a URL para furar o cache
+    location.replace(url.toString());
+  }catch(e){ /* offline ou bloqueado: segue com a versão em cache */ }
+})();
+
 /* ---- escolhas vindas pelo endereço (usado pelo comparador) ---- */
 (()=>{
   const h=location.hash;
