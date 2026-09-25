@@ -85,16 +85,16 @@ var TELAS = {
     mascara:function(v){ var d=v.replace(/\D/g,'').slice(0,11); if(d.length>6) return '('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7); if(d.length>2) return '('+d.slice(0,2)+') '+d.slice(2); return d; },
     valida:function(v){ return v.replace(/\D/g,'').length>=10 || 'Confere o número com DDD.'; }},
 
-  instagram: {tipo:'texto', chave:'instagram', kicker:'4 de 11', titulo:'E o @ do seu Instagram de tattoo?', sub:'É nele que a gente olha antes de responder.', ph:'@seuperfil', prox:'equipe',
+  instagram: {tipo:'texto', chave:'instagram', kicker:'4 de 11', titulo:'E o @ do Instagram? Seu ou do estúdio.', sub:'É nele que a gente olha antes de responder.', ph:'@seuperfil', prox:'equipe',
     valida:function(v){ return v.replace('@','').trim().length>1 || 'Coloca o @ do perfil onde você mostra seu trabalho.'; }},
 
   equipe: {tipo:'uma', chave:'equipe', kicker:'5 de 11', titulo:function(){ return R.nome+', você trabalha como?'; },
     opcoes:['Sozinho(a)','Estúdio com 2 ou 3 tatuadores','Estúdio com 4 ou mais'], prox:'faturamento'},
 
-  faturamento: {tipo:'uma', chave:'faturamento', kicker:'6 de 11', titulo:'Quanto a tattoo te rende por mês, em média?', sub:'Só para entender seu momento. Ninguém além de nós vê.',
+  faturamento: {tipo:'uma', chave:'faturamento', kicker:'6 de 11', titulo:'Quanto a tattoo fatura por mês, em média?', sub:'Do estúdio inteiro, ou só seu se trabalha sozinho(a). Ninguém além de nós vê.',
     opcoes:['Ainda não tenho renda fixa com tattoo','Até R$ 3 mil','Entre R$ 3 mil e R$ 6 mil','Entre R$ 6 mil e R$ 10 mil','Acima de R$ 10 mil'], prox:'ticket'},
 
-  ticket: {tipo:'uma', chave:'ticket', kicker:'7 de 11', titulo:'Quanto custa uma sessão sua, em média?',
+  ticket: {tipo:'uma', chave:'ticket', kicker:'7 de 11', titulo:'Quanto custa uma sessão, em média?',
     opcoes:['Até R$ 300','Entre R$ 300 e R$ 700','Entre R$ 700 e R$ 1.500','Acima de R$ 1.500'], prox:'trafego'},
 
   trafego: {tipo:'uma', chave:'trafego', kicker:'8 de 11', titulo:'Já anunciou antes?',
