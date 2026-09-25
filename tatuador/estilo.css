@@ -43,8 +43,10 @@ h1,h2,h3,.display{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-weight
 .duo figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .duo .f1{left:0;top:0}
 .duo .f2{right:0;bottom:0}
-.duo figcaption{position:absolute;left:14px;bottom:12px;font-size:13px;background:rgba(14,14,28,.75);backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px}
-.duo figcaption b{font-weight:600}
+.duo figcaption{position:absolute;left:12px;right:12px;bottom:12px;display:flex;flex-direction:column;gap:1px;width:max-content;max-width:calc(100% - 24px);font-size:12.5px;line-height:1.3;background:rgba(14,14,28,.78);backdrop-filter:blur(8px);padding:8px 14px;border-radius:14px}
+.duo figcaption b{font-weight:600;font-size:14px}
+.duo figcaption span{color:var(--muted)}
+.duo .f1 figcaption{top:12px;bottom:auto}
 
 /* marquee */
 .marquee{border-block:1px solid var(--faint);background:var(--void-2);overflow:hidden;padding:18px 0}
@@ -142,6 +144,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .duo{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .duo figure{position:relative;width:auto;inset:auto}
   .duo .f2{margin-top:36px}
+  .duo .f1 figcaption{top:auto;bottom:12px}
   .g2,.g3,.g4,.conta{grid-template-columns:1fr}
   .preco{grid-template-columns:1fr}
   .preco .op{font-size:26px}
