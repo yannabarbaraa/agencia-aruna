@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aplicação · Aruna para tatuador</title>
+<link rel="icon" href="assets/simbolo.svg">
+<link rel="stylesheet" href="estilo.css">
+<style>
+body{min-height:100vh;display:flex;flex-direction:column}
+.topo{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;max-width:760px;width:100%;margin:0 auto}
+.voltar{background:none;border:0;color:var(--muted);font:inherit;font-size:14px;cursor:pointer;visibility:hidden}
+.barra{height:3px;background:var(--faint);max-width:760px;width:calc(100% - 40px);margin:0 auto;border-radius:3px;overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:var(--grad);transition:width .35s}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:30px 20px 60px}
+.tela{max-width:640px;width:100%;animation:entra .35s ease}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.tela .kicker{display:block;margin-bottom:14px}
+.tela h1{font-size:clamp(28px,4.6vw,42px);margin-bottom:14px}
+.tela .sub{color:var(--muted);font-size:17px;margin-bottom:26px}
+.opcoes{display:grid;gap:10px;margin-bottom:22px}
+.op{display:flex;align-items:center;gap:14px;text-align:left;background:var(--void-2);border:1px solid rgba(244,239,232,.12);border-radius:14px;padding:16px 18px;color:var(--cream);font:inherit;cursor:pointer;transition:border-color .15s,background .15s}
+.op:hover{border-color:rgba(255,107,53,.5)}
+.op .l{flex:0 0 28px;height:28px;border-radius:8px;border:1px solid rgba(244,239,232,.2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--muted)}
+.op.on{border-color:var(--orange);background:rgba(255,107,53,.1)}
+.op.on .l{background:var(--grad);color:#1a0d08;border-color:transparent}
+.campo{width:100%;background:transparent;border:0;border-bottom:2px solid rgba(244,239,232,.2);color:var(--cream);font:inherit;font-size:24px;padding:10px 2px;margin-bottom:26px;outline:none}
+.campo:focus{border-color:var(--orange)}
+.campo::placeholder{color:rgba(244,239,232,.25)}
+.erro{color:var(--coral);font-size:14px;margin:-16px 0 18px;min-height:20px}
+.dica{font-size:13px;color:var(--muted);margin-left:14px}
+.info{background:linear-gradient(160deg,var(--void-2),var(--void-3));border:1px solid var(--faint);border-radius:var(--r);padding:22px;margin-bottom:24px}
+.info .linha{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--faint)}
+.info .linha:last-child{border:0}
+.info .linha b{font-family:'Cabinet Grotesk';font-size:22px;white-space:nowrap}
+.info .linha span{color:var(--muted)}
+.info .tot b{font-size:28px}
+.nums3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
+.nums3 div{background:var(--void-2);border:1px solid var(--faint);border-radius:14px;padding:14px}
+.nums3 b{font-family:'Cabinet Grotesk';font-size:26px;display:block}
+.nums3 small{color:var(--muted);font-size:13px;line-height:1.3;display:block}
+.diag{display:grid;gap:12px;margin-bottom:26px}
+.diag .it{background:var(--void-2);border:1px solid var(--faint);border-left:3px solid var(--orange);border-radius:12px;padding:16px 18px}
+.diag .it b{display:block;font-family:'Cabinet Grotesk';font-size:18px;margin-bottom:4px}
+.diag .it p{color:var(--muted);font-size:15.5px}
+.fase{display:inline-block;border:1px solid rgba(245,166,35,.4);color:var(--amber);border-radius:999px;padding:6px 14px;font-size:13px;margin-bottom:18px}
+.btn.wa{background:#25D366;color:#06210f;box-shadow:0 10px 40px -12px rgba(37,211,102,.55)}
+.prot{position:fixed;bottom:0;left:0;right:0;text-align:center;font-size:11px;color:rgba(244,239,232,.35);padding:6px;background:rgba(14,14,28,.9)}
+@media (max-width:600px){.nums3{grid-template-columns:1fr}.campo{font-size:20px}}
+</style>
+</head>
+<body>
+
+<div class="topo">
+  <a class="brand" href="index.html"><img src="assets/simbolo.svg" alt=""><span>Aruna</span></a>
+  <button class="voltar" id="voltar">← Voltar</button>
+</div>
+<div class="barra"><i id="progresso"></i></div>
+<main id="palco"></main>
+
+<script>
+var WA = '5585986187522';
+var R = { utm: Object.fromEntries(new URLSearchParams(location.search)) };
+var historico = [];
+
+// Opções de verba com o MESMO texto do formulário atual: a régua de lead qualificado lê essas strings.
+var VERBA_QUALIFICA = ['Tenho os R$ 1.500', 'Entre R$ 2.500 e R$ 4.000', 'Acima de R$ 4.000'];
+
+var TELAS = {
+  inicio: {tipo:'info', kicker:'Aplicação · 2 minutos',
+    titulo:'Antes de tudo: a gente avalia cada aplicação.',
+    sub:'Preencher não garante vaga. Atendemos poucos tatuadores por vez, e o formulário existe para ver se faz sentido para os dois lados. Quem ainda não estiver no momento recebe um diagnóstico do perfil mesmo assim.',
+    botao:'Começar', prox:'dor'},
+
+  dor: {tipo:'multi', chave:'dor', kicker:'1 de 11',
+    titulo:'O que mais trava sua agenda hoje?', sub:'Pode marcar mais de uma.',
+    opcoes:['Muita gente pergunta o preço e some','Dependo de indicação','Posto e não vira cliente','Agenda com buraco na semana','Cliente só quer desconto','Não sei o que postar'],
+    prox:'nome'},
+
+  nome: {tipo:'texto', chave:'nome', kicker:'2 de 11', titulo:'Qual é o seu nome?', ph:'Seu primeiro nome', prox:'whatsapp',
+    valida:function(v){ return v.trim().length>1 || 'Escreve seu nome para a gente te chamar certo.'; }},
+
+  whatsapp: {tipo:'texto', chave:'whatsapp', kicker:'3 de 11', titulo:function(){ return 'Prazer, '+R.nome+'. Qual o seu WhatsApp?'; },
+    sub:'É por ele que vai o próximo passo.', ph:'(85) 99999-9999', inputmode:'tel', prox:'instagram',
+    mascara:function(v){ var d=v.replace(/\D/g,'').slice(0,11); if(d.length>6) return '('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7); if(d.length>2) return '('+d.slice(0,2)+') '+d.slice(2); return d; },
+    valida:function(v){ return v.replace(/\D/g,'').length>=10 || 'Confere o número com DDD.'; }},
+
+  instagram: {tipo:'texto', chave:'instagram', kicker:'4 de 11', titulo:'E o @ do seu Instagram de tattoo?', sub:'É nele que a gente olha antes de responder.', ph:'@seuperfil', prox:'equipe',
+    valida:function(v){ return v.replace('@','').trim().length>1 || 'Coloca o @ do perfil onde você mostra seu trabalho.'; }},
+
+  equipe: {tipo:'uma', chave:'equipe', kicker:'5 de 11', titulo:function(){ return R.nome+', você trabalha como?'; },
+    opcoes:['Sozinho(a)','Estúdio com 2 ou 3 tatuadores','Estúdio com 4 ou mais'], prox:'faturamento'},
+
+  faturamento: {tipo:'uma', chave:'faturamento', kicker:'6 de 11', titulo:'Quanto a tattoo te rende por mês, em média?', sub:'Só para entender seu momento. Ninguém além de nós vê.',
+    opcoes:['Ainda não tenho renda fixa com tattoo','Até R$ 3 mil','Entre R$ 3 mil e R$ 6 mil','Entre R$ 6 mil e R$ 10 mil','Acima de R$ 10 mil'], prox:'ticket'},
+
+  ticket: {tipo:'uma', chave:'ticket', kicker:'7 de 11', titulo:'Quanto custa uma sessão sua, em média?',
+    opcoes:['Até R$ 300','Entre R$ 300 e R$ 700','Entre R$ 700 e R$ 1.500','Acima de R$ 1.500'], prox:'trafego'},
+
+  trafego: {tipo:'uma', chave:'trafego', kicker:'8 de 11', titulo:'Já anunciou antes?',
+    opcoes:['Nunca','Só impulsionei pelo Instagram','Já tive gestor ou agência','Anuncio hoje'], prox:'prova'},
+
+  prova: {tipo:'info', kicker:'Enquanto isso',
+    titulo:function(){ return R.nome+', olha o que aconteceu com o Thiago, tatuador de Fortaleza.'; },
+    sub:'Ele dependia de indicação. No primeiro mês com a gente, uma tattoo pagou o mês inteiro:',
+    extra:'<div class="nums3"><div><b>R$ 1.300</b><small>numa única tattoo, com sinal pago</small></div><div><b>R$ 1.270</b><small>de mês completo: anúncio + gestão</small></div><div><b>+231%</b><small>visitas no perfil</small></div></div><p class="muted" style="font-size:14px;margin-bottom:24px">Resultado de um cliente real, não promessa. Cada cidade e estilo responde diferente.</p>',
+    botao:'Continuar', prox:'investimentos'},
+
+  investimentos: {tipo:'info', kicker:'Transparência',
+    titulo:'Existem dois investimentos, e você precisa saber dos dois antes.',
+    extra:'<div class="info"><div class="linha"><span>Nosso trabalho: campanha, criativo, filtro, roteiro de conversa e relatório semanal</span><b>R$ 650</b></div><div class="linha"><span>Anúncio, pago direto à Meta no seu cartão</span><b>R$ 850</b></div><div class="linha tot"><span>Total por mês, sem fidelidade</span><b class="grad-txt">R$ 1.500</b></div></div><p class="muted" style="margin-bottom:10px">Com uma sessão média de R$ 1.000, duas tattoos no mês já pagam tudo.</p><p class="muted" style="margin-bottom:24px">E não precisa sair de uma vez: a gestão pode ser paga a cada 15 dias (R$ 325) e o anúncio vai no seu cartão de crédito.</p>',
+    botao:'Ok, entendido', prox:'verba'},
+
+  verba: {tipo:'uma', chave:'investimento', kicker:'9 de 11', titulo:'Hoje, você consegue investir os R$ 1.500 por mês?', sub:'Contando com a gestão quinzenal e o anúncio no cartão.',
+    opcoes:VERBA_QUALIFICA.concat(['Ainda não tenho esse valor']),
+    prox:function(v){ return VERBA_QUALIFICA.indexOf(v)>=0 ? 'decisor' : 'seguidores'; }},
+
+  // ramo qualificado
+  decisor: {tipo:'uma', chave:'decisor', kicker:'10 de 11', titulo:'A decisão de investir é só sua?',
+    opcoes:['Sim, decido sozinho(a)','Divido com sócio(a) ou parceiro(a)'], prox:'urgencia'},
+
+  urgencia: {tipo:'uma', chave:'urgencia', kicker:'11 de 11', titulo:function(){ return 'Última, '+R.nome+'. Quando você quer começar?'; },
+    opcoes:['Esta semana','Nos próximos 30 dias','Daqui a uns 3 meses','Só estou pesquisando'], prox:'fim_qualificado'},
+
+  // ramo sem verba: duas perguntas a mais para montar o diagnóstico do momento
+  seguidores: {tipo:'uma', chave:'seguidores', kicker:'10 de 11', titulo:'Sem problema. Quantos seguidores seu perfil tem hoje?', sub:'É para o diagnóstico sair do tamanho certo para você.',
+    opcoes:['Menos de 1.000','Entre 1.000 e 5.000','Entre 5.000 e 20.000','Mais de 20.000'], prox:'frequencia'},
+
+  frequencia: {tipo:'uma', chave:'frequencia', kicker:'11 de 11', titulo:'Com que frequência você posta no feed?',
+    opcoes:['Quase todo dia','2 ou 3 vezes por semana','1 vez por semana ou menos','Fico semanas sem postar'], prox:'fim_diagnostico'}
+};
+
+var palco = document.getElementById('palco');
+function val(x){ return typeof x==='function' ? x() : x; }
+
+function ir(id, voltando){
+  if(!voltando && historico[historico.length-1]!==id) historico.push(id);
+  var t = TELAS[id]; if(id.indexOf('fim_')===0) return fim(id);
+  document.getElementById('voltar').style.visibility = historico.length>1 ? 'visible' : 'hidden';
+  var ordem = ['inicio','dor','nome','whatsapp','instagram','equipe','faturamento','ticket','trafego','prova','investimentos','verba','decisor','seguidores','urgencia','frequencia'];
+  document.getElementById('progresso').style.width = Math.min(96, (ordem.indexOf(id)/ (ordem.length-2))*100)+'%';
+
+  var h = '<div class="tela"><span class="kicker">'+t.kicker+'</span><h1>'+val(t.titulo)+'</h1>'+(t.sub?'<p class="sub">'+val(t.sub)+'</p>':'')+(t.extra||'');
+  if(t.tipo==='info') h += '<button class="btn" id="ok">'+t.botao+'</button>';
+  if(t.tipo==='texto') h += '<input class="campo" id="campo" autocomplete="off" placeholder="'+t.ph+'"'+(t.inputmode?' inputmode="'+t.inputmode+'"':'')+' value="'+(R[t.chave]||'')+'"><div class="erro" id="erro"></div><button class="btn" id="ok">OK</button><span class="dica">ou aperte Enter</span>';
+  if(t.tipo==='uma'||t.tipo==='multi'){
+    h += '<div class="opcoes">'+t.opcoes.map(function(o,i){
+      var on = t.tipo==='multi' ? (R[t.chave]||[]).indexOf(o)>=0 : R[t.chave]===o;
+      return '<button class="op'+(on?' on':'')+'" data-v="'+o+'"><span class="l">'+String.fromCharCode(65+i)+'</span>'+o+'</button>'; }).join('')+'</div>';
+    if(t.tipo==='multi') h += '<div class="erro" id="erro"></div><button class="btn" id="ok">OK</button>';
+  }
+  palco.innerHTML = h + '</div>';
+
+  var ok = document.getElementById('ok');
+  var proximo = function(v){ var p = typeof t.prox==='function' ? t.prox(v) : t.prox; ir(p); };
+
+  if(t.tipo==='info') ok.onclick = function(){ proximo(); };
+  if(t.tipo==='texto'){
+    var c = document.getElementById('campo'); c.focus();
+    if(t.mascara) c.oninput = function(){ c.value = t.mascara(c.value); };
+    var enviar = function(){ var r = t.valida(c.value); if(r!==true){ document.getElementById('erro').textContent=r; return; } R[t.chave]=c.value.trim(); proximo(); };
+    ok.onclick = enviar; c.onkeydown = function(e){ if(e.key==='Enter') enviar(); };
+  }
+  if(t.tipo==='uma') palco.querySelectorAll('.op').forEach(function(b){ b.onclick=function(){
+    palco.querySelectorAll('.op').forEach(function(x){x.classList.remove('on')}); b.classList.add('on'); R[t.chave]=b.dataset.v;
+    setTimeout(function(){ proximo(b.dataset.v); }, 220); }; });
+  if(t.tipo==='multi'){
+    palco.querySelectorAll('.op').forEach(function(b){ b.onclick=function(){ b.classList.toggle('on'); }; });
+    ok.onclick = function(){ var s=[].map.call(palco.querySelectorAll('.op.on'),function(x){return x.dataset.v}); if(!s.length){ document.getElementById('erro').textContent='Marca pelo menos uma.'; return; } R[t.chave]=s; proximo(); };
+  }
+}
+
+document.getElementById('voltar').onclick = function(){ if(historico.length>1){ historico.pop(); ir(historico[historico.length-1], true); } };
+document.addEventListener('keydown', function(e){
+  var ops = palco.querySelectorAll('.op'); var i = e.key.toUpperCase().charCodeAt(0)-65;
+  if(ops.length && e.key.length===1 && i>=0 && i<ops.length && document.activeElement.tagName!=='INPUT') ops[i].click();
+});
+
+// Diagnóstico automático do momento (quem ainda não tem a verba). Regras simples, sem oferta de gestão.
+var DICAS = {
+  'Muita gente pergunta o preço e some': ['Deixe um "a partir de" visível', 'Um destaque "Valores" com o preço de partida faz quem não pode pagar se filtrar sozinho, antes de te chamar. Você responde menos orçamento e mais gente pronta.'],
+  'Dependo de indicação': ['Guarde a indicação no perfil', 'No fim de cada sessão, grave 15 segundos do cliente falando da experiência e salve num destaque. A indicação passa a vender mesmo quando ninguém lembra de você.'],
+  'Posto e não vira cliente': ['Diga como marcar', 'A cada três posts, um precisa mostrar o caminho: agenda aberta, valor de partida e como chamar. Post bonito sem chamada vira curtida.'],
+  'Agenda com buraco na semana': ['Anuncie as vagas da semana', 'Toda segunda, um story com as datas livres e quantas vagas sobraram. Vaga com prazo mexe mais do que "agenda aberta" o mês inteiro.'],
+  'Cliente só quer desconto': ['Mande valor com contexto', 'Nunca o preço seco no direct. Junto do valor, mande uma peça parecida que você fez e o que está incluso (desenho exclusivo, retoque). Preço sem contexto vira comparação.'],
+  'Não sei o que postar': ['Três tipos em rodízio', 'Tattoo cicatrizada (prova), processo em vídeo (confiança) e cliente falando (desejo). Repetir esses três já resolve o mês de conteúdo.']
+};
+function diagnostico(){
+  var fase, frase, itens = [];
+  var semRenda = R.faturamento==='Ainda não tenho renda fixa com tattoo' || R.ticket==='Até R$ 300';
+  var pequeno = R.seguidores==='Menos de 1.000';
+  if(semRenda){ fase='Momento: construir a vitrine'; frase='Antes de pagar por anúncio, seu perfil precisa convencer sozinho quem já chega até ele. Anúncio agora só levaria mais gente para uma vitrine que ainda não fecha.'; }
+  else if(pequeno){ fase='Momento: transformar perfil em agenda'; frase='Você já tem trabalho que vende. O próximo degrau é fazer o perfil trabalhar por você com o público que já tem, antes de comprar público novo.'; }
+  else { fase='Momento: quase pronto para anunciar'; frase='Seu perfil já tem base. Ajustando os pontos abaixo, um anúncio pequeno passa a ter onde cair.'; }
+  (R.dor||[]).slice(0,3).forEach(function(d){ if(DICAS[d]) itens.push(DICAS[d]); });
+  if(R.frequencia==='1 vez por semana ou menos' || R.frequencia==='Fico semanas sem postar')
+    itens.push(['Constância antes de volume', 'Três posts por semana, no mesmo dia e horário, pesam mais que uma semana cheia seguida de silêncio. Deixe três peças prontas no domingo.']);
+  if(pequeno) itens.push(['Seguidor local vale mais', 'Com menos de 1.000 seguidores, marque a cidade em todo post e siga estúdios e perfis de tattoo da sua região. É o público que te encontra primeiro.']);
+  return {fase:fase, frase:frase, itens:itens.slice(0,4)};
+}
+
+function linkWA(txt){ return 'https://wa.me/'+WA+'?text='+encodeURIComponent(txt); }
+
+function fim(id){
+  document.getElementById('progresso').style.width='100%';
+  document.getElementById('voltar').style.visibility='hidden';
+  R.ramo = id==='fim_qualificado' ? 'qualificado' : 'diagnostico_automatico';
+  R.criado_em = new Date().toISOString();
+  gravar(R);
+  var h;
+  if(id==='fim_qualificado'){
+    var quente = R.urgencia==='Esta semana' || R.urgencia==='Nos próximos 30 dias';
+    var msg = 'Oi, Lucas. Acabei de fazer a aplicação da Aruna e quero o diagnóstico do meu perfil.\n\n'+
+      'Nome: '+R.nome+'\nInstagram: '+R.instagram+'\nSessão média: '+R.ticket+'\nInvestimento: '+R.investimento+'\nQuero começar: '+R.urgencia;
+    h = '<div class="tela"><span class="kicker">Aplicação recebida</span>'+
+      '<h1>'+R.nome+', você passou na primeira triagem.</h1>'+
+      '<p class="sub">'+(quente
+        ? 'O próximo passo é o diagnóstico do seu perfil: o Lucas olha seus números, seu feed e sua cidade, e te mostra no WhatsApp o que faria primeiro. Sem call. Ele responde no mesmo dia, em horário comercial.'
+        : 'Como você ainda não tem pressa, fica na fila normal. Se quiser adiantar, chama agora e o Lucas já começa o diagnóstico do seu perfil.')+'</p>'+
+      '<a class="btn wa" href="'+linkWA(msg)+'" target="_blank" rel="noopener">'+(quente?'Receber meu diagnóstico no WhatsApp':'Pular a fila no WhatsApp')+'</a>'+
+      '<p class="cta-note">A mensagem já vai escrita. É só enviar.</p></div>';
+  } else {
+    var d = diagnostico();
+    var msg2 = 'Oi, Lucas. Fiz a aplicação da Aruna e quero receber meu diagnóstico completo.\n\nNome: '+R.nome+'\nInstagram: '+R.instagram;
+    h = '<div class="tela"><span class="kicker">Seu diagnóstico</span>'+
+      '<h1>'+R.nome+', aqui está o que a gente faria no seu lugar.</h1>'+
+      '<span class="fase">'+d.fase+'</span><p class="sub">'+d.frase+'</p>'+
+      '<div class="diag">'+d.itens.map(function(x){ return '<div class="it"><b>'+x[0]+'</b><p>'+x[1]+'</p></div>'; }).join('')+'</div>'+
+      '<a class="btn wa" href="'+linkWA(msg2)+'" target="_blank" rel="noopener">Receber a versão completa no WhatsApp</a>'+
+      '<p class="cta-note">Quando o momento mudar, a aplicação continua aberta.</p></div>';
+  }
+  palco.innerHTML = h;
+}
+
+// TODO integração: POST para o worker aruna-atendimento (form_slug "trafego-pago-v2") + fbq Lead + CAPI com event_id.
+function gravar(dados){ console.log('[protótipo] aplicação', dados); }
+
+ir('inicio');
+</script>
+</body>
+</html>
