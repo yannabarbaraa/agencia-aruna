@@ -18,7 +18,7 @@ fbq('init','805389752641637');fbq('track','PageView');
   <div class="wrap">
     <a class="brand" href="#"><img src="assets/simbolo.svg" alt=""><span>Agência Aruna</span></a>
     <nav class="links"><a href="#metodo">Método</a><a href="#resultados">Resultados</a><a href="#quem-somos">Quem somos</a><a href="#investimento">Investimento</a><a href="#faq">FAQ</a></nav>
-    <a class="btn" href="aplicacao.html">Ver se é pra mim</a>
+    <a class="btn" href="aplicacao.html?v=20260926c">Ver se é pra mim</a>
   </div>
 </header>
 
@@ -29,7 +29,7 @@ fbq('init','805389752641637');fbq('track','PageView');
       <span class="kicker">Tráfego pago para tatuador</span>
       <h1>Se as indicações pararem amanhã, <span class="grad-txt">de onde vem o cliente do mês que vem?</span></h1>
       <p class="lead">A gente coloca seu trabalho na frente de quem mora perto e já está pensando em tatuar, e te mostra toda semana quanto custou cada conversa que chegou no seu WhatsApp.</p>
-      <a class="btn" href="aplicacao.html">Quero previsibilidade de agenda
+      <a class="btn" href="aplicacao.html?v=20260926c">Quero previsibilidade de agenda
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <p class="cta-note">Aplicação de 2 minutos. Avaliamos uma por uma.</p>
     </div>
@@ -254,7 +254,7 @@ fbq('init','805389752641637');fbq('track','PageView');
     <span class="kicker">Sem call · sem fidelidade</span>
     <h2>Comece o mês que vem sabendo de onde vem o cliente.</h2>
     <p>Dois minutos de aplicação. Se fizer sentido, a conversa continua no WhatsApp.</p>
-    <a class="btn" href="aplicacao.html">Quero previsibilidade de agenda
+    <a class="btn" href="aplicacao.html?v=20260926c">Quero previsibilidade de agenda
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
@@ -267,7 +267,8 @@ fbq('init','805389752641637');fbq('track','PageView');
 // repassa UTMs da URL para os links da aplicação
 (function(){
   var q = location.search;
-  if(q) document.querySelectorAll('a[href="aplicacao.html"]').forEach(function(a){ a.href = 'aplicacao.html' + q; });
+  // v= forca o celular a buscar o formulario novo em vez da copia guardada (cache de 10 min)
+  if(q) document.querySelectorAll('a[href="aplicacao.html?v=20260926c"]').forEach(function(a){ a.href = 'aplicacao.html' + q + '&v=20260926c'; });
 })();
 // nódulos neon conectados no hero
 (function(){
