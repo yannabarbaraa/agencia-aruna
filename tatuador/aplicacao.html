@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aplicação · Aruna para tatuador</title>
 <link rel="icon" href="assets/simbolo.svg">
-<link rel="stylesheet" href="estilo.css?v=20260925c">
+<link rel="stylesheet" href="estilo.css?v=20260925d">
 <style>
 body{min-height:100vh;display:flex;flex-direction:column}
 .topo{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;max-width:760px;width:100%;margin:0 auto}
@@ -101,9 +101,9 @@ var TELAS = {
     opcoes:['Nunca','Só impulsionei pelo Instagram','Já tive gestor ou agência','Anuncio hoje'], prox:'prova'},
 
   prova: {tipo:'info', kicker:'Enquanto isso',
-    titulo:function(){ return R.nome+', olha o que aconteceu com o Thiago, tatuador de Fortaleza.'; },
-    sub:'Ele dependia de indicação. No primeiro mês com a gente, uma tattoo pagou o mês inteiro:',
-    extra:'<div class="nums3"><div><b>R$ 1.300</b><small>numa única tattoo, com sinal pago</small></div><div><b>R$ 1.270</b><small>de mês completo: anúncio + gestão</small></div><div><b>+231%</b><small>visitas no perfil</small></div></div><p class="muted" style="font-size:14px;margin-bottom:24px">Resultado de um cliente real, não promessa. Cada cidade e estilo responde diferente.</p>',
+    titulo:function(){ return R.nome+', olha a conta do Thiago, tatuador de Fortaleza.'; },
+    sub:'Ele dependia de indicação. No primeiro mês com a gente:',
+    extra:'<div class="barras" style="margin-bottom:18px"><div class="linha"><span>Uma tattoo agendada, com sinal pago</span><i style="--w:100%"></i><b>R$ 1.300</b></div><div class="linha custo"><span>Mês inteiro: anúncio + gestão</span><i style="--w:98%"></i><b>R$ 1.270</b></div></div><div class="veredito" style="margin-bottom:18px">Uma tattoo pagou o mês inteiro.<br><span class="grad-txt">Da segunda em diante, é lucro.</span></div><div class="nums3" style="grid-template-columns:1fr 1fr"><div><b>57 → 188</b><small>visitas por dia no perfil depois do anúncio</small></div><div><b>+231%</b><small>de gente conhecendo o trabalho dele na região</small></div></div><p class="muted" style="font-size:14px;margin-bottom:24px">Resultado de um cliente real, não promessa. Cada cidade e estilo responde diferente.</p>',
     botao:'Continuar', prox:'investimentos'},
 
   investimentos: {tipo:'info', kicker:'Transparência',
