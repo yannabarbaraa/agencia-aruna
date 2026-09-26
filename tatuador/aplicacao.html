@@ -155,7 +155,7 @@ function ir(id, voltando){
 
   var h = '<div class="tela"><span class="kicker">'+t.kicker+'</span><h1>'+val(t.titulo)+'</h1>'+(t.sub?'<p class="sub">'+val(t.sub)+'</p>':'')+(t.extra||'');
   if(t.tipo==='info') h += '<button class="btn" id="ok">'+t.botao+'</button>';
-  if(t.tipo==='texto') h += '<input class="campo" id="campo" autocomplete="off" placeholder="'+t.ph+'"'+(t.inputmode?' inputmode="'+t.inputmode+'"':'')+' value="'+(R[t.chave]||'')+'"><div class="erro" id="erro"></div><button class="btn" id="ok">OK</button><span class="dica">ou aperte Enter</span>';
+  if(t.tipo==='texto') h += '<input class="campo" id="campo" autocomplete="off" placeholder="'+t.ph+'"'+(t.inputmode?' inputmode="'+t.inputmode+'"':'')+(t.conferir?' autocapitalize="none" autocorrect="off" spellcheck="false"':'')+' value="'+(R[t.chave]||'')+'"><div class="erro" id="erro"></div><button class="btn" id="ok">OK</button><span class="dica">ou aperte Enter</span>';
   if(t.tipo==='uma'||t.tipo==='multi'){
     h += '<div class="opcoes">'+t.opcoes.map(function(o,i){
       var on = t.tipo==='multi' ? (R[t.chave]||[]).indexOf(o)>=0 : R[t.chave]===o;
