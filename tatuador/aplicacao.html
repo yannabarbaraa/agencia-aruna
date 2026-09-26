@@ -44,6 +44,15 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:30px 
 .diag .it b{display:block;font-family:var(--display);font-size:18px;margin-bottom:4px}
 .diag .it p{color:var(--muted);font-size:15.5px}
 .fase{display:inline-block;border:1px solid rgba(245,166,35,.4);color:var(--amber);border-radius:999px;padding:6px 14px;font-size:13px;margin-bottom:18px}
+.igbox{background:var(--void-2);border:1px solid var(--faint);border-radius:14px;padding:16px 18px;margin:-8px 0 20px}
+.igbox .pf{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.igbox .pf img{width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--void-3)}
+.igbox .pf b{display:block;font-size:17px}
+.igbox .pf small{color:var(--muted);font-size:14px}
+.igbox p{color:var(--muted);font-size:15px;margin-bottom:14px}
+.igbox .acoes{display:flex;gap:10px;flex-wrap:wrap}
+.igbox .acoes .btn{margin:0}
+.btn.sec{background:transparent;color:var(--cream);border:1px solid rgba(244,239,232,.25);box-shadow:none}
 .btn.wa{background:#25D366;color:#06210f;box-shadow:0 10px 40px -12px rgba(37,211,102,.55)}
 @media (max-width:600px){.nums3{grid-template-columns:1fr}.campo{font-size:20px}}
 </style>
@@ -89,7 +98,8 @@ var TELAS = {
     valida:function(v){ return v.replace(/\D/g,'').length>=10 || 'Confere o número com DDD.'; }},
 
   instagram: {tipo:'texto', chave:'instagram', kicker:'4 de 11', titulo:'E o @ do Instagram? Seu ou do estúdio.', sub:'É nele que a gente olha antes de responder.', ph:'@seuperfil', prox:'equipe',
-    valida:function(v){ return v.replace('@','').trim().length>1 || 'Coloca o @ do perfil onde você mostra seu trabalho.'; }},
+    valida:function(v){ return !!normIG(v) || 'Isso não parece um @ do Instagram. Só letras, números, ponto e _ (ex: @seuestudio).'; },
+    conferir:conferirInstagram},
 
   equipe: {tipo:'uma', chave:'equipe', kicker:'5 de 11', titulo:function(){ return R.nome+', você trabalha como?'; },
     opcoes:['Sozinho(a)','Estúdio com 2 ou 3 tatuadores','Estúdio com 4 ou mais'], prox:'faturamento'},
@@ -161,7 +171,9 @@ function ir(id, voltando){
   if(t.tipo==='texto'){
     var c = document.getElementById('campo'); c.focus();
     if(t.mascara) c.oninput = function(){ c.value = t.mascara(c.value); };
-    var enviar = function(){ var r = t.valida(c.value); if(r!==true){ document.getElementById('erro').textContent=r; return; } R[t.chave]=c.value.trim(); proximo(); };
+    var enviar = function(){ var r = t.valida(c.value); if(r!==true){ document.getElementById('erro').textContent=r; return; }
+      if(t.conferir) return t.conferir(c, ok, proximo);
+      R[t.chave]=c.value.trim(); proximo(); };
     ok.onclick = enviar; c.onkeydown = function(e){ if(e.key==='Enter') enviar(); };
   }
   if(t.tipo==='uma') palco.querySelectorAll('.op').forEach(function(b){ b.onclick=function(){
@@ -178,6 +190,55 @@ document.addEventListener('keydown', function(e){
   var ops = palco.querySelectorAll('.op'); var i = e.key.toUpperCase().charCodeAt(0)-65;
   if(ops.length && e.key.length===1 && i>=0 && i<ops.length && document.activeElement.tagName!=='INPUT') ops[i].click();
 });
+
+// Conferência do @ (26/09/2026). O worker consulta a Meta, que só enxerga perfil comercial ou
+// de criador: perfil pessoal e perfil inexistente voltam iguais. Por isso "não achado" pede
+// confirmação ao lead em vez de barrar, e o grupo Holding recebe como ficou em ig_verificado.
+var IG_API = 'https://aruna-atendimento.yanna-barbara.workers.dev/api/ig-perfil';
+function normIG(v){
+  var s = String(v||'').trim().toLowerCase(), m = s.match(/instagram\.com\/([^\/?#\s]+)/);
+  if(m) s = m[1];
+  s = s.replace(/^@+/,'').replace(/\s+/g,'').replace(/\/+$/,'');
+  if(!s || s.length>30 || !/^[a-z0-9._]+$/.test(s)) return null;
+  if(s.charAt(0)==='.' || s.slice(-1)==='.' || s.indexOf('..')>=0) return null;
+  return s;
+}
+function esc(x){ return String(x==null?'':x).replace(/[&<>"]/g,function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]; }); }
+function conferirInstagram(c, ok, proximo){
+  var u = normIG(c.value), erro = document.getElementById('erro');
+  var velho = document.getElementById('igbox'); if(velho) velho.remove();
+  erro.textContent = ''; c.value = '@'+u;
+  var seguir = function(status){ R.instagram = '@'+u; R.ig_verificado = status; proximo(); };
+  var caixa = function(html){
+    var d = document.createElement('div'); d.className='igbox'; d.id='igbox'; d.innerHTML = html;
+    ok.style.display='none'; ok.nextElementSibling.style.display='none';
+    erro.parentNode.insertBefore(d, ok); return d;
+  };
+  var corrigir = function(){ var b=document.getElementById('igbox'); if(b) b.remove(); ok.style.display=''; ok.nextElementSibling.style.display=''; c.focus(); c.select(); };
+  c.oninput = corrigir;
+  ok.disabled = true; ok.textContent = 'Conferindo...';
+  var ctl = window.AbortController ? new AbortController() : null;
+  var timer = setTimeout(function(){ if(ctl) ctl.abort(); }, 6000);
+  fetch(IG_API+'?u='+encodeURIComponent(u), ctl ? {signal:ctl.signal} : {})
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      clearTimeout(timer); ok.disabled=false; ok.textContent='OK';
+      if(!d || !d.ok || d.indeterminado) return seguir('não conferido (consulta falhou)');
+      if(d.encontrado){
+        var seg = d.seguidores!=null ? Number(d.seguidores).toLocaleString('pt-BR')+' seguidores' : '';
+        var b = caixa('<div class="pf">'+(d.foto?'<img src="'+esc(d.foto)+'" alt="" referrerpolicy="no-referrer">':'')+'<div><b>@'+esc(d.username||u)+'</b><small>'+esc(d.nome||'')+(d.nome&&seg?' · ':'')+seg+'</small></div></div>'+
+          '<p>É este o seu perfil?</p><div class="acoes"><button class="btn" id="igsim">Sim, é esse</button><button class="btn sec" id="ignao">Não, corrigir</button></div>');
+        b.querySelector('#igsim').onclick = function(){ seguir('sim'+(seg?', '+seg:'')); };
+        b.querySelector('#ignao').onclick = corrigir;
+      } else {
+        var b2 = caixa('<p>Não achamos <b>@'+esc(u)+'</b> como perfil profissional no Instagram. Confere se está escrito certo.</p>'+
+          '<div class="acoes"><button class="btn" id="ignao">Corrigir</button><button class="btn sec" id="igsim">Está certo, seguir</button></div>');
+        b2.querySelector('#ignao').onclick = corrigir;
+        b2.querySelector('#igsim').onclick = function(){ seguir('não achado, lead confirmou que está certo'); };
+      }
+    })
+    .catch(function(){ clearTimeout(timer); ok.disabled=false; ok.textContent='OK'; seguir('não conferido (consulta falhou)'); });
+}
 
 // Diagnóstico automático do momento (quem ainda não tem a verba). Regras simples, sem oferta de gestão.
 var DICAS = {
@@ -264,7 +325,7 @@ function tracking(){ return {url:location.href, fbclid:qs.get('fbclid'), fbp:coo
   utm_source:qs.get('utm_source'), utm_medium:qs.get('utm_medium'), utm_campaign:qs.get('utm_campaign'), utm_content:qs.get('utm_content'), utm_term:qs.get('utm_term')}; }
 function respostas(){
   var r = {};
-  ['nome','whatsapp','instagram','equipe','faturamento','ticket','trafego','investimento','decisor','urgencia','seguidores','frequencia']
+  ['nome','whatsapp','instagram','ig_verificado','equipe','faturamento','ticket','trafego','investimento','decisor','urgencia','seguidores','frequencia']
     .forEach(function(k){ if(R[k]) r[k] = R[k]; });
   if(R.dor && R.dor.length) r.dor = R.dor.join(', ');
   return r;
