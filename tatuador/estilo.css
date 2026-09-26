@@ -162,15 +162,26 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 @media (max-width:900px){
   body{font-size:16px}
-  .hero{padding:40px 0}
   .hero .wrap,.socios,.reframe{grid-template-columns:1fr}
-  .duo{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .duo figure{position:relative;width:auto;inset:auto}
-  .duo .f2{margin-top:36px}
-  .duo .f1 figcaption{top:auto;bottom:0;padding:40px 14px 14px;background:linear-gradient(to top,rgba(14,14,28,.95) 30%,rgba(14,14,28,0))}
-  .duo figcaption{padding:40px 14px 14px}
-  .duo figcaption b{font-size:18px}
-  .duo figcaption span{font-size:12px}
+  /* primeira dobra: do topo até a faixa rolante cabe em ~650px de altura */
+  .nav .wrap{height:56px}
+  .hero{padding:18px 0 16px}
+  .hero .wrap{gap:14px}
+  .hero h1{font-size:29px;line-height:1.08;margin:10px 0 10px}
+  .hero p.lead{font-size:15px;line-height:1.45;margin-bottom:14px}
+  .hero .btn{width:100%;padding:14px 20px;font-size:16px}
+  .hero .cta-note{margin-top:8px;font-size:12px;text-align:center}
+  .duo{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .duo figure{position:relative;width:auto;inset:auto;display:flex;align-items:center;gap:10px;padding:8px;border-radius:14px;background:var(--void-2);box-shadow:none;overflow:visible}
+  .duo figure img{width:42px;height:42px;aspect-ratio:1;border-radius:50%;flex:none}
+  .duo .f1 img{object-position:35% 30%}
+  .duo .f2{margin-top:0}
+  .duo figcaption,.duo .f1 figcaption{position:static;padding:0;background:none}
+  .duo figcaption b{font-size:14px}
+  .duo figcaption span{font-size:11px;margin-top:1px}
+  .marquee{padding:11px 0}
+  .marquee span{font-size:15px;gap:32px}
+  .marquee .track{gap:32px}
   .g2,.g3,.g4,.conta{grid-template-columns:1fr}
   .preco{grid-template-columns:1fr}
   .preco .op{font-size:26px}
@@ -178,5 +189,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .caso .nums{grid-template-columns:repeat(3,1fr)}
   .nav .brand span{display:none}
   .nav .links{display:none}
+  .nav .btn{padding:9px 16px;font-size:13.5px}
 }
 @media (max-width:1060px) and (min-width:901px){.nav .links{gap:18px}.nav .links a{font-size:14px}}
