@@ -214,8 +214,10 @@ function conferirInstagram(c, ok, proximo){
     ok.style.display='none'; ok.nextElementSibling.style.display='none';
     erro.parentNode.insertBefore(d, ok); return d;
   };
-  var corrigir = function(){ var b=document.getElementById('igbox'); if(b) b.remove(); ok.style.display=''; ok.nextElementSibling.style.display=''; c.focus(); c.select(); };
-  c.oninput = corrigir;
+  // Fecha a caixa sem selecionar o texto: com select() cada tecla apagava o que ja estava escrito.
+  var fechar = function(){ var b=document.getElementById('igbox'); if(b) b.remove(); ok.style.display=''; ok.nextElementSibling.style.display=''; };
+  var corrigir = function(){ fechar(); c.focus(); var n=c.value.length; c.setSelectionRange(n,n); };
+  c.oninput = fechar;
   ok.disabled = true; ok.textContent = 'Conferindo...';
   var ctl = window.AbortController ? new AbortController() : null;
   var timer = setTimeout(function(){ if(ctl) ctl.abort(); }, 6000);
