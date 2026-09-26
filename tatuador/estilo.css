@@ -172,11 +172,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
      min-height não corta nada. */
   .hero{min-height:calc(100svh - 56px - var(--mq,48px));display:flex}
   .hero .wrap{width:100%;display:flex;flex-direction:column;justify-content:space-between}
-  .hero .wrap>div:first-child{flex:1;display:flex;flex-direction:column}
-  .hero .wrap>div:first-child .btn{align-self:stretch}
   .hero p.lead{margin-bottom:14px}
-  .hero .wrap>div:first-child .btn{margin-top:auto}
-  .hero .duo{margin-top:auto}
+  /* a sobra de altura vai para as fotos: o bloco dos cartões estica até a faixa e,
+     com 110px ou mais, os avatares viram fotos grandes (container query no .duo) */
+  .hero .duo{flex:1;min-height:66px;container-type:size;grid-auto-rows:1fr;align-self:stretch;width:100%}
   .hero .wrap{gap:14px}
   .hero h1{font-size:clamp(29px,5svh,42px);line-height:1.08;margin:10px 0 10px}
   .hero p.lead{font-size:clamp(15px,2.3svh,19px);line-height:1.45}
@@ -190,6 +189,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .duo figcaption,.duo .f1 figcaption{position:static;padding:0;background:none}
   .duo figcaption b{font-size:14px}
   .duo figcaption span{font-size:11px;margin-top:1px}
+  @container (min-height:110px){
+    .duo figure{display:block;padding:0;overflow:hidden;border-radius:18px}
+    .duo figure img{position:absolute;inset:0;width:100%;height:100%;border-radius:0;object-fit:cover}
+    .duo .f1 img{object-position:30% 22%}
+    .duo .f2 img{object-position:50% 30%}
+    .duo figcaption,.duo .f1 figcaption{position:absolute;left:0;right:0;bottom:0;top:auto;padding:36px 12px 12px;background:linear-gradient(to top,rgba(14,14,28,.96) 25%,rgba(14,14,28,0))}
+    .duo figcaption b{font-size:17px}
+    .duo figcaption span{font-size:12px}
+  }
   .marquee{padding:11px 0}
   .marquee span{font-size:15px;gap:32px}
   .marquee .track{gap:32px}
