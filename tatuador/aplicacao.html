@@ -226,12 +226,12 @@ function fim(id){
 }
 
 function mostrarFim(id, ref){
-  var tag = ref ? ' [REF:'+ref+']' : '';
   var h;
   if(id==='fim_qualificado'){
     var quente = R.urgencia==='Esta semana' || R.urgencia==='Nos próximos 30 dias';
-    var msg = 'Oi, Lucas. Acabei de fazer a aplicação da Aruna e quero o diagnóstico do meu perfil.\n\n'+
-      'Nome: '+R.nome+'\nInstagram: '+R.instagram+'\nSessão média: '+R.ticket+'\nInvestimento: '+R.investimento+'\nQuero começar: '+R.urgencia+tag;
+    // As respostas ja chegam no grupo Holding pela automacao: a mensagem do lead fica curta.
+    // O [REF:] precisa ficar, e o que liga a conversa ao anuncio.
+    var msg = 'Oi, Lucas! Respondi as perguntas lá no site e quero o diagnóstico do meu perfil.'+(ref ? '\n\n[REF:'+ref+']' : '');
     h = '<div class="tela"><span class="kicker">Aplicação recebida</span>'+
       '<h1>'+R.nome+', você passou na primeira triagem.</h1>'+
       '<p class="sub">'+(quente
@@ -241,12 +241,11 @@ function mostrarFim(id, ref){
       '<p class="cta-note">A mensagem já vai escrita. É só enviar.</p></div>';
   } else {
     var d = diagnostico();
-    var msg2 = 'Oi, Lucas. Fiz a aplicação da Aruna e quero receber meu diagnóstico completo.\n\nNome: '+R.nome+'\nInstagram: '+R.instagram+tag;
     h = '<div class="tela"><span class="kicker">Seu diagnóstico</span>'+
       '<h1>'+R.nome+', aqui está o que a gente faria no seu lugar.</h1>'+
       '<span class="fase">'+d.fase+'</span><p class="sub">'+d.frase+'</p>'+
       '<div class="diag">'+d.itens.map(function(x){ return '<div class="it"><b>'+x[0]+'</b><p>'+x[1]+'</p></div>'; }).join('')+'</div>'+
-      '<a class="btn wa" href="'+linkWA(msg2)+'" target="_blank" rel="noopener">Receber a versão completa no WhatsApp</a>'+
+      // sem botao de WhatsApp: quem ficou fora do piso recebe o diagnostico aqui e nao e atendido
       '<p class="cta-note">Quando o momento mudar, a aplicação continua aberta.</p></div>';
   }
   palco.innerHTML = h;
