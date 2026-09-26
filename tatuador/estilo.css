@@ -31,6 +31,10 @@ h1,h2,h3,.display{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-weight
 .brand{display:flex;align-items:center;gap:10px;font-family:'Cabinet Grotesk';font-weight:800;font-size:19px;text-decoration:none}
 .brand img{width:30px;height:30px}
 .nav .btn{padding:10px 18px;font-size:14px}
+.nav .links{display:flex;gap:30px}
+.nav .links a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500;transition:color .15s}
+.nav .links a:hover{color:var(--cream)}
+section[id]{scroll-margin-top:64px}
 
 /* hero */
 .hero{position:relative;padding:70px 0 60px;overflow:hidden}
@@ -172,4 +176,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   section.block{padding:68px 0}
   .caso .nums{grid-template-columns:repeat(3,1fr)}
   .nav .brand span{display:none}
+  .nav .links{display:none}
 }
+@media (max-width:1060px) and (min-width:901px){.nav .links{gap:18px}.nav .links a{font-size:14px}}
