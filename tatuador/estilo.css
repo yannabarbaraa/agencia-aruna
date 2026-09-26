@@ -94,6 +94,24 @@ section.block{padding:96px 0}
 .caso .nums div{background:rgba(244,239,232,.04);border-radius:12px;padding:12px}
 .caso .nums b{display:block;font-family:'Cabinet Grotesk';font-size:24px}
 .caso .nums small{color:var(--muted);font-size:12.5px;line-height:1.3;display:block}
+.caso{display:flex;flex-direction:column;gap:20px}
+.caso .topo{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.caso .topo h3{font-size:24px}
+.caso .big b{display:block;font-family:'Cabinet Grotesk';font-weight:800;font-size:clamp(46px,5vw,64px);line-height:1;letter-spacing:-.02em}
+.caso .big span{display:block;color:var(--muted);margin-top:6px;font-size:15px}
+.barras{display:grid;gap:10px}
+.barras .linha{display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:13.5px;color:var(--muted)}
+.barras .linha i{grid-column:1/-1;grid-row:2;height:10px;border-radius:99px;background:rgba(244,239,232,.06);position:relative;overflow:hidden}
+.barras .linha i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:99px;background:var(--grad)}
+.barras .linha.custo i::after{background:rgba(244,239,232,.35)}
+.barras .linha b{color:var(--cream);font-weight:600}
+.veredito{font-family:'Cabinet Grotesk';font-weight:800;font-size:22px;line-height:1.2;padding:14px 18px;border-radius:14px;background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.3)}
+.vitrine{border-top:1px solid var(--faint);padding-top:18px;margin-top:auto}
+.vitrine small{color:var(--amber);text-transform:uppercase;letter-spacing:.22em;font-size:11.5px;font-weight:600}
+.vitrine .vn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.vitrine .vn div{background:rgba(244,239,232,.04);border-radius:12px;padding:14px}
+.vitrine .vn b{display:block;font-family:'Cabinet Grotesk';font-size:26px;line-height:1.1}
+.vitrine .vn span{display:block;color:var(--muted);font-size:13px;line-height:1.35;margin-top:4px}
 .nota{font-size:13.5px;color:var(--muted);margin-top:22px;max-width:760px}
 
 .socios{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
