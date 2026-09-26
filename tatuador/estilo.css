@@ -166,9 +166,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   /* primeira dobra: do topo até a faixa rolante cabe em ~650px de altura */
   .nav .wrap{height:56px}
   .hero{padding:18px 0 16px}
+  /* a faixa rolante fecha a primeira dobra: nav + hero + faixa = altura visível da tela
+     (svh = altura com as barras do navegador à mostra). Texto fica no alto, a letra cresce
+     com a altura da tela e o que sobra vira respiro antes dos cartões; em tela baixa o
+     min-height não corta nada. */
+  .hero{min-height:calc(100svh - 56px - var(--mq,48px));display:flex}
+  .hero .wrap{width:100%;display:flex;flex-direction:column;justify-content:space-between}
+  .hero .wrap>div:first-child{flex:1;display:flex;flex-direction:column}
+  .hero .wrap>div:first-child .btn{align-self:stretch}
+  .hero p.lead{margin-bottom:14px}
+  .hero .wrap>div:first-child .btn{margin-top:auto}
+  .hero .duo{margin-top:auto}
   .hero .wrap{gap:14px}
-  .hero h1{font-size:29px;line-height:1.08;margin:10px 0 10px}
-  .hero p.lead{font-size:15px;line-height:1.45;margin-bottom:14px}
+  .hero h1{font-size:clamp(29px,5svh,42px);line-height:1.08;margin:10px 0 10px}
+  .hero p.lead{font-size:clamp(15px,2.3svh,19px);line-height:1.45}
   .hero .btn{width:100%;padding:14px 20px;font-size:16px}
   .hero .cta-note{margin-top:8px;font-size:12px;text-align:center}
   .duo{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:8px}
