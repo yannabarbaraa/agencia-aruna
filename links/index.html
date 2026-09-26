@@ -29,95 +29,314 @@ fbq('init','805389752641637'); fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=805389752641637&ev=PageView&noscript=1"></noscript>
 <style>
+@property --beam-angle{syntax:'<angle>'; initial-value:0deg; inherits:false}
 :root{
-  --void:#0E0E1C; --card:#15151F; --steel:#26263A;
+  --void:#0E0E1C; --card:#15151F; --steel:#1E1E2B;
   --cream:#F4EFE8; --fog:#C7C7CD; --smoke:#8A8A93;
   --coral:#E8485A; --orange:#FF6B35; --amber:#F5A623;
-  --grad:linear-gradient(110deg,#E8485A 0%,#FF6B35 48%,#F5A623 100%);
+  --grad-cta:linear-gradient(110deg,#E8485A 0%,#FF6B35 48%,#F5A623 100%);
+  --grad-display:linear-gradient(175deg,#FFE7BE 0%,#F5A623 27%,#C0392B 47%,#B8382F 55%,#FF6B35 73%,#FFDCA8 100%);
   --display:'Inter Tight',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
-  --pop:cubic-bezier(.22,1,.36,1);
+  --saida:cubic-bezier(.21,.6,.35,1);
 }
-*{box-sizing:border-box;margin:0}
+*{box-sizing:border-box; margin:0; padding:0}
 html{-webkit-text-size-adjust:100%}
 body{
-  min-height:100svh; background:var(--void); color:var(--cream);
-  font-family:var(--display); line-height:1.45;
-  background-image:
-    radial-gradient(60% 40% at 50% 0%,rgba(255,107,53,.16),transparent 70%),
-    radial-gradient(rgba(244,239,232,.07) 1px,transparent 1px);
-  background-size:auto,22px 22px;
-  display:flex; justify-content:center; padding:48px 16px 32px;
+  background:var(--void); color:var(--cream);
+  font-family:var(--display); font-size:16px; line-height:1.625;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
-main{width:100%; max-width:440px; display:flex; flex-direction:column; gap:14px}
-header{text-align:center; margin-bottom:18px}
-.marca{width:64px; height:64px; margin:0 auto 14px; display:block; filter:drop-shadow(0 0 18px rgba(255,107,53,.35))}
-h1{font-size:24px; font-weight:600; letter-spacing:-.02em}
-.sub{margin-top:6px; color:var(--fog); font-size:15px}
+.stage{max-width:480px; margin:0 auto; position:relative; min-height:100svh}
+@media (min-width:600px){ .stage{border-inline:1px solid var(--steel)} }
+
+.nav{
+  position:sticky; top:0; z-index:50; height:64px;
+  display:flex; align-items:center; justify-content:space-between; padding:0 20px;
+  border-bottom:1px solid var(--steel);
+  background:color-mix(in srgb, var(--void) 82%, transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--cream)}
+.brand svg{width:26px; height:26px; flex:none}
+.brand .nome{font-size:15px; font-weight:600; letter-spacing:-.02em}
+.brand .nome b{font-weight:600; background:var(--grad-cta); -webkit-background-clip:text; background-clip:text; color:transparent}
+.nav .ig{font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--smoke); text-decoration:none}
+
+.hero{position:relative; overflow:hidden; padding:36px 20px 28px; text-align:center}
+.dots{
+  position:absolute; inset:0; pointer-events:none; opacity:.55;
+  background-image:radial-gradient(circle,rgba(255,255,255,.07) 1px,transparent 1px); background-size:28px 28px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%);
+          mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 20%,transparent 75%);
+}
+.rede{position:absolute; inset:-10% -30%; pointer-events:none; z-index:1; opacity:.9;
+  -webkit-mask-image:radial-gradient(ellipse 34% 30% at 50% 50%, transparent 20%, #000 72%);
+          mask-image:radial-gradient(ellipse 34% 30% at 50% 50%, transparent 20%, #000 72%);
+}
+.rede canvas{display:block; width:100%; height:100%}
+.rede .halo{
+  position:absolute; left:50%; top:50%; translate:-50% -50%; width:60%; aspect-ratio:1; border-radius:50%;
+  background:radial-gradient(circle,rgba(255,107,53,.30),transparent 64%);
+  filter:blur(42px); animation:glow-pulse 4.5s ease-in-out infinite;
+}
+.veu{
+  position:absolute; inset:0; z-index:5; pointer-events:none;
+  background:radial-gradient(ellipse 60% 46% at 50% 52%, color-mix(in srgb, var(--void) 86%, transparent) 0%, color-mix(in srgb, var(--void) 45%, transparent) 60%, transparent 100%);
+}
+.conteudo{position:relative; z-index:10}
+.lockup{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+.tag{
+  font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.2em;
+  border:1px solid var(--steel); border-radius:6px; padding:6px 11px; color:var(--smoke); background:var(--card);
+}
+.tag.on{border-color:rgba(255,107,53,.35); color:#E9A87E}
+h1{
+  margin-top:20px; font-size:clamp(40px,11vw,52px); font-weight:600;
+  line-height:1.02; letter-spacing:-.04em; text-wrap:balance;
+}
+.palavra{
+  position:relative; display:inline-block; background:var(--grad-display);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent;
+  padding-bottom:.06em;
+}
+.palavra::after{
+  content:attr(data-texto); position:absolute; left:0; top:0; white-space:pre;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.9) 50%,transparent 70%) 200% 0/250% 100%;
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent;
+  animation:shine-sweep 6s ease-in-out infinite; pointer-events:none;
+}
+.lead{margin:22px auto 0; max-width:360px; font-size:17px; color:var(--fog)}
+.linha-cmd{margin-top:18px; font-family:var(--mono); font-size:13px; color:var(--smoke)}
+.linha-cmd .cifrao{color:var(--fog)}
+.caret::after{content:"█"; margin-left:2px; animation:blink 1.05s step-end infinite}
+
+.lista{padding:0 20px; display:flex; flex-direction:column; gap:24px}
+.eyebrow{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.30em; color:var(--smoke); margin-bottom:10px}
+.eyebrow .n{color:var(--fog); margin-right:12px}
+
 .card{
-  position:relative; display:block; text-decoration:none; color:inherit;
-  background:var(--card); border:1px solid var(--steel); border-radius:18px;
-  padding:22px 20px 20px; overflow:hidden;
-  transition:transform .35s var(--pop), border-color .35s var(--pop);
+  position:relative; isolation:isolate; display:block; text-decoration:none; color:inherit; overflow:hidden;
+  background:color-mix(in srgb, var(--card) 70%, transparent);
+  border:1px solid var(--steel); border-radius:12px; padding:20px;
+  transition:border-color .2s, transform .2s;
 }
-.card::before{content:""; position:absolute; inset:0 0 auto; height:3px; background:var(--grad)}
-.card:hover{transform:translateY(-2px); border-color:rgba(255,107,53,.55)}
-.card:active{transform:scale(.985)}
+.card:hover{border-color:color-mix(in srgb, var(--smoke) 50%, transparent); transform:translateY(-2px)}
+.card:active{transform:translateY(1px)}
 .card:focus-visible{outline:2px solid var(--amber); outline-offset:3px}
-.tag{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--amber)}
-.card h2{margin-top:8px; font-size:21px; font-weight:600; letter-spacing:-.015em; line-height:1.2}
-.card p{margin-top:8px; color:var(--fog); font-size:15px}
-.ir{
-  margin-top:16px; display:inline-flex; align-items:center; gap:8px;
-  font-weight:600; font-size:15px; padding:11px 16px; border-radius:999px;
-  background:var(--grad); color:#16110D;
+.beam::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; padding:1.5px; z-index:0; pointer-events:none;
+  background:conic-gradient(from var(--beam-angle), transparent 0%, transparent 72%,
+    rgba(245,166,35,.26) 82%, rgba(255,107,53,.9) 88%, rgba(232,72,90,.28) 94%, transparent 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); mask-composite:exclude;
+  animation:beam-rotate 7s linear infinite;
 }
-.ir svg{width:16px; height:16px; transition:transform .35s var(--pop)}
-.card:hover .ir svg{transform:translateX(3px)}
-footer{margin-top:22px; text-align:center; font-size:13px; color:var(--smoke)}
-footer a{color:var(--fog)}
-@media (prefers-reduced-motion:reduce){.card,.ir svg{transition:none}}
+.beam--delay::before{animation-delay:-3.5s}
+.card>*{position:relative; z-index:1}
+.card .topo{display:flex; align-items:center; gap:10px}
+.card .ponto{width:8px; height:8px; border-radius:50%; background:var(--grad-cta); box-shadow:0 0 12px rgba(255,107,53,.8); flex:none}
+.card h2{font-size:22px; font-weight:600; letter-spacing:-.03em; line-height:1.1}
+.card .sub{margin-top:8px; font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.2em; color:var(--smoke)}
+.card .desc{margin-top:12px; font-size:15px; line-height:1.5; color:var(--fog)}
+.btn{
+  margin-top:16px; display:flex; align-items:center; justify-content:center; width:100%;
+  min-height:48px; padding:13px 20px; border-radius:10px;
+  font-family:var(--mono); font-size:13px; font-weight:500; text-transform:uppercase; letter-spacing:.12em;
+  background:var(--cream); color:#0B0B12; border:1px solid var(--cream);
+  transition:background .2s, color .2s;
+}
+.card:hover .btn{background:transparent; color:var(--cream)}
+.card:hover .btn::before{content:"> "; white-space:pre}
+
+.fine{padding:40px 20px 36px; text-align:center; font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--smoke); line-height:1.9}
+.fine a{color:var(--fog); text-decoration:none; border-bottom:1px solid var(--steel)}
+
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .7s var(--saida), transform .7s var(--saida)}
+.reveal.in{opacity:1; transform:none}
+
+@keyframes blink{50%{opacity:0}}
+@keyframes beam-rotate{to{--beam-angle:360deg}}
+@keyframes glow-pulse{0%,to{opacity:.45;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+@keyframes shine-sweep{0%,72%{background-position:200% 0}88%,to{background-position:-60% 0}}
+@media (prefers-reduced-motion:reduce){
+  .beam::before,.rede .halo,.palavra::after,.caret::after{animation:none}
+  .reveal{opacity:1; transform:none; transition:none}
+}
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <svg class="marca" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-      <defs><linearGradient id="ng" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/>
-      </linearGradient></defs>
-      <line x1="50" y1="7" x2="15" y2="86" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round"/>
-      <line x1="50" y1="7" x2="85" y2="86" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round"/>
-      <circle cx="50" cy="7" r="5" fill="url(#ng)"/><circle cx="50" cy="7" r="2.2" fill="#FFF4DE"/>
-      <circle cx="15" cy="86" r="5" fill="url(#ng)"/><circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/>
-      <circle cx="85" cy="86" r="5" fill="url(#ng)"/><circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/>
-      <circle cx="29" cy="58" r="3.5" fill="url(#ng)"/><circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/>
-      <circle cx="71" cy="58" r="3.5" fill="url(#ng)"/><circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
-    </svg>
-    <h1>Agência Aruna</h1>
-    <p class="sub">Escolha o que faz sentido para o seu negócio.</p>
+<div class="stage">
+
+  <nav class="nav">
+    <a class="brand" href="https://agenciaaruna.com/">
+      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <defs><linearGradient id="ng" x1="16" y1="86" x2="84" y2="6" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#E8485A"/><stop offset="45%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#F5A623"/>
+        </linearGradient></defs>
+        <line x1="50" y1="7" x2="15" y2="86" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="50" y1="7" x2="85" y2="86" stroke="url(#ng)" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="50" cy="7" r="5" fill="url(#ng)"/><circle cx="50" cy="7" r="2.2" fill="#FFF4DE"/>
+        <circle cx="15" cy="86" r="5" fill="url(#ng)"/><circle cx="15" cy="86" r="2.2" fill="#FFF4DE"/>
+        <circle cx="85" cy="86" r="5" fill="url(#ng)"/><circle cx="85" cy="86" r="2.2" fill="#FFF4DE"/>
+        <circle cx="29" cy="58" r="3.5" fill="url(#ng)"/><circle cx="29" cy="58" r="1.6" fill="#FFF4DE"/>
+        <circle cx="71" cy="58" r="3.5" fill="url(#ng)"/><circle cx="71" cy="58" r="1.6" fill="#FFF4DE"/>
+      </svg>
+      <span class="nome">Agência <b>Aruna</b></span>
+    </a>
+    <a class="ig" href="https://www.instagram.com/aagenciaaruna/">@aagenciaaruna</a>
+  </nav>
+
+  <header class="hero">
+    <div class="dots"></div>
+    <div class="rede" aria-hidden="true"><span class="halo"></span><canvas id="orb"></canvas></div>
+    <div class="veu" aria-hidden="true"></div>
+    <div class="conteudo">
+      <div class="lockup reveal">
+        <span class="tag on">Agência Aruna</span>
+        <span class="tag">IA · Tráfego pago</span>
+      </div>
+      <h1 class="reveal">Escolha por onde <span class="palavra" data-texto="começar">começar</span>.</h1>
+      <p class="linha-cmd caret reveal"><span class="cifrao">$</span> aruna abrir --servico</p>
+    </div>
   </header>
 
-  <a class="card" data-destino="agentes-ia" href="https://agenciaaruna.com/?utm_source=instagram&amp;utm_medium=bio&amp;utm_campaign=links">
-    <span class="tag">Para empresas</span>
-    <h2>Agentes de IA na sua empresa</h2>
-    <p>Agentes que retomam cliente sumido, fazem follow-up, cobrança e pós-venda. A Aruna instala, hospeda e mantém.</p>
-    <span class="ir">Ver os agentes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-  </a>
+  <main class="lista">
+    <section class="reveal">
+      <p class="eyebrow"><span class="n">01</span>[ para empresas ]</p>
+      <a class="card beam" data-destino="agentes-ia" href="https://agenciaaruna.com/?utm_source=instagram&amp;utm_medium=bio&amp;utm_campaign=links">
+        <div class="topo"><span class="ponto"></span><h2>Agentes de IA na sua empresa</h2></div>
+        <p class="sub">Aruna OS · trabalhando 24 horas</p>
+        <p class="desc">Respondem, cobram e retomam cliente sumido. A Aruna instala e mantém, você comanda pelo WhatsApp.</p>
+        <span class="btn">Ver os agentes</span>
+      </a>
+    </section>
 
-  <a class="card" data-destino="trafego-tatuador" href="https://agenciaaruna.com/tatuador/?utm_source=instagram&amp;utm_medium=bio&amp;utm_campaign=links">
-    <span class="tag">Para tatuadores</span>
-    <h2>Tráfego pago para tatuador</h2>
-    <p>Anúncio que coloca seu trabalho na frente de quem mora perto e já está pensando em tatuar.</p>
-    <span class="ir">Ver como funciona <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-  </a>
+    <section class="reveal">
+      <p class="eyebrow"><span class="n">02</span>[ para tatuadores ]</p>
+      <a class="card beam beam--delay" data-destino="trafego-tatuador" href="https://agenciaaruna.com/tatuador/?utm_source=instagram&amp;utm_medium=bio&amp;utm_campaign=links">
+        <div class="topo"><span class="ponto"></span><h2>Tráfego pago para tatuador</h2></div>
+        <p class="sub">Cliente que não depende de indicação</p>
+        <p class="desc">Seu trabalho na frente de quem mora perto e já pensa em tatuar, com a conversa caindo no seu WhatsApp.</p>
+        <span class="btn">Ver como funciona</span>
+      </a>
+    </section>
+  </main>
 
-  <footer>© Agência Aruna · <a href="https://agenciaaruna.com/politica-de-privacidade/">Privacidade</a></footer>
-</main>
+  <p class="fine">© Agência Aruna · <a href="https://agenciaaruna.com/politica-de-privacidade/">Privacidade</a></p>
+</div>
 <script>
 document.querySelectorAll('.card').forEach(function(a){
   a.addEventListener('click',function(){ if(window.fbq) fbq('trackCustom','CliqueBio',{destino:a.dataset.destino}); });
 });
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e,i){ if(e.isIntersecting){ setTimeout(function(){e.target.classList.add('in')}, Math.min(i,4)*100); io.unobserve(e.target); } });
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+setTimeout(function(){ document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); },1200);
+/* ============================================================
+   REDE DE AGENTES (mesma animação da landing atual da Aruna):
+   emaranhado → organiza em esfera → segura → emaranha de novo.
+   Ciclo de 9,7s. Cores de chama: coral → laranja → âmbar.
+   ============================================================ */
+(function(){
+  var canvas=document.getElementById('orb'); if(!canvas) return;
+  var ctx=canvas.getContext('2d');
+  var DPR=Math.min(window.devicePixelRatio||1,2);
+  var W=0,H=0,R=0,cx=0,cy=0, N=64, nodes=[], startT=null, paused=false, mx=0,my=0;
+  var TANGLE_HOLD=1100, ORGANIZE=2600, SPHERE_HOLD=4200, TANGLE=1800;
+  var CYCLE=TANGLE_HOLD+ORGANIZE+SPHERE_HOLD+TANGLE;
+
+  function flame(t){
+    t=Math.max(0,Math.min(1,t));
+    var c1=[232,72,90],c2=[255,107,53],c3=[245,166,35],a,b,k;
+    if(t<.5){k=t/.5;a=c1;b=c2;} else {k=(t-.5)/.5;a=c2;b=c3;}
+    return [Math.round(a[0]+(b[0]-a[0])*k),Math.round(a[1]+(b[1]-a[1])*k),Math.round(a[2]+(b[2]-a[2])*k)];
+  }
+  function resize(){
+    var rect=canvas.getBoundingClientRect();
+    W=Math.max(1,rect.width); H=Math.max(1,rect.height);
+    canvas.width=W*DPR; canvas.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+    cx=W/2; cy=H/2;
+    /* 0.38 era o valor da landing atual, onde a rede ficava num quadrado de 560px ao
+       lado do texto. Aqui ela ocupa a largura toda do hero, então o raio sobe para
+       preencher e ficar evidente. */
+    R=Math.min(W,H)*0.46;
+  }
+  function build(){
+    nodes=[];
+    for(var i=0;i<N;i++){
+      var k=i+0.5, phi=Math.acos(1-2*k/N), theta=Math.PI*(1+Math.sqrt(5))*k;
+      var u=Math.random()*Math.PI*2, v=Math.random()*Math.PI*2, rr=0.25+Math.random()*1.05;
+      nodes.push({
+        tx:Math.sin(phi)*Math.cos(theta), ty:Math.sin(phi)*Math.sin(theta), tz:Math.cos(phi),
+        cx0:Math.cos(u)*Math.sin(v)*rr, cy0:Math.cos(v)*rr, cz0:Math.sin(u)*Math.sin(v)*rr,
+        sx1:0.6+Math.random()*1.2, sy1:0.6+Math.random()*1.2, sz1:0.6+Math.random()*1.2,
+        px1:Math.random()*6.28, py1:Math.random()*6.28, pz1:Math.random()*6.28,
+        col:flame(i/N), ph:Math.random()*Math.PI*2
+      });
+    }
+  }
+  function easeIO(t){ return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+  function phaseOrg(el){
+    var t=el%CYCLE;
+    if(t<TANGLE_HOLD) return 0;
+    t-=TANGLE_HOLD; if(t<ORGANIZE) return easeIO(t/ORGANIZE);
+    t-=ORGANIZE;     if(t<SPHERE_HOLD) return 1;
+    t-=SPHERE_HOLD;  return 1-easeIO(t/TANGLE);
+  }
+  function frame(ts){
+    if(startT===null) startT=ts;
+    if(paused){ requestAnimationFrame(frame); return; }
+    var el=ts-startT, org=phaseOrg(el), tangle=1-org;
+    var rot=el*0.00018+mx*0.6, tilt=-0.32+my*0.5;
+    ctx.clearRect(0,0,W,H);
+    var cosT=Math.cos(tilt),sinT=Math.sin(tilt),cosR=Math.cos(rot),sinR=Math.sin(rot), proj=[];
+    for(var i=0;i<N;i++){
+      var n=nodes[i];
+      var ex=n.cx0+Math.sin(ts*0.0006*n.sx1+n.px1)*0.5*tangle;
+      var ey=n.cy0+Math.sin(ts*0.0006*n.sy1+n.py1)*0.5*tangle;
+      var ez=n.cz0+Math.sin(ts*0.0006*n.sz1+n.pz1)*0.5*tangle;
+      var px=ex+(n.tx-ex)*org, py=ey+(n.ty-ey)*org, pz=ez+(n.tz-ez)*org;
+      var br=1+Math.sin(ts*0.001+n.ph)*0.02*org; px*=br; py*=br; pz*=br;
+      var rx=px*cosR-pz*sinR, rz=px*sinR+pz*cosR;
+      var ry=py*cosT-rz*sinT, rz2=py*sinT+rz*cosT;
+      var scale=R*(1.7/(2.6-rz2));
+      proj.push({sx:cx+rx*scale, sy:cy+ry*scale, depth:rz2, col:n.col, r:Math.max(.9,(rz2+1.4)*2.1)});
+    }
+    var maxd=R*0.98;
+    for(var a=0;a<N;a++){
+      for(var b=a+1;b<N;b++){
+        var dx=proj[a].sx-proj[b].sx, dy=proj[a].sy-proj[b].sy, d=Math.sqrt(dx*dx+dy*dy);
+        if(d<maxd){
+          var depthf=((proj[a].depth+proj[b].depth)/2+1.4)/2.8;
+          var al=(1-d/maxd)*(0.48+0.30*org)*depthf;
+          if(al<=0.005) continue;
+          var c=proj[a].col;
+          ctx.strokeStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+al.toFixed(3)+')';
+          ctx.lineWidth=1;
+          ctx.beginPath(); ctx.moveTo(proj[a].sx,proj[a].sy); ctx.lineTo(proj[b].sx,proj[b].sy); ctx.stroke();
+        }
+      }
+    }
+    for(var i2=0;i2<N;i2++){
+      var p=proj[i2], c2=p.col, br2=(p.depth+1.6)/3.2;
+      ctx.beginPath();
+      ctx.fillStyle='rgba('+c2[0]+','+c2[1]+','+c2[2]+','+(0.7+br2*0.3).toFixed(3)+')';
+      ctx.shadowColor='rgba('+c2[0]+','+c2[1]+','+c2[2]+',1)';
+      ctx.shadowBlur=16*br2+4;
+      ctx.arc(p.sx,p.sy,p.r,0,Math.PI*2); ctx.fill();
+    }
+    ctx.shadowBlur=0;
+    requestAnimationFrame(frame);
+  }
+  function init(){ resize(); build(); requestAnimationFrame(frame); }
+  addEventListener('resize',()=>setTimeout(resize,60),{passive:true});
+  addEventListener('mousemove',function(e){ mx=(e.clientX/innerWidth-.5); my=(e.clientY/innerHeight-.5); },{passive:true});
+  new IntersectionObserver(function(en){ en.forEach(function(e){ paused=!e.isIntersecting; }); }).observe(canvas);
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){ resize(); build(); requestAnimationFrame(function(t){ startT=t-(1100+2600); frame(t); paused=true; }); return; }
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(init); } else { init(); }
+})();
+
 </script>
 </body>
 </html>
